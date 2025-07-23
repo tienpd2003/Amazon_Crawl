@@ -1,0 +1,266 @@
+2025-07-21 00:01:19 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-21 00:01:19 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-21 00:01:19 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-21 00:01:21 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-21 00:01:21 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-21 00:01:21 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-21 00:01:22 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-21 00:01:22 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-21 00:01:22 - crawler.amazon_crawler - INFO - Crawling product: B07V5WDKGQ from https://www.amazon.com/dp/B07V5WDKGQ
+2025-07-21 00:01:29 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-21 00:01:29 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-21 00:01:29 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-21 00:01:30 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-21 00:01:34 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-21 00:01:36 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-21 00:01:44 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-21 00:01:44 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Extracted title: Step2 Unicorn Up & Down Roller Coaster Kids Ride O...
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $129.0
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-28%'
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 28%
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$179.99'
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $179.99
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$129.0, list=$179.99, discount=28%
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Found rating text: '4.6'
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Extracted rating: 4.6
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container only
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Found 6 image thumbnails in #imageBlock #altImages
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Found 4 main images in #imageBlock (all selectors)
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Found video count text in #imageBlock: '6 VIDEOS'
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Extracted video count from #imageBlock: 6
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Extracted video URL from script config: https://m.media-amazon.com/images/S/vse-vms-transc...
+2025-07-21 00:01:51 - crawler.amazon_crawler - INFO - Extracted 6 videos with 2 URLs from #imageBlock
+2025-07-21 00:01:52 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-21 00:01:52 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-21 00:01:52 - crawler.amazon_crawler - INFO - Extracted product_description: 1023 characters
+2025-07-21 00:01:52 - crawler.amazon_crawler - INFO - Final sale_percentage: 28% (preserved from extraction)
+2025-07-21 00:01:52 - crawler.amazon_crawler - INFO - Successfully crawled product B07V5WDKGQ
+2025-07-21 00:06:54 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-21 00:06:54 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-21 00:06:54 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-21 00:06:55 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-21 00:06:55 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-21 00:06:55 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-21 00:06:56 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-21 00:06:56 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-21 00:06:56 - crawler.amazon_crawler - INFO - Crawling product: B07V5WDKGQ from https://www.amazon.com/dp/B07V5WDKGQ
+2025-07-21 00:07:04 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-21 00:07:04 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-21 00:07:04 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-21 00:07:04 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-21 00:07:09 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-21 00:07:10 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-21 00:07:19 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-21 00:07:19 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Extracted title: Step2 Unicorn Up & Down Roller Coaster Kids Ride O...
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $129.0
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-28%'
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 28%
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$179.99'
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $179.99
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$129.0, list=$179.99, discount=28%
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Found rating text: '4.6'
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Extracted rating: 4.6
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container only
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Found 6 image thumbnails in #imageBlock #altImages
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Selector 'ul.maintain-height li.image.item img' found 1 images
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Selector 'ul.maintain-height li[class*='itemNo'] img' found 1 images
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Selector '#landingImage' found 1 images
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Selector '.imgTagWrapper img' found 1 images
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Selector 'li.maintain-height img' found 1 images
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Total main images found: 5
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Added main image 1: 51fs59zrkbL
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Added main image 2: 51fs59zrkbL
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Added main image 3: 51fs59zrkbL
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Added main image 4: 51fs59zrkbL
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Added main image 5: 51fs59zrkbL
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Found video count text in #imageBlock: '6 VIDEOS'
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Extracted video count from #imageBlock: 6
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Extracted video URL from script config: https://m.media-amazon.com/images/S/vse-vms-transc...
+2025-07-21 00:07:26 - crawler.amazon_crawler - INFO - Extracted 6 videos with 2 URLs from #imageBlock
+2025-07-21 00:07:27 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-21 00:07:27 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-21 00:07:27 - crawler.amazon_crawler - INFO - Extracted product_description: 1023 characters
+2025-07-21 00:07:27 - crawler.amazon_crawler - INFO - Final sale_percentage: 28% (preserved from extraction)
+2025-07-21 00:07:27 - crawler.amazon_crawler - INFO - Successfully crawled product B07V5WDKGQ
+2025-07-21 00:08:47 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-21 00:08:47 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-21 00:08:47 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-21 00:08:48 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-21 00:08:48 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-21 00:08:48 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-21 00:08:49 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-21 00:08:49 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-21 00:08:49 - crawler.amazon_crawler - INFO - Crawling product: B07V5WDKGQ from https://www.amazon.com/dp/B07V5WDKGQ
+2025-07-21 00:08:56 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-21 00:08:56 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-21 00:08:56 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-21 00:08:56 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-21 00:09:01 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-21 00:09:02 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-21 00:09:10 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-21 00:09:10 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-21 00:09:17 - crawler.amazon_crawler - INFO - Extracted title: Step2 Unicorn Up & Down Roller Coaster Kids Ride O...
+2025-07-21 00:09:17 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-21 00:09:17 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-21 00:09:17 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-21 00:09:17 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $129.0
+2025-07-21 00:09:17 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-28%'
+2025-07-21 00:09:17 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 28%
+2025-07-21 00:09:17 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$179.99'
+2025-07-21 00:09:17 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $179.99
+2025-07-21 00:09:17 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$129.0, list=$179.99, discount=28%
+2025-07-21 00:09:17 - crawler.amazon_crawler - INFO - Found rating text: '4.6'
+2025-07-21 00:09:17 - crawler.amazon_crawler - INFO - Extracted rating: 4.6
+2025-07-21 00:09:17 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container only
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Found 8 unique image thumbnails in #imageBlock #altImages
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Added thumbnail 1: 31nOjQH7cGL
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Added thumbnail 2: 51oCvTP-p5L
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Added thumbnail 3: 51RPyz7bTfL
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Added thumbnail 4: 31pzdsm59XL
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Added thumbnail 5: 51nwkwrx92L
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Added thumbnail 6: 51OA6vCYFWL
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Added thumbnail 7: 615tuNGhSPL
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Added main image 1: 51fs59zrkbL
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Extracted 8 unique image URLs from #imageBlock
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Found video count text in #imageBlock: '6 VIDEOS'
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Extracted video count from #imageBlock: 6
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Extracted video URL from script config: https://m.media-amazon.com/images/S/vse-vms-transc...
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Extracted 6 videos with 2 URLs from #imageBlock
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-21 00:09:20 - crawler.amazon_crawler - INFO - Extracted product_description: 1023 characters
+2025-07-21 00:09:21 - crawler.amazon_crawler - INFO - Final sale_percentage: 28% (preserved from extraction)
+2025-07-21 00:09:21 - crawler.amazon_crawler - INFO - Successfully crawled product B07V5WDKGQ
+2025-07-21 00:12:07 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-21 00:12:07 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-21 00:12:07 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-21 00:12:08 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-21 00:12:08 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-21 00:12:08 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-21 00:12:09 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-21 00:12:09 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-21 00:12:09 - crawler.amazon_crawler - INFO - Crawling product: B07V5WDKGQ from https://www.amazon.com/dp/B07V5WDKGQ
+2025-07-21 00:12:16 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-21 00:12:16 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-21 00:12:16 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-21 00:12:16 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-21 00:12:21 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-21 00:12:22 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-21 00:12:30 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-21 00:12:30 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-21 00:12:37 - crawler.amazon_crawler - INFO - Extracted title: Step2 Unicorn Up & Down Roller Coaster Kids Ride O...
+2025-07-21 00:12:37 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-21 00:12:37 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-21 00:12:37 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-21 00:12:37 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $129.0
+2025-07-21 00:12:37 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-28%'
+2025-07-21 00:12:37 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 28%
+2025-07-21 00:12:37 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$179.99'
+2025-07-21 00:12:37 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $179.99
+2025-07-21 00:12:37 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$129.0, list=$179.99, discount=28%
+2025-07-21 00:12:37 - crawler.amazon_crawler - INFO - Found rating text: '4.6'
+2025-07-21 00:12:37 - crawler.amazon_crawler - INFO - Extracted rating: 4.6
+2025-07-21 00:12:37 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container only
+2025-07-21 00:12:39 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-21 00:12:39 - crawler.amazon_crawler - INFO - Added visible thumbnail: 31nOjQH7cGL
+2025-07-21 00:12:39 - crawler.amazon_crawler - INFO - Added visible thumbnail: 51oCvTP-p5L
+2025-07-21 00:12:39 - crawler.amazon_crawler - INFO - Added visible thumbnail: 51RPyz7bTfL
+2025-07-21 00:12:39 - crawler.amazon_crawler - INFO - Added visible thumbnail: 31pzdsm59XL
+2025-07-21 00:12:39 - crawler.amazon_crawler - INFO - Added visible thumbnail: 51nwkwrx92L
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - Found 4 additional hidden images
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - Added visible thumbnail: 51OA6vCYFWL
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - Total images: 10 (6 visible + 4 hidden)
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - Added main image 1: 51fs59zrkbL
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - Found video count text: '6 VIDEOS'
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - Found exactly 6 videos
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - Found video URL: https://m.media-amazon.com/images/S/vse-vms-transc...
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - Final video data: 6 videos with 1 URLs
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - Extracted product_description: 1023 characters
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - Final sale_percentage: 28% (preserved from extraction)
+2025-07-21 00:12:40 - crawler.amazon_crawler - INFO - Successfully crawled product B07V5WDKGQ
+2025-07-21 00:15:33 - __main__ - INFO - .env file already exists
+2025-07-21 00:15:33 - __main__ - INFO - Testing crawl for ASIN: B07V5WDKGQ
+2025-07-21 00:15:33 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-21 00:15:33 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-21 00:15:33 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-21 00:15:35 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-21 00:15:35 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-21 00:15:35 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-21 00:15:36 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-21 00:15:36 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-21 00:15:36 - crawler.amazon_crawler - INFO - Crawling product: B07V5WDKGQ from https://www.amazon.com/dp/B07V5WDKGQ
+2025-07-21 00:15:42 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-21 00:15:42 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-21 00:15:42 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-21 00:15:43 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-21 00:15:47 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-21 00:15:48 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-21 00:15:57 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-21 00:15:57 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-21 00:16:04 - crawler.amazon_crawler - INFO - Extracted title: Step2 Unicorn Up & Down Roller Coaster Kids Ride O...
+2025-07-21 00:16:04 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-21 00:16:04 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-21 00:16:04 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-21 00:16:04 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $129.0
+2025-07-21 00:16:04 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-28%'
+2025-07-21 00:16:04 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 28%
+2025-07-21 00:16:04 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$179.99'
+2025-07-21 00:16:04 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $179.99
+2025-07-21 00:16:04 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$129.0, list=$179.99, discount=28%
+2025-07-21 00:16:04 - crawler.amazon_crawler - INFO - Found rating text: '4.6'
+2025-07-21 00:16:04 - crawler.amazon_crawler - INFO - Extracted rating: 4.6
+2025-07-21 00:16:04 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container only
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Added visible thumbnail: 31nOjQH7cGL
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Added visible thumbnail: 51oCvTP-p5L
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Added visible thumbnail: 51RPyz7bTfL
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Added visible thumbnail: 31pzdsm59XL
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Added visible thumbnail: 51nwkwrx92L
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Found 4 additional hidden images
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Added visible thumbnail: 51OA6vCYFWL
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Total images: 10 (6 visible + 4 hidden)
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Added main image 1: 51fs59zrkbL
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Found video count text: '6 VIDEOS'
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Found exactly 6 videos
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Found video URL: https://m.media-amazon.com/images/S/vse-vms-transc...
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Final video data: 6 videos with 1 URLs
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-21 00:16:06 - crawler.amazon_crawler - INFO - Extracted product_description: 1023 characters
+2025-07-21 00:16:07 - crawler.amazon_crawler - INFO - Final sale_percentage: 28% (preserved from extraction)
+2025-07-21 00:16:07 - crawler.amazon_crawler - INFO - Successfully crawled product B07V5WDKGQ
+2025-07-21 00:16:07 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B07V5WDKGQ with 23 fields
+2025-07-21 00:16:13 - __main__ - INFO - Test crawl successful!

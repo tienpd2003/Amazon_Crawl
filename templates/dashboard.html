@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Product Crawler - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .nav-link {
+            color: rgba(255,255,255,0.8) !important;
+            transition: all 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: white !important;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+        .stats-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .stats-card:hover {
+            transform: translateY(-5px);
+        }
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+        }
+        .bg-primary-gradient { background: linear-gradient(45deg, #007bff, #0056b3); }
+        .bg-success-gradient { background: linear-gradient(45deg, #28a745, #1e7e34); }
+        .bg-warning-gradient { background: linear-gradient(45deg, #ffc107, #e0a800); }
+        .bg-danger-gradient { background: linear-gradient(45deg, #dc3545, #bd2130); }
+        .content-header {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .chart-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <div class="text-center mb-4">
+                        <h4 class="text-white"><i class="fab fa-amazon text-warning"></i> Crawler</h4>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/">
+                                <i class="fas fa-tachometer-alt"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/products">
+                                <i class="fas fa-box"></i> Sản phẩm
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/notifications">
+                                <i class="fas fa-bell"></i> Thông báo
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/settings">
+                                <i class="fas fa-cog"></i> Cài đặt
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="content-header p-3 mt-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h2><i class="fas fa-tachometer-alt text-primary"></i> Dashboard</h2>
+                        <div>
+                            <span class="badge bg-success" id="scheduler-status">
+                                <i class="fas fa-clock"></i> Đang chạy
+                            </span>
+                            <button class="btn btn-outline-primary btn-sm" onclick="refreshDashboard()">
+                                <i class="fas fa-sync-alt"></i> Làm mới
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="row mb-4">
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card stats-card">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Tổng sản phẩm
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="total-products">0</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="stat-icon bg-primary-gradient">
+                                            <i class="fas fa-box"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card stats-card">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            Crawl thành công hôm nay
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="successful-crawls">0</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="stat-icon bg-success-gradient">
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card stats-card">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            Thời gian crawl TB
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="avg-crawl-time">0s</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="stat-icon bg-warning-gradient">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card stats-card">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                            Thay đổi gần đây
+                                        </div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="recent-changes">0</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="stat-icon bg-info">
+                                            <i class="fas fa-bell"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Row -->
+                <div class="row mb-4">
+                    <div class="col-lg-8">
+                        <div class="chart-container">
+                            <h5 class="mb-3"><i class="fas fa-chart-line text-primary"></i> Thống kê Crawl 7 ngày qua</h5>
+                            <canvas id="crawlStatsChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="chart-container">
+                            <h5 class="mb-3"><i class="fas fa-chart-pie text-success"></i> Tỷ lệ thành công</h5>
+                            <canvas id="successRateChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header bg-primary text-white">
+                                <h6 class="mb-0"><i class="fas fa-history"></i> Hoạt động gần đây</h6>
+                            </div>
+                            <div class="card-body" style="max-height: 400px; overflow-y: auto;">
+                                <div id="recent-activity">
+                                    <div class="text-center text-muted">
+                                        <i class="fas fa-spinner fa-spin"></i> Đang tải...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header bg-info text-white">
+                                <h6 class="mb-0"><i class="fas fa-list"></i> ASIN Watchlist</h6>
+                            </div>
+                            <div class="card-body" style="max-height: 400px; overflow-y: auto;">
+                                <div id="watchlist-preview">
+                                    <div class="text-center text-muted">
+                                        <i class="fas fa-spinner fa-spin"></i> Đang tải...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header bg-secondary text-white">
+                                <h6 class="mb-0"><i class="fas fa-bolt"></i> Thao tác nhanh</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" id="quick-asin" placeholder="Nhập ASIN để thêm nhanh">
+                                            <button class="btn btn-primary" onclick="addQuickASIN()">
+                                                <i class="fas fa-plus"></i> Thêm
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" id="crawl-asin" placeholder="Nhập ASIN để crawl ngay">
+                                            <button class="btn btn-success" onclick="crawlASINNow()">
+                                                <i class="fas fa-play"></i> Crawl ngay
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script>
+        let crawlStatsChart, successRateChart;
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDashboardStats();
+            loadCrawlStatsChart();
+            loadRecentActivity();
+            loadWatchlistPreview();
+            checkSchedulerStatus();
+            
+            // Auto refresh every 5 minutes
+            setInterval(refreshDashboard, 300000);
+        });
+
+        async function loadDashboardStats() {
+            try {
+                const response = await fetch('/api/dashboard/stats');
+                const stats = await response.json();
+                
+                document.getElementById('total-products').textContent = stats.total_products;
+                document.getElementById('successful-crawls').textContent = stats.successful_crawls_today;
+                document.getElementById('avg-crawl-time').textContent = stats.avg_crawl_time.toFixed(1) + 's';
+                document.getElementById('recent-changes').textContent = stats.recent_changes;
+                
+            } catch (error) {
+                console.error('Error loading dashboard stats:', error);
+            }
+        }
+
+        async function loadCrawlStatsChart() {
+            try {
+                const response = await fetch('/api/stats/crawl?days=7');
+                const data = await response.json();
+                
+                const ctx = document.getElementById('crawlStatsChart').getContext('2d');
+                
+                if (crawlStatsChart) crawlStatsChart.destroy();
+                
+                crawlStatsChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: data.stats.map(s => new Date(s.date).toLocaleDateString('vi-VN')),
+                        datasets: [{
+                            label: 'Thành công',
+                            data: data.stats.map(s => s.successful),
+                            borderColor: 'rgb(75, 192, 192)',
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            tension: 0.1
+                        }, {
+                            label: 'Thất bại',
+                            data: data.stats.map(s => s.failed),
+                            borderColor: 'rgb(255, 99, 132)',
+                            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                            tension: 0.1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+
+                // Success rate chart
+                const successCtx = document.getElementById('successRateChart').getContext('2d');
+                const totalSuccess = data.stats.reduce((sum, s) => sum + s.successful, 0);
+                const totalFailed = data.stats.reduce((sum, s) => sum + s.failed, 0);
+                
+                if (successRateChart) successRateChart.destroy();
+                
+                successRateChart = new Chart(successCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Thành công', 'Thất bại'],
+                        datasets: [{
+                            data: [totalSuccess, totalFailed],
+                            backgroundColor: ['#28a745', '#dc3545'],
+                            hoverBackgroundColor: ['#34ce57', '#e55467']
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+                
+            } catch (error) {
+                console.error('Error loading crawl stats chart:', error);
+            }
+        }
+
+        async function loadRecentActivity() {
+            try {
+                const response = await fetch('/api/logs/notifications?limit=10');
+                const data = await response.json();
+                
+                const container = document.getElementById('recent-activity');
+                
+                if (data.logs.length === 0) {
+                    container.innerHTML = '<div class="text-center text-muted">Chưa có hoạt động nào</div>';
+                    return;
+                }
+                
+                const html = data.logs.map(log => `
+                    <div class="d-flex mb-2">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-${log.success ? 'check-circle text-success' : 'exclamation-circle text-danger'}"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-2">
+                            <div class="small">
+                                <strong>${log.type}</strong> - ${new Date(log.sent_at).toLocaleString('vi-VN')}
+                            </div>
+                            <div class="text-muted small">${log.message.substring(0, 100)}...</div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                container.innerHTML = html;
+                
+            } catch (error) {
+                console.error('Error loading recent activity:', error);
+                document.getElementById('recent-activity').innerHTML = 
+                    '<div class="text-center text-danger">Lỗi tải dữ liệu</div>';
+            }
+        }
+
+        async function loadWatchlistPreview() {
+            try {
+                const response = await fetch('/api/watchlist');
+                const data = await response.json();
+                
+                const container = document.getElementById('watchlist-preview');
+                
+                if (data.watchlist.length === 0) {
+                    container.innerHTML = '<div class="text-center text-muted">Chưa có ASIN nào trong watchlist</div>';
+                    return;
+                }
+                
+                const html = data.watchlist.slice(0, 10).map(item => `
+                    <div class="d-flex justify-content-between align-items-center mb-2 p-2 border rounded">
+                        <div>
+                            <strong>${item.asin}</strong>
+                            <div class="small text-muted">${item.frequency}</div>
+                        </div>
+                        <div class="text-end">
+                            <div class="small">
+                                ${item.last_crawled ? 
+                                    new Date(item.last_crawled).toLocaleDateString('vi-VN') : 
+                                    'Chưa crawl'
+                                }
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                
+                container.innerHTML = html;
+                
+            } catch (error) {
+                console.error('Error loading watchlist preview:', error);
+                document.getElementById('watchlist-preview').innerHTML = 
+                    '<div class="text-center text-danger">Lỗi tải dữ liệu</div>';
+            }
+        }
+
+        async function checkSchedulerStatus() {
+            try {
+                const response = await fetch('/api/scheduler/status');
+                const status = await response.json();
+                
+                const statusElement = document.getElementById('scheduler-status');
+                if (status.running) {
+                    statusElement.className = 'badge bg-success';
+                    statusElement.innerHTML = '<i class="fas fa-clock"></i> Đang chạy';
+                } else {
+                    statusElement.className = 'badge bg-danger';
+                    statusElement.innerHTML = '<i class="fas fa-pause"></i> Đã dừng';
+                }
+                
+            } catch (error) {
+                console.error('Error checking scheduler status:', error);
+            }
+        }
+
+        async function addQuickASIN() {
+            const asin = document.getElementById('quick-asin').value.trim();
+            if (!asin) {
+                alert('Vui lòng nhập ASIN');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/products/add', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        asin: asin,
+                        frequency: 'daily',
+                        notes: 'Thêm từ dashboard'
+                    })
+                });
+                
+                if (response.ok) {
+                    alert('Đã thêm ASIN thành công!');
+                    document.getElementById('quick-asin').value = '';
+                    refreshDashboard();
+                } else {
+                    const error = await response.json();
+                    alert('Lỗi: ' + error.detail);
+                }
+                
+            } catch (error) {
+                console.error('Error adding ASIN:', error);
+                alert('Có lỗi xảy ra khi thêm ASIN');
+            }
+        }
+
+        async function crawlASINNow() {
+            const asin = document.getElementById('crawl-asin').value.trim();
+            if (!asin) {
+                alert('Vui lòng nhập ASIN');
+                return;
+            }
+            
+            try {
+                const response = await fetch(`/api/products/${asin}/crawl`, {
+                    method: 'POST'
+                });
+                
+                if (response.ok) {
+                    alert('Đã bắt đầu crawl ASIN!');
+                    document.getElementById('crawl-asin').value = '';
+                } else {
+                    const error = await response.json();
+                    alert('Lỗi: ' + error.detail);
+                }
+                
+            } catch (error) {
+                console.error('Error crawling ASIN:', error);
+                alert('Có lỗi xảy ra khi crawl ASIN');
+            }
+        }
+
+        function refreshDashboard() {
+            loadDashboardStats();
+            loadCrawlStatsChart();
+            loadRecentActivity();
+            loadWatchlistPreview();
+            checkSchedulerStatus();
+        }
+    </script>
+</body>
+</html> 

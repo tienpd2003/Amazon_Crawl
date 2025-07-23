@@ -1,0 +1,2281 @@
+2025-07-20 09:17:33 - __main__ - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 09:17:33 - __main__ - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 09:17:33 - __main__ - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 09:17:37 - __main__ - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 09:17:37 - __main__ - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 09:17:37 - __main__ - INFO - Attempting system ChromeDriver...
+2025-07-20 09:17:39 - __main__ - INFO - System ChromeDriver setup successful
+2025-07-20 09:17:39 - __main__ - INFO - Chrome driver setup successful
+2025-07-20 09:17:39 - __main__ - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-20 09:17:47 - __main__ - INFO - Current delivery location: Vietnam
+2025-07-20 09:17:47 - __main__ - INFO - Setting delivery location to New York 10009...
+2025-07-20 09:17:47 - __main__ - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 09:18:01 - __main__ - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 09:18:09 - __main__ - WARNING - Could not extract list price
+2025-07-20 09:18:09 - __main__ - INFO - Successfully crawled product B019OZBSJ8
+2025-07-20 09:18:09 - __main__ - INFO - Created new product record for ASIN: B019OZBSJ8
+2025-07-20 09:18:09 - __main__ - ERROR - Error saving to database: name 'mapped_data' is not defined
+2025-07-20 09:20:31 - __main__ - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 09:20:31 - __main__ - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 09:20:31 - __main__ - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 09:20:32 - __main__ - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 09:20:32 - __main__ - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 09:20:32 - __main__ - INFO - Attempting system ChromeDriver...
+2025-07-20 09:20:33 - __main__ - INFO - System ChromeDriver setup successful
+2025-07-20 09:20:33 - __main__ - INFO - Chrome driver setup successful
+2025-07-20 09:20:33 - __main__ - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-20 09:20:40 - __main__ - INFO - Current delivery location: Vietnam
+2025-07-20 09:20:40 - __main__ - INFO - Setting delivery location to New York 10009...
+2025-07-20 09:20:40 - __main__ - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 09:20:41 - __main__ - INFO - Clicked delivery location button
+2025-07-20 09:20:45 - __main__ - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 09:20:46 - __main__ - INFO - Clicked Apply button
+2025-07-20 09:20:55 - __main__ - INFO - Clicked Continue button (JavaScript)
+2025-07-20 09:20:55 - __main__ - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 09:21:02 - __main__ - INFO - Extracted title: Hipa SRM 210 Carburetor for Echo SRM-210 HC150 SRM...
+2025-07-20 09:21:02 - __main__ - INFO - Extracted 7 bullet points
+2025-07-20 09:21:02 - __main__ - INFO - Extracted sale price: $13.0
+2025-07-20 09:21:02 - __main__ - WARNING - Could not extract list price
+2025-07-20 09:21:02 - __main__ - INFO - Extracted 3 technical specifications
+2025-07-20 09:21:03 - __main__ - INFO - Successfully crawled product B019OZBSJ8
+2025-07-20 09:21:03 - __main__ - INFO - Saved crawl data for ASIN: B019OZBSJ8 with 22 fields
+2025-07-20 11:17:12 - __main__ - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 11:17:12 - __main__ - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 11:17:12 - __main__ - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 11:17:13 - __main__ - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 11:17:13 - __main__ - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 11:17:13 - __main__ - INFO - Attempting system ChromeDriver...
+2025-07-20 11:17:15 - __main__ - INFO - System ChromeDriver setup successful
+2025-07-20 11:17:15 - __main__ - INFO - Chrome driver setup successful
+2025-07-20 11:17:15 - __main__ - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-20 11:17:21 - __main__ - INFO - Current delivery location: Vietnam
+2025-07-20 11:17:21 - __main__ - INFO - Setting delivery location to New York 10009...
+2025-07-20 11:17:21 - __main__ - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 11:17:21 - __main__ - INFO - Clicked delivery location button
+2025-07-20 11:17:24 - __main__ - WARNING - Could not enter zip code: Message: element not interactable
+  (Session info: chrome=138.0.7204.158)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff61d2fe925+77845]
+	GetHandleVerifier [0x0x7ff61d2fe980+77936]
+	(No symbol) [0x0x7ff61d0b9b0c]
+	(No symbol) [0x0x7ff61d105a87]
+	(No symbol) [0x0x7ff61d1388ca]
+	(No symbol) [0x0x7ff61d102f76]
+	(No symbol) [0x0x7ff61d138ae0]
+	(No symbol) [0x0x7ff61d160b07]
+	(No symbol) [0x0x7ff61d1386a3]
+	(No symbol) [0x0x7ff61d101791]
+	(No symbol) [0x0x7ff61d102523]
+	GetHandleVerifier [0x0x7ff61d5d683d+3059501]
+	GetHandleVerifier [0x0x7ff61d5d0bfd+3035885]
+	GetHandleVerifier [0x0x7ff61d5f03f0+3164896]
+	GetHandleVerifier [0x0x7ff61d318c2e+185118]
+	GetHandleVerifier [0x0x7ff61d32053f+216111]
+	GetHandleVerifier [0x0x7ff61d3072d4+113092]
+	GetHandleVerifier [0x0x7ff61d307489+113529]
+	GetHandleVerifier [0x0x7ff61d2ee288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 11:17:24 - __main__ - INFO - Extracted title: Hipa SRM 210 Carburetor for Echo SRM-210 HC150 SRM...
+2025-07-20 11:17:24 - __main__ - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 11:17:24 - __main__ - WARNING - Could not extract sale price
+2025-07-20 11:17:24 - __main__ - WARNING - Could not extract list price
+2025-07-20 11:17:25 - __main__ - INFO - Extracted 3 technical specifications
+2025-07-20 11:17:25 - __main__ - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff61d2fe925+77845]
+	GetHandleVerifier [0x0x7ff61d2fe980+77936]
+	(No symbol) [0x0x7ff61d0b9cda]
+	(No symbol) [0x0x7ff61d1106aa]
+	(No symbol) [0x0x7ff61d11095c]
+	(No symbol) [0x0x7ff61d163d07]
+	(No symbol) [0x0x7ff61d13890f]
+	(No symbol) [0x0x7ff61d160b07]
+	(No symbol) [0x0x7ff61d1386a3]
+	(No symbol) [0x0x7ff61d101791]
+	(No symbol) [0x0x7ff61d102523]
+	GetHandleVerifier [0x0x7ff61d5d683d+3059501]
+	GetHandleVerifier [0x0x7ff61d5d0bfd+3035885]
+	GetHandleVerifier [0x0x7ff61d5f03f0+3164896]
+	GetHandleVerifier [0x0x7ff61d318c2e+185118]
+	GetHandleVerifier [0x0x7ff61d32053f+216111]
+	GetHandleVerifier [0x0x7ff61d3072d4+113092]
+	GetHandleVerifier [0x0x7ff61d307489+113529]
+	GetHandleVerifier [0x0x7ff61d2ee288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 11:17:26 - __main__ - INFO - Successfully crawled product B019OZBSJ8
+2025-07-20 11:17:26 - __main__ - INFO - Saved crawl data for ASIN: B019OZBSJ8 with 21 fields
+2025-07-20 11:18:36 - __main__ - INFO - .env file already exists
+2025-07-20 11:18:36 - __main__ - INFO - Testing crawl for ASIN: B07V5WDKGQ
+2025-07-20 11:18:36 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 11:18:36 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 11:18:36 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 11:18:37 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 11:18:37 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 11:18:37 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 11:18:38 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 11:18:38 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 11:18:38 - crawler.amazon_crawler - INFO - Crawling product: B07V5WDKGQ from https://www.amazon.com/dp/B07V5WDKGQ
+2025-07-20 11:18:46 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 11:18:46 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 11:18:46 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 11:18:46 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 11:18:51 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 11:18:52 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 11:19:00 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 11:19:00 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 11:19:07 - crawler.amazon_crawler - INFO - Extracted title: Step2 Unicorn Up & Down Roller Coaster Kids Ride O...
+2025-07-20 11:19:07 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 11:19:07 - crawler.amazon_crawler - INFO - Extracted sale price: $129.0
+2025-07-20 11:19:07 - crawler.amazon_crawler - WARNING - Could not extract list price
+2025-07-20 11:19:08 - crawler.amazon_crawler - INFO - Extracted product_description: 1023 characters
+2025-07-20 11:19:08 - crawler.amazon_crawler - INFO - Successfully crawled product B07V5WDKGQ
+2025-07-20 11:19:14 - crawler.amazon_crawler - ERROR - Error saving to database: (sqlite3.OperationalError) database is locked
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-20 11:19:20 - __main__ - INFO - Test crawl successful!
+2025-07-20 11:20:34 - __main__ - INFO - .env file already exists
+2025-07-20 11:20:34 - __main__ - INFO - Testing crawl for ASIN: B07V5WDKGQ
+2025-07-20 11:20:34 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 11:20:34 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 11:20:34 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 11:20:35 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 11:20:35 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 11:20:35 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 11:20:37 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 11:20:37 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 11:20:37 - crawler.amazon_crawler - INFO - Crawling product: B07V5WDKGQ from https://www.amazon.com/dp/B07V5WDKGQ
+2025-07-20 11:20:43 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 11:20:43 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 11:20:43 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 11:20:44 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 11:20:48 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 11:20:49 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 11:20:58 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 11:20:58 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 11:21:05 - crawler.amazon_crawler - INFO - Extracted title: Step2 Unicorn Up & Down Roller Coaster Kids Ride O...
+2025-07-20 11:21:05 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 11:21:05 - crawler.amazon_crawler - INFO - Extracted sale price: $129.0
+2025-07-20 11:21:05 - crawler.amazon_crawler - WARNING - Could not extract list price
+2025-07-20 11:21:05 - crawler.amazon_crawler - INFO - Extracted product_description: 1023 characters
+2025-07-20 11:21:06 - crawler.amazon_crawler - INFO - Successfully crawled product B07V5WDKGQ
+2025-07-20 11:21:06 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B07V5WDKGQ
+2025-07-20 11:21:06 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B07V5WDKGQ with 22 fields
+2025-07-20 11:21:12 - __main__ - INFO - Test crawl successful!
+2025-07-20 11:32:54 - __main__ - INFO - .env file already exists
+2025-07-20 11:32:54 - __main__ - INFO - Testing crawl for ASIN: B07V5WDKGQ
+2025-07-20 11:32:54 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 11:32:54 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 11:32:54 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 11:32:55 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 11:32:55 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 11:32:55 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 11:32:56 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 11:32:56 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 11:32:56 - crawler.amazon_crawler - INFO - Crawling product: B07V5WDKGQ from https://www.amazon.com/dp/B07V5WDKGQ
+2025-07-20 11:33:04 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 11:33:04 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 11:33:04 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 11:33:04 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 11:33:09 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 11:33:10 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 11:33:19 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 11:33:19 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 11:33:26 - crawler.amazon_crawler - INFO - Extracted title: Step2 Unicorn Up & Down Roller Coaster Kids Ride O...
+2025-07-20 11:33:26 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 11:33:26 - crawler.amazon_crawler - INFO - Extracted sale price: $129.0
+2025-07-20 11:33:26 - crawler.amazon_crawler - WARNING - Could not extract list price
+2025-07-20 11:33:26 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 28%
+2025-07-20 11:33:26 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-20 11:33:26 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-20 11:33:26 - crawler.amazon_crawler - INFO - Extracted product_description: 1023 characters
+2025-07-20 11:33:27 - crawler.amazon_crawler - INFO - Successfully crawled product B07V5WDKGQ
+2025-07-20 11:33:27 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B07V5WDKGQ with 22 fields
+2025-07-20 11:33:33 - __main__ - INFO - Test crawl successful!
+2025-07-20 11:38:56 - __main__ - INFO - .env file already exists
+2025-07-20 11:38:56 - __main__ - INFO - Testing crawl for ASIN: B07V5WDKGQ
+2025-07-20 11:38:56 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 11:38:56 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 11:38:56 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 11:38:57 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 11:38:57 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 11:38:57 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 11:38:58 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 11:38:58 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 11:38:58 - crawler.amazon_crawler - INFO - Crawling product: B07V5WDKGQ from https://www.amazon.com/dp/B07V5WDKGQ
+2025-07-20 11:39:05 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 11:39:05 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 11:39:05 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 11:39:05 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 11:39:10 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 11:39:11 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 11:39:19 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 11:39:19 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 11:39:26 - crawler.amazon_crawler - INFO - Extracted title: Step2 Unicorn Up & Down Roller Coaster Kids Ride O...
+2025-07-20 11:39:27 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 11:39:27 - crawler.amazon_crawler - INFO - Extracted sale price: $129.0
+2025-07-20 11:39:27 - crawler.amazon_crawler - WARNING - Could not extract list price
+2025-07-20 11:39:27 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 28%
+2025-07-20 11:39:27 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-20 11:39:27 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-20 11:39:27 - crawler.amazon_crawler - INFO - Extracted product_description: 1023 characters
+2025-07-20 11:39:28 - crawler.amazon_crawler - INFO - Successfully crawled product B07V5WDKGQ
+2025-07-20 11:39:33 - crawler.amazon_crawler - ERROR - Error saving to database: (sqlite3.OperationalError) database is locked
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-20 11:39:35 - __main__ - INFO - Test crawl successful!
+2025-07-20 11:39:57 - __main__ - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 11:39:57 - __main__ - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 11:39:57 - __main__ - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 11:39:58 - __main__ - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 11:39:58 - __main__ - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 11:39:58 - __main__ - INFO - Attempting system ChromeDriver...
+2025-07-20 11:39:59 - __main__ - INFO - System ChromeDriver setup successful
+2025-07-20 11:39:59 - __main__ - INFO - Chrome driver setup successful
+2025-07-20 11:39:59 - __main__ - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-20 11:40:06 - __main__ - INFO - Current delivery location: Vietnam
+2025-07-20 11:40:06 - __main__ - INFO - Setting delivery location to New York 10009...
+2025-07-20 11:40:06 - __main__ - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 11:40:07 - __main__ - INFO - Clicked delivery location button
+2025-07-20 11:40:12 - __main__ - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 11:40:13 - __main__ - INFO - Clicked Apply button
+2025-07-20 11:40:21 - __main__ - INFO - Clicked Continue button (JavaScript)
+2025-07-20 11:40:21 - __main__ - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 11:40:28 - __main__ - INFO - Extracted title: Hipa SRM 210 Carburetor for Echo SRM-210 HC150 SRM...
+2025-07-20 11:40:28 - __main__ - INFO - Extracted 7 about_this_item bullet points
+2025-07-20 11:40:28 - __main__ - INFO - Extracted sale price: $13.0
+2025-07-20 11:40:28 - __main__ - WARNING - Could not extract list price
+2025-07-20 11:40:29 - __main__ - INFO - Extracted bag_sale: 800+ bought in past month
+2025-07-20 11:40:29 - __main__ - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2HSFOAIGPMKK&asin=B019OZBSJ8&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 11:40:29 - __main__ - INFO - Extracted 3 technical specifications
+2025-07-20 11:40:29 - __main__ - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff61d2fe925+77845]
+	GetHandleVerifier [0x0x7ff61d2fe980+77936]
+	(No symbol) [0x0x7ff61d0b9cda]
+	(No symbol) [0x0x7ff61d1106aa]
+	(No symbol) [0x0x7ff61d11095c]
+	(No symbol) [0x0x7ff61d163d07]
+	(No symbol) [0x0x7ff61d13890f]
+	(No symbol) [0x0x7ff61d160b07]
+	(No symbol) [0x0x7ff61d1386a3]
+	(No symbol) [0x0x7ff61d101791]
+	(No symbol) [0x0x7ff61d102523]
+	GetHandleVerifier [0x0x7ff61d5d683d+3059501]
+	GetHandleVerifier [0x0x7ff61d5d0bfd+3035885]
+	GetHandleVerifier [0x0x7ff61d5f03f0+3164896]
+	GetHandleVerifier [0x0x7ff61d318c2e+185118]
+	GetHandleVerifier [0x0x7ff61d32053f+216111]
+	GetHandleVerifier [0x0x7ff61d3072d4+113092]
+	GetHandleVerifier [0x0x7ff61d307489+113529]
+	GetHandleVerifier [0x0x7ff61d2ee288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 11:40:29 - __main__ - INFO - Extracted product_description from #aplus: 73 characters
+2025-07-20 11:40:29 - __main__ - INFO - Successfully crawled product B019OZBSJ8
+2025-07-20 11:40:35 - __main__ - ERROR - Error saving to database: (sqlite3.OperationalError) database is locked
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-20 11:41:32 - __main__ - INFO - .env file already exists
+2025-07-20 11:41:32 - __main__ - INFO - Testing crawl for ASIN: B07V5WDKGQ
+2025-07-20 11:41:32 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 11:41:32 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 11:41:32 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 11:41:33 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 11:41:33 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 11:41:33 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 11:41:34 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 11:41:34 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 11:41:34 - crawler.amazon_crawler - INFO - Crawling product: B07V5WDKGQ from https://www.amazon.com/dp/B07V5WDKGQ
+2025-07-20 11:41:41 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 11:41:41 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 11:41:41 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 11:41:41 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 11:41:46 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 11:41:47 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 11:41:55 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 11:41:55 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 11:42:02 - crawler.amazon_crawler - INFO - Extracted title: Step2 Unicorn Up & Down Roller Coaster Kids Ride O...
+2025-07-20 11:42:02 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 11:42:03 - crawler.amazon_crawler - INFO - Extracted sale price: $129.0
+2025-07-20 11:42:03 - crawler.amazon_crawler - WARNING - Could not extract list price
+2025-07-20 11:42:03 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 28%
+2025-07-20 11:42:03 - crawler.amazon_crawler - WARNING - Could not extract rating
+2025-07-20 11:42:03 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-20 11:42:03 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-20 11:42:03 - crawler.amazon_crawler - INFO - Extracted product_description: 1023 characters
+2025-07-20 11:42:03 - crawler.amazon_crawler - INFO - Successfully crawled product B07V5WDKGQ
+2025-07-20 11:42:03 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B07V5WDKGQ with 22 fields
+2025-07-20 11:42:10 - __main__ - INFO - Test crawl successful!
+2025-07-20 11:47:06 - __main__ - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 11:47:06 - __main__ - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 11:47:06 - __main__ - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 11:47:07 - __main__ - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 11:47:07 - __main__ - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 11:47:07 - __main__ - INFO - Attempting system ChromeDriver...
+2025-07-20 11:47:08 - __main__ - INFO - System ChromeDriver setup successful
+2025-07-20 11:47:08 - __main__ - INFO - Chrome driver setup successful
+2025-07-20 11:47:08 - __main__ - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-20 11:47:15 - __main__ - ERROR - Failed to crawl product B019OZBSJ8: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=138.0.7204.158)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff61d2fe925+77845]
+	GetHandleVerifier [0x0x7ff61d2fe980+77936]
+	(No symbol) [0x0x7ff61d0b9cda]
+	(No symbol) [0x0x7ff61d0a5f35]
+	(No symbol) [0x0x7ff61d0caabe]
+	(No symbol) [0x0x7ff61d13feb5]
+	(No symbol) [0x0x7ff61d160432]
+	(No symbol) [0x0x7ff61d1386a3]
+	(No symbol) [0x0x7ff61d101791]
+	(No symbol) [0x0x7ff61d102523]
+	GetHandleVerifier [0x0x7ff61d5d683d+3059501]
+	GetHandleVerifier [0x0x7ff61d5d0bfd+3035885]
+	GetHandleVerifier [0x0x7ff61d5f03f0+3164896]
+	GetHandleVerifier [0x0x7ff61d318c2e+185118]
+	GetHandleVerifier [0x0x7ff61d32053f+216111]
+	GetHandleVerifier [0x0x7ff61d3072d4+113092]
+	GetHandleVerifier [0x0x7ff61d307489+113529]
+	GetHandleVerifier [0x0x7ff61d2ee288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 11:47:16 - __main__ - INFO - Saved crawl data for ASIN: B019OZBSJ8 with 3 fields
+2025-07-20 11:47:34 - __main__ - INFO - .env file already exists
+2025-07-20 11:47:34 - __main__ - INFO - Testing crawl for ASIN: B00NNMB3KS
+2025-07-20 11:47:34 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 11:47:34 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 11:47:34 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 11:47:35 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 11:47:35 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 11:47:35 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 11:47:36 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 11:47:36 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 11:47:36 - crawler.amazon_crawler - INFO - Crawling product: B00NNMB3KS from https://www.amazon.com/dp/B00NNMB3KS
+2025-07-20 11:47:43 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 11:47:43 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 11:47:43 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 11:47:43 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 11:47:48 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 11:47:49 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 11:47:57 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 11:47:57 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 11:48:04 - crawler.amazon_crawler - INFO - Extracted title: havit HV-F2056 15.6"-17" Laptop Cooler Cooling Pad...
+2025-07-20 11:48:04 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 11:48:04 - crawler.amazon_crawler - INFO - Extracted sale price: $27.0
+2025-07-20 11:48:04 - crawler.amazon_crawler - WARNING - Could not extract list price
+2025-07-20 11:48:04 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 30%
+2025-07-20 11:48:04 - crawler.amazon_crawler - WARNING - Could not extract rating
+2025-07-20 11:48:05 - crawler.amazon_crawler - INFO - Extracted bag_sale: 10K+ bought in past month
+2025-07-20 11:48:05 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A3TJEO884AOUB3&asin=B00NNMB3KS&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 11:48:05 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-20 11:48:05 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff61d2fe925+77845]
+	GetHandleVerifier [0x0x7ff61d2fe980+77936]
+	(No symbol) [0x0x7ff61d0b9cda]
+	(No symbol) [0x0x7ff61d1106aa]
+	(No symbol) [0x0x7ff61d11095c]
+	(No symbol) [0x0x7ff61d163d07]
+	(No symbol) [0x0x7ff61d13890f]
+	(No symbol) [0x0x7ff61d160b07]
+	(No symbol) [0x0x7ff61d1386a3]
+	(No symbol) [0x0x7ff61d101791]
+	(No symbol) [0x0x7ff61d102523]
+	GetHandleVerifier [0x0x7ff61d5d683d+3059501]
+	GetHandleVerifier [0x0x7ff61d5d0bfd+3035885]
+	GetHandleVerifier [0x0x7ff61d5f03f0+3164896]
+	GetHandleVerifier [0x0x7ff61d318c2e+185118]
+	GetHandleVerifier [0x0x7ff61d32053f+216111]
+	GetHandleVerifier [0x0x7ff61d3072d4+113092]
+	GetHandleVerifier [0x0x7ff61d307489+113529]
+	GetHandleVerifier [0x0x7ff61d2ee288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 11:48:05 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 35 characters
+2025-07-20 11:48:05 - crawler.amazon_crawler - INFO - Successfully crawled product B00NNMB3KS
+2025-07-20 11:48:05 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B00NNMB3KS
+2025-07-20 11:48:05 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B00NNMB3KS with 22 fields
+2025-07-20 11:48:12 - __main__ - INFO - Test crawl successful!
+2025-07-20 20:24:52 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 20:24:52 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 20:24:52 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 20:24:54 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 20:24:54 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 20:24:54 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 20:24:56 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 20:24:56 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 20:24:56 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-20 20:25:00 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 20:25:00 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 20:25:00 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 20:25:00 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 20:25:05 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 20:25:06 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 20:25:14 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 20:25:14 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 20:25:21 - crawler.amazon_crawler - INFO - Extracted title: Hipa SRM 210 Carburetor for Echo SRM-210 HC150 SRM...
+2025-07-20 20:25:21 - crawler.amazon_crawler - INFO - Extracted 7 about_this_item bullet points
+2025-07-20 20:25:21 - crawler.amazon_crawler - INFO - Extracted sale price: $13.0
+2025-07-20 20:25:21 - crawler.amazon_crawler - WARNING - Could not extract list price
+2025-07-20 20:25:22 - crawler.amazon_crawler - WARNING - Could not extract rating
+2025-07-20 20:25:22 - crawler.amazon_crawler - INFO - Extracted bag_sale: 800+ bought in past month
+2025-07-20 20:25:22 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2HSFOAIGPMKK&asin=B019OZBSJ8&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 20:25:22 - crawler.amazon_crawler - INFO - Extracted 3 technical specifications
+2025-07-20 20:25:22 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 20:25:22 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 73 characters
+2025-07-20 20:25:23 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-20 20:26:28 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 20:26:28 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 20:26:28 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 20:26:29 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 20:26:29 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 20:26:29 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 20:26:30 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 20:26:30 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 20:26:30 - crawler.amazon_crawler - INFO - Crawling product: B07V5WDKGQ from https://www.amazon.com/dp/B07V5WDKGQ
+2025-07-20 20:26:38 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 20:26:38 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 20:26:38 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 20:26:38 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 20:26:42 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 20:26:44 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 20:26:52 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 20:26:52 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 20:26:59 - crawler.amazon_crawler - INFO - Extracted title: Step2 Unicorn Up & Down Roller Coaster Kids Ride O...
+2025-07-20 20:26:59 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 20:26:59 - crawler.amazon_crawler - INFO - Extracted sale price: $129.0
+2025-07-20 20:26:59 - crawler.amazon_crawler - WARNING - Could not extract list price
+2025-07-20 20:26:59 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 28%
+2025-07-20 20:26:59 - crawler.amazon_crawler - WARNING - Could not extract rating
+2025-07-20 20:27:00 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-20 20:27:00 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-20 20:27:00 - crawler.amazon_crawler - INFO - Extracted product_description: 1023 characters
+2025-07-20 20:27:00 - crawler.amazon_crawler - INFO - Successfully crawled product B07V5WDKGQ
+2025-07-20 20:28:15 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 20:28:15 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 20:28:15 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 20:28:16 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 20:28:16 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 20:28:16 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 20:28:17 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 20:28:17 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 20:28:17 - crawler.amazon_crawler - INFO - Crawling product: B07V5WDKGQ from https://www.amazon.com/dp/B07V5WDKGQ
+2025-07-20 20:28:25 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 20:28:25 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 20:28:25 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 20:28:25 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 20:28:30 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 20:28:31 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 20:28:39 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 20:28:39 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 20:28:46 - crawler.amazon_crawler - INFO - Extracted title: Step2 Unicorn Up & Down Roller Coaster Kids Ride O...
+2025-07-20 20:28:47 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 20:28:47 - crawler.amazon_crawler - INFO - Extracted sale price: $129.0
+2025-07-20 20:28:47 - crawler.amazon_crawler - WARNING - Could not extract list price - trying manual debug...
+2025-07-20 20:28:47 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 28%
+2025-07-20 20:28:47 - crawler.amazon_crawler - WARNING - Could not extract rating - trying manual debug...
+2025-07-20 20:28:47 - crawler.amazon_crawler - INFO - Debug rating element 2: text='4.6', classes='reviewCountTextLinkedHistogram noUnderline', id='acrPopover'
+2025-07-20 20:28:48 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-20 20:28:48 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-20 20:28:48 - crawler.amazon_crawler - INFO - Extracted product_description: 1023 characters
+2025-07-20 20:28:48 - crawler.amazon_crawler - INFO - Successfully crawled product B07V5WDKGQ
+2025-07-20 20:29:55 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 20:29:55 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 20:29:55 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 20:29:56 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 20:29:56 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 20:29:56 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 20:29:57 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 20:29:57 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 20:29:57 - crawler.amazon_crawler - INFO - Crawling product: B07V5WDKGQ from https://www.amazon.com/dp/B07V5WDKGQ
+2025-07-20 20:30:04 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 20:30:04 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 20:30:04 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 20:30:04 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 20:30:09 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 20:30:10 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 20:30:18 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 20:30:18 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 20:30:25 - crawler.amazon_crawler - INFO - Extracted title: Step2 Unicorn Up & Down Roller Coaster Kids Ride O...
+2025-07-20 20:30:26 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 20:30:26 - crawler.amazon_crawler - INFO - Extracted sale price: $129.0
+2025-07-20 20:30:26 - crawler.amazon_crawler - WARNING - Could not extract list price - trying manual debug...
+2025-07-20 20:30:26 - crawler.amazon_crawler - INFO - Found 329 price-related elements for debugging
+2025-07-20 20:30:26 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 28%
+2025-07-20 20:30:26 - crawler.amazon_crawler - INFO - Found rating text: '4.6'
+2025-07-20 20:30:26 - crawler.amazon_crawler - INFO - Extracted rating: 4.6
+2025-07-20 20:30:26 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-20 20:30:26 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-20 20:30:26 - crawler.amazon_crawler - INFO - Extracted product_description: 1023 characters
+2025-07-20 20:30:27 - crawler.amazon_crawler - INFO - Successfully crawled product B07V5WDKGQ
+2025-07-20 20:31:03 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 20:31:03 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 20:31:03 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 20:31:04 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 20:31:04 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 20:31:04 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 20:31:05 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 20:31:05 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 20:31:05 - crawler.amazon_crawler - INFO - Crawling product: B07V5WDKGQ from https://www.amazon.com/dp/B07V5WDKGQ
+2025-07-20 20:31:13 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 20:31:13 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 20:31:13 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 20:31:13 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 20:31:17 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 20:31:18 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 20:31:27 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 20:31:27 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 20:31:34 - crawler.amazon_crawler - INFO - Extracted title: Step2 Unicorn Up & Down Roller Coaster Kids Ride O...
+2025-07-20 20:31:34 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 20:31:34 - crawler.amazon_crawler - INFO - Extracted sale price: $129.0
+2025-07-20 20:31:34 - crawler.amazon_crawler - WARNING - Could not extract list price - trying manual debug...
+2025-07-20 20:31:34 - crawler.amazon_crawler - INFO - Found 392 price-related elements for debugging
+2025-07-20 20:31:34 - crawler.amazon_crawler - INFO - List price class candidate 0: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:31:34 - crawler.amazon_crawler - INFO - List price class candidate 1: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:31:34 - crawler.amazon_crawler - INFO - List price class candidate 2: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:31:34 - crawler.amazon_crawler - INFO - List price class candidate 3: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:31:34 - crawler.amazon_crawler - INFO - List price class candidate 4: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:31:34 - crawler.amazon_crawler - INFO - List price class candidate 5: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:31:34 - crawler.amazon_crawler - INFO - List price class candidate 6: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:31:34 - crawler.amazon_crawler - INFO - List price class candidate 7: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:31:34 - crawler.amazon_crawler - INFO - List price class candidate 8: text='', classes='keyboard-shortcuts-list-container', id=''
+2025-07-20 20:31:34 - crawler.amazon_crawler - INFO - List price class candidate 9: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:31:35 - crawler.amazon_crawler - INFO - List price class candidate 10: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:31:35 - crawler.amazon_crawler - INFO - List price class candidate 11: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:31:35 - crawler.amazon_crawler - INFO - List price class candidate 12: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:31:35 - crawler.amazon_crawler - INFO - List price class candidate 13: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:31:35 - crawler.amazon_crawler - INFO - List price class candidate 14: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:31:35 - crawler.amazon_crawler - INFO - List price class candidate 15: text='Toys & Games
+›
+Tricycles, Scooters & Wagons
+›
+Push Ride-Ons', classes='a-unordered-list a-horizontal a-size-small', id=''
+2025-07-20 20:31:35 - crawler.amazon_crawler - INFO - List price class candidate 16: text='Toys & Games', classes='a-list-item', id=''
+2025-07-20 20:31:35 - crawler.amazon_crawler - INFO - List price class candidate 17: text='›', classes='a-list-item a-color-tertiary', id=''
+2025-07-20 20:31:35 - crawler.amazon_crawler - INFO - List price class candidate 18: text='Tricycles, Scooters & Wagons', classes='a-list-item', id=''
+2025-07-20 20:31:35 - crawler.amazon_crawler - INFO - List price class candidate 19: text='›', classes='a-list-item a-color-tertiary', id=''
+2025-07-20 20:31:35 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 28%
+2025-07-20 20:31:35 - crawler.amazon_crawler - INFO - Found rating text: '4.6'
+2025-07-20 20:31:35 - crawler.amazon_crawler - INFO - Extracted rating: 4.6
+2025-07-20 20:31:35 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-20 20:31:35 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-20 20:31:36 - crawler.amazon_crawler - INFO - Extracted product_description: 1023 characters
+2025-07-20 20:31:36 - crawler.amazon_crawler - INFO - Successfully crawled product B07V5WDKGQ
+2025-07-20 20:33:57 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 20:33:57 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 20:33:57 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 20:33:58 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 20:33:58 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 20:33:58 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 20:34:00 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 20:34:00 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 20:34:00 - crawler.amazon_crawler - INFO - Crawling product: B07V5WDKGQ from https://www.amazon.com/dp/B07V5WDKGQ
+2025-07-20 20:34:07 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 20:34:07 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 20:34:07 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 20:34:07 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 20:34:12 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 20:34:13 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 20:34:22 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 20:34:22 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - Extracted title: Step2 Unicorn Up & Down Roller Coaster Kids Ride O...
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - Extracted sale price: $129.0
+2025-07-20 20:34:29 - crawler.amazon_crawler - WARNING - Could not extract list price - trying manual debug...
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - Found 329 price-related elements for debugging
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 0: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 1: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 2: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 3: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 4: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 5: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 6: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 7: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 8: text='', classes='keyboard-shortcuts-list-container', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 9: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 10: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 11: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 12: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 13: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 14: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 15: text='Toys & Games
+›
+Tricycles, Scooters & Wagons
+›
+Push Ride-Ons', classes='a-unordered-list a-horizontal a-size-small', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 16: text='Toys & Games', classes='a-list-item', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 17: text='›', classes='a-list-item a-color-tertiary', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 18: text='Tricycles, Scooters & Wagons', classes='a-list-item', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - List price class candidate 19: text='›', classes='a-list-item a-color-tertiary', id=''
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 28%
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - Found rating text: '4.6'
+2025-07-20 20:34:29 - crawler.amazon_crawler - INFO - Extracted rating: 4.6
+2025-07-20 20:34:30 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-20 20:34:30 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-20 20:34:30 - crawler.amazon_crawler - INFO - Extracted product_description: 1023 characters
+2025-07-20 20:34:30 - crawler.amazon_crawler - INFO - Successfully crawled product B07V5WDKGQ
+2025-07-20 20:36:25 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 20:36:25 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 20:36:25 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 20:36:26 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 20:36:26 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 20:36:26 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 20:36:27 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 20:36:27 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 20:36:27 - crawler.amazon_crawler - INFO - Crawling product: B071Y4YFQF from https://www.amazon.com/dp/B071Y4YFQF
+2025-07-20 20:36:34 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 20:36:34 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 20:36:34 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 20:36:34 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 20:36:39 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 20:36:40 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 20:36:49 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 20:36:49 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - Extracted title: Super Wings Jett's Takeoff Tower 2-in-1 Airplane T...
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - Extracted sale price: $46.0
+2025-07-20 20:36:56 - crawler.amazon_crawler - WARNING - Could not extract list price - trying manual debug...
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - Found 173 price-related elements for debugging
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - List price class candidate 0: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - List price class candidate 1: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - List price class candidate 2: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - List price class candidate 3: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - List price class candidate 4: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - List price class candidate 5: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - List price class candidate 6: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - List price class candidate 7: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - List price class candidate 8: text='', classes='keyboard-shortcuts-list-container', id=''
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - List price class candidate 9: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - List price class candidate 10: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - List price class candidate 11: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - List price class candidate 12: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - List price class candidate 13: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - List price class candidate 14: text='', classes='nav-assistant-list-item', id=''
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - List price class candidate 15: text='Toys & Games
+›
+Toy Figures & Playsets
+›
+Playsets', classes='a-unordered-list a-horizontal a-size-small', id=''
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - List price class candidate 16: text='Toys & Games', classes='a-list-item', id=''
+2025-07-20 20:36:56 - crawler.amazon_crawler - INFO - List price class candidate 17: text='›', classes='a-list-item a-color-tertiary', id=''
+2025-07-20 20:36:57 - crawler.amazon_crawler - INFO - List price class candidate 18: text='Toy Figures & Playsets', classes='a-list-item', id=''
+2025-07-20 20:36:57 - crawler.amazon_crawler - INFO - List price class candidate 19: text='›', classes='a-list-item a-color-tertiary', id=''
+2025-07-20 20:36:57 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 15%
+2025-07-20 20:36:57 - crawler.amazon_crawler - INFO - Found rating text: '4.4'
+2025-07-20 20:36:57 - crawler.amazon_crawler - INFO - Extracted rating: 4.4
+2025-07-20 20:36:57 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-20 20:36:57 - crawler.amazon_crawler - INFO - Extracted product_description: 958 characters
+2025-07-20 20:36:58 - crawler.amazon_crawler - INFO - Successfully crawled product B071Y4YFQF
+2025-07-20 20:42:56 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 20:42:56 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 20:42:56 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 20:42:57 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 20:42:57 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 20:42:57 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 20:42:58 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 20:42:58 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 20:42:58 - crawler.amazon_crawler - INFO - Crawling product: B01KZ6UMUQ from https://www.amazon.com/dp/B01KZ6UMUQ
+2025-07-20 20:43:06 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 20:43:06 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 20:43:06 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 20:43:06 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 20:43:11 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 20:43:12 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 20:43:21 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 20:43:21 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 20:43:28 - crawler.amazon_crawler - INFO - Extracted title: Super Wings Toys, Transformable Toys 2 Inch, Airpl...
+2025-07-20 20:43:28 - crawler.amazon_crawler - INFO - Extracted 8 about_this_item bullet points
+2025-07-20 20:43:28 - crawler.amazon_crawler - INFO - Extracted sale price: $25.0
+2025-07-20 20:43:28 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 15%
+2025-07-20 20:43:28 - crawler.amazon_crawler - WARNING - Could not extract list price - trying debug...
+2025-07-20 20:43:28 - crawler.amazon_crawler - INFO - Found 121 basis/list elements
+2025-07-20 20:43:28 - crawler.amazon_crawler - INFO - Found rating text: '4.8'
+2025-07-20 20:43:28 - crawler.amazon_crawler - INFO - Extracted rating: 4.8
+2025-07-20 20:43:28 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-20 20:43:29 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-20 20:43:29 - crawler.amazon_crawler - INFO - Extracted product_description: 1409 characters
+2025-07-20 20:43:29 - crawler.amazon_crawler - INFO - Successfully crawled product B01KZ6UMUQ
+2025-07-20 20:44:11 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 20:44:11 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 20:44:11 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 20:44:12 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 20:44:12 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 20:44:12 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 20:44:13 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 20:44:13 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 20:44:13 - crawler.amazon_crawler - INFO - Crawling product: B01KZ6UMUQ from https://www.amazon.com/dp/B01KZ6UMUQ
+2025-07-20 20:44:22 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 20:44:22 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 20:44:22 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 20:44:22 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 20:44:26 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 20:44:27 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 20:44:36 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 20:44:36 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO - Extracted title: Super Wings Toys, Transformable Toys 2 Inch, Airpl...
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO - Extracted 8 about_this_item bullet points
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO - Extracted sale price: $25.0
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 15%
+2025-07-20 20:44:43 - crawler.amazon_crawler - WARNING - Could not extract list price - trying debug...
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO - Debug: Testing each list price selector individually...
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO - Selector 0 '.aok-relative .a-size-small.aok-offscreen': Found 2 elements
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO - Selector 1 '.basisPrice .a-price.a-text-price .a-offscreen': Found 2 elements
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO - Selector 2 '.basisPrice .a-price.a-text-price span[aria-hidden='true']': Found 2 elements
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO -   Element 0 text: '$29.99'
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO - Selector 3 '.a-section.a-spacing-small.aok-align-center .a-size-small.aok-offscreen': Found 2 elements
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO - Selector 4 '.a-price.a-text-price[data-a-strike='true'] .a-offscreen': Found 5 elements
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO - Selector 5 '.a-price.a-text-price[data-a-strike='true'] span[aria-hidden='true']': Found 5 elements
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO -   Element 0 text: '$29.99'
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO - Selector 6 'span.basisPrice .a-offscreen': Found 2 elements
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO - Selector 7 'span.a-size-small.aok-offscreen': Found 2 elements
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO - Selector 8 'span.a-price.a-text-price .a-offscreen': Found 8 elements
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO - Selector 9 '.a-price-was .a-offscreen': Found 0 elements
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO - Selector 10 '.a-text-strike .a-offscreen': Found 0 elements
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO - Found rating text: '4.8'
+2025-07-20 20:44:43 - crawler.amazon_crawler - INFO - Extracted rating: 4.8
+2025-07-20 20:44:44 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-20 20:44:44 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-20 20:44:44 - crawler.amazon_crawler - INFO - Extracted product_description: 1409 characters
+2025-07-20 20:44:44 - crawler.amazon_crawler - INFO - Successfully crawled product B01KZ6UMUQ
+2025-07-20 20:45:19 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 20:45:19 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 20:45:19 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 20:45:20 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 20:45:20 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 20:45:20 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 20:45:21 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 20:45:21 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 20:45:21 - crawler.amazon_crawler - INFO - Crawling product: B01KZ6UMUQ from https://www.amazon.com/dp/B01KZ6UMUQ
+2025-07-20 20:45:28 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 20:45:28 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 20:45:28 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 20:45:28 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 20:45:33 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 20:45:34 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 20:45:42 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 20:45:42 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 20:45:49 - crawler.amazon_crawler - INFO - Extracted title: Super Wings Toys, Transformable Toys 2 Inch, Airpl...
+2025-07-20 20:45:49 - crawler.amazon_crawler - INFO - Extracted 8 about_this_item bullet points
+2025-07-20 20:45:50 - crawler.amazon_crawler - INFO - Extracted sale price: $25.0
+2025-07-20 20:45:50 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 15%
+2025-07-20 20:45:50 - crawler.amazon_crawler - INFO - Found list price text: '$29.99'
+2025-07-20 20:45:50 - crawler.amazon_crawler - INFO - Extracted list price: $29.99
+2025-07-20 20:45:50 - crawler.amazon_crawler - INFO - Found rating text: '4.8'
+2025-07-20 20:45:50 - crawler.amazon_crawler - INFO - Extracted rating: 4.8
+2025-07-20 20:45:50 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-20 20:45:50 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-20 20:45:50 - crawler.amazon_crawler - INFO - Extracted product_description: 1409 characters
+2025-07-20 20:45:50 - crawler.amazon_crawler - INFO - Successfully crawled product B01KZ6UMUQ
+2025-07-20 20:46:57 - __main__ - INFO - .env file already exists
+2025-07-20 20:46:57 - __main__ - INFO - Testing crawl for ASIN: B071Y4YFQF
+2025-07-20 20:46:57 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 20:46:57 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 20:46:57 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 20:46:58 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 20:46:58 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 20:46:58 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 20:46:59 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 20:46:59 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 20:46:59 - crawler.amazon_crawler - INFO - Crawling product: B071Y4YFQF from https://www.amazon.com/dp/B071Y4YFQF
+2025-07-20 20:47:06 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 20:47:06 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 20:47:06 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 20:47:06 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 20:47:11 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 20:47:12 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 20:47:20 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 20:47:20 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 20:47:27 - crawler.amazon_crawler - INFO - Extracted title: Super Wings Jett's Takeoff Tower 2-in-1 Airplane T...
+2025-07-20 20:47:27 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 20:47:27 - crawler.amazon_crawler - INFO - Extracted sale price: $46.0
+2025-07-20 20:47:27 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 15%
+2025-07-20 20:47:28 - crawler.amazon_crawler - INFO - Found list price text: '$54.99'
+2025-07-20 20:47:28 - crawler.amazon_crawler - INFO - Extracted list price: $54.99
+2025-07-20 20:47:28 - crawler.amazon_crawler - INFO - Found rating text: '4.4'
+2025-07-20 20:47:28 - crawler.amazon_crawler - INFO - Extracted rating: 4.4
+2025-07-20 20:47:28 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-20 20:47:28 - crawler.amazon_crawler - INFO - Extracted product_description: 958 characters
+2025-07-20 20:47:28 - crawler.amazon_crawler - INFO - Successfully crawled product B071Y4YFQF
+2025-07-20 20:47:28 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B071Y4YFQF
+2025-07-20 20:47:28 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B071Y4YFQF with 24 fields
+2025-07-20 20:47:34 - __main__ - INFO - Test crawl successful!
+2025-07-20 20:51:15 - __main__ - INFO - .env file already exists
+2025-07-20 20:51:15 - __main__ - INFO - Testing crawl for ASIN: B0CRLFRQ5V
+2025-07-20 20:51:15 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 20:51:15 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 20:51:15 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 20:51:16 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 20:51:16 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 20:51:16 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 20:51:17 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 20:51:17 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 20:51:17 - crawler.amazon_crawler - INFO - Crawling product: B0CRLFRQ5V from https://www.amazon.com/dp/B0CRLFRQ5V
+2025-07-20 20:51:24 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 20:51:24 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 20:51:24 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 20:51:24 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 20:51:29 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 20:51:30 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 20:51:38 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 20:51:38 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 20:51:45 - crawler.amazon_crawler - INFO - Extracted title: ASUS ROG Strix G16 (2024) Gaming Laptop, 16” 16:10...
+2025-07-20 20:51:45 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 20:51:45 - crawler.amazon_crawler - INFO - Extracted sale price: $2236.0
+2025-07-20 20:51:46 - crawler.amazon_crawler - INFO - Found list price text: '$2,199.99'
+2025-07-20 20:51:46 - crawler.amazon_crawler - INFO - Extracted list price: $2199.99
+2025-07-20 20:51:46 - crawler.amazon_crawler - INFO - Found rating text: '4.0'
+2025-07-20 20:51:46 - crawler.amazon_crawler - INFO - Extracted rating: 4.0
+2025-07-20 20:51:46 - crawler.amazon_crawler - INFO - Extracted bag_sale: 300+ bought in past month
+2025-07-20 20:51:46 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=AHJZ1A60LWT6M&asin=B0CRLFRQ5V&ref_=dp_merchant_link
+2025-07-20 20:51:46 - crawler.amazon_crawler - INFO - Extracted 7 technical specifications
+2025-07-20 20:51:46 - crawler.amazon_crawler - INFO - Extracted product_description: 812 characters
+2025-07-20 20:51:47 - crawler.amazon_crawler - INFO - Successfully crawled product B0CRLFRQ5V
+2025-07-20 20:51:47 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B0CRLFRQ5V
+2025-07-20 20:51:47 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B0CRLFRQ5V with 24 fields
+2025-07-20 20:51:53 - __main__ - INFO - Test crawl successful!
+2025-07-20 21:04:49 - __main__ - INFO - .env file already exists
+2025-07-20 21:04:49 - __main__ - INFO - Testing crawl for ASIN: B0DQQ7NZF5
+2025-07-20 21:04:49 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 21:04:49 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 21:04:49 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 21:04:51 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 21:04:51 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 21:04:51 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 21:04:52 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 21:04:52 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 21:04:52 - crawler.amazon_crawler - INFO - Crawling product: B0DQQ7NZF5 from https://www.amazon.com/dp/B0DQQ7NZF5
+2025-07-20 21:04:59 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 21:04:59 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 21:04:59 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 21:04:59 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 21:05:04 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 21:05:05 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 21:05:14 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 21:05:14 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 21:05:21 - crawler.amazon_crawler - INFO - Extracted title: Lenovo Essential Laptop | Ideapad 1i | 20GB RAM | ...
+2025-07-20 21:05:21 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 21:05:21 - crawler.amazon_crawler - INFO - Extracted sale price: $386.0
+2025-07-20 21:05:21 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 31%
+2025-07-20 21:05:21 - crawler.amazon_crawler - INFO - Found list price text: '$559.00'
+2025-07-20 21:05:21 - crawler.amazon_crawler - INFO - Extracted list price: $559.0
+2025-07-20 21:05:21 - crawler.amazon_crawler - INFO - Found rating text: '4.2'
+2025-07-20 21:05:21 - crawler.amazon_crawler - INFO - Extracted rating: 4.2
+2025-07-20 21:05:21 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-20 21:05:21 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A3QR4864ATM9Z9&asin=B0DQQ7NZF5&ref_=dp_merchant_link
+2025-07-20 21:05:21 - crawler.amazon_crawler - INFO - Extracted 7 technical specifications
+2025-07-20 21:05:22 - crawler.amazon_crawler - INFO - Extracted product_description: 724 characters
+2025-07-20 21:05:22 - crawler.amazon_crawler - INFO - Successfully crawled product B0DQQ7NZF5
+2025-07-20 21:05:27 - crawler.amazon_crawler - ERROR - Error saving to database: (sqlite3.OperationalError) database is locked
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-20 21:05:34 - __main__ - INFO - Test crawl successful!
+2025-07-20 21:05:49 - __main__ - INFO - .env file already exists
+2025-07-20 21:05:49 - __main__ - INFO - Testing crawl for ASIN: B0DQQ7NZF5
+2025-07-20 21:05:49 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 21:05:49 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 21:05:49 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 21:05:50 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 21:05:50 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 21:05:50 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 21:05:51 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 21:05:51 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 21:05:51 - crawler.amazon_crawler - INFO - Crawling product: B0DQQ7NZF5 from https://www.amazon.com/dp/B0DQQ7NZF5
+2025-07-20 21:05:57 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 21:05:57 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 21:05:57 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 21:05:57 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 21:06:02 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 21:06:03 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 21:06:11 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 21:06:11 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 21:06:18 - crawler.amazon_crawler - INFO - Extracted title: Lenovo Essential Laptop | Ideapad 1i | 20GB RAM | ...
+2025-07-20 21:06:19 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 21:06:19 - crawler.amazon_crawler - INFO - Extracted sale price: $386.0
+2025-07-20 21:06:19 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 31%
+2025-07-20 21:06:19 - crawler.amazon_crawler - INFO - Found list price text: '$559.00'
+2025-07-20 21:06:19 - crawler.amazon_crawler - INFO - Extracted list price: $559.0
+2025-07-20 21:06:19 - crawler.amazon_crawler - INFO - Found rating text: '4.2'
+2025-07-20 21:06:19 - crawler.amazon_crawler - INFO - Extracted rating: 4.2
+2025-07-20 21:06:19 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-20 21:06:19 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A3QR4864ATM9Z9&asin=B0DQQ7NZF5&ref_=dp_merchant_link
+2025-07-20 21:06:19 - crawler.amazon_crawler - INFO - Extracted 7 technical specifications
+2025-07-20 21:06:19 - crawler.amazon_crawler - INFO - Extracted product_description: 724 characters
+2025-07-20 21:06:20 - crawler.amazon_crawler - INFO - Successfully crawled product B0DQQ7NZF5
+2025-07-20 21:06:20 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B0DQQ7NZF5
+2025-07-20 21:06:20 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B0DQQ7NZF5 with 24 fields
+2025-07-20 21:06:26 - __main__ - INFO - Test crawl successful!
+2025-07-20 21:14:41 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 21:14:41 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 21:14:41 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 21:14:43 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 21:14:43 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 21:14:43 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 21:14:44 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 21:14:44 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 21:14:44 - crawler.amazon_crawler - INFO - Crawling product: B0FGQ79DGB from https://www.amazon.com/dp/B0FGQ79DGB
+2025-07-20 21:14:50 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 21:14:50 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 21:14:50 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 21:14:50 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 21:14:55 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 21:14:56 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 21:15:05 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 21:15:05 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 21:15:12 - crawler.amazon_crawler - INFO - Extracted title: Lenovo V15 Gen 4 Laptop, 15.6" FHD Display, Intel ...
+2025-07-20 21:15:12 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 21:15:12 - crawler.amazon_crawler - INFO - Extracted sale price: $589.0
+2025-07-20 21:15:12 - crawler.amazon_crawler - INFO - Found list price text: '$2,399.00'
+2025-07-20 21:15:12 - crawler.amazon_crawler - INFO - Extracted list price: $2399.0
+2025-07-20 21:15:12 - crawler.amazon_crawler - INFO - Calculated sale percentage from prices: 75%
+2025-07-20 21:15:12 - crawler.amazon_crawler - INFO - Found rating text: '4.2'
+2025-07-20 21:15:12 - crawler.amazon_crawler - INFO - Extracted rating: 4.2
+2025-07-20 21:15:12 - crawler.amazon_crawler - INFO - Extracted coupon: Apply $40 coupon Terms
+2025-07-20 21:15:12 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A3QR4864ATM9Z9&asin=B0FGQ79DGB&ref_=dp_merchant_link
+2025-07-20 21:15:13 - crawler.amazon_crawler - INFO - Extracted 7 technical specifications
+2025-07-20 21:15:13 - crawler.amazon_crawler - INFO - Extracted product_description: 834 characters
+2025-07-20 21:15:13 - crawler.amazon_crawler - INFO - Successfully crawled product B0FGQ79DGB
+2025-07-20 21:15:13 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B0FGQ79DGB
+2025-07-20 21:15:13 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B0FGQ79DGB with 24 fields
+2025-07-20 21:18:02 - __main__ - INFO - .env file already exists
+2025-07-20 21:18:02 - __main__ - INFO - Testing crawl for ASIN: B0C74SQRYP
+2025-07-20 21:18:02 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 21:18:02 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-20 21:18:02 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 21:18:03 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 21:18:03 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 21:18:03 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 21:18:04 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 21:18:04 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 21:18:04 - crawler.amazon_crawler - INFO - Crawling product: B0C74SQRYP from https://www.amazon.com/dp/B0C74SQRYP
+2025-07-20 21:18:13 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 21:18:13 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 21:18:13 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 21:18:14 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 21:18:18 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 21:18:19 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 21:18:28 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 21:18:28 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 21:18:35 - crawler.amazon_crawler - INFO - Extracted title: MAREE Glycolic Acid Polishes - Toner Pads for Face...
+2025-07-20 21:18:35 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 21:18:35 - crawler.amazon_crawler - INFO - Extracted sale price: $27.0
+2025-07-20 21:18:35 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 28%
+2025-07-20 21:18:35 - crawler.amazon_crawler - INFO - Found list price text: '$35.00'
+2025-07-20 21:18:35 - crawler.amazon_crawler - INFO - Extracted list price: $35.0
+2025-07-20 21:18:35 - crawler.amazon_crawler - INFO - Found rating text: '4.4'
+2025-07-20 21:18:35 - crawler.amazon_crawler - INFO - Extracted rating: 4.4
+2025-07-20 21:18:35 - crawler.amazon_crawler - INFO - Extracted coupon: Save an extra 50% on your first Subscribe and Save order. Terms
+2025-07-20 21:18:35 - crawler.amazon_crawler - INFO - Extracted bag_sale: 30K+ bought in past month
+2025-07-20 21:18:35 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2SFFHZFSK3IVG&asin=B0C74SQRYP&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 21:18:35 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-20 21:18:35 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 21:18:35 - crawler.amazon_crawler - INFO - Extracted product_description from [data-feature-name='aplus']: 927 characters
+2025-07-20 21:18:36 - crawler.amazon_crawler - INFO - Successfully crawled product B0C74SQRYP
+2025-07-20 21:18:36 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B0C74SQRYP
+2025-07-20 21:18:36 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B0C74SQRYP with 24 fields
+2025-07-20 21:18:42 - __main__ - INFO - Test crawl successful!
+2025-07-20 21:22:53 - __main__ - INFO - .env file already exists
+2025-07-20 21:22:53 - __main__ - INFO - Testing crawl for ASIN: B0C74SQRYP
+2025-07-20 21:22:53 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 21:22:53 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-20 21:22:53 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 21:22:54 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 21:22:54 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 21:22:54 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 21:22:55 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 21:22:55 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 21:22:55 - crawler.amazon_crawler - INFO - Crawling product: B0C74SQRYP from https://www.amazon.com/dp/B0C74SQRYP
+2025-07-20 21:23:02 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 21:23:02 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 21:23:02 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 21:23:02 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 21:23:07 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 21:23:08 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 21:23:16 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 21:23:16 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 21:23:23 - crawler.amazon_crawler - INFO - Extracted title: MAREE Glycolic Acid Polishes - Toner Pads for Face...
+2025-07-20 21:23:23 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 21:23:23 - crawler.amazon_crawler - INFO - Extracted sale price: $27.0
+2025-07-20 21:23:23 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 28%
+2025-07-20 21:23:24 - crawler.amazon_crawler - INFO - Found list price text: '$35.00'
+2025-07-20 21:23:24 - crawler.amazon_crawler - INFO - Extracted list price: $35.0
+2025-07-20 21:23:24 - crawler.amazon_crawler - INFO - Found rating text: '4.4'
+2025-07-20 21:23:24 - crawler.amazon_crawler - INFO - Extracted rating: 4.4
+2025-07-20 21:23:24 - crawler.amazon_crawler - INFO - Extracted coupon: Save an extra 50% on your first Subscribe and Save order. Terms
+2025-07-20 21:23:24 - crawler.amazon_crawler - INFO - Extracted bag_sale: 30K+ bought in past month
+2025-07-20 21:23:24 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2SFFHZFSK3IVG&asin=B0C74SQRYP&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 21:23:24 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-20 21:23:24 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 21:23:24 - crawler.amazon_crawler - INFO - Extracted product_description from [data-feature-name='aplus']: 927 characters
+2025-07-20 21:23:24 - crawler.amazon_crawler - INFO - Successfully crawled product B0C74SQRYP
+2025-07-20 21:23:24 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B0C74SQRYP with 24 fields
+2025-07-20 21:23:31 - __main__ - INFO - Test crawl successful!
+2025-07-20 21:30:15 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 21:30:15 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-20 21:30:15 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 21:30:16 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 21:30:16 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 21:30:16 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 21:30:18 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 21:30:18 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 21:30:26 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 21:30:26 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 21:30:31 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 21:30:32 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 21:30:40 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 21:30:40 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 21:32:09 - __main__ - INFO - .env file already exists
+2025-07-20 21:32:09 - __main__ - INFO - Testing crawl for ASIN: B07RFG647Q
+2025-07-20 21:32:09 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 21:32:09 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-20 21:32:09 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 21:32:10 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 21:32:10 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 21:32:10 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 21:32:11 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 21:32:11 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 21:32:11 - crawler.amazon_crawler - INFO - Crawling product: B07RFG647Q from https://www.amazon.com/dp/B07RFG647Q
+2025-07-20 21:32:19 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 21:32:19 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 21:32:19 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 21:32:19 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 21:32:23 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 21:32:24 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 21:32:33 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 21:32:33 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 21:32:40 - crawler.amazon_crawler - INFO - Extracted title: LE GUSHE Under Eye Patches - Gold Under Eye Masks ...
+2025-07-20 21:32:40 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 21:32:40 - crawler.amazon_crawler - INFO - Extracted sale price: $9.0
+2025-07-20 21:32:40 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 33%
+2025-07-20 21:32:40 - crawler.amazon_crawler - INFO - Found list price text: '$14.95'
+2025-07-20 21:32:40 - crawler.amazon_crawler - INFO - Extracted list price: $14.95
+2025-07-20 21:32:40 - crawler.amazon_crawler - INFO - Found rating text: '4.3'
+2025-07-20 21:32:40 - crawler.amazon_crawler - INFO - Extracted rating: 4.3
+2025-07-20 21:32:40 - crawler.amazon_crawler - INFO - Extracted promotion program: Limited time deal
+2025-07-20 21:32:40 - crawler.amazon_crawler - INFO - Extracted bag_sale: 900+ bought in past month
+2025-07-20 21:32:41 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=AL6R3TS8PV0QD&asin=B07RFG647Q&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 21:32:41 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-20 21:32:41 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 21:32:41 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 35 characters
+2025-07-20 21:32:41 - crawler.amazon_crawler - INFO - Successfully crawled product B07RFG647Q
+2025-07-20 21:32:41 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B07RFG647Q
+2025-07-20 21:32:41 - crawler.amazon_crawler - ERROR - Error saving to database: (sqlite3.OperationalError) table product_crawl_history has no column named promotion_program
+[SQL: INSERT INTO product_crawl_history (product_id, asin, crawl_date, title, product_description, product_information, about_this_item, image_count, image_urls, video_count, video_urls, sale_price, list_price, sale_percentage, promotion_program, coupon, bag_sale, rating, rating_count, brand_store_link, sold_by_link, advertised_asins, amazon_choice, inventory, crawl_success, crawl_error) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (3, 'B07RFG647Q', '2025-07-20 14:32:11.382304', 'LE GUSHE Under Eye Patches - Gold Under Eye Masks for Dark Circles and Puffiness - With Collagen & Amino Acids - Gifts for Women - Bridesmaid Gifts (20 pairs)', 'From the brand\nShop our Bestsellers', '{"Brand": "LE GUSHE", "Item Form": "Patch", "Product Benefits": "Hydrating", "Scent": "20 pairs gold", "Skin Type": "All"}', '["Enhanced Hydration and Moisturizing: Infused with hyaluronic acid, these under eye patches for puffy eyes provide deep hydration and lasting moistu ... (952 characters truncated) ... of nourishing under eye mask patches, ensuring a substantial supply. It\'s a practical gift set for women and a perfect pick for stocking stuffers."]', 10, '["https://images-na.ssl-images-amazon.com/images/G/01/x-locale/common/grey-pixel.gif", "https://m.media-amazon.com/images/I/51t+1LQXK3L._SS40_.jpg",  ... (394 characters truncated) ... 81p3UHN29ML._SX466_.jpg", "https://m.media-amazon.com/images/I/41ZLJGjSAoL._SS40_.jpg", "https://m.media-amazon.com/images/I/417CM5mBClL._SS40_.jpg"]', 10, '["https://m.media-amazon.com/images/S/vse-vms-transcoding-artifact-us-east-1-prod/c00b61ec-7279-4fe3-a51b-ebca3b2af092/default.jobtemplate.hls.m3u8", ... (1222 characters truncated) ...  "https://m.media-amazon.com/images/S/vse-vms-transcoding-artifact-us-east-1-prod/88cd99d9-6235-468d-bd46-cd58e3e61b89/default.jobtemplate.hls.m3u8"]', 9.0, 14.95, 33, 'Limited time deal', '', '900+ bought in past month', 4.3, 13791, 'https://www.amazon.com/stores/LeGushe/page/62CCC55E-84CF-4AD6-B945-49E3FF6AB033?is_byline_deeplink=true&deeplink=49847571-6F72-422A-BD58-BE6C1EF928B1&redirect_store_id=62CCC55E-84CF-4AD6-B945-49E3FF6AB033&lp_asin=B07RFG647Q&ref_=ast_bln&store_ref=bl_ast_dp_brandLogo_sto', 'https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=AL6R3TS8PV0QD&asin=B07RFG647Q&ref_=dp_merchant_link&isAmazonFulfilled=1', '["B0F8VWLYRC", "B07RFG647Q", "B0DSDFWK5W", "B0BFFSKMSC", "B0CPT8W3RV", "B0CQ6CF1YV", "B0BLHFPFV9", "B0DF85D7CG"]', 1, 'In Stock', 1, None)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-20 21:32:43 - __main__ - INFO - Test crawl successful!
+2025-07-20 21:35:40 - __main__ - INFO - .env file already exists
+2025-07-20 21:35:40 - __main__ - INFO - Testing crawl for ASIN: B07RFG647Q
+2025-07-20 21:35:40 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 21:35:40 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-20 21:35:40 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 21:35:43 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 21:35:43 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 21:35:43 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 21:35:44 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 21:35:44 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 21:35:44 - crawler.amazon_crawler - INFO - Crawling product: B07RFG647Q from https://www.amazon.com/dp/B07RFG647Q
+2025-07-20 21:35:51 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 21:35:51 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 21:35:51 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 21:35:51 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 21:35:56 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 21:35:57 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 21:36:05 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 21:36:05 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 21:36:12 - crawler.amazon_crawler - INFO - Extracted title: LE GUSHE Under Eye Patches - Gold Under Eye Masks ...
+2025-07-20 21:36:12 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 21:36:12 - crawler.amazon_crawler - INFO - Extracted sale price: $9.0
+2025-07-20 21:36:12 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 33%
+2025-07-20 21:36:12 - crawler.amazon_crawler - INFO - Found list price text: '$14.95'
+2025-07-20 21:36:12 - crawler.amazon_crawler - INFO - Extracted list price: $14.95
+2025-07-20 21:36:13 - crawler.amazon_crawler - INFO - Found rating text: '4.3'
+2025-07-20 21:36:13 - crawler.amazon_crawler - INFO - Extracted rating: 4.3
+2025-07-20 21:36:13 - crawler.amazon_crawler - INFO - Extracted promotion program: Limited time deal
+2025-07-20 21:36:13 - crawler.amazon_crawler - INFO - Extracted bag_sale: 900+ bought in past month
+2025-07-20 21:36:13 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=AL6R3TS8PV0QD&asin=B07RFG647Q&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 21:36:13 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-20 21:36:13 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 21:36:13 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 35 characters
+2025-07-20 21:36:13 - crawler.amazon_crawler - INFO - Successfully crawled product B07RFG647Q
+2025-07-20 21:36:13 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B07RFG647Q
+2025-07-20 21:36:13 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B07RFG647Q with 23 fields
+2025-07-20 21:36:20 - __main__ - INFO - Test crawl successful!
+2025-07-20 21:47:07 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 21:47:07 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-20 21:47:07 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 21:47:09 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 21:47:09 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 21:47:09 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 21:47:10 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 21:47:10 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 21:47:10 - crawler.amazon_crawler - INFO - Crawling product: B07RFG647Q from https://www.amazon.com/dp/B07RFG647Q
+2025-07-20 21:47:17 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 21:47:17 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 21:47:17 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 21:47:18 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 21:47:22 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 21:47:23 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 21:47:32 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 21:47:32 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 21:47:39 - crawler.amazon_crawler - INFO - Extracted title: LE GUSHE Under Eye Patches - Gold Under Eye Masks ...
+2025-07-20 21:47:39 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 21:47:39 - crawler.amazon_crawler - INFO - Extracted sale price: $9.0
+2025-07-20 21:47:39 - crawler.amazon_crawler - INFO - Extracted sale percentage from page: 33%
+2025-07-20 21:47:39 - crawler.amazon_crawler - INFO - Found list price text: '$14.95'
+2025-07-20 21:47:39 - crawler.amazon_crawler - INFO - Extracted list price: $14.95
+2025-07-20 21:47:39 - crawler.amazon_crawler - INFO - Found rating text: '4.3'
+2025-07-20 21:47:39 - crawler.amazon_crawler - INFO - Extracted rating: 4.3
+2025-07-20 21:47:39 - crawler.amazon_crawler - INFO - Found 7 image thumbnails in #altImages
+2025-07-20 21:47:39 - crawler.amazon_crawler - INFO - Extracted 7 image URLs
+2025-07-20 21:47:39 - crawler.amazon_crawler - WARNING - Could not extract video count from #videoCount: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#altImages #videoCount"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 21:47:39 - crawler.amazon_crawler - INFO - Fallback video count from thumbnails: 0
+2025-07-20 21:47:39 - crawler.amazon_crawler - INFO - Extracted 10 videos with 10 URLs
+2025-07-20 21:47:39 - crawler.amazon_crawler - INFO - Extracted promotion program: Limited time deal
+2025-07-20 21:47:39 - crawler.amazon_crawler - INFO - Extracted bag_sale: 900+ bought in past month
+2025-07-20 21:47:40 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=AL6R3TS8PV0QD&asin=B07RFG647Q&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 21:47:40 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-20 21:47:40 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 21:47:40 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 35 characters
+2025-07-20 21:47:40 - crawler.amazon_crawler - INFO - Successfully crawled product B07RFG647Q
+2025-07-20 21:52:34 - __main__ - INFO - .env file already exists
+2025-07-20 21:52:34 - __main__ - INFO - Testing crawl for ASIN: B019OZBSJ8
+2025-07-20 21:52:34 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 21:52:34 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-20 21:52:34 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 21:52:35 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 21:52:35 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 21:52:35 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 21:52:36 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 21:52:36 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 21:52:36 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-20 21:52:45 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 21:52:45 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 21:52:45 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 21:52:45 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 21:52:50 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 21:52:51 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 21:53:00 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 21:53:00 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 21:53:07 - crawler.amazon_crawler - INFO - Extracted title: Hipa SRM 210 Carburetor for Echo SRM-210 HC150 SRM...
+2025-07-20 21:53:07 - crawler.amazon_crawler - INFO - Extracted 7 about_this_item bullet points
+2025-07-20 21:53:07 - crawler.amazon_crawler - INFO - Extracted sale price: $13.0
+2025-07-20 21:53:07 - crawler.amazon_crawler - INFO - Found list price text: '$17.97'
+2025-07-20 21:53:07 - crawler.amazon_crawler - INFO - Extracted list price: $17.97
+2025-07-20 21:53:07 - crawler.amazon_crawler - INFO - Calculated sale percentage from prices: 28%
+2025-07-20 21:53:07 - crawler.amazon_crawler - INFO - Found rating text: '4.5'
+2025-07-20 21:53:07 - crawler.amazon_crawler - INFO - Extracted rating: 4.5
+2025-07-20 21:53:07 - crawler.amazon_crawler - INFO - Found 6 image thumbnails in #altImages
+2025-07-20 21:53:07 - crawler.amazon_crawler - INFO - Extracted 6 image URLs
+2025-07-20 21:53:08 - crawler.amazon_crawler - INFO - Found video count text: '4 VIDEOS'
+2025-07-20 21:53:08 - crawler.amazon_crawler - INFO - Extracted video count: 4
+2025-07-20 21:53:08 - crawler.amazon_crawler - INFO - Extracted 7 videos with 7 URLs
+2025-07-20 21:53:08 - crawler.amazon_crawler - INFO - Extracted bag_sale: 800+ bought in past month
+2025-07-20 21:53:08 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2HSFOAIGPMKK&asin=B019OZBSJ8&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 21:53:08 - crawler.amazon_crawler - INFO - Extracted 3 technical specifications
+2025-07-20 21:53:08 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 21:53:08 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 73 characters
+2025-07-20 21:53:09 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-20 21:53:09 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B019OZBSJ8
+2025-07-20 21:53:09 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B019OZBSJ8 with 23 fields
+2025-07-20 21:53:15 - __main__ - INFO - Test crawl successful!
+2025-07-20 22:02:54 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 22:02:54 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-20 22:02:54 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 22:02:56 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 22:02:56 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 22:02:56 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 22:02:57 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 22:02:57 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 22:02:57 - crawler.amazon_crawler - INFO - Crawling product: B07RFG647Q from https://www.amazon.com/dp/B07RFG647Q
+2025-07-20 22:03:04 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 22:03:04 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 22:03:04 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 22:03:04 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 22:03:08 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 22:03:10 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 22:03:18 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 22:03:18 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 22:03:25 - crawler.amazon_crawler - INFO - Extracted title: LE GUSHE Under Eye Patches - Gold Under Eye Masks ...
+2025-07-20 22:03:25 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 22:03:25 - crawler.amazon_crawler - INFO - Found pricing container with both price and percentage
+2025-07-20 22:03:25 - crawler.amazon_crawler - INFO - Extracted sale price from container: $9.0
+2025-07-20 22:03:25 - crawler.amazon_crawler - INFO - Found percentage text in same container: '-33%'
+2025-07-20 22:03:25 - crawler.amazon_crawler - INFO - Extracted sale percentage from same container: 33%
+2025-07-20 22:03:25 - crawler.amazon_crawler - INFO - Found list price text: '$14.95'
+2025-07-20 22:03:25 - crawler.amazon_crawler - INFO - Extracted list price: $14.95
+2025-07-20 22:03:25 - crawler.amazon_crawler - INFO - Found rating text: '4.3'
+2025-07-20 22:03:25 - crawler.amazon_crawler - INFO - Extracted rating: 4.3
+2025-07-20 22:03:25 - crawler.amazon_crawler - INFO - Found 7 image thumbnails in #altImages
+2025-07-20 22:03:25 - crawler.amazon_crawler - INFO - Extracted 7 image URLs
+2025-07-20 22:03:25 - crawler.amazon_crawler - WARNING - Could not extract video count from #videoCount: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#altImages #videoCount"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 22:03:25 - crawler.amazon_crawler - INFO - Fallback video count from thumbnails: 0
+2025-07-20 22:03:26 - crawler.amazon_crawler - INFO - Extracted 10 videos with 10 URLs
+2025-07-20 22:03:26 - crawler.amazon_crawler - INFO - Extracted promotion program: Limited time deal
+2025-07-20 22:03:26 - crawler.amazon_crawler - INFO - Extracted bag_sale: 900+ bought in past month
+2025-07-20 22:03:26 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=AL6R3TS8PV0QD&asin=B07RFG647Q&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 22:03:26 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-20 22:03:26 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 22:03:26 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 35 characters
+2025-07-20 22:03:26 - crawler.amazon_crawler - INFO - Successfully crawled product B07RFG647Q
+2025-07-20 22:03:26 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - Delivery location already set to New York area
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - Extracted title: Hipa SRM 210 Carburetor for Echo SRM-210 HC150 SRM...
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - Extracted 7 about_this_item bullet points
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - Found pricing container with price only
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - Extracted sale price from container: $13.0
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - No percentage found in pricing container - no discount
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - Found list price text: '$22.98'
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - Extracted list price: $22.98
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - Calculated sale percentage from price difference: 43%
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - Found rating text: '4.5'
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - Extracted rating: 4.5
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - Found 6 image thumbnails in #altImages
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - Extracted 6 image URLs
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - Found video count text: '4 VIDEOS'
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - Extracted video count: 4
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - Extracted 7 videos with 7 URLs
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - Extracted bag_sale: 800+ bought in past month
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2HSFOAIGPMKK&asin=B019OZBSJ8&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - Extracted 3 technical specifications
+2025-07-20 22:03:34 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 22:03:34 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 73 characters
+2025-07-20 22:03:35 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-20 22:04:12 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 22:04:12 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-20 22:04:12 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 22:04:13 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 22:04:13 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 22:04:13 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 22:04:14 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 22:04:14 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 22:04:14 - crawler.amazon_crawler - INFO - Crawling product: B07RFG647Q from https://www.amazon.com/dp/B07RFG647Q
+2025-07-20 22:04:20 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 22:04:20 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 22:04:20 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 22:04:21 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 22:04:25 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 22:04:26 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 22:04:35 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 22:04:35 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 22:04:42 - crawler.amazon_crawler - INFO - Extracted title: LE GUSHE Under Eye Patches - Gold Under Eye Masks ...
+2025-07-20 22:04:42 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 22:04:42 - crawler.amazon_crawler - INFO - Found pricing container with both price and percentage
+2025-07-20 22:04:42 - crawler.amazon_crawler - INFO - Extracted sale price from container: $9.0
+2025-07-20 22:04:42 - crawler.amazon_crawler - INFO - Found percentage text in same container: '-33%'
+2025-07-20 22:04:42 - crawler.amazon_crawler - INFO - Extracted sale percentage from same container: 33%
+2025-07-20 22:04:42 - crawler.amazon_crawler - INFO - Found list price text: '$14.95'
+2025-07-20 22:04:42 - crawler.amazon_crawler - INFO - Extracted list price: $14.95
+2025-07-20 22:04:42 - crawler.amazon_crawler - INFO - Using sale percentage from same container: 33%
+2025-07-20 22:04:42 - crawler.amazon_crawler - INFO - Found rating text: '4.3'
+2025-07-20 22:04:42 - crawler.amazon_crawler - INFO - Extracted rating: 4.3
+2025-07-20 22:04:42 - crawler.amazon_crawler - INFO - Found 7 image thumbnails in #altImages
+2025-07-20 22:04:42 - crawler.amazon_crawler - INFO - Extracted 7 image URLs
+2025-07-20 22:04:42 - crawler.amazon_crawler - WARNING - Could not extract video count from #videoCount: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#altImages #videoCount"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 22:04:42 - crawler.amazon_crawler - INFO - Fallback video count from thumbnails: 0
+2025-07-20 22:04:42 - crawler.amazon_crawler - INFO - Extracted 10 videos with 10 URLs
+2025-07-20 22:04:42 - crawler.amazon_crawler - INFO - Extracted promotion program: Limited time deal
+2025-07-20 22:04:43 - crawler.amazon_crawler - INFO - Extracted bag_sale: 900+ bought in past month
+2025-07-20 22:04:43 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=AL6R3TS8PV0QD&asin=B07RFG647Q&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 22:04:43 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-20 22:04:43 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 22:04:43 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 35 characters
+2025-07-20 22:04:43 - crawler.amazon_crawler - INFO - Successfully crawled product B07RFG647Q
+2025-07-20 22:04:43 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - Delivery location already set to New York area
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - Extracted title: Hipa SRM 210 Carburetor for Echo SRM-210 HC150 SRM...
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - Extracted 7 about_this_item bullet points
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - Found pricing container with price only
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - Extracted sale price from container: $13.0
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - No percentage found in pricing container - no discount
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - Found list price text: '$22.98'
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - Extracted list price: $22.98
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - No percentage in same container as price - setting to 0% (no discount)
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - Found rating text: '4.5'
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - Extracted rating: 4.5
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - Found 6 image thumbnails in #altImages
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - Extracted 6 image URLs
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - Found video count text: '4 VIDEOS'
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - Extracted video count: 4
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - Extracted 7 videos with 7 URLs
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - Extracted bag_sale: 800+ bought in past month
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2HSFOAIGPMKK&asin=B019OZBSJ8&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - Extracted 3 technical specifications
+2025-07-20 22:04:51 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 22:04:51 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 73 characters
+2025-07-20 22:04:52 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-20 22:05:48 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 22:05:48 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-20 22:05:48 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 22:05:49 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 22:05:49 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 22:05:49 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 22:05:50 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 22:05:50 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 22:05:50 - crawler.amazon_crawler - INFO - Crawling product: B07RFG647Q from https://www.amazon.com/dp/B07RFG647Q
+2025-07-20 22:05:58 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 22:05:58 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 22:05:58 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 22:05:58 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 22:06:03 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 22:06:04 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 22:06:12 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 22:06:12 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 22:06:19 - crawler.amazon_crawler - INFO - Extracted title: LE GUSHE Under Eye Patches - Gold Under Eye Masks ...
+2025-07-20 22:06:20 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 22:06:20 - crawler.amazon_crawler - INFO - Found pricing container with both price and percentage
+2025-07-20 22:06:20 - crawler.amazon_crawler - INFO - Extracted sale price from container: $9.0
+2025-07-20 22:06:20 - crawler.amazon_crawler - INFO - Found percentage text in same container: '-33%'
+2025-07-20 22:06:20 - crawler.amazon_crawler - INFO - Extracted sale percentage from same container: 33%
+2025-07-20 22:06:20 - crawler.amazon_crawler - INFO - Found list price text: '$14.95'
+2025-07-20 22:06:20 - crawler.amazon_crawler - INFO - Extracted list price: $14.95
+2025-07-20 22:06:20 - crawler.amazon_crawler - INFO - Using sale percentage from same container: 33%
+2025-07-20 22:06:20 - crawler.amazon_crawler - INFO - Found rating text: '4.3'
+2025-07-20 22:06:20 - crawler.amazon_crawler - INFO - Extracted rating: 4.3
+2025-07-20 22:06:20 - crawler.amazon_crawler - INFO - Found 7 image thumbnails in #altImages
+2025-07-20 22:06:20 - crawler.amazon_crawler - INFO - Extracted 7 image URLs
+2025-07-20 22:06:20 - crawler.amazon_crawler - WARNING - Could not extract video count from #videoCount: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#altImages #videoCount"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 22:06:20 - crawler.amazon_crawler - INFO - Fallback video count from thumbnails: 0
+2025-07-20 22:06:20 - crawler.amazon_crawler - INFO - Extracted 10 videos with 10 URLs
+2025-07-20 22:06:20 - crawler.amazon_crawler - INFO - Extracted promotion program: Limited time deal
+2025-07-20 22:06:20 - crawler.amazon_crawler - INFO - Extracted bag_sale: 900+ bought in past month
+2025-07-20 22:06:20 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=AL6R3TS8PV0QD&asin=B07RFG647Q&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 22:06:20 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-20 22:06:20 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 22:06:20 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 35 characters
+2025-07-20 22:06:21 - crawler.amazon_crawler - INFO - Final sale_percentage: 33% (preserved from extraction)
+2025-07-20 22:06:21 - crawler.amazon_crawler - INFO - Successfully crawled product B07RFG647Q
+2025-07-20 22:06:21 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - Delivery location already set to New York area
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - Extracted title: Hipa SRM 210 Carburetor for Echo SRM-210 HC150 SRM...
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - Extracted 7 about_this_item bullet points
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - Found pricing container with price only
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - Extracted sale price from container: $13.0
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - No percentage found in pricing container - no discount
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - Found list price text: '$22.98'
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - Extracted list price: $22.98
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - No percentage in same container as price - setting to 0% (no discount)
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - Found rating text: '4.5'
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - Extracted rating: 4.5
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - Found 6 image thumbnails in #altImages
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - Extracted 6 image URLs
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - Found video count text: '4 VIDEOS'
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - Extracted video count: 4
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - Extracted 7 videos with 7 URLs
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - Extracted bag_sale: 800+ bought in past month
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2HSFOAIGPMKK&asin=B019OZBSJ8&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - Extracted 3 technical specifications
+2025-07-20 22:06:27 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 22:06:27 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 73 characters
+2025-07-20 22:06:28 - crawler.amazon_crawler - INFO - Final sale_percentage: 0% (preserved from extraction)
+2025-07-20 22:06:28 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-20 22:07:18 - __main__ - INFO - .env file already exists
+2025-07-20 22:07:18 - __main__ - INFO - Testing crawl for ASIN: B019OZBSJ8
+2025-07-20 22:07:18 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 22:07:18 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-20 22:07:18 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 22:07:20 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 22:07:20 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 22:07:20 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 22:07:21 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 22:07:21 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 22:07:21 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-20 22:07:27 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 22:07:27 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 22:07:27 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 22:07:27 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 22:07:32 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 22:07:33 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 22:07:41 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 22:07:41 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 22:07:48 - crawler.amazon_crawler - INFO - Extracted title: Hipa SRM 210 Carburetor for Echo SRM-210 HC150 SRM...
+2025-07-20 22:07:48 - crawler.amazon_crawler - INFO - Extracted 7 about_this_item bullet points
+2025-07-20 22:07:48 - crawler.amazon_crawler - INFO - Found pricing container with price only
+2025-07-20 22:07:48 - crawler.amazon_crawler - INFO - Extracted sale price from container: $13.0
+2025-07-20 22:07:48 - crawler.amazon_crawler - INFO - No percentage found in pricing container - no discount
+2025-07-20 22:07:48 - crawler.amazon_crawler - INFO - Found list price text: '$22.98'
+2025-07-20 22:07:48 - crawler.amazon_crawler - INFO - Extracted list price: $22.98
+2025-07-20 22:07:48 - crawler.amazon_crawler - INFO - No percentage in same container as price - setting to 0% (no discount)
+2025-07-20 22:07:48 - crawler.amazon_crawler - INFO - Found rating text: '4.5'
+2025-07-20 22:07:48 - crawler.amazon_crawler - INFO - Extracted rating: 4.5
+2025-07-20 22:07:48 - crawler.amazon_crawler - INFO - Found 6 image thumbnails in #altImages
+2025-07-20 22:07:48 - crawler.amazon_crawler - INFO - Extracted 6 image URLs
+2025-07-20 22:07:48 - crawler.amazon_crawler - INFO - Found video count text: '4 VIDEOS'
+2025-07-20 22:07:48 - crawler.amazon_crawler - INFO - Extracted video count: 4
+2025-07-20 22:07:49 - crawler.amazon_crawler - INFO - Extracted 7 videos with 7 URLs
+2025-07-20 22:07:49 - crawler.amazon_crawler - INFO - Extracted bag_sale: 800+ bought in past month
+2025-07-20 22:07:49 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2HSFOAIGPMKK&asin=B019OZBSJ8&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 22:07:49 - crawler.amazon_crawler - INFO - Extracted 3 technical specifications
+2025-07-20 22:07:49 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 22:07:49 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 73 characters
+2025-07-20 22:07:49 - crawler.amazon_crawler - INFO - Final sale_percentage: 0% (preserved from extraction)
+2025-07-20 22:07:49 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-20 22:07:49 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B019OZBSJ8 with 23 fields
+2025-07-20 22:07:55 - __main__ - INFO - Test crawl successful!
+2025-07-20 22:13:06 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 22:13:06 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-20 22:13:06 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 22:13:07 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 22:13:07 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 22:13:07 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 22:13:09 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 22:13:09 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 22:13:09 - crawler.amazon_crawler - INFO - Crawling product: B07RFG647Q from https://www.amazon.com/dp/B07RFG647Q
+2025-07-20 22:13:16 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 22:13:16 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 22:13:16 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 22:13:16 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 22:13:21 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 22:13:22 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 22:13:30 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 22:13:30 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 22:13:37 - crawler.amazon_crawler - INFO - Extracted title: LE GUSHE Under Eye Patches - Gold Under Eye Masks ...
+2025-07-20 22:13:38 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 22:13:38 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-20 22:13:38 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-20 22:13:38 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $9.0
+2025-07-20 22:13:38 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-33%'
+2025-07-20 22:13:38 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 33%
+2025-07-20 22:13:38 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$14.95'
+2025-07-20 22:13:38 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $14.95
+2025-07-20 22:13:38 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$9.0, list=$14.95, discount=33%
+2025-07-20 22:13:38 - crawler.amazon_crawler - INFO - Found rating text: '4.3'
+2025-07-20 22:13:38 - crawler.amazon_crawler - INFO - Extracted rating: 4.3
+2025-07-20 22:13:38 - crawler.amazon_crawler - INFO - Found 7 image thumbnails in #altImages
+2025-07-20 22:13:38 - crawler.amazon_crawler - INFO - Extracted 7 image URLs
+2025-07-20 22:13:38 - crawler.amazon_crawler - WARNING - Could not extract video count from #videoCount: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#altImages #videoCount"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 22:13:38 - crawler.amazon_crawler - INFO - Fallback video count from thumbnails: 0
+2025-07-20 22:13:39 - crawler.amazon_crawler - INFO - Extracted 10 videos with 10 URLs
+2025-07-20 22:13:39 - crawler.amazon_crawler - INFO - Extracted promotion program: Limited time deal
+2025-07-20 22:13:39 - crawler.amazon_crawler - INFO - Extracted bag_sale: 900+ bought in past month
+2025-07-20 22:13:39 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=AL6R3TS8PV0QD&asin=B07RFG647Q&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 22:13:39 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-20 22:13:39 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 22:13:39 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 35 characters
+2025-07-20 22:13:40 - crawler.amazon_crawler - INFO - Final sale_percentage: 33% (preserved from extraction)
+2025-07-20 22:13:40 - crawler.amazon_crawler - INFO - Successfully crawled product B07RFG647Q
+2025-07-20 22:13:40 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-20 22:13:48 - crawler.amazon_crawler - INFO - Delivery location already set to New York area
+2025-07-20 22:13:48 - crawler.amazon_crawler - INFO - Extracted title: Hipa SRM 210 Carburetor for Echo SRM-210 HC150 SRM...
+2025-07-20 22:13:48 - crawler.amazon_crawler - INFO - Extracted 7 about_this_item bullet points
+2025-07-20 22:13:48 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-20 22:13:48 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-20 22:13:48 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $13.0
+2025-07-20 22:13:48 - crawler.amazon_crawler - INFO - No percentage found in corePriceDisplay - no discount
+2025-07-20 22:13:48 - crawler.amazon_crawler - INFO - No list price found in corePriceDisplay container - setting to NULL
+2025-07-20 22:13:48 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$13.0, list=$None, no discount
+2025-07-20 22:13:48 - crawler.amazon_crawler - INFO - Found rating text: '4.5'
+2025-07-20 22:13:48 - crawler.amazon_crawler - INFO - Extracted rating: 4.5
+2025-07-20 22:13:48 - crawler.amazon_crawler - INFO - Found 6 image thumbnails in #altImages
+2025-07-20 22:13:48 - crawler.amazon_crawler - INFO - Extracted 6 image URLs
+2025-07-20 22:13:48 - crawler.amazon_crawler - INFO - Found video count text: '4 VIDEOS'
+2025-07-20 22:13:48 - crawler.amazon_crawler - INFO - Extracted video count: 4
+2025-07-20 22:13:49 - crawler.amazon_crawler - INFO - Extracted 7 videos with 7 URLs
+2025-07-20 22:13:49 - crawler.amazon_crawler - INFO - Extracted bag_sale: 800+ bought in past month
+2025-07-20 22:13:49 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2HSFOAIGPMKK&asin=B019OZBSJ8&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 22:13:49 - crawler.amazon_crawler - INFO - Extracted 3 technical specifications
+2025-07-20 22:13:49 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 22:13:49 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 73 characters
+2025-07-20 22:13:49 - crawler.amazon_crawler - INFO - Final sale_percentage: 0% (preserved from extraction)
+2025-07-20 22:13:49 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-20 22:15:07 - __main__ - INFO - .env file already exists
+2025-07-20 22:15:07 - __main__ - INFO - Testing crawl for ASIN: B019OZBSJ8
+2025-07-20 22:15:07 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 22:15:07 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-20 22:15:07 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 22:15:08 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 22:15:08 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 22:15:08 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 22:15:09 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 22:15:09 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 22:15:09 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-20 22:15:16 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 22:15:16 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 22:15:16 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 22:15:17 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 22:15:21 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 22:15:22 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 22:15:31 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 22:15:31 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 22:15:38 - crawler.amazon_crawler - INFO - Extracted title: Hipa SRM 210 Carburetor for Echo SRM-210 HC150 SRM...
+2025-07-20 22:15:38 - crawler.amazon_crawler - INFO - Extracted 7 about_this_item bullet points
+2025-07-20 22:15:38 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-20 22:15:38 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-20 22:15:38 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $13.0
+2025-07-20 22:15:38 - crawler.amazon_crawler - INFO - No percentage found in corePriceDisplay - no discount
+2025-07-20 22:15:38 - crawler.amazon_crawler - INFO - No list price found in corePriceDisplay container - setting to NULL
+2025-07-20 22:15:38 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$13.0, list=$None, no discount
+2025-07-20 22:15:38 - crawler.amazon_crawler - INFO - Found rating text: '4.5'
+2025-07-20 22:15:38 - crawler.amazon_crawler - INFO - Extracted rating: 4.5
+2025-07-20 22:15:38 - crawler.amazon_crawler - INFO - Found 6 image thumbnails in #altImages
+2025-07-20 22:15:38 - crawler.amazon_crawler - INFO - Extracted 6 image URLs
+2025-07-20 22:15:38 - crawler.amazon_crawler - INFO - Found video count text: '4 VIDEOS'
+2025-07-20 22:15:38 - crawler.amazon_crawler - INFO - Extracted video count: 4
+2025-07-20 22:15:38 - crawler.amazon_crawler - INFO - Extracted 7 videos with 7 URLs
+2025-07-20 22:15:38 - crawler.amazon_crawler - INFO - Extracted bag_sale: 800+ bought in past month
+2025-07-20 22:15:38 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2HSFOAIGPMKK&asin=B019OZBSJ8&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 22:15:38 - crawler.amazon_crawler - INFO - Extracted 3 technical specifications
+2025-07-20 22:15:38 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 22:15:38 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 73 characters
+2025-07-20 22:15:39 - crawler.amazon_crawler - INFO - Final sale_percentage: 0% (preserved from extraction)
+2025-07-20 22:15:39 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-20 22:15:39 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B019OZBSJ8 with 22 fields
+2025-07-20 22:15:45 - __main__ - INFO - Test crawl successful!
+2025-07-20 22:16:24 - __main__ - INFO - .env file already exists
+2025-07-20 22:16:24 - __main__ - INFO - Testing crawl for ASIN: B07V5WDKGQ
+2025-07-20 22:16:24 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 22:16:24 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-20 22:16:24 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 22:16:26 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 22:16:26 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 22:16:26 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 22:16:27 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 22:16:27 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 22:16:27 - crawler.amazon_crawler - INFO - Crawling product: B07V5WDKGQ from https://www.amazon.com/dp/B07V5WDKGQ
+2025-07-20 22:16:34 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 22:16:34 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 22:16:34 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 22:16:34 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 22:16:39 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 22:16:40 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 22:16:48 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 22:16:48 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 22:16:55 - crawler.amazon_crawler - INFO - Extracted title: Step2 Unicorn Up & Down Roller Coaster Kids Ride O...
+2025-07-20 22:16:55 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 22:16:55 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-20 22:16:55 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-20 22:16:55 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $129.0
+2025-07-20 22:16:55 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-28%'
+2025-07-20 22:16:55 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 28%
+2025-07-20 22:16:55 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$179.99'
+2025-07-20 22:16:55 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $179.99
+2025-07-20 22:16:55 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$129.0, list=$179.99, discount=28%
+2025-07-20 22:16:55 - crawler.amazon_crawler - INFO - Found rating text: '4.6'
+2025-07-20 22:16:56 - crawler.amazon_crawler - INFO - Extracted rating: 4.6
+2025-07-20 22:16:56 - crawler.amazon_crawler - INFO - Found 6 image thumbnails in #altImages
+2025-07-20 22:16:56 - crawler.amazon_crawler - INFO - Extracted 12 image URLs
+2025-07-20 22:16:56 - crawler.amazon_crawler - INFO - Found video count text: '6 VIDEOS'
+2025-07-20 22:16:56 - crawler.amazon_crawler - INFO - Extracted video count: 6
+2025-07-20 22:16:56 - crawler.amazon_crawler - INFO - Extracted 21 videos with 21 URLs
+2025-07-20 22:16:57 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-20 22:16:57 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-20 22:16:57 - crawler.amazon_crawler - INFO - Extracted product_description: 1023 characters
+2025-07-20 22:16:57 - crawler.amazon_crawler - INFO - Final sale_percentage: 28% (preserved from extraction)
+2025-07-20 22:16:57 - crawler.amazon_crawler - INFO - Successfully crawled product B07V5WDKGQ
+2025-07-20 22:16:57 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B07V5WDKGQ
+2025-07-20 22:16:57 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B07V5WDKGQ with 23 fields
+2025-07-20 22:17:03 - __main__ - INFO - Test crawl successful!
+2025-07-20 23:50:40 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 23:50:40 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-20 23:50:40 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 23:50:41 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 23:50:41 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 23:50:41 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 23:50:43 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 23:50:43 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 23:50:43 - crawler.amazon_crawler - INFO - Crawling product: B07V5WDKGQ from https://www.amazon.com/dp/B07V5WDKGQ
+2025-07-20 23:50:51 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 23:50:51 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 23:50:51 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 23:50:51 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 23:50:56 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 23:50:57 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 23:51:05 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 23:51:05 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 23:51:12 - crawler.amazon_crawler - INFO - Extracted title: Step2 Unicorn Up & Down Roller Coaster Kids Ride O...
+2025-07-20 23:51:12 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 23:51:12 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-20 23:51:12 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-20 23:51:12 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $129.0
+2025-07-20 23:51:12 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-28%'
+2025-07-20 23:51:12 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 28%
+2025-07-20 23:51:13 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$179.99'
+2025-07-20 23:51:13 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $179.99
+2025-07-20 23:51:13 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$129.0, list=$179.99, discount=28%
+2025-07-20 23:51:13 - crawler.amazon_crawler - INFO - Found rating text: '4.6'
+2025-07-20 23:51:13 - crawler.amazon_crawler - INFO - Extracted rating: 4.6
+2025-07-20 23:51:13 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container only
+2025-07-20 23:51:13 - crawler.amazon_crawler - INFO - Found 6 image thumbnails in #imageBlock #altImages
+2025-07-20 23:51:13 - crawler.amazon_crawler - INFO - Found 1 main images in #imageBlock
+2025-07-20 23:51:13 - crawler.amazon_crawler - INFO - Extracted 14 image URLs from #imageBlock
+2025-07-20 23:51:13 - crawler.amazon_crawler - INFO - Found video count text in #imageBlock: '6 VIDEOS'
+2025-07-20 23:51:13 - crawler.amazon_crawler - INFO - Extracted video count from #imageBlock: 6
+2025-07-20 23:51:13 - crawler.amazon_crawler - INFO - Extracted video URL from script config: https://m.media-amazon.com/images/S/vse-vms-transc...
+2025-07-20 23:51:13 - crawler.amazon_crawler - INFO - Extracted 6 videos with 2 URLs from #imageBlock
+2025-07-20 23:51:13 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-20 23:51:13 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-20 23:51:13 - crawler.amazon_crawler - INFO - Extracted product_description: 1023 characters
+2025-07-20 23:51:14 - crawler.amazon_crawler - INFO - Final sale_percentage: 28% (preserved from extraction)
+2025-07-20 23:51:14 - crawler.amazon_crawler - INFO - Successfully crawled product B07V5WDKGQ
+2025-07-20 23:51:14 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-20 23:51:21 - crawler.amazon_crawler - INFO - Delivery location already set to New York area
+2025-07-20 23:51:21 - crawler.amazon_crawler - INFO - Extracted title: Hipa SRM 210 Carburetor for Echo SRM-210 HC150 SRM...
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Extracted 7 about_this_item bullet points
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $13.0
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - No percentage found in corePriceDisplay - no discount
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - No list price found in corePriceDisplay container - setting to NULL
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$13.0, list=$None, no discount
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Found rating text: '4.5'
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Extracted rating: 4.5
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container only
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Found 6 image thumbnails in #imageBlock #altImages
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Found 1 main images in #imageBlock
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Extracted 8 image URLs from #imageBlock
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Found video count text in #imageBlock: '4 VIDEOS'
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Extracted video count from #imageBlock: 4
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Extracted video URL from script config: https://m.media-amazon.com/images/S/vse-vms-transc...
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Extracted 4 videos with 2 URLs from #imageBlock
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Extracted bag_sale: 800+ bought in past month
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2HSFOAIGPMKK&asin=B019OZBSJ8&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Extracted 3 technical specifications
+2025-07-20 23:51:22 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff7398ce925+77845]
+	GetHandleVerifier [0x0x7ff7398ce980+77936]
+	(No symbol) [0x0x7ff739689cda]
+	(No symbol) [0x0x7ff7396e06aa]
+	(No symbol) [0x0x7ff7396e095c]
+	(No symbol) [0x0x7ff739733d07]
+	(No symbol) [0x0x7ff73970890f]
+	(No symbol) [0x0x7ff739730b07]
+	(No symbol) [0x0x7ff7397086a3]
+	(No symbol) [0x0x7ff7396d1791]
+	(No symbol) [0x0x7ff7396d2523]
+	GetHandleVerifier [0x0x7ff739ba683d+3059501]
+	GetHandleVerifier [0x0x7ff739ba0bfd+3035885]
+	GetHandleVerifier [0x0x7ff739bc03f0+3164896]
+	GetHandleVerifier [0x0x7ff7398e8c2e+185118]
+	GetHandleVerifier [0x0x7ff7398f053f+216111]
+	GetHandleVerifier [0x0x7ff7398d72d4+113092]
+	GetHandleVerifier [0x0x7ff7398d7489+113529]
+	GetHandleVerifier [0x0x7ff7398be288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 73 characters
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Final sale_percentage: 0% (preserved from extraction)
+2025-07-20 23:51:22 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-20 23:53:00 - __main__ - INFO - .env file already exists
+2025-07-20 23:53:00 - __main__ - INFO - Testing crawl for ASIN: B07V5WDKGQ
+2025-07-20 23:53:00 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 23:53:00 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-20 23:53:00 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 23:53:01 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 23:53:01 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 23:53:01 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-20 23:53:03 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-20 23:53:03 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-20 23:53:03 - crawler.amazon_crawler - INFO - Crawling product: B07V5WDKGQ from https://www.amazon.com/dp/B07V5WDKGQ
+2025-07-20 23:53:09 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-20 23:53:09 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-20 23:53:09 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-20 23:53:09 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-20 23:53:14 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-20 23:53:15 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-20 23:53:23 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-20 23:53:23 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-20 23:53:30 - crawler.amazon_crawler - INFO - Extracted title: Step2 Unicorn Up & Down Roller Coaster Kids Ride O...
+2025-07-20 23:53:30 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-20 23:53:30 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-20 23:53:30 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-20 23:53:30 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $129.0
+2025-07-20 23:53:30 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-28%'
+2025-07-20 23:53:30 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 28%
+2025-07-20 23:53:30 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$179.99'
+2025-07-20 23:53:30 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $179.99
+2025-07-20 23:53:30 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$129.0, list=$179.99, discount=28%
+2025-07-20 23:53:30 - crawler.amazon_crawler - INFO - Found rating text: '4.6'
+2025-07-20 23:53:30 - crawler.amazon_crawler - INFO - Extracted rating: 4.6
+2025-07-20 23:53:30 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container only
+2025-07-20 23:53:30 - crawler.amazon_crawler - INFO - Found 6 image thumbnails in #imageBlock #altImages
+2025-07-20 23:53:30 - crawler.amazon_crawler - INFO - Found 1 main images in #imageBlock
+2025-07-20 23:53:30 - crawler.amazon_crawler - INFO - Extracted 14 image URLs from #imageBlock
+2025-07-20 23:53:31 - crawler.amazon_crawler - INFO - Found video count text in #imageBlock: '6 VIDEOS'
+2025-07-20 23:53:31 - crawler.amazon_crawler - INFO - Extracted video count from #imageBlock: 6
+2025-07-20 23:53:31 - crawler.amazon_crawler - INFO - Extracted video URL from script config: https://m.media-amazon.com/images/S/vse-vms-transc...
+2025-07-20 23:53:31 - crawler.amazon_crawler - INFO - Extracted 6 videos with 2 URLs from #imageBlock
+2025-07-20 23:53:31 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-20 23:53:31 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-20 23:53:31 - crawler.amazon_crawler - INFO - Extracted product_description: 1023 characters
+2025-07-20 23:53:31 - crawler.amazon_crawler - INFO - Final sale_percentage: 28% (preserved from extraction)
+2025-07-20 23:53:31 - crawler.amazon_crawler - INFO - Successfully crawled product B07V5WDKGQ
+2025-07-20 23:53:31 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B07V5WDKGQ with 23 fields
+2025-07-20 23:53:37 - __main__ - INFO - Test crawl successful!
+2025-07-20 23:59:58 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-20 23:59:58 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-20 23:59:58 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-20 23:59:59 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-20 23:59:59 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-20 23:59:59 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-21 00:00:01 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-21 00:00:01 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-21 00:00:01 - crawler.amazon_crawler - INFO - Crawling product: B07V5WDKGQ from https://www.amazon.com/dp/B07V5WDKGQ
+2025-07-21 00:00:09 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-21 00:00:09 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-21 00:00:09 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-21 00:00:09 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-21 00:00:14 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-21 00:00:15 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-21 00:00:23 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-21 00:00:23 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-21 00:00:30 - crawler.amazon_crawler - INFO - Extracted title: Step2 Unicorn Up & Down Roller Coaster Kids Ride O...
+2025-07-21 00:00:30 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-21 00:00:30 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-21 00:00:30 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-21 00:00:30 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $129.0
+2025-07-21 00:00:30 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-28%'
+2025-07-21 00:00:30 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 28%
+2025-07-21 00:00:31 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$179.99'
+2025-07-21 00:00:31 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $179.99
+2025-07-21 00:00:31 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$129.0, list=$179.99, discount=28%
+2025-07-21 00:00:31 - crawler.amazon_crawler - INFO - Found rating text: '4.6'
+2025-07-21 00:00:31 - crawler.amazon_crawler - INFO - Extracted rating: 4.6
+2025-07-21 00:00:31 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container only
+2025-07-21 00:00:31 - crawler.amazon_crawler - INFO - Found 6 image thumbnails in #imageBlock #altImages
+2025-07-21 00:00:31 - crawler.amazon_crawler - INFO - Found 1 main images in #imageBlock
+2025-07-21 00:00:31 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-21 00:00:31 - crawler.amazon_crawler - INFO - Found video count text in #imageBlock: '6 VIDEOS'
+2025-07-21 00:00:31 - crawler.amazon_crawler - INFO - Extracted video count from #imageBlock: 6
+2025-07-21 00:00:31 - crawler.amazon_crawler - INFO - Extracted video URL from script config: https://m.media-amazon.com/images/S/vse-vms-transc...
+2025-07-21 00:00:31 - crawler.amazon_crawler - INFO - Extracted 6 videos with 2 URLs from #imageBlock
+2025-07-21 00:00:31 - crawler.amazon_crawler - INFO - Extracted bag_sale: 500+ bought in past month
+2025-07-21 00:00:31 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-21 00:00:31 - crawler.amazon_crawler - INFO - Extracted product_description: 1023 characters
+2025-07-21 00:00:32 - crawler.amazon_crawler - INFO - Final sale_percentage: 28% (preserved from extraction)
+2025-07-21 00:00:32 - crawler.amazon_crawler - INFO - Successfully crawled product B07V5WDKGQ

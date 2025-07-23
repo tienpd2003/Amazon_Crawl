@@ -1,0 +1,1895 @@
+2025-07-23 18:52:41 - __main__ - INFO - .env file already exists
+2025-07-23 18:52:41 - __main__ - INFO - Testing crawl for ASIN: B00K6JUG4K
+2025-07-23 18:52:41 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 18:52:41 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 18:52:41 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 18:52:44 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 18:52:44 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 18:52:44 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 18:52:48 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 18:52:48 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 18:52:48 - crawler.amazon_crawler - INFO - Crawling product: B00K6JUG4K from https://www.amazon.com/dp/B00K6JUG4K
+2025-07-23 18:52:56 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 18:52:56 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 18:52:56 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 18:52:56 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 18:53:00 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 18:53:02 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 18:53:10 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 18:53:10 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 18:53:17 - crawler.amazon_crawler - INFO - Extracted title: Vital Proteins Collagen Peptides Powder Advanced w...
+2025-07-23 18:53:17 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 18:53:17 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 18:53:17 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 18:53:17 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $38.0
+2025-07-23 18:53:17 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-25%'
+2025-07-23 18:53:17 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 25%
+2025-07-23 18:53:17 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$51.00'
+2025-07-23 18:53:17 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $51.0
+2025-07-23 18:53:17 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$38.0, list=$51.0, discount=25%
+2025-07-23 18:53:17 - crawler.amazon_crawler - INFO - Found rating text: '4.5'
+2025-07-23 18:53:17 - crawler.amazon_crawler - INFO - Extracted rating: 4.5
+2025-07-23 18:53:17 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 18:53:17 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 18:53:17 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 18:53:19 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 18:53:19 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41NAxoL57FL
+2025-07-23 18:53:19 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41pGybjjAqL
+2025-07-23 18:53:19 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41ir0hVaieL
+2025-07-23 18:53:19 - crawler.amazon_crawler - INFO - Added visible thumbnail: 51VlJhYdPsL
+2025-07-23 18:53:19 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41oaoH8wR-L
+2025-07-23 18:53:19 - crawler.amazon_crawler - INFO - Found 2 additional hidden images
+2025-07-23 18:53:19 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41OQLfg3qsL
+2025-07-23 18:53:19 - crawler.amazon_crawler - INFO - Total images: 8 (6 visible + 2 hidden)
+2025-07-23 18:53:19 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 18:53:19 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 18:53:19 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 18:53:20 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 18:53:20 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 18:53:20 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 18:53:20 - crawler.amazon_crawler - INFO - Added main image 1: 71wxEQ8dZQL
+2025-07-23 18:53:20 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 18:53:20 - crawler.amazon_crawler - INFO - Found video count text: '7 VIDEOS'
+2025-07-23 18:53:20 - crawler.amazon_crawler - INFO - Found exactly 7 videos
+2025-07-23 18:53:20 - crawler.amazon_crawler - INFO - Found video URL: https://m.media-amazon.com/images/S/vse-vms-transc...
+2025-07-23 18:53:20 - crawler.amazon_crawler - INFO - Final video data: 7 videos with 1 URLs
+2025-07-23 18:53:20 - crawler.amazon_crawler - INFO - Extracted promotion program: Limited time deal
+2025-07-23 18:53:20 - crawler.amazon_crawler - INFO - Extracted bag_sale: 100K+ bought in past month
+2025-07-23 18:53:20 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A1XFHE53OEJ7QV&asin=B00K6JUG4K&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-23 18:53:20 - crawler.amazon_crawler - INFO - Extracted 7 technical specifications
+2025-07-23 18:53:20 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6aac1e935+77845]
+	GetHandleVerifier [0x0x7ff6aac1e990+77936]
+	(No symbol) [0x0x7ff6aa9d9cda]
+	(No symbol) [0x0x7ff6aaa306aa]
+	(No symbol) [0x0x7ff6aaa3095c]
+	(No symbol) [0x0x7ff6aaa83d07]
+	(No symbol) [0x0x7ff6aaa5890f]
+	(No symbol) [0x0x7ff6aaa80b07]
+	(No symbol) [0x0x7ff6aaa586a3]
+	(No symbol) [0x0x7ff6aaa21791]
+	(No symbol) [0x0x7ff6aaa22523]
+	GetHandleVerifier [0x0x7ff6aaef684d+3059501]
+	GetHandleVerifier [0x0x7ff6aaef0c0d+3035885]
+	GetHandleVerifier [0x0x7ff6aaf10400+3164896]
+	GetHandleVerifier [0x0x7ff6aac38c3e+185118]
+	GetHandleVerifier [0x0x7ff6aac4054f+216111]
+	GetHandleVerifier [0x0x7ff6aac272e4+113092]
+	GetHandleVerifier [0x0x7ff6aac27499+113529]
+	GetHandleVerifier [0x0x7ff6aac0e298+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-23 18:53:20 - crawler.amazon_crawler - INFO - Extracted product_description from [data-feature-name='aplus']: 944 characters
+2025-07-23 18:53:20 - crawler.amazon_crawler - INFO - Final sale_percentage: 25% (preserved from extraction)
+2025-07-23 18:53:20 - crawler.amazon_crawler - INFO - Successfully crawled product B00K6JUG4K
+2025-07-23 18:53:20 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B00K6JUG4K
+2025-07-23 18:53:20 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B00K6JUG4K with 23 fields
+2025-07-23 18:53:27 - __main__ - INFO - Test crawl successful!
+2025-07-23 19:08:54 - __main__ - INFO - .env file already exists
+2025-07-23 19:08:54 - __main__ - INFO - Testing crawl for ASIN: B00K6JUG4K
+2025-07-23 19:08:54 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 19:08:54 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 19:08:54 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 19:08:56 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 19:08:56 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 19:08:56 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 19:08:57 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 19:08:57 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 19:08:57 - crawler.amazon_crawler - INFO - Crawling product: B00K6JUG4K from https://www.amazon.com/dp/B00K6JUG4K
+2025-07-23 19:09:04 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 19:09:04 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 19:09:04 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 19:09:04 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 19:09:08 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 19:09:09 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 19:09:18 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 19:09:18 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 19:09:25 - crawler.amazon_crawler - INFO - Extracted title: Vital Proteins Collagen Peptides Powder Advanced w...
+2025-07-23 19:09:25 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 19:09:25 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 19:09:25 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 19:09:25 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $38.0
+2025-07-23 19:09:25 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-25%'
+2025-07-23 19:09:25 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 25%
+2025-07-23 19:09:25 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$51.00'
+2025-07-23 19:09:25 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $51.0
+2025-07-23 19:09:25 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$38.0, list=$51.0, discount=25%
+2025-07-23 19:09:25 - crawler.amazon_crawler - INFO - Found rating text: '4.5'
+2025-07-23 19:09:25 - crawler.amazon_crawler - INFO - Extracted rating: 4.5
+2025-07-23 19:09:25 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 19:09:25 - crawler.amazon_crawler - WARNING - Could not extract from ivThumbs container: local variable 'unique_images' referenced before assignment
+2025-07-23 19:09:25 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 19:09:25 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41NAxoL57FL
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41pGybjjAqL
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41ir0hVaieL
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - Added visible thumbnail: 51VlJhYdPsL
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41oaoH8wR-L
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - Found 2 additional hidden images
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41OQLfg3qsL
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - Total images: 8 (6 visible + 2 hidden)
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - Added main image 1: 71wxEQ8dZQL
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - No videos found on the page
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - Extracted promotion program: Limited time deal
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - Extracted bag_sale: 100K+ bought in past month
+2025-07-23 19:09:27 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A1XFHE53OEJ7QV&asin=B00K6JUG4K&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-23 19:09:28 - crawler.amazon_crawler - INFO - Extracted 7 technical specifications
+2025-07-23 19:09:28 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6aac1e935+77845]
+	GetHandleVerifier [0x0x7ff6aac1e990+77936]
+	(No symbol) [0x0x7ff6aa9d9cda]
+	(No symbol) [0x0x7ff6aaa306aa]
+	(No symbol) [0x0x7ff6aaa3095c]
+	(No symbol) [0x0x7ff6aaa83d07]
+	(No symbol) [0x0x7ff6aaa5890f]
+	(No symbol) [0x0x7ff6aaa80b07]
+	(No symbol) [0x0x7ff6aaa586a3]
+	(No symbol) [0x0x7ff6aaa21791]
+	(No symbol) [0x0x7ff6aaa22523]
+	GetHandleVerifier [0x0x7ff6aaef684d+3059501]
+	GetHandleVerifier [0x0x7ff6aaef0c0d+3035885]
+	GetHandleVerifier [0x0x7ff6aaf10400+3164896]
+	GetHandleVerifier [0x0x7ff6aac38c3e+185118]
+	GetHandleVerifier [0x0x7ff6aac4054f+216111]
+	GetHandleVerifier [0x0x7ff6aac272e4+113092]
+	GetHandleVerifier [0x0x7ff6aac27499+113529]
+	GetHandleVerifier [0x0x7ff6aac0e298+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-23 19:09:28 - crawler.amazon_crawler - INFO - Extracted product_description from [data-feature-name='aplus']: 944 characters
+2025-07-23 19:09:28 - crawler.amazon_crawler - INFO - Final sale_percentage: 25% (preserved from extraction)
+2025-07-23 19:09:28 - crawler.amazon_crawler - INFO - Successfully crawled product B00K6JUG4K
+2025-07-23 19:09:28 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B00K6JUG4K with 23 fields
+2025-07-23 19:09:34 - __main__ - INFO - Test crawl successful!
+2025-07-23 19:12:27 - __main__ - INFO - .env file already exists
+2025-07-23 19:12:27 - __main__ - INFO - Testing crawl for ASIN: B00K6JUG4K
+2025-07-23 19:12:27 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 19:12:27 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 19:12:27 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 19:12:28 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 19:12:28 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 19:12:28 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 19:12:29 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 19:12:29 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 19:12:29 - crawler.amazon_crawler - INFO - Crawling product: B00K6JUG4K from https://www.amazon.com/dp/B00K6JUG4K
+2025-07-23 19:12:36 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 19:12:36 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 19:12:36 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 19:12:36 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 19:12:41 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 19:12:42 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 19:12:50 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 19:12:50 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 19:12:57 - crawler.amazon_crawler - INFO - Extracted title: Vital Proteins Collagen Peptides Powder Advanced w...
+2025-07-23 19:12:57 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 19:12:57 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 19:12:57 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 19:12:57 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $38.0
+2025-07-23 19:12:57 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-25%'
+2025-07-23 19:12:57 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 25%
+2025-07-23 19:12:57 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$51.00'
+2025-07-23 19:12:57 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $51.0
+2025-07-23 19:12:57 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$38.0, list=$51.0, discount=25%
+2025-07-23 19:12:57 - crawler.amazon_crawler - INFO - Found rating text: '4.5'
+2025-07-23 19:12:57 - crawler.amazon_crawler - INFO - Extracted rating: 4.5
+2025-07-23 19:12:57 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 19:12:57 - crawler.amazon_crawler - WARNING - Could not extract from ivThumbs container: local variable 'unique_images' referenced before assignment
+2025-07-23 19:12:57 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 19:12:57 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 19:12:59 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 19:12:59 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41NAxoL57FL
+2025-07-23 19:12:59 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41pGybjjAqL
+2025-07-23 19:12:59 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41ir0hVaieL
+2025-07-23 19:12:59 - crawler.amazon_crawler - INFO - Added visible thumbnail: 51VlJhYdPsL
+2025-07-23 19:12:59 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41oaoH8wR-L
+2025-07-23 19:12:59 - crawler.amazon_crawler - INFO - Found 2 additional hidden images
+2025-07-23 19:12:59 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41OQLfg3qsL
+2025-07-23 19:12:59 - crawler.amazon_crawler - INFO - Total images: 8 (6 visible + 2 hidden)
+2025-07-23 19:12:59 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 19:12:59 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 19:12:59 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 19:12:59 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 19:12:59 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 19:12:59 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 19:12:59 - crawler.amazon_crawler - INFO - Added main image 1: 71wxEQ8dZQL
+2025-07-23 19:12:59 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 19:12:59 - crawler.amazon_crawler - WARNING - Error extracting videos: Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id="anonCarousel9"]"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6aac1e935+77845]
+	GetHandleVerifier [0x0x7ff6aac1e990+77936]
+	(No symbol) [0x0x7ff6aa9d9cda]
+	(No symbol) [0x0x7ff6aaa306aa]
+	(No symbol) [0x0x7ff6aaa3095c]
+	(No symbol) [0x0x7ff6aaa83d07]
+	(No symbol) [0x0x7ff6aaa5890f]
+	(No symbol) [0x0x7ff6aaa80b07]
+	(No symbol) [0x0x7ff6aaa586a3]
+	(No symbol) [0x0x7ff6aaa21791]
+	(No symbol) [0x0x7ff6aaa22523]
+	GetHandleVerifier [0x0x7ff6aaef684d+3059501]
+	GetHandleVerifier [0x0x7ff6aaef0c0d+3035885]
+	GetHandleVerifier [0x0x7ff6aaf10400+3164896]
+	GetHandleVerifier [0x0x7ff6aac38c3e+185118]
+	GetHandleVerifier [0x0x7ff6aac4054f+216111]
+	GetHandleVerifier [0x0x7ff6aac272e4+113092]
+	GetHandleVerifier [0x0x7ff6aac27499+113529]
+	GetHandleVerifier [0x0x7ff6aac0e298+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-23 19:12:59 - crawler.amazon_crawler - INFO - Extracted promotion program: Limited time deal
+2025-07-23 19:13:00 - crawler.amazon_crawler - INFO - Extracted bag_sale: 100K+ bought in past month
+2025-07-23 19:13:00 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A1XFHE53OEJ7QV&asin=B00K6JUG4K&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-23 19:13:00 - crawler.amazon_crawler - INFO - Extracted 7 technical specifications
+2025-07-23 19:13:00 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6aac1e935+77845]
+	GetHandleVerifier [0x0x7ff6aac1e990+77936]
+	(No symbol) [0x0x7ff6aa9d9cda]
+	(No symbol) [0x0x7ff6aaa306aa]
+	(No symbol) [0x0x7ff6aaa3095c]
+	(No symbol) [0x0x7ff6aaa83d07]
+	(No symbol) [0x0x7ff6aaa5890f]
+	(No symbol) [0x0x7ff6aaa80b07]
+	(No symbol) [0x0x7ff6aaa586a3]
+	(No symbol) [0x0x7ff6aaa21791]
+	(No symbol) [0x0x7ff6aaa22523]
+	GetHandleVerifier [0x0x7ff6aaef684d+3059501]
+	GetHandleVerifier [0x0x7ff6aaef0c0d+3035885]
+	GetHandleVerifier [0x0x7ff6aaf10400+3164896]
+	GetHandleVerifier [0x0x7ff6aac38c3e+185118]
+	GetHandleVerifier [0x0x7ff6aac4054f+216111]
+	GetHandleVerifier [0x0x7ff6aac272e4+113092]
+	GetHandleVerifier [0x0x7ff6aac27499+113529]
+	GetHandleVerifier [0x0x7ff6aac0e298+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-23 19:13:00 - crawler.amazon_crawler - INFO - Extracted product_description from [data-feature-name='aplus']: 944 characters
+2025-07-23 19:13:00 - crawler.amazon_crawler - INFO - Final sale_percentage: 25% (preserved from extraction)
+2025-07-23 19:13:00 - crawler.amazon_crawler - INFO - Successfully crawled product B00K6JUG4K
+2025-07-23 19:13:00 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B00K6JUG4K with 23 fields
+2025-07-23 19:13:07 - __main__ - INFO - Test crawl successful!
+2025-07-23 19:17:30 - __main__ - INFO - .env file already exists
+2025-07-23 19:17:30 - __main__ - INFO - Testing crawl for ASIN: B00K6JUG4K
+2025-07-23 19:17:30 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 19:17:30 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 19:17:30 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 19:17:31 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 19:17:31 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 19:17:31 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 19:17:32 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 19:17:32 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 19:17:32 - crawler.amazon_crawler - INFO - Crawling product: B00K6JUG4K from https://www.amazon.com/dp/B00K6JUG4K
+2025-07-23 19:17:40 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 19:17:40 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 19:17:40 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 19:17:40 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 19:17:44 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 19:17:45 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 19:17:54 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 19:17:54 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 19:18:01 - crawler.amazon_crawler - INFO - Extracted title: Vital Proteins Collagen Peptides Powder Advanced w...
+2025-07-23 19:18:01 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 19:18:01 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 19:18:01 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 19:18:01 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $38.0
+2025-07-23 19:18:01 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-25%'
+2025-07-23 19:18:01 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 25%
+2025-07-23 19:18:01 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$51.00'
+2025-07-23 19:18:01 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $51.0
+2025-07-23 19:18:01 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$38.0, list=$51.0, discount=25%
+2025-07-23 19:18:01 - crawler.amazon_crawler - INFO - Found rating text: '4.5'
+2025-07-23 19:18:01 - crawler.amazon_crawler - INFO - Extracted rating: 4.5
+2025-07-23 19:18:01 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 19:18:01 - crawler.amazon_crawler - WARNING - Could not extract from ivThumbs container: local variable 'unique_images' referenced before assignment
+2025-07-23 19:18:01 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 19:18:01 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41NAxoL57FL
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41pGybjjAqL
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41ir0hVaieL
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Added visible thumbnail: 51VlJhYdPsL
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41oaoH8wR-L
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Found 2 additional hidden images
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41OQLfg3qsL
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Total images: 8 (6 visible + 2 hidden)
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Added main image 1: 71wxEQ8dZQL
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Found video carousel container
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Found 0 product videos
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Found 0 related videos
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - No videos found in carousel
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Extracted promotion program: Limited time deal
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Extracted bag_sale: 100K+ bought in past month
+2025-07-23 19:18:03 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A1XFHE53OEJ7QV&asin=B00K6JUG4K&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-23 19:18:04 - crawler.amazon_crawler - INFO - Extracted 7 technical specifications
+2025-07-23 19:18:04 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6aac1e935+77845]
+	GetHandleVerifier [0x0x7ff6aac1e990+77936]
+	(No symbol) [0x0x7ff6aa9d9cda]
+	(No symbol) [0x0x7ff6aaa306aa]
+	(No symbol) [0x0x7ff6aaa3095c]
+	(No symbol) [0x0x7ff6aaa83d07]
+	(No symbol) [0x0x7ff6aaa5890f]
+	(No symbol) [0x0x7ff6aaa80b07]
+	(No symbol) [0x0x7ff6aaa586a3]
+	(No symbol) [0x0x7ff6aaa21791]
+	(No symbol) [0x0x7ff6aaa22523]
+	GetHandleVerifier [0x0x7ff6aaef684d+3059501]
+	GetHandleVerifier [0x0x7ff6aaef0c0d+3035885]
+	GetHandleVerifier [0x0x7ff6aaf10400+3164896]
+	GetHandleVerifier [0x0x7ff6aac38c3e+185118]
+	GetHandleVerifier [0x0x7ff6aac4054f+216111]
+	GetHandleVerifier [0x0x7ff6aac272e4+113092]
+	GetHandleVerifier [0x0x7ff6aac27499+113529]
+	GetHandleVerifier [0x0x7ff6aac0e298+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-23 19:18:04 - crawler.amazon_crawler - INFO - Extracted product_description from [data-feature-name='aplus']: 944 characters
+2025-07-23 19:18:04 - crawler.amazon_crawler - INFO - Final sale_percentage: 25% (preserved from extraction)
+2025-07-23 19:18:04 - crawler.amazon_crawler - INFO - Successfully crawled product B00K6JUG4K
+2025-07-23 19:18:04 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B00K6JUG4K with 23 fields
+2025-07-23 19:18:10 - __main__ - INFO - Test crawl successful!
+2025-07-23 19:22:21 - __main__ - INFO - .env file already exists
+2025-07-23 19:22:21 - __main__ - INFO - Testing crawl for ASIN: B00K6JUG4K
+2025-07-23 19:22:21 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 19:22:21 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 19:22:21 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 19:22:22 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 19:22:22 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 19:22:22 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 19:22:23 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 19:22:23 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 19:22:23 - crawler.amazon_crawler - INFO - Crawling product: B00K6JUG4K from https://www.amazon.com/dp/B00K6JUG4K
+2025-07-23 19:22:29 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 19:22:29 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 19:22:29 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 19:22:29 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 19:22:33 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 19:22:35 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 19:22:43 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 19:22:43 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 19:22:50 - crawler.amazon_crawler - INFO - Extracted title: Vital Proteins Collagen Peptides Powder Advanced w...
+2025-07-23 19:22:50 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 19:22:50 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 19:22:50 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 19:22:50 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $38.0
+2025-07-23 19:22:50 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-25%'
+2025-07-23 19:22:50 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 25%
+2025-07-23 19:22:50 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$51.00'
+2025-07-23 19:22:50 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $51.0
+2025-07-23 19:22:50 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$38.0, list=$51.0, discount=25%
+2025-07-23 19:22:50 - crawler.amazon_crawler - INFO - Found rating text: '4.5'
+2025-07-23 19:22:50 - crawler.amazon_crawler - INFO - Extracted rating: 4.5
+2025-07-23 19:22:50 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 19:22:50 - crawler.amazon_crawler - WARNING - Could not extract from ivThumbs container: local variable 'unique_images' referenced before assignment
+2025-07-23 19:22:50 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 19:22:50 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41NAxoL57FL
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41pGybjjAqL
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41ir0hVaieL
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - Added visible thumbnail: 51VlJhYdPsL
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41oaoH8wR-L
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - Found 2 additional hidden images
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41OQLfg3qsL
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - Total images: 8 (6 visible + 2 hidden)
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - Added main image 1: 71wxEQ8dZQL
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - Found video carousel container
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - Found 0 product videos
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - Found 0 related videos
+2025-07-23 19:22:52 - crawler.amazon_crawler - INFO - No videos found in carousel
+2025-07-23 19:22:53 - crawler.amazon_crawler - INFO - Extracted promotion program: Limited time deal
+2025-07-23 19:22:53 - crawler.amazon_crawler - INFO - Extracted bag_sale: 100K+ bought in past month
+2025-07-23 19:22:53 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A1XFHE53OEJ7QV&asin=B00K6JUG4K&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-23 19:22:53 - crawler.amazon_crawler - INFO - Extracted 7 technical specifications
+2025-07-23 19:22:53 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6aac1e935+77845]
+	GetHandleVerifier [0x0x7ff6aac1e990+77936]
+	(No symbol) [0x0x7ff6aa9d9cda]
+	(No symbol) [0x0x7ff6aaa306aa]
+	(No symbol) [0x0x7ff6aaa3095c]
+	(No symbol) [0x0x7ff6aaa83d07]
+	(No symbol) [0x0x7ff6aaa5890f]
+	(No symbol) [0x0x7ff6aaa80b07]
+	(No symbol) [0x0x7ff6aaa586a3]
+	(No symbol) [0x0x7ff6aaa21791]
+	(No symbol) [0x0x7ff6aaa22523]
+	GetHandleVerifier [0x0x7ff6aaef684d+3059501]
+	GetHandleVerifier [0x0x7ff6aaef0c0d+3035885]
+	GetHandleVerifier [0x0x7ff6aaf10400+3164896]
+	GetHandleVerifier [0x0x7ff6aac38c3e+185118]
+	GetHandleVerifier [0x0x7ff6aac4054f+216111]
+	GetHandleVerifier [0x0x7ff6aac272e4+113092]
+	GetHandleVerifier [0x0x7ff6aac27499+113529]
+	GetHandleVerifier [0x0x7ff6aac0e298+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-23 19:22:53 - crawler.amazon_crawler - INFO - Extracted product_description from [data-feature-name='aplus']: 944 characters
+2025-07-23 19:22:53 - crawler.amazon_crawler - INFO - Final sale_percentage: 25% (preserved from extraction)
+2025-07-23 19:22:53 - crawler.amazon_crawler - INFO - Successfully crawled product B00K6JUG4K
+2025-07-23 19:22:53 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B00K6JUG4K with 23 fields
+2025-07-23 19:23:00 - __main__ - INFO - Test crawl successful!
+2025-07-23 21:04:22 - __main__ - INFO - .env file already exists
+2025-07-23 21:04:22 - __main__ - INFO - Testing crawl for ASIN: B006CSPZK4
+2025-07-23 21:04:22 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 21:04:22 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 21:04:22 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 21:04:24 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 21:04:24 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 21:04:24 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 21:04:26 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 21:04:26 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 21:04:26 - crawler.amazon_crawler - INFO - Crawling product: B006CSPZK4 from https://www.amazon.com/dp/B006CSPZK4
+2025-07-23 21:04:33 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 21:04:33 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 21:04:33 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 21:04:33 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 21:04:38 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 21:04:39 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 21:04:47 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 21:04:47 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 21:04:55 - crawler.amazon_crawler - INFO - Extracted title: Ticonderoga Wood-Cased Pencils, Pre-Sharpened, #2 ...
+2025-07-23 21:04:55 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 21:04:55 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 21:04:55 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 21:04:55 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $5.0
+2025-07-23 21:04:55 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-23%'
+2025-07-23 21:04:55 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 23%
+2025-07-23 21:04:55 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$6.50'
+2025-07-23 21:04:55 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $6.5
+2025-07-23 21:04:55 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$5.0, list=$6.5, discount=23%
+2025-07-23 21:04:55 - crawler.amazon_crawler - INFO - Found rating text: '4.8'
+2025-07-23 21:04:55 - crawler.amazon_crawler - INFO - Extracted rating: 4.8
+2025-07-23 21:04:55 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 21:04:55 - crawler.amazon_crawler - WARNING - Could not extract from ivThumbs container: local variable 'unique_images' referenced before assignment
+2025-07-23 21:04:55 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 21:04:55 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41ovZidDjXL
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41ufF7poOyL
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Added visible thumbnail: 21LWCX6wgmL
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41o5XCEVuFL
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Added visible thumbnail: 212Z9o51JsL
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Found 5 additional hidden images
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41TVR6jIm1L
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Total images: 11 (6 visible + 5 hidden)
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Added main image 1: 71PAhPu+LvL
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Found video carousel container
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Found 0 product videos
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Found 0 related videos
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - No videos found in carousel
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Extracted lightning deal: 82% claimed
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Extracted product_description: 160 characters
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Final sale_percentage: 23% (preserved from extraction)
+2025-07-23 21:04:57 - crawler.amazon_crawler - INFO - Successfully crawled product B006CSPZK4
+2025-07-23 21:04:58 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B006CSPZK4
+2025-07-23 21:04:58 - crawler.amazon_crawler - ERROR - Error saving to database: 'promotion_program' is an invalid keyword argument for ProductCrawlHistory
+2025-07-23 21:05:00 - __main__ - INFO - Test crawl successful!
+2025-07-23 21:08:18 - __main__ - INFO - .env file already exists
+2025-07-23 21:08:18 - __main__ - INFO - Testing crawl for ASIN: B006CSPZK4
+2025-07-23 21:08:18 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 21:08:18 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 21:08:18 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 21:08:19 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 21:08:19 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 21:08:19 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 21:08:20 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 21:08:20 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 21:08:20 - crawler.amazon_crawler - INFO - Crawling product: B006CSPZK4 from https://www.amazon.com/dp/B006CSPZK4
+2025-07-23 21:08:29 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 21:08:29 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 21:08:29 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 21:08:29 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 21:08:34 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 21:08:35 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 21:08:43 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 21:08:43 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 21:08:50 - crawler.amazon_crawler - INFO - Extracted title: Ticonderoga Wood-Cased Pencils, Pre-Sharpened, #2 ...
+2025-07-23 21:08:50 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 21:08:50 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 21:08:50 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 21:08:50 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $5.0
+2025-07-23 21:08:50 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-23%'
+2025-07-23 21:08:50 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 23%
+2025-07-23 21:08:50 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$6.50'
+2025-07-23 21:08:50 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $6.5
+2025-07-23 21:08:50 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$5.0, list=$6.5, discount=23%
+2025-07-23 21:08:50 - crawler.amazon_crawler - INFO - Found rating text: '4.8'
+2025-07-23 21:08:50 - crawler.amazon_crawler - INFO - Extracted rating: 4.8
+2025-07-23 21:08:50 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 21:08:50 - crawler.amazon_crawler - WARNING - Could not extract from ivThumbs container: local variable 'unique_images' referenced before assignment
+2025-07-23 21:08:50 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 21:08:50 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 21:08:52 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 21:08:52 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41ovZidDjXL
+2025-07-23 21:08:52 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41ufF7poOyL
+2025-07-23 21:08:52 - crawler.amazon_crawler - INFO - Added visible thumbnail: 21LWCX6wgmL
+2025-07-23 21:08:52 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41o5XCEVuFL
+2025-07-23 21:08:52 - crawler.amazon_crawler - INFO - Added visible thumbnail: 212Z9o51JsL
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - Found 5 additional hidden images
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41TVR6jIm1L
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - Total images: 11 (6 visible + 5 hidden)
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - Added main image 1: 71PAhPu+LvL
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - Found video carousel container
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - Found 0 product videos
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - Found 0 related videos
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - No videos found in carousel
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - Extracted lightning deal: 82% claimed
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - Extracted product_description: 160 characters
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - Final sale_percentage: 23% (preserved from extraction)
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - Successfully crawled product B006CSPZK4
+2025-07-23 21:08:53 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B006CSPZK4 with 24 fields
+2025-07-23 21:09:00 - __main__ - INFO - Test crawl successful!
+2025-07-23 21:17:20 - __main__ - INFO - .env file already exists
+2025-07-23 21:17:20 - __main__ - INFO - Testing crawl for ASIN: B01M16WBW1
+2025-07-23 21:17:20 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 21:17:20 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 21:17:20 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 21:17:21 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 21:17:21 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 21:17:21 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 21:17:22 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 21:17:22 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 21:17:22 - crawler.amazon_crawler - INFO - Crawling product: B01M16WBW1 from https://www.amazon.com/dp/B01M16WBW1
+2025-07-23 21:17:30 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 21:17:30 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 21:17:30 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 21:17:30 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 21:17:35 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 21:17:36 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 21:17:45 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 21:17:45 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 21:17:52 - crawler.amazon_crawler - INFO - Extracted title: Queen Size 4 Piece Sheet Set - Comfy Breathable & ...
+2025-07-23 21:17:52 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 21:17:52 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 21:17:52 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 21:17:52 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $19.0
+2025-07-23 21:17:52 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-53%'
+2025-07-23 21:17:52 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 53%
+2025-07-23 21:17:52 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$41.99'
+2025-07-23 21:17:52 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $41.99
+2025-07-23 21:17:52 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$19.0, list=$41.99, discount=53%
+2025-07-23 21:17:52 - crawler.amazon_crawler - INFO - Found rating text: '4.4'
+2025-07-23 21:17:52 - crawler.amazon_crawler - INFO - Extracted rating: 4.4
+2025-07-23 21:17:52 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 21:17:52 - crawler.amazon_crawler - WARNING - Could not extract from ivThumbs container: local variable 'unique_images' referenced before assignment
+2025-07-23 21:17:52 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 21:17:52 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 21:17:54 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 21:17:54 - crawler.amazon_crawler - INFO - Added visible thumbnail: 414JCCGZL3L
+2025-07-23 21:17:54 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41+sLmAfnkL
+2025-07-23 21:17:54 - crawler.amazon_crawler - INFO - Added visible thumbnail: 415joao8efL
+2025-07-23 21:17:54 - crawler.amazon_crawler - INFO - Added visible thumbnail: 413dfH7DGAL
+2025-07-23 21:17:54 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41VNduSow4L
+2025-07-23 21:17:54 - crawler.amazon_crawler - INFO - Found 3 additional hidden images
+2025-07-23 21:17:54 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41Vnz1HTzpL
+2025-07-23 21:17:54 - crawler.amazon_crawler - INFO - Total images: 9 (6 visible + 3 hidden)
+2025-07-23 21:17:54 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 21:17:54 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 21:17:54 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 21:17:54 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 21:17:54 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 21:17:54 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 21:17:55 - crawler.amazon_crawler - INFO - Added main image 1: 71b8fh-dQ4L
+2025-07-23 21:17:55 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 21:17:55 - crawler.amazon_crawler - INFO - Found video carousel container
+2025-07-23 21:17:55 - crawler.amazon_crawler - INFO - Found 0 product videos
+2025-07-23 21:17:55 - crawler.amazon_crawler - INFO - Found 0 related videos
+2025-07-23 21:17:55 - crawler.amazon_crawler - INFO - No videos found in carousel
+2025-07-23 21:17:55 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-23 21:17:55 - crawler.amazon_crawler - INFO - Extracted bag_sale: 30K+ bought in past month
+2025-07-23 21:17:55 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2VLBXA9GN9C90&asin=B01M16WBW1&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-23 21:17:55 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-23 21:17:55 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6aac1e935+77845]
+	GetHandleVerifier [0x0x7ff6aac1e990+77936]
+	(No symbol) [0x0x7ff6aa9d9cda]
+	(No symbol) [0x0x7ff6aaa306aa]
+	(No symbol) [0x0x7ff6aaa3095c]
+	(No symbol) [0x0x7ff6aaa83d07]
+	(No symbol) [0x0x7ff6aaa5890f]
+	(No symbol) [0x0x7ff6aaa80b07]
+	(No symbol) [0x0x7ff6aaa586a3]
+	(No symbol) [0x0x7ff6aaa21791]
+	(No symbol) [0x0x7ff6aaa22523]
+	GetHandleVerifier [0x0x7ff6aaef684d+3059501]
+	GetHandleVerifier [0x0x7ff6aaef0c0d+3035885]
+	GetHandleVerifier [0x0x7ff6aaf10400+3164896]
+	GetHandleVerifier [0x0x7ff6aac38c3e+185118]
+	GetHandleVerifier [0x0x7ff6aac4054f+216111]
+	GetHandleVerifier [0x0x7ff6aac272e4+113092]
+	GetHandleVerifier [0x0x7ff6aac27499+113529]
+	GetHandleVerifier [0x0x7ff6aac0e298+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-23 21:17:55 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 1177 characters
+2025-07-23 21:17:56 - crawler.amazon_crawler - INFO - Final sale_percentage: 53% (preserved from extraction)
+2025-07-23 21:17:56 - crawler.amazon_crawler - INFO - Successfully crawled product B01M16WBW1
+2025-07-23 21:17:56 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B01M16WBW1
+2025-07-23 21:17:56 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B01M16WBW1 with 24 fields
+2025-07-23 21:18:02 - __main__ - INFO - Test crawl successful!
+2025-07-23 21:23:02 - __main__ - INFO - .env file already exists
+2025-07-23 21:23:02 - __main__ - INFO - Testing crawl for ASIN: B01M16WBW1
+2025-07-23 21:23:02 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 21:23:02 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 21:23:02 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 21:23:03 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 21:23:03 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 21:23:03 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 21:23:04 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 21:23:04 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 21:23:04 - crawler.amazon_crawler - INFO - Crawling product: B01M16WBW1 from https://www.amazon.com/dp/B01M16WBW1
+2025-07-23 21:23:11 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 21:23:11 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 21:23:11 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 21:23:12 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 21:23:17 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 21:23:18 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 21:23:26 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 21:23:26 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 21:23:33 - crawler.amazon_crawler - INFO - Extracted title: Queen Size 4 Piece Sheet Set - Comfy Breathable & ...
+2025-07-23 21:23:33 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 21:23:33 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 21:23:33 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 21:23:33 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $19.0
+2025-07-23 21:23:33 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-53%'
+2025-07-23 21:23:33 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 53%
+2025-07-23 21:23:33 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$41.99'
+2025-07-23 21:23:33 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $41.99
+2025-07-23 21:23:33 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$19.0, list=$41.99, discount=53%
+2025-07-23 21:23:33 - crawler.amazon_crawler - INFO - Found rating text: '4.4'
+2025-07-23 21:23:33 - crawler.amazon_crawler - INFO - Extracted rating: 4.4
+2025-07-23 21:23:33 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 21:23:33 - crawler.amazon_crawler - WARNING - Could not extract from ivThumbs container: local variable 'unique_images' referenced before assignment
+2025-07-23 21:23:33 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 21:23:33 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 21:23:35 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 21:23:35 - crawler.amazon_crawler - INFO - Added visible thumbnail: 414JCCGZL3L
+2025-07-23 21:23:35 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41+sLmAfnkL
+2025-07-23 21:23:35 - crawler.amazon_crawler - INFO - Added visible thumbnail: 415joao8efL
+2025-07-23 21:23:35 - crawler.amazon_crawler - INFO - Added visible thumbnail: 413dfH7DGAL
+2025-07-23 21:23:35 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41VNduSow4L
+2025-07-23 21:23:35 - crawler.amazon_crawler - INFO - Found 3 additional hidden images
+2025-07-23 21:23:35 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41Vnz1HTzpL
+2025-07-23 21:23:35 - crawler.amazon_crawler - INFO - Total images: 9 (6 visible + 3 hidden)
+2025-07-23 21:23:35 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 21:23:35 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 21:23:35 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 21:23:36 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 21:23:36 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 21:23:36 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 21:23:36 - crawler.amazon_crawler - INFO - Added main image 1: 71b8fh-dQ4L
+2025-07-23 21:23:36 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 21:23:36 - crawler.amazon_crawler - INFO - Found video carousel container
+2025-07-23 21:23:36 - crawler.amazon_crawler - INFO - Found 0 product videos
+2025-07-23 21:23:36 - crawler.amazon_crawler - INFO - Found 0 related videos
+2025-07-23 21:23:36 - crawler.amazon_crawler - INFO - No videos found in carousel
+2025-07-23 21:23:36 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-23 21:23:36 - crawler.amazon_crawler - INFO - Extracted bag_sale: 30K+ bought in past month
+2025-07-23 21:23:36 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2VLBXA9GN9C90&asin=B01M16WBW1&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-23 21:23:36 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-23 21:23:36 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6aac1e935+77845]
+	GetHandleVerifier [0x0x7ff6aac1e990+77936]
+	(No symbol) [0x0x7ff6aa9d9cda]
+	(No symbol) [0x0x7ff6aaa306aa]
+	(No symbol) [0x0x7ff6aaa3095c]
+	(No symbol) [0x0x7ff6aaa83d07]
+	(No symbol) [0x0x7ff6aaa5890f]
+	(No symbol) [0x0x7ff6aaa80b07]
+	(No symbol) [0x0x7ff6aaa586a3]
+	(No symbol) [0x0x7ff6aaa21791]
+	(No symbol) [0x0x7ff6aaa22523]
+	GetHandleVerifier [0x0x7ff6aaef684d+3059501]
+	GetHandleVerifier [0x0x7ff6aaef0c0d+3035885]
+	GetHandleVerifier [0x0x7ff6aaf10400+3164896]
+	GetHandleVerifier [0x0x7ff6aac38c3e+185118]
+	GetHandleVerifier [0x0x7ff6aac4054f+216111]
+	GetHandleVerifier [0x0x7ff6aac272e4+113092]
+	GetHandleVerifier [0x0x7ff6aac27499+113529]
+	GetHandleVerifier [0x0x7ff6aac0e298+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-23 21:23:36 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 1177 characters
+2025-07-23 21:23:36 - crawler.amazon_crawler - INFO - Final sale_percentage: 53% (preserved from extraction)
+2025-07-23 21:23:36 - crawler.amazon_crawler - INFO - Successfully crawled product B01M16WBW1
+2025-07-23 21:23:42 - crawler.amazon_crawler - ERROR - Error saving to database: (sqlite3.OperationalError) database is locked
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-07-23 21:23:44 - __main__ - INFO - Test crawl successful!
+2025-07-23 21:24:30 - __main__ - INFO - .env file already exists
+2025-07-23 21:24:30 - __main__ - INFO - Testing crawl for ASIN: B01M16WBW1
+2025-07-23 21:24:30 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 21:24:30 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 21:24:30 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 21:24:31 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 21:24:31 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 21:24:31 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 21:24:32 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 21:24:32 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 21:24:32 - crawler.amazon_crawler - INFO - Crawling product: B01M16WBW1 from https://www.amazon.com/dp/B01M16WBW1
+2025-07-23 21:24:41 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 21:24:41 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 21:24:41 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 21:24:41 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 21:24:46 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 21:24:47 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 21:24:55 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 21:24:55 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 21:25:02 - crawler.amazon_crawler - INFO - Extracted title: Queen Size 4 Piece Sheet Set - Comfy Breathable & ...
+2025-07-23 21:25:02 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 21:25:02 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 21:25:02 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 21:25:02 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $19.0
+2025-07-23 21:25:02 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-53%'
+2025-07-23 21:25:02 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 53%
+2025-07-23 21:25:02 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$41.99'
+2025-07-23 21:25:02 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $41.99
+2025-07-23 21:25:02 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$19.0, list=$41.99, discount=53%
+2025-07-23 21:25:02 - crawler.amazon_crawler - INFO - Found rating text: '4.4'
+2025-07-23 21:25:02 - crawler.amazon_crawler - INFO - Extracted rating: 4.4
+2025-07-23 21:25:02 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 21:25:02 - crawler.amazon_crawler - WARNING - Could not extract from ivThumbs container: local variable 'unique_images' referenced before assignment
+2025-07-23 21:25:02 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 21:25:02 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 21:25:04 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 21:25:04 - crawler.amazon_crawler - INFO - Added visible thumbnail: 414JCCGZL3L
+2025-07-23 21:25:04 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41+sLmAfnkL
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - Added visible thumbnail: 415joao8efL
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - Added visible thumbnail: 413dfH7DGAL
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41VNduSow4L
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - Found 3 additional hidden images
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41Vnz1HTzpL
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - Total images: 9 (6 visible + 3 hidden)
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - Added main image 1: 71b8fh-dQ4L
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - Found video carousel container
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - Found 0 product videos
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - Found 0 related videos
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - No videos found in carousel
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - Extracted bag_sale: 30K+ bought in past month
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2VLBXA9GN9C90&asin=B01M16WBW1&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-23 21:25:05 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6aac1e935+77845]
+	GetHandleVerifier [0x0x7ff6aac1e990+77936]
+	(No symbol) [0x0x7ff6aa9d9cda]
+	(No symbol) [0x0x7ff6aaa306aa]
+	(No symbol) [0x0x7ff6aaa3095c]
+	(No symbol) [0x0x7ff6aaa83d07]
+	(No symbol) [0x0x7ff6aaa5890f]
+	(No symbol) [0x0x7ff6aaa80b07]
+	(No symbol) [0x0x7ff6aaa586a3]
+	(No symbol) [0x0x7ff6aaa21791]
+	(No symbol) [0x0x7ff6aaa22523]
+	GetHandleVerifier [0x0x7ff6aaef684d+3059501]
+	GetHandleVerifier [0x0x7ff6aaef0c0d+3035885]
+	GetHandleVerifier [0x0x7ff6aaf10400+3164896]
+	GetHandleVerifier [0x0x7ff6aac38c3e+185118]
+	GetHandleVerifier [0x0x7ff6aac4054f+216111]
+	GetHandleVerifier [0x0x7ff6aac272e4+113092]
+	GetHandleVerifier [0x0x7ff6aac27499+113529]
+	GetHandleVerifier [0x0x7ff6aac0e298+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-23 21:25:05 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 1177 characters
+2025-07-23 21:25:06 - crawler.amazon_crawler - INFO - Final sale_percentage: 53% (preserved from extraction)
+2025-07-23 21:25:06 - crawler.amazon_crawler - INFO - Successfully crawled product B01M16WBW1
+2025-07-23 21:25:06 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B01M16WBW1 with 24 fields
+2025-07-23 21:25:12 - __main__ - INFO - Test crawl successful!
+2025-07-23 21:29:04 - __main__ - INFO - .env file already exists
+2025-07-23 21:29:04 - __main__ - INFO - Testing crawl for ASIN: B01M16WBW1
+2025-07-23 21:29:04 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 21:29:04 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 21:29:04 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 21:29:05 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 21:29:05 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 21:29:05 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 21:29:06 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 21:29:06 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 21:29:06 - crawler.amazon_crawler - INFO - Crawling product: B01M16WBW1 from https://www.amazon.com/dp/B01M16WBW1
+2025-07-23 21:29:13 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 21:29:13 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 21:29:13 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 21:29:14 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 21:29:18 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 21:29:20 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 21:29:28 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 21:29:28 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 21:29:35 - crawler.amazon_crawler - INFO - Extracted title: Queen Size 4 Piece Sheet Set - Comfy Breathable & ...
+2025-07-23 21:29:35 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 21:29:35 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 21:29:35 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 21:29:35 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $19.0
+2025-07-23 21:29:35 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-53%'
+2025-07-23 21:29:35 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 53%
+2025-07-23 21:29:35 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$41.99'
+2025-07-23 21:29:35 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $41.99
+2025-07-23 21:29:35 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$19.0, list=$41.99, discount=53%
+2025-07-23 21:29:35 - crawler.amazon_crawler - INFO - Found rating text: '4.4'
+2025-07-23 21:29:35 - crawler.amazon_crawler - INFO - Extracted rating: 4.4
+2025-07-23 21:29:35 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 21:29:35 - crawler.amazon_crawler - WARNING - Could not extract from ivThumbs container: local variable 'unique_images' referenced before assignment
+2025-07-23 21:29:35 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 21:29:35 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - Added visible thumbnail: 414JCCGZL3L
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41+sLmAfnkL
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - Added visible thumbnail: 415joao8efL
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - Added visible thumbnail: 413dfH7DGAL
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41VNduSow4L
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - Found 3 additional hidden images
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41Vnz1HTzpL
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - Total images: 9 (6 visible + 3 hidden)
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - Added main image 1: 71b8fh-dQ4L
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - Found video carousel container
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - Found 0 product videos
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - Found 0 related videos
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - No videos found in carousel
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-23 21:29:37 - crawler.amazon_crawler - INFO - Extracted bag_sale: 30K+ bought in past month
+2025-07-23 21:29:38 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2VLBXA9GN9C90&asin=B01M16WBW1&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-23 21:29:38 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-23 21:29:38 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6aac1e935+77845]
+	GetHandleVerifier [0x0x7ff6aac1e990+77936]
+	(No symbol) [0x0x7ff6aa9d9cda]
+	(No symbol) [0x0x7ff6aaa306aa]
+	(No symbol) [0x0x7ff6aaa3095c]
+	(No symbol) [0x0x7ff6aaa83d07]
+	(No symbol) [0x0x7ff6aaa5890f]
+	(No symbol) [0x0x7ff6aaa80b07]
+	(No symbol) [0x0x7ff6aaa586a3]
+	(No symbol) [0x0x7ff6aaa21791]
+	(No symbol) [0x0x7ff6aaa22523]
+	GetHandleVerifier [0x0x7ff6aaef684d+3059501]
+	GetHandleVerifier [0x0x7ff6aaef0c0d+3035885]
+	GetHandleVerifier [0x0x7ff6aaf10400+3164896]
+	GetHandleVerifier [0x0x7ff6aac38c3e+185118]
+	GetHandleVerifier [0x0x7ff6aac4054f+216111]
+	GetHandleVerifier [0x0x7ff6aac272e4+113092]
+	GetHandleVerifier [0x0x7ff6aac27499+113529]
+	GetHandleVerifier [0x0x7ff6aac0e298+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-23 21:29:38 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 1177 characters
+2025-07-23 21:29:38 - crawler.amazon_crawler - INFO - Final sale_percentage: 53% (preserved from extraction)
+2025-07-23 21:29:38 - crawler.amazon_crawler - INFO - Successfully crawled product B01M16WBW1
+2025-07-23 21:29:38 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B01M16WBW1 with 24 fields
+2025-07-23 21:29:44 - __main__ - INFO - Test crawl successful!
+2025-07-23 21:32:57 - __main__ - INFO - .env file already exists
+2025-07-23 21:32:57 - __main__ - INFO - Testing crawl for ASIN: B01M16WBW1
+2025-07-23 21:32:57 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 21:32:57 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 21:32:57 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 21:32:58 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 21:32:58 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 21:32:58 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 21:32:59 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 21:32:59 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 21:32:59 - crawler.amazon_crawler - INFO - Crawling product: B01M16WBW1 from https://www.amazon.com/dp/B01M16WBW1
+2025-07-23 21:33:10 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 21:33:10 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 21:33:10 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 21:33:10 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 21:33:15 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 21:33:16 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 21:33:24 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 21:33:24 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 21:33:37 - crawler.amazon_crawler - INFO - Extracted title: Queen Size 4 Piece Sheet Set - Comfy Breathable & ...
+2025-07-23 21:33:37 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 21:33:37 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 21:33:37 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 21:33:37 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $19.0
+2025-07-23 21:33:37 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-53%'
+2025-07-23 21:33:37 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 53%
+2025-07-23 21:33:37 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$41.99'
+2025-07-23 21:33:37 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $41.99
+2025-07-23 21:33:37 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$19.0, list=$41.99, discount=53%
+2025-07-23 21:33:37 - crawler.amazon_crawler - INFO - Found rating text: '4.4'
+2025-07-23 21:33:37 - crawler.amazon_crawler - INFO - Extracted rating: 4.4
+2025-07-23 21:33:37 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 21:33:37 - crawler.amazon_crawler - WARNING - Could not extract from ivThumbs container: local variable 'unique_images' referenced before assignment
+2025-07-23 21:33:37 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 21:33:37 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Added visible thumbnail: 414JCCGZL3L
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41+sLmAfnkL
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Added visible thumbnail: 415joao8efL
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Added visible thumbnail: 413dfH7DGAL
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41VNduSow4L
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Found 3 additional hidden images
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41Vnz1HTzpL
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Total images: 9 (6 visible + 3 hidden)
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Added main image 1: 71b8fh-dQ4L
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Found video carousel container
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Found 0 product videos
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Found 0 related videos
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - No videos found in carousel
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Extracted bag_sale: 30K+ bought in past month
+2025-07-23 21:33:39 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2VLBXA9GN9C90&asin=B01M16WBW1&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-23 21:33:40 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-23 21:33:40 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6aac1e935+77845]
+	GetHandleVerifier [0x0x7ff6aac1e990+77936]
+	(No symbol) [0x0x7ff6aa9d9cda]
+	(No symbol) [0x0x7ff6aaa306aa]
+	(No symbol) [0x0x7ff6aaa3095c]
+	(No symbol) [0x0x7ff6aaa83d07]
+	(No symbol) [0x0x7ff6aaa5890f]
+	(No symbol) [0x0x7ff6aaa80b07]
+	(No symbol) [0x0x7ff6aaa586a3]
+	(No symbol) [0x0x7ff6aaa21791]
+	(No symbol) [0x0x7ff6aaa22523]
+	GetHandleVerifier [0x0x7ff6aaef684d+3059501]
+	GetHandleVerifier [0x0x7ff6aaef0c0d+3035885]
+	GetHandleVerifier [0x0x7ff6aaf10400+3164896]
+	GetHandleVerifier [0x0x7ff6aac38c3e+185118]
+	GetHandleVerifier [0x0x7ff6aac4054f+216111]
+	GetHandleVerifier [0x0x7ff6aac272e4+113092]
+	GetHandleVerifier [0x0x7ff6aac27499+113529]
+	GetHandleVerifier [0x0x7ff6aac0e298+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-23 21:33:40 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 1177 characters
+2025-07-23 21:33:40 - crawler.amazon_crawler - INFO - Final sale_percentage: 53% (preserved from extraction)
+2025-07-23 21:33:40 - crawler.amazon_crawler - INFO - Successfully crawled product B01M16WBW1
+2025-07-23 21:33:40 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B01M16WBW1 with 24 fields
+2025-07-23 21:33:46 - __main__ - INFO - Test crawl successful!
+2025-07-23 21:37:14 - __main__ - INFO - .env file already exists
+2025-07-23 21:37:14 - __main__ - INFO - Testing crawl for ASIN: B01M16WBW1
+2025-07-23 21:37:14 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 21:37:14 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 21:37:14 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 21:37:15 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 21:37:15 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 21:37:15 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 21:37:16 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 21:37:16 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 21:37:16 - crawler.amazon_crawler - INFO - Crawling product: B01M16WBW1 from https://www.amazon.com/dp/B01M16WBW1
+2025-07-23 21:37:24 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 21:37:24 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 21:37:24 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 21:37:25 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 21:37:29 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 21:37:31 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 21:37:39 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 21:37:39 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 21:37:46 - crawler.amazon_crawler - INFO - Extracted title: Queen Size 4 Piece Sheet Set - Comfy Breathable & ...
+2025-07-23 21:37:46 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 21:37:46 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 21:37:46 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 21:37:46 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $19.0
+2025-07-23 21:37:46 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-53%'
+2025-07-23 21:37:46 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 53%
+2025-07-23 21:37:46 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$41.99'
+2025-07-23 21:37:46 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $41.99
+2025-07-23 21:37:46 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$19.0, list=$41.99, discount=53%
+2025-07-23 21:37:46 - crawler.amazon_crawler - INFO - Found rating text: '4.4'
+2025-07-23 21:37:46 - crawler.amazon_crawler - INFO - Extracted rating: 4.4
+2025-07-23 21:37:46 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 21:37:46 - crawler.amazon_crawler - WARNING - Could not extract from ivThumbs container: local variable 'unique_images' referenced before assignment
+2025-07-23 21:37:46 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 21:37:46 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 21:37:48 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 21:37:48 - crawler.amazon_crawler - INFO - Added visible thumbnail: 414JCCGZL3L
+2025-07-23 21:37:48 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41+sLmAfnkL
+2025-07-23 21:37:48 - crawler.amazon_crawler - INFO - Added visible thumbnail: 415joao8efL
+2025-07-23 21:37:48 - crawler.amazon_crawler - INFO - Added visible thumbnail: 413dfH7DGAL
+2025-07-23 21:37:48 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41VNduSow4L
+2025-07-23 21:37:48 - crawler.amazon_crawler - INFO - Found 3 additional hidden images
+2025-07-23 21:37:48 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41Vnz1HTzpL
+2025-07-23 21:37:48 - crawler.amazon_crawler - INFO - Total images: 9 (6 visible + 3 hidden)
+2025-07-23 21:37:48 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 21:37:48 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 21:37:48 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 21:37:48 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 21:37:48 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 21:37:48 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 21:37:48 - crawler.amazon_crawler - INFO - Added main image 1: 71b8fh-dQ4L
+2025-07-23 21:37:48 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 21:37:49 - crawler.amazon_crawler - INFO - Found video carousel container
+2025-07-23 21:37:49 - crawler.amazon_crawler - INFO - Found 0 product videos
+2025-07-23 21:37:49 - crawler.amazon_crawler - INFO - Found 0 related videos
+2025-07-23 21:37:49 - crawler.amazon_crawler - INFO - No videos found in carousel
+2025-07-23 21:37:49 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-23 21:37:49 - crawler.amazon_crawler - INFO - Extracted lightning deal (from progress view): 10% claimed
+2025-07-23 21:37:49 - crawler.amazon_crawler - INFO - Extracted bag_sale: 30K+ bought in past month
+2025-07-23 21:37:49 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2VLBXA9GN9C90&asin=B01M16WBW1&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-23 21:37:49 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-23 21:37:49 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6aac1e935+77845]
+	GetHandleVerifier [0x0x7ff6aac1e990+77936]
+	(No symbol) [0x0x7ff6aa9d9cda]
+	(No symbol) [0x0x7ff6aaa306aa]
+	(No symbol) [0x0x7ff6aaa3095c]
+	(No symbol) [0x0x7ff6aaa83d07]
+	(No symbol) [0x0x7ff6aaa5890f]
+	(No symbol) [0x0x7ff6aaa80b07]
+	(No symbol) [0x0x7ff6aaa586a3]
+	(No symbol) [0x0x7ff6aaa21791]
+	(No symbol) [0x0x7ff6aaa22523]
+	GetHandleVerifier [0x0x7ff6aaef684d+3059501]
+	GetHandleVerifier [0x0x7ff6aaef0c0d+3035885]
+	GetHandleVerifier [0x0x7ff6aaf10400+3164896]
+	GetHandleVerifier [0x0x7ff6aac38c3e+185118]
+	GetHandleVerifier [0x0x7ff6aac4054f+216111]
+	GetHandleVerifier [0x0x7ff6aac272e4+113092]
+	GetHandleVerifier [0x0x7ff6aac27499+113529]
+	GetHandleVerifier [0x0x7ff6aac0e298+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-23 21:37:49 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 1177 characters
+2025-07-23 21:37:49 - crawler.amazon_crawler - INFO - Final sale_percentage: 53% (preserved from extraction)
+2025-07-23 21:37:49 - crawler.amazon_crawler - INFO - Successfully crawled product B01M16WBW1
+2025-07-23 21:37:49 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B01M16WBW1 with 24 fields
+2025-07-23 21:37:56 - __main__ - INFO - Test crawl successful!
+2025-07-23 21:43:09 - __main__ - INFO - .env file already exists
+2025-07-23 21:43:09 - __main__ - INFO - Testing crawl for ASIN: B01M16WBW1
+2025-07-23 21:43:09 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 21:43:09 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 21:43:09 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 21:43:10 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 21:43:10 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 21:43:10 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 21:43:11 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 21:43:11 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 21:43:11 - crawler.amazon_crawler - INFO - Crawling product: B01M16WBW1 from https://www.amazon.com/dp/B01M16WBW1
+2025-07-23 21:43:19 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 21:43:19 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 21:43:19 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 21:43:19 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 21:43:24 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 21:43:25 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 21:43:33 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 21:43:33 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 21:43:40 - crawler.amazon_crawler - INFO - Extracted title: Queen Size 4 Piece Sheet Set - Comfy Breathable & ...
+2025-07-23 21:43:40 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 21:43:40 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $19.0
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-53%'
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 53%
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$41.99'
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $41.99
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$19.0, list=$41.99, discount=53%
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Found rating text: '4.4'
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Extracted rating: 4.4
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Found 1 thumbnail elements in ivThumbs
+2025-07-23 21:43:41 - crawler.amazon_crawler - WARNING - No images found in ivThumbs container
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Extracted lightning deal (from progress view): 11% claimed
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Extracted lightning deal (from progress view): 11% claimed
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Extracted bag_sale: 30K+ bought in past month
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2VLBXA9GN9C90&asin=B01M16WBW1&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-23 21:43:41 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6aac1e935+77845]
+	GetHandleVerifier [0x0x7ff6aac1e990+77936]
+	(No symbol) [0x0x7ff6aa9d9cda]
+	(No symbol) [0x0x7ff6aaa306aa]
+	(No symbol) [0x0x7ff6aaa3095c]
+	(No symbol) [0x0x7ff6aaa83d07]
+	(No symbol) [0x0x7ff6aaa5890f]
+	(No symbol) [0x0x7ff6aaa80b07]
+	(No symbol) [0x0x7ff6aaa586a3]
+	(No symbol) [0x0x7ff6aaa21791]
+	(No symbol) [0x0x7ff6aaa22523]
+	GetHandleVerifier [0x0x7ff6aaef684d+3059501]
+	GetHandleVerifier [0x0x7ff6aaef0c0d+3035885]
+	GetHandleVerifier [0x0x7ff6aaf10400+3164896]
+	GetHandleVerifier [0x0x7ff6aac38c3e+185118]
+	GetHandleVerifier [0x0x7ff6aac4054f+216111]
+	GetHandleVerifier [0x0x7ff6aac272e4+113092]
+	GetHandleVerifier [0x0x7ff6aac27499+113529]
+	GetHandleVerifier [0x0x7ff6aac0e298+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 1177 characters
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Final sale_percentage: 53% (preserved from extraction)
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Successfully crawled product B01M16WBW1
+2025-07-23 21:43:41 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B01M16WBW1 with 24 fields
+2025-07-23 21:43:48 - __main__ - INFO - Test crawl successful!
+2025-07-23 21:46:18 - __main__ - INFO - .env file already exists
+2025-07-23 21:46:18 - __main__ - INFO - Testing crawl for ASIN: B01M16WBW1
+2025-07-23 21:46:18 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 21:46:18 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 21:46:18 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 21:46:19 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 21:46:19 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 21:46:19 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 21:46:20 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 21:46:20 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 21:46:20 - crawler.amazon_crawler - INFO - Crawling product: B01M16WBW1 from https://www.amazon.com/dp/B01M16WBW1
+2025-07-23 21:46:30 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 21:46:30 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 21:46:30 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 21:46:30 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 21:46:35 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 21:46:36 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 21:46:44 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 21:46:44 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 21:46:51 - crawler.amazon_crawler - INFO - Extracted title: Queen Size 4 Piece Sheet Set - Comfy Breathable & ...
+2025-07-23 21:46:51 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 21:46:51 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 21:46:51 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 21:46:51 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $19.0
+2025-07-23 21:46:51 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-53%'
+2025-07-23 21:46:51 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 53%
+2025-07-23 21:46:51 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$41.99'
+2025-07-23 21:46:51 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $41.99
+2025-07-23 21:46:51 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$19.0, list=$41.99, discount=53%
+2025-07-23 21:46:51 - crawler.amazon_crawler - INFO - Found rating text: '4.4'
+2025-07-23 21:46:51 - crawler.amazon_crawler - INFO - Extracted rating: 4.4
+2025-07-23 21:46:51 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 21:46:51 - crawler.amazon_crawler - WARNING - No images found in ivThumbs container
+2025-07-23 21:46:51 - crawler.amazon_crawler - INFO - Extracted lightning deal (from progress view): 11% claimed
+2025-07-23 21:46:52 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-23 21:46:52 - crawler.amazon_crawler - INFO - Extracted lightning deal (from progress view): 11% claimed
+2025-07-23 21:46:52 - crawler.amazon_crawler - INFO - Extracted bag_sale: 30K+ bought in past month
+2025-07-23 21:46:52 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2VLBXA9GN9C90&asin=B01M16WBW1&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-23 21:46:52 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-23 21:46:52 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6aac1e935+77845]
+	GetHandleVerifier [0x0x7ff6aac1e990+77936]
+	(No symbol) [0x0x7ff6aa9d9cda]
+	(No symbol) [0x0x7ff6aaa306aa]
+	(No symbol) [0x0x7ff6aaa3095c]
+	(No symbol) [0x0x7ff6aaa83d07]
+	(No symbol) [0x0x7ff6aaa5890f]
+	(No symbol) [0x0x7ff6aaa80b07]
+	(No symbol) [0x0x7ff6aaa586a3]
+	(No symbol) [0x0x7ff6aaa21791]
+	(No symbol) [0x0x7ff6aaa22523]
+	GetHandleVerifier [0x0x7ff6aaef684d+3059501]
+	GetHandleVerifier [0x0x7ff6aaef0c0d+3035885]
+	GetHandleVerifier [0x0x7ff6aaf10400+3164896]
+	GetHandleVerifier [0x0x7ff6aac38c3e+185118]
+	GetHandleVerifier [0x0x7ff6aac4054f+216111]
+	GetHandleVerifier [0x0x7ff6aac272e4+113092]
+	GetHandleVerifier [0x0x7ff6aac27499+113529]
+	GetHandleVerifier [0x0x7ff6aac0e298+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-23 21:46:52 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 1177 characters
+2025-07-23 21:46:52 - crawler.amazon_crawler - INFO - Final sale_percentage: 53% (preserved from extraction)
+2025-07-23 21:46:52 - crawler.amazon_crawler - INFO - Successfully crawled product B01M16WBW1
+2025-07-23 21:46:52 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B01M16WBW1 with 24 fields
+2025-07-23 21:46:58 - __main__ - INFO - Test crawl successful!
+2025-07-23 21:54:19 - __main__ - INFO - .env file already exists
+2025-07-23 21:54:19 - __main__ - INFO - Testing crawl for ASIN: B01M16WBW1
+2025-07-23 21:54:19 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 21:54:19 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 21:54:19 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 21:54:20 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 21:54:20 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 21:54:20 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 21:54:22 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 21:54:22 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 21:54:22 - crawler.amazon_crawler - INFO - Crawling product: B01M16WBW1 from https://www.amazon.com/dp/B01M16WBW1
+2025-07-23 21:54:29 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 21:54:29 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 21:54:29 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 21:54:29 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 21:54:34 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 21:54:35 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 21:54:43 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 21:54:43 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 21:54:50 - crawler.amazon_crawler - INFO - Extracted title: Queen Size 4 Piece Sheet Set - Comfy Breathable & ...
+2025-07-23 21:54:50 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $19.0
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-53%'
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 53%
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$41.99'
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $41.99
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$19.0, list=$41.99, discount=53%
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Found rating text: '4.4'
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Extracted rating: 4.4
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Found 1 thumbnail elements in ivThumbs
+2025-07-23 21:54:51 - crawler.amazon_crawler - WARNING - No images found in ivThumbs container
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Extracted lightning deal (from progress view): 12% claimed
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Extracted lightning deal (from progress view): 12% claimed
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Extracted bag_sale: 30K+ bought in past month
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2VLBXA9GN9C90&asin=B01M16WBW1&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-23 21:54:51 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6c2ebe935+77845]
+	GetHandleVerifier [0x0x7ff6c2ebe990+77936]
+	(No symbol) [0x0x7ff6c2c79cda]
+	(No symbol) [0x0x7ff6c2cd06aa]
+	(No symbol) [0x0x7ff6c2cd095c]
+	(No symbol) [0x0x7ff6c2d23d07]
+	(No symbol) [0x0x7ff6c2cf890f]
+	(No symbol) [0x0x7ff6c2d20b07]
+	(No symbol) [0x0x7ff6c2cf86a3]
+	(No symbol) [0x0x7ff6c2cc1791]
+	(No symbol) [0x0x7ff6c2cc2523]
+	GetHandleVerifier [0x0x7ff6c319684d+3059501]
+	GetHandleVerifier [0x0x7ff6c3190c0d+3035885]
+	GetHandleVerifier [0x0x7ff6c31b0400+3164896]
+	GetHandleVerifier [0x0x7ff6c2ed8c3e+185118]
+	GetHandleVerifier [0x0x7ff6c2ee054f+216111]
+	GetHandleVerifier [0x0x7ff6c2ec72e4+113092]
+	GetHandleVerifier [0x0x7ff6c2ec7499+113529]
+	GetHandleVerifier [0x0x7ff6c2eae298+10616]
+	BaseThreadInitThunk [0x0x7fffd368e8d7+23]
+	RtlUserThreadStart [0x0x7fffd57fc34c+44]
+
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 1177 characters
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Final sale_percentage: 53% (preserved from extraction)
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Successfully crawled product B01M16WBW1
+2025-07-23 21:54:51 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B01M16WBW1 with 24 fields
+2025-07-23 21:54:58 - __main__ - INFO - Test crawl successful!
+2025-07-23 21:57:39 - __main__ - INFO - .env file already exists
+2025-07-23 21:57:39 - __main__ - INFO - Testing crawl for ASIN: B01M16WBW1
+2025-07-23 21:57:39 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 21:57:39 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 21:57:39 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 21:57:40 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 21:57:40 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 21:57:40 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 21:57:41 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 21:57:41 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 21:57:41 - crawler.amazon_crawler - INFO - Crawling product: B01M16WBW1 from https://www.amazon.com/dp/B01M16WBW1
+2025-07-23 21:57:48 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 21:57:48 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 21:57:48 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 21:57:48 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 21:57:53 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 21:57:54 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 21:58:02 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 21:58:02 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 21:58:09 - crawler.amazon_crawler - INFO - Extracted title: Queen Size 4 Piece Sheet Set - Comfy Breathable & ...
+2025-07-23 21:58:09 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 21:58:09 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 21:58:09 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 21:58:09 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $19.0
+2025-07-23 21:58:09 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-53%'
+2025-07-23 21:58:09 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 53%
+2025-07-23 21:58:09 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$41.99'
+2025-07-23 21:58:09 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $41.99
+2025-07-23 21:58:09 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$19.0, list=$41.99, discount=53%
+2025-07-23 21:58:09 - crawler.amazon_crawler - INFO - Found rating text: '4.4'
+2025-07-23 21:58:09 - crawler.amazon_crawler - INFO - Extracted rating: 4.4
+2025-07-23 21:58:09 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 21:58:09 - crawler.amazon_crawler - WARNING - Could not extract from ivThumbs container: local variable 'unique_images' referenced before assignment
+2025-07-23 21:58:09 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 21:58:09 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 21:58:11 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 21:58:11 - crawler.amazon_crawler - INFO - Added visible thumbnail: 414JCCGZL3L
+2025-07-23 21:58:11 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41+sLmAfnkL
+2025-07-23 21:58:11 - crawler.amazon_crawler - INFO - Added visible thumbnail: 415joao8efL
+2025-07-23 21:58:11 - crawler.amazon_crawler - INFO - Added visible thumbnail: 413dfH7DGAL
+2025-07-23 21:58:11 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41VNduSow4L
+2025-07-23 21:58:11 - crawler.amazon_crawler - INFO - Found 3 additional hidden images
+2025-07-23 21:58:11 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41Vnz1HTzpL
+2025-07-23 21:58:11 - crawler.amazon_crawler - INFO - Total images: 9 (6 visible + 3 hidden)
+2025-07-23 21:58:11 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 21:58:11 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 21:58:12 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 21:58:12 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 21:58:12 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 21:58:12 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 21:58:12 - crawler.amazon_crawler - INFO - Added main image 1: 71b8fh-dQ4L
+2025-07-23 21:58:12 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 21:58:12 - crawler.amazon_crawler - INFO - Found video carousel container
+2025-07-23 21:58:12 - crawler.amazon_crawler - INFO - Found 0 product videos
+2025-07-23 21:58:12 - crawler.amazon_crawler - INFO - Found 0 related videos
+2025-07-23 21:58:12 - crawler.amazon_crawler - INFO - No videos found in carousel
+2025-07-23 21:58:12 - crawler.amazon_crawler - ERROR - Failed to crawl product B01M16WBW1: 'AmazonCrawler' object has no attribute '_extract_promotions'
+2025-07-23 21:58:12 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B01M16WBW1 with 15 fields
+2025-07-23 21:58:29 - __main__ - INFO - .env file already exists
+2025-07-23 21:58:29 - __main__ - INFO - Testing crawl for ASIN: B01M16WBW1
+2025-07-23 21:58:29 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 21:58:29 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 21:58:29 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 21:58:30 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 21:58:30 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 21:58:30 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 21:58:31 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 21:58:31 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 21:58:31 - crawler.amazon_crawler - INFO - Crawling product: B01M16WBW1 from https://www.amazon.com/dp/B01M16WBW1
+2025-07-23 21:58:38 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 21:58:38 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 21:58:38 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 21:58:38 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 21:58:43 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 21:58:44 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 21:58:52 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 21:58:52 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 21:58:59 - crawler.amazon_crawler - INFO - Extracted title: Queen Size 4 Piece Sheet Set - Comfy Breathable & ...
+2025-07-23 21:58:59 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 21:58:59 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 21:58:59 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 21:58:59 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $19.0
+2025-07-23 21:58:59 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-53%'
+2025-07-23 21:58:59 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 53%
+2025-07-23 21:59:00 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$41.99'
+2025-07-23 21:59:00 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $41.99
+2025-07-23 21:59:00 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$19.0, list=$41.99, discount=53%
+2025-07-23 21:59:00 - crawler.amazon_crawler - INFO - Found rating text: '4.4'
+2025-07-23 21:59:00 - crawler.amazon_crawler - INFO - Extracted rating: 4.4
+2025-07-23 21:59:00 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 21:59:00 - crawler.amazon_crawler - WARNING - Could not extract from ivThumbs container: local variable 'unique_images' referenced before assignment
+2025-07-23 21:59:00 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 21:59:00 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - Added visible thumbnail: 414JCCGZL3L
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41+sLmAfnkL
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - Added visible thumbnail: 415joao8efL
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - Added visible thumbnail: 413dfH7DGAL
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41VNduSow4L
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - Found 3 additional hidden images
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41Vnz1HTzpL
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - Total images: 9 (6 visible + 3 hidden)
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - Added main image 1: 71b8fh-dQ4L
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - Found video carousel container
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - Found 0 product videos
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - Found 0 related videos
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - No videos found in carousel
+2025-07-23 21:59:02 - crawler.amazon_crawler - ERROR - Failed to crawl product B01M16WBW1: 'AmazonCrawler' object has no attribute '_extract_promotions'
+2025-07-23 21:59:02 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B01M16WBW1 with 15 fields
+2025-07-23 22:09:36 - __main__ - INFO - .env file already exists
+2025-07-23 22:09:36 - __main__ - INFO - Testing crawl for ASIN: B01M16WBW1
+2025-07-23 22:09:36 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 22:09:36 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 22:09:36 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 22:09:37 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 22:09:37 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 22:09:37 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 22:09:40 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 22:09:40 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 22:09:40 - crawler.amazon_crawler - INFO - Crawling product: B01M16WBW1 from https://www.amazon.com/dp/B01M16WBW1
+2025-07-23 22:09:50 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 22:09:50 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 22:09:50 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 22:09:50 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 22:09:54 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 22:09:56 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 22:10:04 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 22:10:04 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 22:10:11 - crawler.amazon_crawler - INFO - Extracted title: Queen Size 4 Piece Sheet Set - Comfy Breathable & ...
+2025-07-23 22:10:11 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 22:10:11 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 22:10:11 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 22:10:11 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $19.0
+2025-07-23 22:10:11 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-53%'
+2025-07-23 22:10:11 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 53%
+2025-07-23 22:10:11 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$41.99'
+2025-07-23 22:10:11 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $41.99
+2025-07-23 22:10:11 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$19.0, list=$41.99, discount=53%
+2025-07-23 22:10:11 - crawler.amazon_crawler - INFO - Found rating text: '4.4'
+2025-07-23 22:10:11 - crawler.amazon_crawler - INFO - Extracted rating: 4.4
+2025-07-23 22:10:11 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 22:10:11 - crawler.amazon_crawler - WARNING - Could not extract from ivThumbs container: local variable 'unique_images' referenced before assignment
+2025-07-23 22:10:11 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 22:10:11 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 22:10:13 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 22:10:13 - crawler.amazon_crawler - INFO - Added visible thumbnail: 414JCCGZL3L
+2025-07-23 22:10:13 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41+sLmAfnkL
+2025-07-23 22:10:13 - crawler.amazon_crawler - INFO - Added visible thumbnail: 415joao8efL
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - Added visible thumbnail: 413dfH7DGAL
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41VNduSow4L
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - Found 3 additional hidden images
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41Vnz1HTzpL
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - Total images: 9 (6 visible + 3 hidden)
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - Added main image 1: 71b8fh-dQ4L
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - Found video carousel container
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - Found 0 product videos
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - Found 0 related videos
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - No videos found in carousel
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - Found bag sale info: 30K+ bought in past month
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - Extracted bag_sale: 30K+ bought in past month
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2VLBXA9GN9C90&asin=B01M16WBW1&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-23 22:10:14 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70d23e935+77845]
+	GetHandleVerifier [0x0x7ff70d23e990+77936]
+	(No symbol) [0x0x7ff70cff9cda]
+	(No symbol) [0x0x7ff70d0506aa]
+	(No symbol) [0x0x7ff70d05095c]
+	(No symbol) [0x0x7ff70d0a3d07]
+	(No symbol) [0x0x7ff70d07890f]
+	(No symbol) [0x0x7ff70d0a0b07]
+	(No symbol) [0x0x7ff70d0786a3]
+	(No symbol) [0x0x7ff70d041791]
+	(No symbol) [0x0x7ff70d042523]
+	GetHandleVerifier [0x0x7ff70d51684d+3059501]
+	GetHandleVerifier [0x0x7ff70d510c0d+3035885]
+	GetHandleVerifier [0x0x7ff70d530400+3164896]
+	GetHandleVerifier [0x0x7ff70d258c3e+185118]
+	GetHandleVerifier [0x0x7ff70d26054f+216111]
+	GetHandleVerifier [0x0x7ff70d2472e4+113092]
+	GetHandleVerifier [0x0x7ff70d247499+113529]
+	GetHandleVerifier [0x0x7ff70d22e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-23 22:10:14 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 1177 characters
+2025-07-23 22:10:15 - crawler.amazon_crawler - INFO - Final sale_percentage: 53% (preserved from extraction)
+2025-07-23 22:10:15 - crawler.amazon_crawler - INFO - Successfully crawled product B01M16WBW1
+2025-07-23 22:10:15 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B01M16WBW1 with 24 fields
+2025-07-23 22:10:21 - __main__ - INFO - Test crawl successful!
+2025-07-23 22:12:37 - __main__ - INFO - .env file already exists
+2025-07-23 22:12:37 - __main__ - INFO - Testing crawl for ASIN: B01M16WBW1
+2025-07-23 22:12:37 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 22:12:37 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 22:12:37 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 22:12:39 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 22:12:39 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 22:12:39 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 22:12:40 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 22:12:40 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 22:12:40 - crawler.amazon_crawler - INFO - Crawling product: B01M16WBW1 from https://www.amazon.com/dp/B01M16WBW1
+2025-07-23 22:12:47 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 22:12:47 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 22:12:47 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 22:12:47 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 22:12:52 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 22:12:53 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 22:13:01 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 22:13:01 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 22:13:08 - crawler.amazon_crawler - INFO - Extracted title: Queen Size 4 Piece Sheet Set - Comfy Breathable & ...
+2025-07-23 22:13:08 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 22:13:08 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 22:13:08 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 22:13:08 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $19.0
+2025-07-23 22:13:08 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-53%'
+2025-07-23 22:13:08 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 53%
+2025-07-23 22:13:08 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$41.99'
+2025-07-23 22:13:08 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $41.99
+2025-07-23 22:13:08 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$19.0, list=$41.99, discount=53%
+2025-07-23 22:13:08 - crawler.amazon_crawler - INFO - Found rating text: '4.4'
+2025-07-23 22:13:08 - crawler.amazon_crawler - INFO - Extracted rating: 4.4
+2025-07-23 22:13:08 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 22:13:08 - crawler.amazon_crawler - WARNING - Could not extract from ivThumbs container: local variable 'unique_images' referenced before assignment
+2025-07-23 22:13:08 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 22:13:08 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 22:13:10 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 22:13:10 - crawler.amazon_crawler - INFO - Added visible thumbnail: 414JCCGZL3L
+2025-07-23 22:13:10 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41+sLmAfnkL
+2025-07-23 22:13:10 - crawler.amazon_crawler - INFO - Added visible thumbnail: 415joao8efL
+2025-07-23 22:13:10 - crawler.amazon_crawler - INFO - Added visible thumbnail: 413dfH7DGAL
+2025-07-23 22:13:10 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41VNduSow4L
+2025-07-23 22:13:10 - crawler.amazon_crawler - INFO - Found 3 additional hidden images
+2025-07-23 22:13:10 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41Vnz1HTzpL
+2025-07-23 22:13:10 - crawler.amazon_crawler - INFO - Total images: 9 (6 visible + 3 hidden)
+2025-07-23 22:13:10 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 22:13:10 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 22:13:11 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 22:13:11 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 22:13:11 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 22:13:11 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 22:13:11 - crawler.amazon_crawler - INFO - Added main image 1: 71b8fh-dQ4L
+2025-07-23 22:13:11 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 22:13:11 - crawler.amazon_crawler - INFO - Found video carousel container
+2025-07-23 22:13:11 - crawler.amazon_crawler - INFO - Found 0 product videos
+2025-07-23 22:13:11 - crawler.amazon_crawler - INFO - Found 0 related videos
+2025-07-23 22:13:11 - crawler.amazon_crawler - INFO - No videos found in carousel
+2025-07-23 22:13:11 - crawler.amazon_crawler - INFO - Found bag sale info: 30K+ bought in past month
+2025-07-23 22:13:11 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-23 22:13:11 - crawler.amazon_crawler - INFO - Extracted bag_sale: 30K+ bought in past month
+2025-07-23 22:13:11 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2VLBXA9GN9C90&asin=B01M16WBW1&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-23 22:13:11 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-23 22:13:11 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70d23e935+77845]
+	GetHandleVerifier [0x0x7ff70d23e990+77936]
+	(No symbol) [0x0x7ff70cff9cda]
+	(No symbol) [0x0x7ff70d0506aa]
+	(No symbol) [0x0x7ff70d05095c]
+	(No symbol) [0x0x7ff70d0a3d07]
+	(No symbol) [0x0x7ff70d07890f]
+	(No symbol) [0x0x7ff70d0a0b07]
+	(No symbol) [0x0x7ff70d0786a3]
+	(No symbol) [0x0x7ff70d041791]
+	(No symbol) [0x0x7ff70d042523]
+	GetHandleVerifier [0x0x7ff70d51684d+3059501]
+	GetHandleVerifier [0x0x7ff70d510c0d+3035885]
+	GetHandleVerifier [0x0x7ff70d530400+3164896]
+	GetHandleVerifier [0x0x7ff70d258c3e+185118]
+	GetHandleVerifier [0x0x7ff70d26054f+216111]
+	GetHandleVerifier [0x0x7ff70d2472e4+113092]
+	GetHandleVerifier [0x0x7ff70d247499+113529]
+	GetHandleVerifier [0x0x7ff70d22e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-23 22:13:11 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 1177 characters
+2025-07-23 22:13:11 - crawler.amazon_crawler - INFO - Final sale_percentage: 53% (preserved from extraction)
+2025-07-23 22:13:11 - crawler.amazon_crawler - INFO - Successfully crawled product B01M16WBW1
+2025-07-23 22:13:11 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B01M16WBW1 with 24 fields
+2025-07-23 22:13:18 - __main__ - INFO - Test crawl successful!
+2025-07-23 22:15:45 - __main__ - INFO - .env file already exists
+2025-07-23 22:15:45 - __main__ - INFO - Testing crawl for ASIN: B01M16WBW1
+2025-07-23 22:15:45 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 22:15:45 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 22:15:45 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 22:15:46 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 22:15:46 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 22:15:46 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 22:15:48 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 22:15:48 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 22:15:48 - crawler.amazon_crawler - INFO - Crawling product: B01M16WBW1 from https://www.amazon.com/dp/B01M16WBW1
+2025-07-23 22:15:54 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 22:15:54 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 22:15:54 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 22:15:54 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 22:15:59 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 22:16:00 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 22:16:09 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 22:16:09 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 22:16:16 - crawler.amazon_crawler - INFO - Extracted title: Queen Size 4 Piece Sheet Set - Comfy Breathable & ...
+2025-07-23 22:16:16 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 22:16:16 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 22:16:16 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 22:16:16 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $19.0
+2025-07-23 22:16:16 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-53%'
+2025-07-23 22:16:16 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 53%
+2025-07-23 22:16:16 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$41.99'
+2025-07-23 22:16:16 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $41.99
+2025-07-23 22:16:16 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$19.0, list=$41.99, discount=53%
+2025-07-23 22:16:16 - crawler.amazon_crawler - INFO - Found rating text: '4.4'
+2025-07-23 22:16:16 - crawler.amazon_crawler - INFO - Extracted rating: 4.4
+2025-07-23 22:16:16 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 22:16:16 - crawler.amazon_crawler - WARNING - Could not extract from ivThumbs container: local variable 'unique_images' referenced before assignment
+2025-07-23 22:16:16 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 22:16:16 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Added visible thumbnail: 414JCCGZL3L
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41+sLmAfnkL
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Added visible thumbnail: 415joao8efL
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Added visible thumbnail: 413dfH7DGAL
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41VNduSow4L
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Found 3 additional hidden images
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41Vnz1HTzpL
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Total images: 9 (6 visible + 3 hidden)
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Added main image 1: 71b8fh-dQ4L
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Found video carousel container
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Found 0 product videos
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Found 0 related videos
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - No videos found in carousel
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Found bag sale info: 30K+ bought in past month
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Found lightning deal: 14% claimed
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Extracted bag_sale: 30K+ bought in past month
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2VLBXA9GN9C90&asin=B01M16WBW1&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-23 22:16:18 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70d23e935+77845]
+	GetHandleVerifier [0x0x7ff70d23e990+77936]
+	(No symbol) [0x0x7ff70cff9cda]
+	(No symbol) [0x0x7ff70d0506aa]
+	(No symbol) [0x0x7ff70d05095c]
+	(No symbol) [0x0x7ff70d0a3d07]
+	(No symbol) [0x0x7ff70d07890f]
+	(No symbol) [0x0x7ff70d0a0b07]
+	(No symbol) [0x0x7ff70d0786a3]
+	(No symbol) [0x0x7ff70d041791]
+	(No symbol) [0x0x7ff70d042523]
+	GetHandleVerifier [0x0x7ff70d51684d+3059501]
+	GetHandleVerifier [0x0x7ff70d510c0d+3035885]
+	GetHandleVerifier [0x0x7ff70d530400+3164896]
+	GetHandleVerifier [0x0x7ff70d258c3e+185118]
+	GetHandleVerifier [0x0x7ff70d26054f+216111]
+	GetHandleVerifier [0x0x7ff70d2472e4+113092]
+	GetHandleVerifier [0x0x7ff70d247499+113529]
+	GetHandleVerifier [0x0x7ff70d22e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-23 22:16:18 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 1177 characters
+2025-07-23 22:16:19 - crawler.amazon_crawler - INFO - Final sale_percentage: 53% (preserved from extraction)
+2025-07-23 22:16:19 - crawler.amazon_crawler - INFO - Successfully crawled product B01M16WBW1
+2025-07-23 22:16:19 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B01M16WBW1 with 24 fields
+2025-07-23 22:16:25 - __main__ - INFO - Test crawl successful!
+2025-07-23 22:19:25 - __main__ - INFO - .env file already exists
+2025-07-23 22:19:25 - __main__ - INFO - Testing crawl for ASIN: B01M16WBW1
+2025-07-23 22:19:25 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 22:19:25 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 22:19:25 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 22:19:26 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 22:19:26 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 22:19:26 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 22:19:27 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 22:19:27 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 22:19:27 - crawler.amazon_crawler - INFO - Crawling product: B01M16WBW1 from https://www.amazon.com/dp/B01M16WBW1
+2025-07-23 22:19:34 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 22:19:34 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 22:19:34 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 22:19:35 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 22:19:39 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 22:19:40 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 22:19:49 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 22:19:49 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 22:19:56 - crawler.amazon_crawler - INFO - Extracted title: Queen Size 4 Piece Sheet Set - Comfy Breathable & ...
+2025-07-23 22:19:56 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 22:19:56 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 22:19:56 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 22:19:56 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $19.0
+2025-07-23 22:19:56 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-53%'
+2025-07-23 22:19:56 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 53%
+2025-07-23 22:19:56 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$41.99'
+2025-07-23 22:19:56 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $41.99
+2025-07-23 22:19:56 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$19.0, list=$41.99, discount=53%
+2025-07-23 22:19:56 - crawler.amazon_crawler - INFO - Found rating text: '4.4'
+2025-07-23 22:19:56 - crawler.amazon_crawler - INFO - Extracted rating: 4.4
+2025-07-23 22:19:56 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 22:19:56 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 22:19:56 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Added visible thumbnail: 414JCCGZL3L
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41+sLmAfnkL
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Added visible thumbnail: 415joao8efL
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Added visible thumbnail: 413dfH7DGAL
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41VNduSow4L
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Found 3 additional hidden images
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41Vnz1HTzpL
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Total images: 9 (6 visible + 3 hidden)
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Added main image 1: 71b8fh-dQ4L
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Found video carousel container
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Found 0 product videos
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Found 0 related videos
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - No videos found in carousel
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Found bag sale info: 30K+ bought in past month
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Found lightning deal: 15% claimed
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Extracted bag_sale: 30K+ bought in past month
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2VLBXA9GN9C90&asin=B01M16WBW1&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-23 22:19:58 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-23 22:19:58 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70d23e935+77845]
+	GetHandleVerifier [0x0x7ff70d23e990+77936]
+	(No symbol) [0x0x7ff70cff9cda]
+	(No symbol) [0x0x7ff70d0506aa]
+	(No symbol) [0x0x7ff70d05095c]
+	(No symbol) [0x0x7ff70d0a3d07]
+	(No symbol) [0x0x7ff70d07890f]
+	(No symbol) [0x0x7ff70d0a0b07]
+	(No symbol) [0x0x7ff70d0786a3]
+	(No symbol) [0x0x7ff70d041791]
+	(No symbol) [0x0x7ff70d042523]
+	GetHandleVerifier [0x0x7ff70d51684d+3059501]
+	GetHandleVerifier [0x0x7ff70d510c0d+3035885]
+	GetHandleVerifier [0x0x7ff70d530400+3164896]
+	GetHandleVerifier [0x0x7ff70d258c3e+185118]
+	GetHandleVerifier [0x0x7ff70d26054f+216111]
+	GetHandleVerifier [0x0x7ff70d2472e4+113092]
+	GetHandleVerifier [0x0x7ff70d247499+113529]
+	GetHandleVerifier [0x0x7ff70d22e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-23 22:19:59 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 1177 characters
+2025-07-23 22:19:59 - crawler.amazon_crawler - INFO - Final sale_percentage: 53% (preserved from extraction)
+2025-07-23 22:19:59 - crawler.amazon_crawler - INFO - Successfully crawled product B01M16WBW1
+2025-07-23 22:19:59 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B01M16WBW1 with 24 fields
+2025-07-23 22:20:05 - __main__ - INFO - Test crawl successful!
+2025-07-23 22:20:47 - __main__ - INFO - .env file already exists
+2025-07-23 22:20:47 - __main__ - INFO - Testing crawl for ASIN: B006CSPZK4
+2025-07-23 22:20:47 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-23 22:20:47 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-23 22:20:47 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-23 22:20:48 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-23 22:20:48 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-23 22:20:48 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-23 22:20:49 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-23 22:20:49 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-23 22:20:49 - crawler.amazon_crawler - INFO - Crawling product: B006CSPZK4 from https://www.amazon.com/dp/B006CSPZK4
+2025-07-23 22:20:56 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-23 22:20:56 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-23 22:20:56 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-23 22:20:57 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-23 22:21:01 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-23 22:21:02 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-23 22:21:11 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-23 22:21:11 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-23 22:21:18 - crawler.amazon_crawler - INFO - Extracted title: Ticonderoga Wood-Cased Pencils, Pre-Sharpened, #2 ...
+2025-07-23 22:21:18 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-23 22:21:18 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-23 22:21:18 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-23 22:21:18 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $5.0
+2025-07-23 22:21:18 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-23%'
+2025-07-23 22:21:18 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 23%
+2025-07-23 22:21:18 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$6.50'
+2025-07-23 22:21:18 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $6.5
+2025-07-23 22:21:18 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$5.0, list=$6.5, discount=23%
+2025-07-23 22:21:18 - crawler.amazon_crawler - INFO - Found rating text: '4.8'
+2025-07-23 22:21:18 - crawler.amazon_crawler - INFO - Extracted rating: 4.8
+2025-07-23 22:21:18 - crawler.amazon_crawler - INFO - Found 0 thumbnail elements in ivThumbs
+2025-07-23 22:21:18 - crawler.amazon_crawler - INFO - Falling back to imageBlock extraction...
+2025-07-23 22:21:18 - crawler.amazon_crawler - INFO - Found #imageBlock container - extracting media from this container
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Found 6 thumbnail elements
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41ovZidDjXL
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41ufF7poOyL
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Added visible thumbnail: 21LWCX6wgmL
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41o5XCEVuFL
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Added visible thumbnail: 212Z9o51JsL
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Found 5 additional hidden images
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Added visible thumbnail: 41TVR6jIm1L
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Total images: 11 (6 visible + 5 hidden)
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Searching for main images in right panel...
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Found 1 images for itemNo0
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - General selector 'ul.maintain-height li.image.item img' found 1 additional images
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - General selector '#landingImage' found 1 additional images
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - General selector '.imgTagWrapper img' found 1 additional images
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Total unique main images found: 1
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Added main image 1: 71PAhPu+LvL
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Extracted 7 unique image URLs from #imageBlock
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Found video carousel container
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Found 0 product videos
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Found 0 related videos
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - No videos found in carousel
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Found lightning deal: 85% claimed
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Found bag sale info: 100K+ bought in past month
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Found lightning deal: 85% claimed
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Extracted bag_sale: 100K+ bought in past month
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-23 22:21:20 - crawler.amazon_crawler - INFO - Extracted product_description: 160 characters
+2025-07-23 22:21:21 - crawler.amazon_crawler - INFO - Final sale_percentage: 23% (preserved from extraction)
+2025-07-23 22:21:21 - crawler.amazon_crawler - INFO - Successfully crawled product B006CSPZK4
+2025-07-23 22:21:21 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B006CSPZK4 with 24 fields
+2025-07-23 22:21:27 - __main__ - INFO - Test crawl successful!

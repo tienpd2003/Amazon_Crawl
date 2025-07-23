@@ -1,0 +1,533 @@
+2025-07-19 21:40:46 - __main__ - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 21:40:54 - __main__ - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 21:40:54 - __main__ - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 21:40:54 - __main__ - INFO - Attempting system ChromeDriver...
+2025-07-19 21:41:00 - __main__ - INFO - System ChromeDriver setup successful
+2025-07-19 21:41:00 - __main__ - INFO - Chrome driver setup successful
+2025-07-19 21:41:00 - __main__ - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 21:41:07 - __main__ - INFO - Setting delivery location to zip code: 10009
+2025-07-19 21:41:17 - __main__ - ERROR - Error setting delivery location: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6a065e925+77845]
+	GetHandleVerifier [0x0x7ff6a065e980+77936]
+	(No symbol) [0x0x7ff6a0419cda]
+	(No symbol) [0x0x7ff6a0421679]
+	(No symbol) [0x0x7ff6a042471c]
+	(No symbol) [0x0x7ff6a04247ef]
+	(No symbol) [0x0x7ff6a046ff57]
+	(No symbol) [0x0x7ff6a047095c]
+	(No symbol) [0x0x7ff6a04c3d07]
+	(No symbol) [0x0x7ff6a049890f]
+	(No symbol) [0x0x7ff6a04c0b07]
+	(No symbol) [0x0x7ff6a04986a3]
+	(No symbol) [0x0x7ff6a0461791]
+	(No symbol) [0x0x7ff6a0462523]
+	GetHandleVerifier [0x0x7ff6a093683d+3059501]
+	GetHandleVerifier [0x0x7ff6a0930bfd+3035885]
+	GetHandleVerifier [0x0x7ff6a09503f0+3164896]
+	GetHandleVerifier [0x0x7ff6a0678c2e+185118]
+	GetHandleVerifier [0x0x7ff6a068053f+216111]
+	GetHandleVerifier [0x0x7ff6a06672d4+113092]
+	GetHandleVerifier [0x0x7ff6a0667489+113529]
+	GetHandleVerifier [0x0x7ff6a064e288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-19 21:41:23 - __main__ - INFO - Successfully crawled product B019OZBSJ8
+2025-07-19 21:41:23 - __main__ - INFO - Saved crawl data for ASIN: B019OZBSJ8
+2025-07-19 21:42:16 - __main__ - INFO - .env file already exists
+2025-07-19 21:42:16 - __main__ - INFO - Testing crawl for ASIN: B019OZBSJ8
+2025-07-19 21:42:16 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 21:42:17 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 21:42:17 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 21:42:17 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-19 21:42:19 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-19 21:42:19 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-19 21:42:19 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 21:42:26 - crawler.amazon_crawler - INFO - Setting delivery location to zip code: 10009
+2025-07-19 21:42:36 - crawler.amazon_crawler - ERROR - Error setting delivery location: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6a065e925+77845]
+	GetHandleVerifier [0x0x7ff6a065e980+77936]
+	(No symbol) [0x0x7ff6a0419cda]
+	(No symbol) [0x0x7ff6a0421679]
+	(No symbol) [0x0x7ff6a042471c]
+	(No symbol) [0x0x7ff6a04247ef]
+	(No symbol) [0x0x7ff6a046ff57]
+	(No symbol) [0x0x7ff6a047095c]
+	(No symbol) [0x0x7ff6a04c3d07]
+	(No symbol) [0x0x7ff6a049890f]
+	(No symbol) [0x0x7ff6a04c0b07]
+	(No symbol) [0x0x7ff6a04986a3]
+	(No symbol) [0x0x7ff6a0461791]
+	(No symbol) [0x0x7ff6a0462523]
+	GetHandleVerifier [0x0x7ff6a093683d+3059501]
+	GetHandleVerifier [0x0x7ff6a0930bfd+3035885]
+	GetHandleVerifier [0x0x7ff6a09503f0+3164896]
+	GetHandleVerifier [0x0x7ff6a0678c2e+185118]
+	GetHandleVerifier [0x0x7ff6a068053f+216111]
+	GetHandleVerifier [0x0x7ff6a06672d4+113092]
+	GetHandleVerifier [0x0x7ff6a0667489+113529]
+	GetHandleVerifier [0x0x7ff6a064e288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-19 21:42:41 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-19 21:42:41 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B019OZBSJ8
+2025-07-19 21:42:47 - __main__ - INFO - Test crawl successful!
+2025-07-19 21:46:34 - __main__ - INFO - .env file already exists
+2025-07-19 21:46:34 - __main__ - INFO - Testing crawl for ASIN: B019OZBSJ8
+2025-07-19 21:46:34 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 21:46:35 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 21:46:35 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 21:46:35 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-19 21:46:36 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-19 21:46:36 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-19 21:46:36 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 21:46:43 - crawler.amazon_crawler - INFO - Setting delivery location to zip code: 10009
+2025-07-19 21:46:56 - crawler.amazon_crawler - ERROR - Error setting delivery location: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6a065e925+77845]
+	GetHandleVerifier [0x0x7ff6a065e980+77936]
+	(No symbol) [0x0x7ff6a0419cda]
+	(No symbol) [0x0x7ff6a0421679]
+	(No symbol) [0x0x7ff6a042471c]
+	(No symbol) [0x0x7ff6a04247ef]
+	(No symbol) [0x0x7ff6a046ff57]
+	(No symbol) [0x0x7ff6a047095c]
+	(No symbol) [0x0x7ff6a04c3d07]
+	(No symbol) [0x0x7ff6a049890f]
+	(No symbol) [0x0x7ff6a04c0b07]
+	(No symbol) [0x0x7ff6a04986a3]
+	(No symbol) [0x0x7ff6a0461791]
+	(No symbol) [0x0x7ff6a0462523]
+	GetHandleVerifier [0x0x7ff6a093683d+3059501]
+	GetHandleVerifier [0x0x7ff6a0930bfd+3035885]
+	GetHandleVerifier [0x0x7ff6a09503f0+3164896]
+	GetHandleVerifier [0x0x7ff6a0678c2e+185118]
+	GetHandleVerifier [0x0x7ff6a068053f+216111]
+	GetHandleVerifier [0x0x7ff6a06672d4+113092]
+	GetHandleVerifier [0x0x7ff6a0667489+113529]
+	GetHandleVerifier [0x0x7ff6a064e288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-19 21:47:02 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-19 21:47:02 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B019OZBSJ8
+2025-07-19 21:47:08 - __main__ - INFO - Test crawl successful!
+2025-07-19 21:47:11 - __main__ - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 21:47:12 - __main__ - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 21:47:12 - __main__ - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 21:47:12 - __main__ - INFO - Attempting system ChromeDriver...
+2025-07-19 21:47:13 - __main__ - INFO - System ChromeDriver setup successful
+2025-07-19 21:47:13 - __main__ - INFO - Chrome driver setup successful
+2025-07-19 21:47:13 - __main__ - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 21:47:21 - __main__ - INFO - Setting delivery location to zip code: 10009
+2025-07-19 21:47:35 - __main__ - ERROR - Error setting delivery location: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6a065e925+77845]
+	GetHandleVerifier [0x0x7ff6a065e980+77936]
+	(No symbol) [0x0x7ff6a0419cda]
+	(No symbol) [0x0x7ff6a0421679]
+	(No symbol) [0x0x7ff6a042471c]
+	(No symbol) [0x0x7ff6a04247ef]
+	(No symbol) [0x0x7ff6a046ff57]
+	(No symbol) [0x0x7ff6a047095c]
+	(No symbol) [0x0x7ff6a04c3d07]
+	(No symbol) [0x0x7ff6a049890f]
+	(No symbol) [0x0x7ff6a04c0b07]
+	(No symbol) [0x0x7ff6a04986a3]
+	(No symbol) [0x0x7ff6a0461791]
+	(No symbol) [0x0x7ff6a0462523]
+	GetHandleVerifier [0x0x7ff6a093683d+3059501]
+	GetHandleVerifier [0x0x7ff6a0930bfd+3035885]
+	GetHandleVerifier [0x0x7ff6a09503f0+3164896]
+	GetHandleVerifier [0x0x7ff6a0678c2e+185118]
+	GetHandleVerifier [0x0x7ff6a068053f+216111]
+	GetHandleVerifier [0x0x7ff6a06672d4+113092]
+	GetHandleVerifier [0x0x7ff6a0667489+113529]
+	GetHandleVerifier [0x0x7ff6a064e288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-19 21:47:40 - __main__ - INFO - Successfully crawled product B019OZBSJ8
+2025-07-19 21:47:40 - __main__ - INFO - Saved crawl data for ASIN: B019OZBSJ8
+2025-07-19 21:48:44 - __main__ - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 21:48:46 - __main__ - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 21:48:46 - __main__ - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 21:48:46 - __main__ - INFO - Attempting system ChromeDriver...
+2025-07-19 21:48:47 - __main__ - INFO - System ChromeDriver setup successful
+2025-07-19 21:48:47 - __main__ - INFO - Chrome driver setup successful
+2025-07-19 21:48:47 - __main__ - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 21:48:53 - __main__ - INFO - Setting delivery location to zip code: 10009
+2025-07-19 21:48:56 - __main__ - INFO - Clicked delivery location button
+2025-07-19 21:49:00 - __main__ - INFO - Entered zip code: 10009
+2025-07-19 21:49:01 - __main__ - INFO - Clicked Apply button
+2025-07-19 21:49:15 - __main__ - WARNING - Could not click Done button: Message: element click intercepted: Element <span class="a-button-text" aria-hidden="true" id="a-autoid-45-announce">...</span> is not clickable at point (383, 167). Other element would receive the click: <div class="a-modal-scroller a-declarative" data-action="a-popover-floating-close" style="padding-bottom: 0px; visibility: visible;">...</div>
+  (Session info: chrome=138.0.7204.158)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6a065e925+77845]
+	GetHandleVerifier [0x0x7ff6a065e980+77936]
+	(No symbol) [0x0x7ff6a0419cda]
+	(No symbol) [0x0x7ff6a04786a9]
+	(No symbol) [0x0x7ff6a0476042]
+	(No symbol) [0x0x7ff6a0473081]
+	(No symbol) [0x0x7ff6a0471f81]
+	(No symbol) [0x0x7ff6a04636c8]
+	(No symbol) [0x0x7ff6a04988ca]
+	(No symbol) [0x0x7ff6a0462f76]
+	(No symbol) [0x0x7ff6a0498ae0]
+	(No symbol) [0x0x7ff6a04c0b07]
+	(No symbol) [0x0x7ff6a04986a3]
+	(No symbol) [0x0x7ff6a0461791]
+	(No symbol) [0x0x7ff6a0462523]
+	GetHandleVerifier [0x0x7ff6a093683d+3059501]
+	GetHandleVerifier [0x0x7ff6a0930bfd+3035885]
+	GetHandleVerifier [0x0x7ff6a09503f0+3164896]
+	GetHandleVerifier [0x0x7ff6a0678c2e+185118]
+	GetHandleVerifier [0x0x7ff6a068053f+216111]
+	GetHandleVerifier [0x0x7ff6a06672d4+113092]
+	GetHandleVerifier [0x0x7ff6a0667489+113529]
+	GetHandleVerifier [0x0x7ff6a064e288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-19 21:49:15 - __main__ - INFO - Clicked Done button via JavaScript
+2025-07-19 21:49:19 - __main__ - INFO - Current delivery location text: Vietnam
+2025-07-19 21:49:19 - __main__ - WARNING - Location text doesn't contain 10009: Vietnam
+2025-07-19 21:49:24 - __main__ - INFO - Successfully crawled product B019OZBSJ8
+2025-07-19 21:49:24 - __main__ - INFO - Saved crawl data for ASIN: B019OZBSJ8
+2025-07-19 21:51:20 - __main__ - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 21:51:21 - __main__ - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 21:51:21 - __main__ - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 21:51:21 - __main__ - INFO - Attempting system ChromeDriver...
+2025-07-19 21:51:23 - __main__ - INFO - System ChromeDriver setup successful
+2025-07-19 21:51:23 - __main__ - INFO - Chrome driver setup successful
+2025-07-19 21:51:23 - __main__ - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 21:51:30 - __main__ - INFO - Successfully crawled product B019OZBSJ8
+2025-07-19 21:51:30 - __main__ - INFO - Saved crawl data for ASIN: B019OZBSJ8
+2025-07-19 21:53:46 - __main__ - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 21:53:47 - __main__ - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 21:53:47 - __main__ - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 21:53:47 - __main__ - INFO - Attempting system ChromeDriver...
+2025-07-19 21:53:48 - __main__ - INFO - System ChromeDriver setup successful
+2025-07-19 21:53:48 - __main__ - INFO - Chrome driver setup successful
+2025-07-19 21:53:48 - __main__ - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 21:53:57 - __main__ - INFO - Setting delivery location to zip code: 10009
+2025-07-19 21:54:00 - __main__ - INFO - Clicked delivery location button
+2025-07-19 21:54:03 - __main__ - INFO - Entered zip code: 10009
+2025-07-19 21:54:05 - __main__ - INFO - Clicked Apply button
+2025-07-19 21:54:19 - __main__ - WARNING - Could not click Done button: Message: element click intercepted: Element <span class="a-button-text" aria-hidden="true" id="a-autoid-47-announce">...</span> is not clickable at point (383, 167). Other element would receive the click: <div class="a-modal-scroller a-declarative" data-action="a-popover-floating-close" style="padding-bottom: 0px; visibility: visible;">...</div>
+  (Session info: chrome=138.0.7204.158)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6a065e925+77845]
+	GetHandleVerifier [0x0x7ff6a065e980+77936]
+	(No symbol) [0x0x7ff6a0419cda]
+	(No symbol) [0x0x7ff6a04786a9]
+	(No symbol) [0x0x7ff6a0476042]
+	(No symbol) [0x0x7ff6a0473081]
+	(No symbol) [0x0x7ff6a0471f81]
+	(No symbol) [0x0x7ff6a04636c8]
+	(No symbol) [0x0x7ff6a04988ca]
+	(No symbol) [0x0x7ff6a0462f76]
+	(No symbol) [0x0x7ff6a0498ae0]
+	(No symbol) [0x0x7ff6a04c0b07]
+	(No symbol) [0x0x7ff6a04986a3]
+	(No symbol) [0x0x7ff6a0461791]
+	(No symbol) [0x0x7ff6a0462523]
+	GetHandleVerifier [0x0x7ff6a093683d+3059501]
+	GetHandleVerifier [0x0x7ff6a0930bfd+3035885]
+	GetHandleVerifier [0x0x7ff6a09503f0+3164896]
+	GetHandleVerifier [0x0x7ff6a0678c2e+185118]
+	GetHandleVerifier [0x0x7ff6a068053f+216111]
+	GetHandleVerifier [0x0x7ff6a06672d4+113092]
+	GetHandleVerifier [0x0x7ff6a0667489+113529]
+	GetHandleVerifier [0x0x7ff6a064e288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-19 21:54:19 - __main__ - INFO - Clicked Done button via JavaScript
+2025-07-19 21:54:23 - __main__ - INFO - Current delivery location text: Vietnam
+2025-07-19 21:54:23 - __main__ - WARNING - Location text doesn't contain 10009: Vietnam
+2025-07-19 21:54:24 - __main__ - INFO - Successfully crawled product B019OZBSJ8
+2025-07-19 21:54:24 - __main__ - INFO - Saved crawl data for ASIN: B019OZBSJ8
+2025-07-19 21:55:36 - __main__ - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 21:55:37 - __main__ - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 21:55:37 - __main__ - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 21:55:37 - __main__ - INFO - Attempting system ChromeDriver...
+2025-07-19 21:55:38 - __main__ - INFO - System ChromeDriver setup successful
+2025-07-19 21:55:38 - __main__ - INFO - Chrome driver setup successful
+2025-07-19 21:55:38 - __main__ - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 21:55:38 - __main__ - INFO - Setting location cookies for zip code: 10009
+2025-07-19 21:55:43 - __main__ - INFO - Set cookie: lc-main
+2025-07-19 21:55:43 - __main__ - INFO - Set cookie: sp-cdn
+2025-07-19 21:55:43 - __main__ - INFO - Set cookie: ubid-main
+2025-07-19 21:55:43 - __main__ - INFO - Set cookie: session-id
+2025-07-19 21:55:43 - __main__ - INFO - Set cookie: csm-hit
+2025-07-19 21:55:51 - __main__ - INFO - Current delivery location: Ukraine
+2025-07-19 21:55:51 - __main__ - INFO - Attempting to set delivery location...
+2025-07-19 21:55:51 - __main__ - INFO - Setting delivery location to zip code: 10009
+2025-07-19 21:55:54 - __main__ - INFO - Clicked delivery location button
+2025-07-19 21:55:58 - __main__ - INFO - Entered zip code: 10009
+2025-07-19 21:55:59 - __main__ - INFO - Clicked Apply button
+2025-07-19 21:56:13 - __main__ - WARNING - Could not click Done button: Message: element click intercepted: Element <span class="a-button-text" aria-hidden="true">...</span> is not clickable at point (386, 167). Other element would receive the click: <div class="a-modal-scroller a-declarative" data-action="a-popover-floating-close" style="padding-bottom: 0px; visibility: visible;">...</div>
+  (Session info: chrome=138.0.7204.158)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6a065e925+77845]
+	GetHandleVerifier [0x0x7ff6a065e980+77936]
+	(No symbol) [0x0x7ff6a0419cda]
+	(No symbol) [0x0x7ff6a04786a9]
+	(No symbol) [0x0x7ff6a0476042]
+	(No symbol) [0x0x7ff6a0473081]
+	(No symbol) [0x0x7ff6a0471f81]
+	(No symbol) [0x0x7ff6a04636c8]
+	(No symbol) [0x0x7ff6a04988ca]
+	(No symbol) [0x0x7ff6a0462f76]
+	(No symbol) [0x0x7ff6a0498ae0]
+	(No symbol) [0x0x7ff6a04c0b07]
+	(No symbol) [0x0x7ff6a04986a3]
+	(No symbol) [0x0x7ff6a0461791]
+	(No symbol) [0x0x7ff6a0462523]
+	GetHandleVerifier [0x0x7ff6a093683d+3059501]
+	GetHandleVerifier [0x0x7ff6a0930bfd+3035885]
+	GetHandleVerifier [0x0x7ff6a09503f0+3164896]
+	GetHandleVerifier [0x0x7ff6a0678c2e+185118]
+	GetHandleVerifier [0x0x7ff6a068053f+216111]
+	GetHandleVerifier [0x0x7ff6a06672d4+113092]
+	GetHandleVerifier [0x0x7ff6a0667489+113529]
+	GetHandleVerifier [0x0x7ff6a064e288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-19 21:56:13 - __main__ - INFO - Clicked Done button via JavaScript
+2025-07-19 21:56:17 - __main__ - INFO - Current delivery location text: Ukraine
+2025-07-19 21:56:17 - __main__ - WARNING - Location text doesn't contain 10009: Ukraine
+2025-07-19 21:56:18 - __main__ - INFO - Successfully crawled product B019OZBSJ8
+2025-07-19 21:56:18 - __main__ - INFO - Saved crawl data for ASIN: B019OZBSJ8
+2025-07-19 21:59:10 - __main__ - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 21:59:11 - __main__ - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 21:59:11 - __main__ - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 21:59:11 - __main__ - INFO - Attempting system ChromeDriver...
+2025-07-19 21:59:12 - __main__ - INFO - System ChromeDriver setup successful
+2025-07-19 21:59:12 - __main__ - INFO - Chrome driver setup successful
+2025-07-19 21:59:12 - __main__ - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 21:59:22 - __main__ - INFO - Successfully crawled product B019OZBSJ8
+2025-07-19 21:59:22 - __main__ - INFO - Saved crawl data for ASIN: B019OZBSJ8
+2025-07-19 22:01:44 - __main__ - INFO - HEADLESS_BROWSER setting: True
+2025-07-19 22:01:44 - __main__ - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 22:01:45 - __main__ - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 22:01:45 - __main__ - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 22:01:45 - __main__ - INFO - Attempting system ChromeDriver...
+2025-07-19 22:01:46 - __main__ - INFO - System ChromeDriver setup successful
+2025-07-19 22:01:46 - __main__ - INFO - Chrome driver setup successful
+2025-07-19 22:01:46 - __main__ - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 22:01:54 - __main__ - INFO - Successfully crawled product B019OZBSJ8
+2025-07-19 22:01:54 - __main__ - INFO - Saved crawl data for ASIN: B019OZBSJ8
+2025-07-19 22:03:09 - __main__ - INFO - .env file already exists
+2025-07-19 22:03:09 - __main__ - INFO - Testing crawl for ASIN: B019OZBSJ8
+2025-07-19 22:03:09 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-19 22:03:09 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 22:03:10 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 22:03:10 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 22:03:10 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-19 22:03:12 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-19 22:03:12 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-19 22:03:12 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 22:03:21 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-19 22:03:21 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B019OZBSJ8
+2025-07-19 22:03:27 - __main__ - INFO - Test crawl successful!
+2025-07-19 22:05:28 - __main__ - INFO - .env file already exists
+2025-07-19 22:05:28 - __main__ - INFO - Testing crawl for ASIN: B019OZBSJ8
+2025-07-19 22:05:28 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-19 22:05:28 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 22:05:30 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 22:05:30 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 22:05:30 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-19 22:05:31 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-19 22:05:31 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-19 22:05:31 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 22:05:44 - crawler.amazon_crawler - WARNING - Could not click Apply: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@value='Apply'] | //button[contains(text(), 'Apply')]"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6a065e925+77845]
+	GetHandleVerifier [0x0x7ff6a065e980+77936]
+	(No symbol) [0x0x7ff6a0419cda]
+	(No symbol) [0x0x7ff6a04706aa]
+	(No symbol) [0x0x7ff6a047095c]
+	(No symbol) [0x0x7ff6a04c3d07]
+	(No symbol) [0x0x7ff6a049890f]
+	(No symbol) [0x0x7ff6a04c0b07]
+	(No symbol) [0x0x7ff6a04986a3]
+	(No symbol) [0x0x7ff6a0461791]
+	(No symbol) [0x0x7ff6a0462523]
+	GetHandleVerifier [0x0x7ff6a093683d+3059501]
+	GetHandleVerifier [0x0x7ff6a0930bfd+3035885]
+	GetHandleVerifier [0x0x7ff6a09503f0+3164896]
+	GetHandleVerifier [0x0x7ff6a0678c2e+185118]
+	GetHandleVerifier [0x0x7ff6a068053f+216111]
+	GetHandleVerifier [0x0x7ff6a06672d4+113092]
+	GetHandleVerifier [0x0x7ff6a0667489+113529]
+	GetHandleVerifier [0x0x7ff6a064e288+10616]
+	BaseThreadInitThunk [0x0x7ffc678de8d7+23]
+	RtlUserThreadStart [0x0x7ffc684dc34c+44]
+
+2025-07-19 22:05:45 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-19 22:05:45 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B019OZBSJ8
+2025-07-19 22:05:51 - __main__ - INFO - Test crawl successful!
+2025-07-19 22:09:54 - __main__ - INFO - .env file already exists
+2025-07-19 22:09:54 - __main__ - INFO - Testing crawl for ASIN: B019OZBSJ8
+2025-07-19 22:09:54 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-19 22:09:54 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 22:09:56 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 22:09:56 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 22:09:56 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-19 22:09:57 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-19 22:09:57 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-19 22:09:57 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 22:10:23 - crawler.amazon_crawler - WARNING - Could not click Continue: Message: 
+
+2025-07-19 22:10:39 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-19 22:10:39 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B019OZBSJ8
+2025-07-19 22:10:45 - __main__ - INFO - Test crawl successful!
+2025-07-19 22:16:48 - __main__ - INFO - .env file already exists
+2025-07-19 22:16:48 - __main__ - INFO - Testing crawl for ASIN: B019OZBSJ8
+2025-07-19 22:16:48 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-19 22:16:48 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-19 22:16:48 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 22:16:49 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 22:16:49 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 22:16:49 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-19 22:16:50 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-19 22:16:50 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-19 22:16:50 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 22:16:58 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-19 22:16:58 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-19 22:16:58 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-19 22:17:13 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-19 22:17:20 - crawler.amazon_crawler - INFO - Refreshing page to load New York pricing...
+2025-07-19 22:17:28 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-19 22:17:28 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B019OZBSJ8
+2025-07-19 22:17:34 - __main__ - INFO - Test crawl successful!
+2025-07-19 22:19:31 - __main__ - INFO - .env file already exists
+2025-07-19 22:19:31 - __main__ - INFO - Testing crawl for ASIN: B019OZBSJ8
+2025-07-19 22:19:31 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-19 22:19:31 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-19 22:19:31 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 22:19:32 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 22:19:32 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 22:19:32 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-19 22:19:33 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-19 22:19:33 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-19 22:19:33 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 22:19:41 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-19 22:19:41 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-19 22:19:41 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-19 22:19:55 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-19 22:20:02 - crawler.amazon_crawler - INFO - Refreshing page to load New York pricing...
+2025-07-19 22:20:09 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-19 22:20:10 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B019OZBSJ8
+2025-07-19 22:20:16 - __main__ - INFO - Test crawl successful!
+2025-07-19 22:21:45 - __main__ - INFO - .env file already exists
+2025-07-19 22:21:45 - __main__ - INFO - Testing crawl for ASIN: B019OZBSJ8
+2025-07-19 22:21:45 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-19 22:21:45 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-19 22:21:45 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 22:21:46 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 22:21:46 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 22:21:46 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-19 22:21:47 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-19 22:21:47 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-19 22:21:47 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 22:21:55 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-19 22:21:55 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-19 22:21:55 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-19 22:22:10 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-19 22:22:18 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-19 22:22:18 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B019OZBSJ8
+2025-07-19 22:22:24 - __main__ - INFO - Test crawl successful!
+2025-07-19 22:24:23 - __main__ - INFO - .env file already exists
+2025-07-19 22:24:23 - __main__ - INFO - Starting Amazon Product Crawler...
+2025-07-19 22:24:23 - __main__ - INFO - Initializing database...
+2025-07-19 22:24:23 - __main__ - INFO - Starting crawler scheduler...
+2025-07-19 22:24:23 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-19 22:24:23 - __main__ - INFO - Application initialized successfully!
+2025-07-19 22:24:23 - __main__ - INFO - Starting web server on http://127.0.0.1:8000
+2025-07-19 22:24:24 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-19 22:24:24 - api.main - INFO - Application started successfully
+2025-07-19 22:24:36 - scheduler.crawler_scheduler - INFO - Manual crawl requested for ASIN: B019OZBSJ8
+2025-07-19 22:24:36 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-19 22:24:36 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (no browser window)
+2025-07-19 22:24:36 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 22:24:37 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 22:24:37 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 22:24:37 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-19 22:24:38 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-19 22:24:38 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-19 22:24:38 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 22:24:47 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-19 22:24:47 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-19 22:24:47 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-19 22:25:01 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-19 22:25:09 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-19 22:25:09 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B019OZBSJ8
+2025-07-19 22:25:09 - crawler.change_detector - INFO - No significant changes detected for ASIN B019OZBSJ8
+2025-07-19 22:25:09 - scheduler.crawler_scheduler - INFO - Manual crawl completed for B019OZBSJ8: Success
+2025-07-19 22:37:26 - scheduler.crawler_scheduler - INFO - Crawler scheduler stopped
+2025-07-19 22:37:26 - api.main - INFO - Application shutdown completed
+2025-07-19 22:37:26 - __main__ - INFO - Shutting down Amazon Crawler...
+2025-07-19 22:37:26 - __main__ - INFO - Cleanup completed!
+2025-07-19 22:37:31 - __main__ - INFO - .env file already exists
+2025-07-19 22:37:31 - __main__ - INFO - Testing crawl for ASIN: B019OZBSJ8
+2025-07-19 22:37:31 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-19 22:37:31 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (no browser window)
+2025-07-19 22:37:31 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 22:37:32 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 22:37:32 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 22:37:32 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-19 22:37:33 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-19 22:37:33 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-19 22:37:33 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 22:37:41 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-19 22:37:41 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-19 22:37:41 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-19 22:37:55 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-19 22:38:04 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-19 22:38:04 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B019OZBSJ8
+2025-07-19 22:38:10 - __main__ - INFO - Test crawl successful!
+2025-07-19 23:12:47 - __main__ - INFO - .env file already exists
+2025-07-19 23:12:47 - __main__ - INFO - Testing crawl for ASIN: B019OZBSJ8
+2025-07-19 23:12:47 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-19 23:12:47 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (no browser window)
+2025-07-19 23:12:47 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 23:12:49 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 23:12:49 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 23:12:49 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-19 23:12:54 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-19 23:12:54 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-19 23:12:54 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 23:13:00 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-19 23:13:00 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-19 23:13:00 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-19 23:13:10 - __main__ - INFO - Goodbye!
+2025-07-19 23:14:10 - __main__ - INFO - .env file already exists
+2025-07-19 23:14:10 - __main__ - INFO - Testing crawl for ASIN: B019OZBSJ8
+2025-07-19 23:14:10 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-19 23:14:10 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-19 23:14:10 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-19 23:14:11 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.157\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-19 23:14:11 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-19 23:14:11 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-19 23:14:12 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-19 23:14:12 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-19 23:14:12 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-19 23:14:22 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-19 23:14:22 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-19 23:14:22 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-19 23:14:36 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-19 23:14:45 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-19 23:14:45 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B019OZBSJ8
+2025-07-19 23:14:51 - __main__ - INFO - Test crawl successful!
