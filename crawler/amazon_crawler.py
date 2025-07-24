@@ -844,104 +844,172 @@ class AmazonCrawler:
                     data['image_count'] = len(unique_images)
                     logger.info(f"Successfully extracted {data['image_count']} images from ivThumbs")
                     
-                    # Video extraction logic
+                    # Video extraction logic - must click video thumbnail first to open popup
                     try:
-                        # First find video thumbnail and click it
-                        video_thumb = self.driver.find_element(By.CSS_SELECTOR, "li.videoThumbnail")
-                        if video_thumb:
-                            # Get video count before clicking
-                            video_count_elem = video_thumb.find_element(By.ID, "videoCount")
-                            count_text = video_count_elem.text.strip()  # e.g., "7 VIDEOS"
-                            expected_count = int(count_text.split()[0])
-                            logger.info(f"Found video thumbnail with {expected_count} videos")
+                        video_urls = []
+                        
+                        # Step 1: Find and click video thumbnail to open video popup
+                        try:
+                            # Look for video thumbnail that shows video count (e.g., "8 videos")
+                            video_thumbnails = self.driver.find_elements(By.CSS_SELECTOR, "li.videoThumbnail")
+                            if not video_thumbnails:
+                                # Try alternative selectors for video thumbnail
+                                video_thumbnails = self.driver.find_elements(By.CSS_SELECTOR, "li[class*='video'], .video-thumbnail, [id*='video']")
                             
-                            # Click the thumbnail to open video player
-                            try:
-                                video_thumb.click()
-                                logger.info("Clicked video thumbnail")
-                                
-                                # Wait for video carousel to load
-                                WebDriverWait(self.driver, 10).until(
-                                    EC.presence_of_element_located((By.CSS_SELECTOR, "div.a-carousel-col.a-carousel-center"))
-                                )
-                                logger.info("Video carousel loaded")
-                                
-                                # Now extract videos from carousel
-                                carousel = self.driver.find_element(By.CSS_SELECTOR, "div.a-carousel-col.a-carousel-center")
-                                video_urls = []
-                                
-                                # 1. Extract "Videos for this product"
+                            video_thumbnail_clicked = False
+                            for thumb in video_thumbnails:
                                 try:
-                                    product_videos = carousel.find_elements(
-                                        By.XPATH,
-                                        ".//li[contains(@class, 'vse-video-card') and preceding-sibling::li[contains(@class, 'segment-title-IB_G1')]]//div[contains(@class, 'vse-video-item')]"
-                                    )
+                                    # Check if this thumbnail has video count info
+                                    video_count_elem = thumb.find_elements(By.CSS_SELECTOR, "#videoCount, .video-count, [class*='video'][class*='count']")
+                                    if video_count_elem:
+                                        count_text = video_count_elem[0].text.strip()
+                                        logger.info(f"Found video thumbnail with count: {count_text}")
+                                        
+                                        # Click the thumbnail to open video popup
+                                        thumb.click()
+                                        logger.info("Clicked video thumbnail to open popup")
+                                        video_thumbnail_clicked = True
+                                        
+                                        # Wait for video popup/carousel to load
+                                        time.sleep(3)
+                                        break
+                                    else:
+                                        # Try clicking any video-related thumbnail
+                                        if 'video' in thumb.get_attribute('class').lower():
+                                            thumb.click()
+                                            logger.info("Clicked video thumbnail (no count found)")
+                                            video_thumbnail_clicked = True
+                                            time.sleep(3)
+                                            break
+                                except Exception as e:
+                                    logger.debug(f"Could not process video thumbnail: {e}")
+                                    continue
+                            
+                            if not video_thumbnail_clicked:
+                                logger.info("No video thumbnail found to click")
+                                data['video_urls'] = []
+                                data['video_count'] = 0
+                                return data
+                            
+                        except Exception as e:
+                            logger.warning(f"Could not find/click video thumbnail: {e}")
+                            data['video_urls'] = []
+                            data['video_count'] = 0
+                            return data
+                        
+                        # Step 2: Now look for video carousel container (after clicking thumbnail)
+                        carousel_containers = self.driver.find_elements(By.CSS_SELECTOR, "div.vse-related-videos-container")
+                        if not carousel_containers:
+                            # Try alternative selectors for video carousel
+                            carousel_containers = self.driver.find_elements(By.CSS_SELECTOR, "div[class*='video'][class*='container'], .video-carousel, [id*='video'][id*='carousel']")
+                        
+                        logger.info(f"Found {len(carousel_containers)} video carousel containers after clicking thumbnail")
+                        
+                        for carousel in carousel_containers:
+                            try:
+                                # Find "Videos for this product" section specifically
+                                product_video_section = None
+                                section_headers = carousel.find_elements(By.CSS_SELECTOR, "h4[data-element-id='segment-title-1']")
+                                
+                                for header in section_headers:
+                                    if "Videos for this product" in header.text:
+                                        product_video_section = header
+                                        logger.info("Found 'Videos for this product' section")
+                                        break
+                                
+                                if not product_video_section:
+                                    # Try alternative selectors for the section
+                                    alt_headers = carousel.find_elements(By.CSS_SELECTOR, "li.segment-title-IB_G1 h4")
+                                    for header in alt_headers:
+                                        if "Videos for this product" in header.text:
+                                            product_video_section = header
+                                            logger.info("Found 'Videos for this product' section (alternative selector)")
+                                            break
+                                
+                                if product_video_section:
+                                    # Extract videos from "Videos for this product" section
+                                    # Look for video cards that come after the "Videos for this product" header
+                                    video_cards = carousel.find_elements(By.CSS_SELECTOR, "li.vse-video-card .vse-video-item")
                                     
-                                    for video in product_videos:
+                                    for video_card in video_cards:
                                         try:
-                                            video_url = video.get_attribute("data-video-url")
-                                            if video_url:
+                                            # Check if this video belongs to "Videos for this product" section
+                                            # by looking for the redirect URL in the anchor tag
+                                            video_link = video_card.find_element(By.CSS_SELECTOR, "a[data-redirect-url]")
+                                            redirect_url = video_link.get_attribute("data-redirect-url")
+                                            
+                                            if redirect_url and redirect_url.startswith("/vdp/"):
+                                                # Convert relative URL to full Amazon URL
+                                                full_video_url = f"https://amazon.com{redirect_url}"
+                                                
+                                                # Extract video metadata
+                                                title = video_card.get_attribute("data-title") or ""
+                                                duration = video_card.get_attribute("data-duration") or ""
+                                                vendor = video_card.get_attribute("data-vendor-name") or ""
+                                                video_id = video_card.get_attribute("data-asin") or ""
+                                                
+                                                # Also try to get title from the title element if not in data attribute
+                                                if not title:
+                                                    try:
+                                                        title_elem = video_card.find_element(By.CSS_SELECTOR, ".vse-video-title-text")
+                                                        title = title_elem.text.strip()
+                                                    except:
+                                                        pass
+                                                
+                                                # Get duration from duration element if not in data attribute
+                                                if not duration:
+                                                    try:
+                                                        duration_elem = video_card.find_element(By.CSS_SELECTOR, ".vse-video-duration")
+                                                        duration = duration_elem.text.strip()
+                                                    except:
+                                                        pass
+                                                
+                                                # Get vendor from vendor element if not in data attribute
+                                                if not vendor:
+                                                    try:
+                                                        vendor_elem = video_card.find_element(By.CSS_SELECTOR, ".vse-video-vendorname")
+                                                        vendor = vendor_elem.text.strip()
+                                                    except:
+                                                        pass
+                                                
                                                 video_data = {
-                                                    'url': video_url,
-                                                    'title': video.get_attribute("data-title"),
-                                                    'duration': video.get_attribute("data-duration"),
-                                                    'vendor': video.get_attribute("data-vendor-name"),
+                                                    'url': full_video_url,
+                                                    'redirect_path': redirect_url,
+                                                    'title': title,
+                                                    'duration': duration,
+                                                    'vendor': vendor,
+                                                    'video_id': video_id,
                                                     'type': 'product'
                                                 }
+                                                
                                                 video_urls.append(video_data)
-                                                logger.info(f"Found product video: {video_data['title']}")
+                                                logger.info(f"Found product video: '{title}' - {full_video_url}")
+                                                
                                         except Exception as e:
-                                            logger.warning(f"Error extracting product video details: {e}")
-                                            
-                                    logger.info(f"Found {len(product_videos)} product videos")
-                                except Exception as e:
-                                    logger.warning(f"Error extracting product videos section: {e}")
-                                
-                                # 2. Extract "Related videos"
-                                try:
-                                    related_videos = carousel.find_elements(
-                                        By.XPATH,
-                                        ".//li[contains(@class, 'vse-video-card') and preceding-sibling::li[contains(@class, 'segment-title-IB_G2')]]//div[contains(@class, 'vse-video-item')]"
-                                    )
+                                            logger.warning(f"Error extracting video details: {e}")
+                                            continue
                                     
-                                    for video in related_videos:
-                                        try:
-                                            video_url = video.get_attribute("data-video-url")
-                                            if video_url:
-                                                video_data = {
-                                                    'url': video_url,
-                                                    'title': video.get_attribute("data-title"),
-                                                    'duration': video.get_attribute("data-duration"),
-                                                    'vendor': video.get_attribute("data-vendor-name"),
-                                                    'type': 'related'
-                                                }
-                                                video_urls.append(video_data)
-                                                logger.info(f"Found related video: {video_data['title']}")
-                                        except Exception as e:
-                                            logger.warning(f"Error extracting related video details: {e}")
-                                            
-                                    logger.info(f"Found {len(related_videos)} related videos")
-                                except Exception as e:
-                                    logger.warning(f"Error extracting related videos section: {e}")
-                                
-                                # Save all videos
-                                if video_urls:
-                                    data['video_urls'] = video_urls
-                                    data['video_count'] = len(video_urls)
-                                    product_count = sum(1 for v in video_urls if v['type'] == 'product')
-                                    related_count = sum(1 for v in video_urls if v['type'] == 'related')
-                                    logger.info(f"Total videos found: {data['video_count']} ({product_count} product, {related_count} related)")
-                                    
-                                    # Verify we found all videos
-                                    if data['video_count'] != expected_count:
-                                        logger.warning(f"Found {data['video_count']} videos but thumbnail showed {expected_count}")
+                                    logger.info(f"Extracted {len(video_urls)} videos from 'Videos for this product' section")
                                 else:
-                                    logger.info("No videos found in carousel")
+                                    logger.info("Could not find 'Videos for this product' section")
                                     
                             except Exception as e:
-                                logger.error(f"Error after clicking video thumbnail: {e}")
+                                logger.warning(f"Error processing video carousel: {e}")
+                                continue
+                        
+                        # Set final video data
+                        if video_urls:
+                            data['video_urls'] = video_urls
+                            data['video_count'] = len(video_urls)
+                            logger.info(f"Total product videos found: {data['video_count']}")
+                            
+                            # Log video details for verification
+                            for i, video in enumerate(video_urls, 1):
+                                logger.info(f"Video {i}: {video['title']} ({video['duration']}) - {video['url']}")
                         else:
-                            logger.info("No video thumbnail found")
+                            data['video_urls'] = []
+                            data['video_count'] = 0
+                            logger.info("No product videos found")
                             
                     except Exception as e:
                         logger.warning(f"Error extracting videos: {e}")
@@ -1108,80 +1176,168 @@ class AmazonCrawler:
             data['image_count'] = len(image_urls)
             logger.info(f"Extracted {data['image_count']} unique image URLs from #imageBlock")
             
-            # Video extraction logic
+            # Video extraction logic (fallback) - must click video thumbnail first to open popup
             try:
-                # Find the main carousel container
-                carousel = self.driver.find_element(By.CSS_SELECTOR, "div.a-carousel-col.a-carousel-center")
-                if carousel:
-                    logger.info("Found video carousel container")
+                video_urls = []
+                
+                # Step 1: Find and click video thumbnail to open video popup (fallback)
+                try:
+                    # Look for video thumbnail that shows video count (e.g., "8 videos")
+                    video_thumbnails = self.driver.find_elements(By.CSS_SELECTOR, "li.videoThumbnail")
+                    if not video_thumbnails:
+                        # Try alternative selectors for video thumbnail
+                        video_thumbnails = self.driver.find_elements(By.CSS_SELECTOR, "li[class*='video'], .video-thumbnail, [id*='video']")
                     
-                    video_urls = []
-                    
-                    # 1. Extract "Videos for this product"
-                    try:
-                        product_videos = carousel.find_elements(
-                            By.XPATH,
-                            ".//li[contains(@class, 'vse-video-card') and preceding-sibling::li[contains(@class, 'segment-title-IB_G1')]]//div[contains(@class, 'vse-video-item')]"
-                        )
-                        
-                        for video in product_videos:
-                            try:
-                                video_url = video.get_attribute("data-video-url")
-                                if video_url:
-                                    video_data = {
-                                        'url': video_url,
-                                        'title': video.get_attribute("data-title"),
-                                        'duration': video.get_attribute("data-duration"),
-                                        'vendor': video.get_attribute("data-vendor-name"),
-                                        'type': 'product'
-                                    }
-                                    video_urls.append(video_data)
-                                    logger.info(f"Found product video: {video_data['title']}")
-                            except Exception as e:
-                                logger.warning(f"Error extracting product video details: {e}")
+                    video_thumbnail_clicked = False
+                    for thumb in video_thumbnails:
+                        try:
+                            # Check if this thumbnail has video count info
+                            video_count_elem = thumb.find_elements(By.CSS_SELECTOR, "#videoCount, .video-count, [class*='video'][class*='count']")
+                            if video_count_elem:
+                                count_text = video_count_elem[0].text.strip()
+                                logger.info(f"Found video thumbnail with count (fallback): {count_text}")
                                 
-                        logger.info(f"Found {len(product_videos)} product videos")
-                    except Exception as e:
-                        logger.warning(f"Error extracting product videos section: {e}")
-                    
-                    # 2. Extract "Related videos"
-                    try:
-                        related_videos = carousel.find_elements(
-                            By.XPATH,
-                            ".//li[contains(@class, 'vse-video-card') and preceding-sibling::li[contains(@class, 'segment-title-IB_G2')]]//div[contains(@class, 'vse-video-item')]"
-                        )
-                        
-                        for video in related_videos:
-                            try:
-                                video_url = video.get_attribute("data-video-url")
-                                if video_url:
-                                    video_data = {
-                                        'url': video_url,
-                                        'title': video.get_attribute("data-title"),
-                                        'duration': video.get_attribute("data-duration"),
-                                        'vendor': video.get_attribute("data-vendor-name"),
-                                        'type': 'related'
-                                    }
-                                    video_urls.append(video_data)
-                                    logger.info(f"Found related video: {video_data['title']}")
-                            except Exception as e:
-                                logger.warning(f"Error extracting related video details: {e}")
+                                # Click the thumbnail to open video popup
+                                thumb.click()
+                                logger.info("Clicked video thumbnail to open popup (fallback)")
+                                video_thumbnail_clicked = True
                                 
-                        logger.info(f"Found {len(related_videos)} related videos")
-                    except Exception as e:
-                        logger.warning(f"Error extracting related videos section: {e}")
+                                # Wait for video popup/carousel to load
+                                time.sleep(3)
+                                break
+                            else:
+                                # Try clicking any video-related thumbnail
+                                if 'video' in thumb.get_attribute('class').lower():
+                                    thumb.click()
+                                    logger.info("Clicked video thumbnail (fallback - no count found)")
+                                    video_thumbnail_clicked = True
+                                    time.sleep(3)
+                                    break
+                        except Exception as e:
+                            logger.debug(f"Could not process video thumbnail (fallback): {e}")
+                            continue
                     
-                    # Save all videos
-                    if video_urls:
-                        data['video_urls'] = video_urls
-                        data['video_count'] = len(video_urls)
-                        product_count = sum(1 for v in video_urls if v['type'] == 'product')
-                        related_count = sum(1 for v in video_urls if v['type'] == 'related')
-                        logger.info(f"Total videos found: {data['video_count']} ({product_count} product, {related_count} related)")
-                    else:
-                        logger.info("No videos found in carousel")
+                    if not video_thumbnail_clicked:
+                        logger.info("No video thumbnail found to click (fallback)")
+                        data['video_urls'] = []
+                        data['video_count'] = 0
+                        return data
+                    
+                except Exception as e:
+                    logger.warning(f"Could not find/click video thumbnail (fallback): {e}")
+                    data['video_urls'] = []
+                    data['video_count'] = 0
+                    return data
+                
+                # Step 2: Now look for video carousel container (after clicking thumbnail)
+                carousel_containers = self.driver.find_elements(By.CSS_SELECTOR, "div.vse-related-videos-container")
+                if not carousel_containers:
+                    # Try alternative selectors for video carousel
+                    carousel_containers = self.driver.find_elements(By.CSS_SELECTOR, "div[class*='video'][class*='container'], .video-carousel, [id*='video'][id*='carousel']")
+                
+                logger.info(f"Found {len(carousel_containers)} video carousel containers (fallback) after clicking thumbnail")
+                
+                for carousel in carousel_containers:
+                    try:
+                        # Find "Videos for this product" section specifically
+                        product_video_section = None
+                        section_headers = carousel.find_elements(By.CSS_SELECTOR, "h4[data-element-id='segment-title-1']")
+                        
+                        for header in section_headers:
+                            if "Videos for this product" in header.text:
+                                product_video_section = header
+                                logger.info("Found 'Videos for this product' section (fallback)")
+                                break
+                        
+                        if not product_video_section:
+                            # Try alternative selectors for the section
+                            alt_headers = carousel.find_elements(By.CSS_SELECTOR, "li.segment-title-IB_G1 h4")
+                            for header in alt_headers:
+                                if "Videos for this product" in header.text:
+                                    product_video_section = header
+                                    logger.info("Found 'Videos for this product' section (fallback - alternative)")
+                                    break
+                        
+                        if product_video_section:
+                            # Extract videos from "Videos for this product" section
+                            video_cards = carousel.find_elements(By.CSS_SELECTOR, "li.vse-video-card .vse-video-item")
+                            
+                            for video_card in video_cards:
+                                try:
+                                    # Get redirect URL from anchor tag
+                                    video_link = video_card.find_element(By.CSS_SELECTOR, "a[data-redirect-url]")
+                                    redirect_url = video_link.get_attribute("data-redirect-url")
+                                    
+                                    if redirect_url and redirect_url.startswith("/vdp/"):
+                                        # Convert relative URL to full Amazon URL
+                                        full_video_url = f"https://amazon.com{redirect_url}"
+                                        
+                                        # Extract video metadata
+                                        title = video_card.get_attribute("data-title") or ""
+                                        duration = video_card.get_attribute("data-duration") or ""
+                                        vendor = video_card.get_attribute("data-vendor-name") or ""
+                                        video_id = video_card.get_attribute("data-asin") or ""
+                                        
+                                        # Fallback to element text if data attributes are empty
+                                        if not title:
+                                            try:
+                                                title_elem = video_card.find_element(By.CSS_SELECTOR, ".vse-video-title-text")
+                                                title = title_elem.text.strip()
+                                            except:
+                                                pass
+                                        
+                                        if not duration:
+                                            try:
+                                                duration_elem = video_card.find_element(By.CSS_SELECTOR, ".vse-video-duration")
+                                                duration = duration_elem.text.strip()
+                                            except:
+                                                pass
+                                        
+                                        if not vendor:
+                                            try:
+                                                vendor_elem = video_card.find_element(By.CSS_SELECTOR, ".vse-video-vendorname")
+                                                vendor = vendor_elem.text.strip()
+                                            except:
+                                                pass
+                                        
+                                        video_data = {
+                                            'url': full_video_url,
+                                            'redirect_path': redirect_url,
+                                            'title': title,
+                                            'duration': duration,
+                                            'vendor': vendor,
+                                            'video_id': video_id,
+                                            'type': 'product'
+                                        }
+                                        
+                                        video_urls.append(video_data)
+                                        logger.info(f"Found product video (fallback): '{title}' - {full_video_url}")
+                                        
+                                except Exception as e:
+                                    logger.warning(f"Error extracting video details (fallback): {e}")
+                                    continue
+                            
+                            logger.info(f"Extracted {len(video_urls)} videos from 'Videos for this product' section (fallback)")
+                        else:
+                            logger.info("Could not find 'Videos for this product' section (fallback)")
+                            
+                    except Exception as e:
+                        logger.warning(f"Error processing video carousel (fallback): {e}")
+                        continue
+                
+                # Set final video data
+                if video_urls:
+                    data['video_urls'] = video_urls
+                    data['video_count'] = len(video_urls)
+                    logger.info(f"Total product videos found (fallback): {data['video_count']}")
+                    
+                    # Log video details for verification
+                    for i, video in enumerate(video_urls, 1):
+                        logger.info(f"Video {i} (fallback): {video['title']} ({video['duration']}) - {video['url']}")
                 else:
-                    logger.info("Video carousel container not found")
+                    data['video_urls'] = []
+                    data['video_count'] = 0
+                    logger.info("No product videos found (fallback)")
                 
             except Exception as e:
                 logger.warning(f"Error extracting videos: {e}")
