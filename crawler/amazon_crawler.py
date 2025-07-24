@@ -976,17 +976,8 @@ class AmazonCrawler:
                                                     except:
                                                         pass
                                                 
-                                                video_data = {
-                                                    'url': full_video_url,
-                                                    'redirect_path': redirect_url,
-                                                    'title': title,
-                                                    'duration': duration,
-                                                    'vendor': vendor,
-                                                    'video_id': video_id,
-                                                    'type': 'product'
-                                                }
-                                                
-                                                video_urls.append(video_data)
+                                                # Only store the URL, not the complex object
+                                                video_urls.append(full_video_url)
                                                 logger.info(f"Found product video: '{title}' - {full_video_url}")
                                                 
                                         except Exception as e:
@@ -1007,9 +998,9 @@ class AmazonCrawler:
                             data['video_count'] = len(video_urls)
                             logger.info(f"Total product videos found: {data['video_count']}")
                             
-                            # Log video details for verification
-                            for i, video in enumerate(video_urls, 1):
-                                logger.info(f"Video {i}: {video['title']} ({video['duration']}) - {video['url']}")
+                            # Log video URLs for verification
+                            for i, video_url in enumerate(video_urls, 1):
+                                logger.info(f"Video {i}: {video_url}")
                         else:
                             data['video_urls'] = []
                             data['video_count'] = 0
@@ -1304,17 +1295,8 @@ class AmazonCrawler:
                                             except:
                                                 pass
                                         
-                                        video_data = {
-                                            'url': full_video_url,
-                                            'redirect_path': redirect_url,
-                                            'title': title,
-                                            'duration': duration,
-                                            'vendor': vendor,
-                                            'video_id': video_id,
-                                            'type': 'product'
-                                        }
-                                        
-                                        video_urls.append(video_data)
+                                        # Only store the URL, not the complex object
+                                        video_urls.append(full_video_url)
                                         logger.info(f"Found product video (fallback): '{title}' - {full_video_url}")
                                         
                                 except Exception as e:
@@ -1335,9 +1317,9 @@ class AmazonCrawler:
                     data['video_count'] = len(video_urls)
                     logger.info(f"Total product videos found (fallback): {data['video_count']}")
                     
-                    # Log video details for verification
-                    for i, video in enumerate(video_urls, 1):
-                        logger.info(f"Video {i} (fallback): {video['title']} ({video['duration']}) - {video['url']}")
+                    # Log video URLs for verification
+                    for i, video_url in enumerate(video_urls, 1):
+                        logger.info(f"Video {i} (fallback): {video_url}")
                 else:
                     data['video_urls'] = []
                     data['video_count'] = 0
