@@ -400,16 +400,20 @@ class AmazonCrawler:
             except Exception as e:
                 logger.warning(f"Could not read delivery location: {e}")
             
-            # Extract all product information
+            # Extract all product information (EXCEPT images/videos first to avoid DOM changes)
             product_data.update(self._extract_basic_info())
             product_data.update(self._extract_pricing())
             product_data.update(self._extract_ratings())
-            product_data.update(self._extract_images_videos())
             product_data.update(self._extract_promotions())
             product_data.update(self._extract_inventory())
             product_data.update(self._extract_seller_info())
             product_data.update(self._extract_technical_info())
             product_data.update(self._extract_advertisements())
+            
+            # Extract images and videos LAST to avoid affecting other data extraction
+            # (clicking video thumbnail may change DOM structure)
+            logger.info("Starting images/videos extraction (last step)")
+            product_data.update(self._extract_images_videos())
             
             # Format output according to required 22 fields
             product_data = self._format_final_output(product_data)
