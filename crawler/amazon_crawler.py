@@ -785,7 +785,7 @@ class AmazonCrawler:
         return data
     
     def _extract_images_videos(self) -> Dict:
-        """Extract images and videos from product page"""
+        """Extract videos first, then images from popup"""
         data = {
             'image_urls': [],
             'image_count': 0,
@@ -794,443 +794,65 @@ class AmazonCrawler:
         }
         
         try:
-            # Initialize dictionary to store unique images
-            unique_images = {}
+            logger.info("Starting video extraction first, then images from popup")
             
-            # Image extraction logic...
-            # First try to extract from ivThumbs container (new structure)
+            # Step 1: Find and click video thumbnail to open video popup
+            video_urls = []
+            video_thumbnail_clicked = False
+            
             try:
-                # Find all ivThumb elements that have an ID (excluding placeholders)
-                thumb_elements = self.driver.find_elements(By.CSS_SELECTOR, "#ivThumbs .ivThumb[id^='ivImage_']")
-                logger.info(f"Found {len(thumb_elements)} thumbnail elements in ivThumbs")
+                # Look for video thumbnail that shows video count (e.g., "8 videos")
+                video_thumbnails = self.driver.find_elements(By.CSS_SELECTOR, "li.videoThumbnail")
+                if not video_thumbnails:
+                    # Try alternative selectors for video thumbnail
+                    video_thumbnails = self.driver.find_elements(By.CSS_SELECTOR, "li[class*='video'], .video-thumbnail, [id*='video']")
                 
-                # Try to scroll through all thumbnails if there's a "Show more" button
-                try:
-                    show_more = self.driver.find_element(By.CSS_SELECTOR, "#ivShowMore")
-                    if show_more and show_more.is_displayed():
-                        show_more.click()
-                        logger.info("Clicked 'Show more' button for images")
-                        time.sleep(2)  # Wait for more images to load
-                        # Get updated list of thumbnails
-                        thumb_elements = self.driver.find_elements(By.CSS_SELECTOR, "#ivThumbs .ivThumb[id^='ivImage_']")
-                        logger.info(f"After showing more, found {len(thumb_elements)} thumbnails")
-                except Exception as e:
-                    logger.debug(f"No 'Show more' button found or error clicking it: {e}")
-                
-                for thumb_elem in thumb_elements:
+                for thumb in video_thumbnails:
                     try:
-                        # Get the background image URL from the inner ivThumbImage div
-                        thumb_image = thumb_elem.find_element(By.CSS_SELECTOR, ".ivThumbImage")
-                        bg_style = thumb_image.get_attribute("style")
-                        
-                        # Extract URL from background-image style
-                        url_match = re.search(r'url\("([^"]+)"\)', bg_style)
-                        if url_match:
-                            thumb_url = url_match.group(1)
+                        # Check if this thumbnail has video count info
+                        video_count_elem = thumb.find_elements(By.CSS_SELECTOR, "#videoCount, .video-count, [class*='video'][class*='count']")
+                        if video_count_elem:
+                            count_text = video_count_elem[0].text.strip()
+                            logger.info(f"Found video thumbnail with count: {count_text}")
                             
-                            # Convert thumbnail URL to high resolution
-                            # From: https://m.media-amazon.com/images/I/41NAxoL57FL._AC_US40_AA50_.jpg
-                            # To:   https://m.media-amazon.com/images/I/41NAxoL57FL._AC_SL1500_.jpg
-                            high_res_url = thumb_url.replace('_AC_US40_AA50_', '_AC_SL1500_')
-                            
-                            # Extract image ID to avoid duplicates
-                            id_match = re.search(r'/I/([^._]+)', high_res_url)
-                            if id_match:
-                                image_id = id_match.group(1)
-                                unique_images[image_id] = high_res_url
-                                logger.info(f"Added image from ivThumbs: {image_id}")
-                    except Exception as e:
-                        logger.warning(f"Error processing thumbnail: {e}")
-                
-                # If we found images in ivThumbs, use this count
-                if unique_images:
-                    data['image_urls'] = list(unique_images.values())
-                    data['image_count'] = len(unique_images)
-                    logger.info(f"Successfully extracted {data['image_count']} images from ivThumbs")
-                    
-                    # Video extraction logic - must click video thumbnail first to open popup
-                    try:
-                        video_urls = []
-                        
-                        # Step 1: Find and click video thumbnail to open video popup
-                        try:
-                            # Look for video thumbnail that shows video count (e.g., "8 videos")
-                            video_thumbnails = self.driver.find_elements(By.CSS_SELECTOR, "li.videoThumbnail")
-                            if not video_thumbnails:
-                                # Try alternative selectors for video thumbnail
-                                video_thumbnails = self.driver.find_elements(By.CSS_SELECTOR, "li[class*='video'], .video-thumbnail, [id*='video']")
-                            
-                            video_thumbnail_clicked = False
-                            for thumb in video_thumbnails:
-                                try:
-                                    # Check if this thumbnail has video count info
-                                    video_count_elem = thumb.find_elements(By.CSS_SELECTOR, "#videoCount, .video-count, [class*='video'][class*='count']")
-                                    if video_count_elem:
-                                        count_text = video_count_elem[0].text.strip()
-                                        logger.info(f"Found video thumbnail with count: {count_text}")
-                                        
-                                        # Click the thumbnail to open video popup
-                                        thumb.click()
-                                        logger.info("Clicked video thumbnail to open popup")
-                                        video_thumbnail_clicked = True
-                                        
-                                        # Wait for video popup/carousel to load
-                                        time.sleep(3)
-                                        break
-                                    else:
-                                        # Try clicking any video-related thumbnail
-                                        if 'video' in thumb.get_attribute('class').lower():
-                                            thumb.click()
-                                            logger.info("Clicked video thumbnail (no count found)")
-                                            video_thumbnail_clicked = True
-                                            time.sleep(3)
-                                            break
-                                except Exception as e:
-                                    logger.debug(f"Could not process video thumbnail: {e}")
-                                    continue
-                            
-                            if not video_thumbnail_clicked:
-                                logger.info("No video thumbnail found to click")
-                                data['video_urls'] = []
-                                data['video_count'] = 0
-                                return data
-                            
-                        except Exception as e:
-                            logger.warning(f"Could not find/click video thumbnail: {e}")
-                            data['video_urls'] = []
-                            data['video_count'] = 0
-                            return data
-                        
-                        # Step 2: Now look for video carousel container (after clicking thumbnail)
-                        carousel_containers = self.driver.find_elements(By.CSS_SELECTOR, "div.vse-related-videos-container")
-                        if not carousel_containers:
-                            # Try alternative selectors for video carousel
-                            carousel_containers = self.driver.find_elements(By.CSS_SELECTOR, "div[class*='video'][class*='container'], .video-carousel, [id*='video'][id*='carousel']")
-                        
-                        logger.info(f"Found {len(carousel_containers)} video carousel containers after clicking thumbnail")
-                        
-                        for carousel in carousel_containers:
-                            try:
-                                # Find "Videos for this product" section specifically
-                                product_video_section = None
-                                section_headers = carousel.find_elements(By.CSS_SELECTOR, "h4[data-element-id='segment-title-1']")
-                                
-                                for header in section_headers:
-                                    if "Videos for this product" in header.text:
-                                        product_video_section = header
-                                        logger.info("Found 'Videos for this product' section")
-                                        break
-                                
-                                if not product_video_section:
-                                    # Try alternative selectors for the section
-                                    alt_headers = carousel.find_elements(By.CSS_SELECTOR, "li.segment-title-IB_G1 h4")
-                                    for header in alt_headers:
-                                        if "Videos for this product" in header.text:
-                                            product_video_section = header
-                                            logger.info("Found 'Videos for this product' section (alternative selector)")
-                                            break
-                                
-                                if product_video_section:
-                                    # Extract videos from "Videos for this product" section
-                                    # Look for video cards that come after the "Videos for this product" header
-                                    video_cards = carousel.find_elements(By.CSS_SELECTOR, "li.vse-video-card .vse-video-item")
-                                    
-                                    for video_card in video_cards:
-                                        try:
-                                            # Check if this video belongs to "Videos for this product" section
-                                            # by looking for the redirect URL in the anchor tag
-                                            video_link = video_card.find_element(By.CSS_SELECTOR, "a[data-redirect-url]")
-                                            redirect_url = video_link.get_attribute("data-redirect-url")
-                                            
-                                            if redirect_url and redirect_url.startswith("/vdp/"):
-                                                # Convert relative URL to full Amazon URL
-                                                full_video_url = f"https://amazon.com{redirect_url}"
-                                                
-                                                # Extract video metadata
-                                                title = video_card.get_attribute("data-title") or ""
-                                                duration = video_card.get_attribute("data-duration") or ""
-                                                vendor = video_card.get_attribute("data-vendor-name") or ""
-                                                video_id = video_card.get_attribute("data-asin") or ""
-                                                
-                                                # Also try to get title from the title element if not in data attribute
-                                                if not title:
-                                                    try:
-                                                        title_elem = video_card.find_element(By.CSS_SELECTOR, ".vse-video-title-text")
-                                                        title = title_elem.text.strip()
-                                                    except:
-                                                        pass
-                                                
-                                                # Get duration from duration element if not in data attribute
-                                                if not duration:
-                                                    try:
-                                                        duration_elem = video_card.find_element(By.CSS_SELECTOR, ".vse-video-duration")
-                                                        duration = duration_elem.text.strip()
-                                                    except:
-                                                        pass
-                                                
-                                                # Get vendor from vendor element if not in data attribute
-                                                if not vendor:
-                                                    try:
-                                                        vendor_elem = video_card.find_element(By.CSS_SELECTOR, ".vse-video-vendorname")
-                                                        vendor = vendor_elem.text.strip()
-                                                    except:
-                                                        pass
-                                                
-                                                # Only store the URL, not the complex object
-                                                video_urls.append(full_video_url)
-                                                logger.info(f"Found product video: '{title}' - {full_video_url}")
-                                                
-                                        except Exception as e:
-                                            logger.warning(f"Error extracting video details: {e}")
-                                            continue
-                                    
-                                    logger.info(f"Extracted {len(video_urls)} videos from 'Videos for this product' section")
-                                else:
-                                    logger.info("Could not find 'Videos for this product' section")
-                                    
-                            except Exception as e:
-                                logger.warning(f"Error processing video carousel: {e}")
-                                continue
-                        
-                        # Set final video data
-                        if video_urls:
-                            data['video_urls'] = video_urls
-                            data['video_count'] = len(video_urls)
-                            logger.info(f"Total product videos found: {data['video_count']}")
-                            
-                            # Log video URLs for verification
-                            for i, video_url in enumerate(video_urls, 1):
-                                logger.info(f"Video {i}: {video_url}")
+                            # Click the thumbnail to open video popup
+                            thumb.click()
+                            logger.info("Clicked video thumbnail to open popup")
+                            video_thumbnail_clicked = True
+                            time.sleep(3)
+                            break
                         else:
-                            data['video_urls'] = []
-                            data['video_count'] = 0
-                            logger.info("No product videos found")
-                            
-                    except Exception as e:
-                        logger.warning(f"Error extracting videos: {e}")
-                        data['video_urls'] = []
-                        data['video_count'] = 0
-                    
-                    return data
-                    
-            except Exception as e:
-                logger.warning(f"Could not extract from ivThumbs container: {e}")
-            
-            # If ivThumbs extraction failed, fall back to original imageBlock extraction
-            logger.info("Falling back to imageBlock extraction...")
-            
-            # Find the imageBlock container
-            imageblock_container = None
-            try:
-                imageblock_container = self.driver.find_element(By.CSS_SELECTOR, "#imageBlock")
-                logger.info("Found #imageBlock container - extracting media from this container")
-                
-                # Wait a bit for all images to load completely
-                time.sleep(2)
-                
-            except:
-                logger.warning("Could not find #imageBlock container")
-                # Set defaults and return early
-                data['image_urls'] = []
-                data['image_count'] = 0
-                data['video_urls'] = []
-                data['video_count'] = 0
-                return data
-            
-            # Extract images from imageBlock container ONLY - count unique images
-            unique_images = {}  # Use dict to track unique images by their base ID
-            
-            try:
-                # Extract unique image thumbnails from #altImages - including hidden images
-                visible_thumbnails = []
-                hidden_count = 0
-                
-                # First find all thumbnail elements
-                thumbnail_elements = imageblock_container.find_elements(By.CSS_SELECTOR, "#altImages li.item.imageThumbnail")
-                logger.info(f"Found {len(thumbnail_elements)} thumbnail elements")
-                
-                for thumb_elem in thumbnail_elements:
-                    try:
-                        # Skip video thumbnails
-                        if 'videoThumbnail' in thumb_elem.get_attribute('class'):
-                            continue
-                            
-                        # Get the image element
-                        img = thumb_elem.find_element(By.CSS_SELECTOR, "img")
-                        src = img.get_attribute('src')
-                        
-                        if src and 'media-amazon.com' in src:
-                            # Check for "4+" or similar text indicating hidden images
-                            more_text = thumb_elem.find_elements(By.CSS_SELECTOR, ".textMoreImages")
-                            if more_text:
-                                text = more_text[0].text.strip()
-                                if text and text.endswith('+'):
-                                    try:
-                                        # Extract number before "+" (e.g., "4+" -> 4)
-                                        hidden_count = int(text.rstrip('+'))
-                                        logger.info(f"Found {hidden_count} additional hidden images")
-                                    except:
-                                        pass
-                            
-                            # Add visible thumbnail
-                            visible_thumbnails.append(img)
-                            
-                            # Extract and convert to high res
-                            id_match = re.search(r'/I/([^._]+)', src)
-                            if id_match:
-                                image_id = id_match.group(1)
-                                # Convert to highest resolution version
-                                if '_AC_US40_' in src:
-                                    high_res_src = src.replace('_AC_US40_', '_AC_SL1500_')
-                                else:
-                                    high_res_src = src
-                                unique_images[image_id] = high_res_src
-                                logger.info(f"Added visible thumbnail: {image_id}")
-                                
-                    except Exception as e:
-                        logger.warning(f"Error processing thumbnail: {e}")
-                
-                # Calculate total images (visible + hidden)
-                total_images = len(visible_thumbnails) + hidden_count
-                logger.info(f"Total images: {total_images} ({len(visible_thumbnails)} visible + {hidden_count} hidden)")
-                
-                # Store total image count for later
-                data['image_count'] = total_images
-                
-                # Extract unique main images from the right panel - comprehensive search
-                logger.info("Searching for main images in right panel...")
-                
-                # Find all images in the main display area - search for all itemNo variations
-                main_images_found = []
-                
-                # Search for all possible itemNo images (itemNo0, itemNo1, itemNo2, etc.)
-                for item_num in range(10):  # Check itemNo0 through itemNo9
-                    try:
-                        item_selector = f"li.itemNo{item_num} img, li[class*='itemNo{item_num}'] img"
-                        item_images = imageblock_container.find_elements(By.CSS_SELECTOR, item_selector)
-                        if item_images:
-                            logger.info(f"Found {len(item_images)} images for itemNo{item_num}")
-                            for img in item_images:
-                                src = img.get_attribute('src')
-                                old_hires = img.get_attribute('data-old-hires')
-                                if (src or old_hires) and img not in main_images_found:
-                                    main_images_found.append(img)
-                    except:
-                        pass
-                
-                # Also search general selectors as fallback
-                general_selectors = [
-                    "ul.maintain-height li.image.item img",      # Standard item images
-                    "#landingImage",                              # Landing image
-                    ".imgTagWrapper img"                          # Images in wrapper
-                ]
-                
-                for selector in general_selectors:
-                    try:
-                        found_images = imageblock_container.find_elements(By.CSS_SELECTOR, selector)
-                        for img in found_images:
-                            src = img.get_attribute('src')
-                            old_hires = img.get_attribute('data-old-hires')
-                            if (src or old_hires) and img not in main_images_found:
-                                main_images_found.append(img)
-                        if found_images:
-                            logger.info(f"General selector '{selector}' found {len(found_images)} additional images")
-                    except Exception as e:
-                        logger.debug(f"General selector '{selector}' failed: {e}")
-                
-                logger.info(f"Total unique main images found: {len(main_images_found)}")
-                
-                # Process each main image
-                for i, img in enumerate(main_images_found):
-                    try:
-                        # Get highest resolution available
-                        old_hires = img.get_attribute('data-old-hires')
-                        src = img.get_attribute('src')
-                        
-                        best_url = old_hires if old_hires and 'media-amazon.com' in old_hires else src
-                        if best_url and 'media-amazon.com' in best_url:
-                            # Extract base image ID to avoid duplicates
-                            id_match = re.search(r'/I/([^._]+)', best_url)
-                            if id_match:
-                                image_id = id_match.group(1)
-                                # Only add if not already exists or if this is higher resolution
-                                if image_id not in unique_images or '_SL1500_' in best_url or '_SL1080_' in best_url:
-                                    unique_images[image_id] = best_url
-                                    logger.info(f"Added main image {i+1}: {image_id}")
-                                else:
-                                    logger.debug(f"Skipped duplicate main image: {image_id}")
-                    except Exception as e:
-                        logger.warning(f"Error processing main image {i+1}: {e}")
-                
-            except Exception as e:
-                logger.warning(f"Could not extract images from #imageBlock: {e}")
-            
-            # Convert to final list
-            image_urls = list(unique_images.values())
-            data['image_urls'] = image_urls
-            data['image_count'] = len(image_urls)
-            logger.info(f"Extracted {data['image_count']} unique image URLs from #imageBlock")
-            
-            # Video extraction logic (fallback) - must click video thumbnail first to open popup
-            try:
-                video_urls = []
-                
-                # Step 1: Find and click video thumbnail to open video popup (fallback)
-                try:
-                    # Look for video thumbnail that shows video count (e.g., "8 videos")
-                    video_thumbnails = self.driver.find_elements(By.CSS_SELECTOR, "li.videoThumbnail")
-                    if not video_thumbnails:
-                        # Try alternative selectors for video thumbnail
-                        video_thumbnails = self.driver.find_elements(By.CSS_SELECTOR, "li[class*='video'], .video-thumbnail, [id*='video']")
-                    
-                    video_thumbnail_clicked = False
-                    for thumb in video_thumbnails:
-                        try:
-                            # Check if this thumbnail has video count info
-                            video_count_elem = thumb.find_elements(By.CSS_SELECTOR, "#videoCount, .video-count, [class*='video'][class*='count']")
-                            if video_count_elem:
-                                count_text = video_count_elem[0].text.strip()
-                                logger.info(f"Found video thumbnail with count (fallback): {count_text}")
-                                
-                                # Click the thumbnail to open video popup
+                            # Try clicking any video-related thumbnail
+                            if 'video' in thumb.get_attribute('class').lower():
                                 thumb.click()
-                                logger.info("Clicked video thumbnail to open popup (fallback)")
+                                logger.info("Clicked video thumbnail (no count found)")
                                 video_thumbnail_clicked = True
-                                
-                                # Wait for video popup/carousel to load
                                 time.sleep(3)
                                 break
-                            else:
-                                # Try clicking any video-related thumbnail
-                                if 'video' in thumb.get_attribute('class').lower():
-                                    thumb.click()
-                                    logger.info("Clicked video thumbnail (fallback - no count found)")
-                                    video_thumbnail_clicked = True
-                                    time.sleep(3)
-                                    break
-                        except Exception as e:
-                            logger.debug(f"Could not process video thumbnail (fallback): {e}")
-                            continue
-                    
-                    if not video_thumbnail_clicked:
-                        logger.info("No video thumbnail found to click (fallback)")
-                        data['video_urls'] = []
-                        data['video_count'] = 0
-                        return data
-                    
-                except Exception as e:
-                    logger.warning(f"Could not find/click video thumbnail (fallback): {e}")
+                    except Exception as e:
+                        logger.debug(f"Could not process video thumbnail: {e}")
+                        continue
+                
+                if not video_thumbnail_clicked:
+                    logger.info("No video thumbnail found to click")
                     data['video_urls'] = []
                     data['video_count'] = 0
                     return data
                 
-                # Step 2: Now look for video carousel container (after clicking thumbnail)
+            except Exception as e:
+                logger.warning(f"Could not find/click video thumbnail: {e}")
+                data['video_urls'] = []
+                data['video_count'] = 0
+                return data
+            
+            # Step 2: Extract videos from carousel after clicking thumbnail
+            try:
                 carousel_containers = self.driver.find_elements(By.CSS_SELECTOR, "div.vse-related-videos-container")
                 if not carousel_containers:
                     # Try alternative selectors for video carousel
                     carousel_containers = self.driver.find_elements(By.CSS_SELECTOR, "div[class*='video'][class*='container'], .video-carousel, [id*='video'][id*='carousel']")
                 
-                logger.info(f"Found {len(carousel_containers)} video carousel containers (fallback) after clicking thumbnail")
+                logger.info(f"Found {len(carousel_containers)} video carousel containers after clicking thumbnail")
                 
                 for carousel in carousel_containers:
                     try:
@@ -1241,7 +863,7 @@ class AmazonCrawler:
                         for header in section_headers:
                             if "Videos for this product" in header.text:
                                 product_video_section = header
-                                logger.info("Found 'Videos for this product' section (fallback)")
+                                logger.info("Found 'Videos for this product' section")
                                 break
                         
                         if not product_video_section:
@@ -1250,7 +872,7 @@ class AmazonCrawler:
                             for header in alt_headers:
                                 if "Videos for this product" in header.text:
                                     product_video_section = header
-                                    logger.info("Found 'Videos for this product' section (fallback - alternative)")
+                                    logger.info("Found 'Videos for this product' section (alternative selector)")
                                     break
                         
                         if product_video_section:
@@ -1267,13 +889,8 @@ class AmazonCrawler:
                                         # Convert relative URL to full Amazon URL
                                         full_video_url = f"https://amazon.com{redirect_url}"
                                         
-                                        # Extract video metadata
+                                        # Extract title for logging
                                         title = video_card.get_attribute("data-title") or ""
-                                        duration = video_card.get_attribute("data-duration") or ""
-                                        vendor = video_card.get_attribute("data-vendor-name") or ""
-                                        video_id = video_card.get_attribute("data-asin") or ""
-                                        
-                                        # Fallback to element text if data attributes are empty
                                         if not title:
                                             try:
                                                 title_elem = video_card.find_element(By.CSS_SELECTOR, ".vse-video-title-text")
@@ -1281,86 +898,169 @@ class AmazonCrawler:
                                             except:
                                                 pass
                                         
-                                        if not duration:
-                                            try:
-                                                duration_elem = video_card.find_element(By.CSS_SELECTOR, ".vse-video-duration")
-                                                duration = duration_elem.text.strip()
-                                            except:
-                                                pass
-                                        
-                                        if not vendor:
-                                            try:
-                                                vendor_elem = video_card.find_element(By.CSS_SELECTOR, ".vse-video-vendorname")
-                                                vendor = vendor_elem.text.strip()
-                                            except:
-                                                pass
-                                        
-                                        # Only store the URL, not the complex object
+                                        # Only store the URL
                                         video_urls.append(full_video_url)
-                                        logger.info(f"Found product video (fallback): '{title}' - {full_video_url}")
+                                        logger.info(f"Found product video: '{title}' - {full_video_url}")
                                         
                                 except Exception as e:
-                                    logger.warning(f"Error extracting video details (fallback): {e}")
+                                    logger.warning(f"Error extracting video details: {e}")
                                     continue
                             
-                            logger.info(f"Extracted {len(video_urls)} videos from 'Videos for this product' section (fallback)")
+                            logger.info(f"Extracted {len(video_urls)} videos from 'Videos for this product' section")
                         else:
-                            logger.info("Could not find 'Videos for this product' section (fallback)")
+                            logger.info("Could not find 'Videos for this product' section")
                             
                     except Exception as e:
-                        logger.warning(f"Error processing video carousel (fallback): {e}")
+                        logger.warning(f"Error processing video carousel: {e}")
                         continue
                 
-                # Set final video data
-                if video_urls:
-                    data['video_urls'] = video_urls
-                    data['video_count'] = len(video_urls)
-                    logger.info(f"Total product videos found (fallback): {data['video_count']}")
-                    
-                    # Log video URLs for verification
-                    for i, video_url in enumerate(video_urls, 1):
-                        logger.info(f"Video {i} (fallback): {video_url}")
-                else:
-                    data['video_urls'] = []
-                    data['video_count'] = 0
-                    logger.info("No product videos found (fallback)")
+                # Set video data
+                data['video_urls'] = video_urls
+                data['video_count'] = len(video_urls)
+                logger.info(f"Total product videos found: {data['video_count']}")
                 
             except Exception as e:
                 logger.warning(f"Error extracting videos: {e}")
+                data['video_urls'] = []
+                data['video_count'] = 0
             
-            # Extract lightning deal progress
+            # Step 3: Close video popup by clicking X button
             try:
-                deal_progress = self.driver.find_element(By.ID, "dealProgress_feature_div")
-                if deal_progress:
-                    percent_message = deal_progress.find_element(By.ID, "dealsx_percent_message")
-                    if percent_message:
-                        claimed_text = percent_message.text.strip()
-                        if "claimed" in claimed_text.lower():
-                            data['lightning_deal'] = claimed_text
-                            logger.info(f"Found lightning deal: {claimed_text}")
-            except Exception as e:
-                logger.debug(f"No lightning deal found: {e}")
-            
-            # Extract bag sale info
-            try:
-                bag_sale_elem = self.driver.find_element(By.ID, "social-proofing-faceout-title-tk_bought")
-                if bag_sale_elem:
-                    data['bag_sale'] = bag_sale_elem.text.strip()
-                    logger.info(f"Found bag sale info: {data['bag_sale']}")
-            except Exception as e:
-                logger.debug(f"No bag sale info found: {e}")
+                # Multiple selectors to find the close button
+                close_selectors = [
+                    "button[data-action='a-popover-close'][aria-label='Close']",  # Most specific
+                    "button[data-action='a-popover-close']",                     # Basic selector
+                    "button[aria-label='Close'].a-button-close",                 # Fallback 1
+                    ".a-button-close.a-declarative.a-button-top-right",         # Fallback 2
+                    ".a-button-close"                                           # Last resort
+                ]
                 
-            # Extract best deal
-            try:
-                deal_badge = self.driver.find_element(By.CSS_SELECTOR, "#dealBadge_feature_div .a-badge-text")
-                if deal_badge:
-                    data['best_deal'] = deal_badge.text.strip()
-                    logger.info(f"Found best deal: {data['best_deal']}")
+                close_success = False
+                for selector in close_selectors:
+                    try:
+                        close_buttons = self.driver.find_elements(By.CSS_SELECTOR, selector)
+                        for close_btn in close_buttons:
+                            if close_btn.is_displayed() and close_btn.is_enabled():
+                                # Try JavaScript click
+                                self.driver.execute_script("arguments[0].click();", close_btn)
+                                logger.info(f"Closed video popup with selector: {selector}")
+                                close_success = True
+                                break
+                        if close_success:
+                            break
+                    except Exception as e:
+                        logger.debug(f"Selector {selector} failed: {e}")
+                        continue
+                
+                if close_success:
+                    # Wait and verify popup is actually closed
+                    time.sleep(2)
+                    
+                    # Check if video element is still blocking
+                    try:
+                        video_elements = self.driver.find_elements(By.CSS_SELECTOR, "video.vjs-tech")
+                        if video_elements:
+                            logger.info(f"Found {len(video_elements)} video elements still present")
+                            # Try to remove video elements that might block clicks
+                            for video in video_elements:
+                                try:
+                                    self.driver.execute_script("arguments[0].style.display = 'none';", video)
+                                except:
+                                    pass
+                        
+                        # Additional wait for popup animation
+                        time.sleep(2)
+                        logger.info("Video popup closed successfully")
+                    except Exception as e:
+                        logger.debug(f"Error checking video elements: {e}")
+                else:
+                    logger.warning("Could not close video popup with any selector")
+                    
             except Exception as e:
-                logger.debug(f"No best deal found: {e}")
+                logger.warning(f"Error closing video popup: {e}")
+            
+            # Step 4: Click first image thumbnail to open image view
+            try:
+                first_thumb = self.driver.find_element(By.CSS_SELECTOR, "li.imageThumbnail.a-declarative")
+                if first_thumb.is_displayed():
+                    first_thumb.click()
+                    logger.info("Clicked first image thumbnail")
+                    time.sleep(2)
+            except Exception as e:
+                logger.warning(f"Could not click first image thumbnail: {e}")
+            
+            # Step 5: Click "Click to see full view" link
+            try:
+                full_view_link = self.driver.find_element(By.CSS_SELECTOR, "#canvasCaption a.a-declarative")
+                if full_view_link.is_displayed():
+                    full_view_link.click()
+                    logger.info("Clicked 'Click to see full view' link")
+                    time.sleep(3)
+            except Exception as e:
+                logger.warning(f"Could not click 'Click to see full view': {e}")
+            
+            # Step 6: Extract images from popup
+            try:
+                # Find ivThumbs container
+                iv_thumbs = self.driver.find_element(By.CSS_SELECTOR, "#ivThumbs")
+                logger.info("Found ivThumbs container")
+                
+                # Find all image thumbnails
+                image_thumbs = iv_thumbs.find_elements(By.CSS_SELECTOR, ".ivThumb[id^='ivImage_']")
+                logger.info(f"Found {len(image_thumbs)} image thumbnails")
+                
+                image_urls = []
+                for thumb in image_thumbs:
+                    try:
+                        # Get background image URL
+                        thumb_image = thumb.find_element(By.CSS_SELECTOR, ".ivThumbImage")
+                        style = thumb_image.get_attribute("style")
+                        
+                        # Extract URL from background-image style
+                        url_match = re.search(r'url\("([^"]+)"\)', style)
+                        if url_match:
+                            thumb_url = url_match.group(1)
+                            
+                            # Convert thumbnail URL to high resolution
+                            # From: https://m.media-amazon.com/images/I/41N5gLDbQuL._AC_US40_AA50_.jpg
+                            # To:   https://m.media-amazon.com/images/I/41N5gLDbQuL._AC_SL1500_.jpg
+                            high_res_url = thumb_url.replace('_AC_US40_AA50_', '_AC_SL1500_')
+                            image_urls.append(high_res_url)
+                            logger.info(f"Extracted image: {high_res_url}")
+                            
+                    except Exception as e:
+                        logger.warning(f"Error extracting image from thumbnail: {e}")
+                        continue
+                
+                # Set final image data
+                data['image_urls'] = image_urls
+                data['image_count'] = len(image_urls)
+                logger.info(f"Total images extracted: {data['image_count']}")
+                
+                # Close image popup
+                try:
+                    body = self.driver.find_element(By.TAG_NAME, "body")
+                    body.click()
+                    logger.info("Closed image popup by clicking outside")
+                    time.sleep(1)
+                except:
+                    logger.warning("Could not close image popup")
+                    
+            except Exception as e:
+                logger.warning(f"Error extracting images from popup: {e}")
+                # Set fallback defaults
+                data['image_urls'] = []
+                data['image_count'] = 0
+            
+            return data
                 
         except Exception as e:
             logger.error(f"Error in _extract_images_videos: {e}")
+            data['image_urls'] = []
+            data['image_count'] = 0
+            data['video_urls'] = []
+            data['video_count'] = 0
+            return data
         
         return data
     

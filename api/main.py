@@ -118,6 +118,11 @@ async def settings_page(request: Request):
     """Settings page"""
     return templates.TemplateResponse("settings.html", {"request": request})
 
+@app.get("/price-tracking", response_class=HTMLResponse)
+async def price_tracking_page(request: Request):
+    """Price tracking dashboard page"""
+    return templates.TemplateResponse("price_tracking.html", {"request": request})
+
 # API Routes
 @app.get("/api/dashboard/stats")
 async def get_dashboard_stats(db: Session = Depends(get_db)) -> DashboardStats:
@@ -243,6 +248,50 @@ async def get_products(
     except Exception as e:
         logger.error(f"Error getting products: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/api/products/list")
+async def get_products_list(db: Session = Depends(get_db)):
+    """Get list of all products for dropdown"""
+    try:
+        logger.info("Starting get_products_list API call")
+        
+        # Get all unique ASINs with their latest title - no limit
+        from sqlalchemy import func
+        
+        # Get latest crawl for each ASIN
+        subquery = db.query(
+            ProductCrawlHistory.asin,
+            func.max(ProductCrawlHistory.crawl_date).label('max_date')
+        ).filter(
+            ProductCrawlHistory.title != None,
+            ProductCrawlHistory.title != "",
+            ProductCrawlHistory.crawl_success == True
+        ).group_by(ProductCrawlHistory.asin).subquery()
+        
+        # Join back to get the titles
+        products = db.query(ProductCrawlHistory.asin, ProductCrawlHistory.title)\
+            .join(subquery, 
+                  (ProductCrawlHistory.asin == subquery.c.asin) & 
+                  (ProductCrawlHistory.crawl_date == subquery.c.max_date))\
+            .all()
+        
+        logger.info(f"Found {len(products)} unique ASINs from database")
+        
+        product_list = [{"asin": asin, "title": title[:50] + "..." if len(title) > 50 else title} 
+                       for asin, title in products]
+        
+        logger.info(f"Returning {len(product_list)} products")
+        
+        return {
+            "products": product_list,
+            "total": len(product_list)
+        }
+        
+    except Exception as e:
+        logger.error(f"Error getting products list: {e}")
+        import traceback
+        logger.error(f"Traceback: {traceback.format_exc()}")
+        raise HTTPException(status_code=500, detail=f"Database error: {str(e)}")
 
 @app.get("/api/products/{asin}")
 async def get_product_details(asin: str, db: Session = Depends(get_db)):
@@ -493,6 +542,67 @@ async def get_crawl_stats(days: int = 7, db: Session = Depends(get_db)):
         
     except Exception as e:
         logger.error(f"Error getting crawl stats: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+# Price History API
+@app.get("/api/price-history/{asin}")
+async def get_price_history(asin: str, days: int = 30, db: Session = Depends(get_db)):
+    """Get price history for an ASIN"""
+    try:
+        # Get price history for the last N days
+        from_date = datetime.utcnow() - timedelta(days=days)
+        
+        price_history = db.query(ProductCrawlHistory)\
+            .filter(ProductCrawlHistory.asin == asin)\
+            .filter(ProductCrawlHistory.crawl_date >= from_date)\
+            .filter(ProductCrawlHistory.sale_price.isnot(None))\
+            .order_by(ProductCrawlHistory.crawl_date.asc())\
+            .all()
+        
+        if not price_history:
+            raise HTTPException(status_code=404, detail="No price history found for this ASIN")
+        
+        # Process data for chart
+        chart_data = []
+        prices = []
+        
+        for record in price_history:
+            chart_data.append({
+                "date": record.crawl_date.strftime("%Y-%m-%d"),
+                "price": float(record.sale_price) if record.sale_price else 0,
+                "list_price": float(record.list_price) if record.list_price else 0,
+                "title": record.title
+            })
+            if record.sale_price:
+                prices.append(float(record.sale_price))
+        
+        # Calculate statistics
+        current_price = prices[-1] if prices else 0
+        min_price = min(prices) if prices else 0
+        max_price = max(prices) if prices else 0
+        
+        # Find min/max dates
+        min_date = ""
+        max_date = ""
+        for record in price_history:
+            if record.sale_price and float(record.sale_price) == min_price:
+                min_date = record.crawl_date.strftime("%d-%m-%Y")
+            if record.sale_price and float(record.sale_price) == max_price:
+                max_date = record.crawl_date.strftime("%d-%m-%Y")
+        
+        return {
+            "asin": asin,
+            "current_price": current_price,
+            "min_price": min_price,
+            "max_price": max_price,
+            "min_date": min_date,
+            "max_date": max_date,
+            "chart_data": chart_data,
+            "total_records": len(chart_data)
+        }
+        
+    except Exception as e:
+        logger.error(f"Error getting price history: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 # Health check

@@ -50,7 +50,7 @@ class Settings:
     AMAZON_DP_URL = "https://www.amazon.com/dp/{asin}"
     
     # Selenium Settings
-    HEADLESS_BROWSER = os.getenv("HEADLESS_BROWSER", "true").lower() == "true"
+    HEADLESS_BROWSER = os.getenv("HEADLESS_BROWSER", "false").lower() == "true"
     BROWSER_TYPE = os.getenv("BROWSER_TYPE", "chrome")  # chrome, firefox
     SELENIUM_GRID_URL = os.getenv("SELENIUM_GRID_URL", "")
     

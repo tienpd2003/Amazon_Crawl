@@ -17,13 +17,12 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 def get_database_url():
     """Get the database URL"""
-    return "sqlite:///amazon_crawler.db"
+    return settings.DATABASE_URL
 
 def get_db_session():
     """Get a database session"""
-    engine = create_engine(get_database_url())
-    Session = sessionmaker(bind=engine)
-    return Session()
+    # Use the same engine as the main application
+    return SessionLocal()
 
 def create_tables():
     """Create all database tables"""

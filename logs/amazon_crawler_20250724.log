@@ -431,3 +431,1482 @@ Stacktrace:
 2025-07-24 21:18:55 - crawler.amazon_crawler - INFO - Successfully crawled product B0D62XSBPZ
 2025-07-24 21:18:55 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B0D62XSBPZ with 24 fields
 2025-07-24 21:19:01 - __main__ - INFO - Test crawl successful!
+2025-07-24 21:32:23 - __main__ - INFO - .env file already exists
+2025-07-24 21:32:23 - __main__ - INFO - Testing crawl for ASIN: B0D62XSBPZ
+2025-07-24 21:32:23 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-24 21:32:23 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-24 21:32:23 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-24 21:32:24 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-24 21:32:24 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-24 21:32:24 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-24 21:32:26 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-24 21:32:26 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-24 21:32:26 - crawler.amazon_crawler - INFO - Crawling product: B0D62XSBPZ from https://www.amazon.com/dp/B0D62XSBPZ
+2025-07-24 21:32:34 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-24 21:32:34 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-24 21:32:34 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-24 21:32:34 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-24 21:32:39 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-24 21:32:41 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-24 21:32:49 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-24 21:32:49 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-24 21:32:56 - crawler.amazon_crawler - INFO - Extracted title: ZAFRO 8,000 BTU Portable Air Conditioners, 4 Modes...
+2025-07-24 21:32:56 - crawler.amazon_crawler - INFO - Extracted 6 about_this_item bullet points
+2025-07-24 21:32:56 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-24 21:32:56 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-24 21:32:56 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $189.0
+2025-07-24 21:32:56 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-24%'
+2025-07-24 21:32:56 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 24%
+2025-07-24 21:32:56 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$249.99'
+2025-07-24 21:32:56 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $249.99
+2025-07-24 21:32:56 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$189.0, list=$249.99, discount=24%
+2025-07-24 21:32:56 - crawler.amazon_crawler - INFO - Found rating text: '4.1'
+2025-07-24 21:32:56 - crawler.amazon_crawler - INFO - Extracted rating: 4.1
+2025-07-24 21:32:56 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-24 21:32:57 - crawler.amazon_crawler - INFO - Found lightning deal: 10% claimed
+2025-07-24 21:32:57 - crawler.amazon_crawler - INFO - Extracted bag_sale: 4K+ bought in past month
+2025-07-24 21:32:57 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-24 21:32:57 - crawler.amazon_crawler - INFO - Extracted 7 technical specifications
+2025-07-24 21:32:57 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70246e935+77845]
+	GetHandleVerifier [0x0x7ff70246e990+77936]
+	(No symbol) [0x0x7ff702229cda]
+	(No symbol) [0x0x7ff7022806aa]
+	(No symbol) [0x0x7ff70228095c]
+	(No symbol) [0x0x7ff7022d3d07]
+	(No symbol) [0x0x7ff7022a890f]
+	(No symbol) [0x0x7ff7022d0b07]
+	(No symbol) [0x0x7ff7022a86a3]
+	(No symbol) [0x0x7ff702271791]
+	(No symbol) [0x0x7ff702272523]
+	GetHandleVerifier [0x0x7ff70274684d+3059501]
+	GetHandleVerifier [0x0x7ff702740c0d+3035885]
+	GetHandleVerifier [0x0x7ff702760400+3164896]
+	GetHandleVerifier [0x0x7ff702488c3e+185118]
+	GetHandleVerifier [0x0x7ff70249054f+216111]
+	GetHandleVerifier [0x0x7ff7024772e4+113092]
+	GetHandleVerifier [0x0x7ff702477499+113529]
+	GetHandleVerifier [0x0x7ff70245e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-24 21:32:57 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 261 characters
+2025-07-24 21:32:58 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-24 21:32:58 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-24 21:32:58 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 8 VIDEOS
+2025-07-24 21:32:59 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-24 21:33:02 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-24 21:33:02 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-24 21:33:02 - crawler.amazon_crawler - INFO - Found product video: 'ZAFRO Portable Air Conditioner Quick Set Guide' - https://amazon.com/vdp/0000b1caea8f4471bbb9816019a177fd
+2025-07-24 21:33:02 - crawler.amazon_crawler - INFO - Found product video: 'Fullview of ZAFRO portablr air conditioner and how to use it' - https://amazon.com/vdp/09a6156d73d84c518454480c00ef0644
+2025-07-24 21:33:02 - crawler.amazon_crawler - INFO - Found product video: 'ZAFRO portable air conditioners quick guide' - https://amazon.com/vdp/010272ae1e3a4aa8a33c938390f83542
+2025-07-24 21:33:02 - crawler.amazon_crawler - INFO - Found product video: 'DONT MAKE MY MISTAKE! Full Install #ad' - https://amazon.com/vdp/0f558bfe6b8a411b9f4b963fb88da035
+2025-07-24 21:33:02 - crawler.amazon_crawler - INFO - Found product video: 'NOBODY TELLS YOU THIS.. Zafro A/C #ad' - https://amazon.com/vdp/04aceb6a209b433684b77e2ef7057df6
+2025-07-24 21:33:02 - crawler.amazon_crawler - INFO - Found product video: 'Portable Air Conditioner, 4 Modes, Fast Cooling, Remote' - https://amazon.com/vdp/0dab6dafa6c44f84b7463b81520141cd
+2025-07-24 21:33:02 - crawler.amazon_crawler - INFO - Found product video: 'HOW TO USE. IN UNDER 3min! #ad' - https://amazon.com/vdp/02b62637c34340e3b6e43d42aa9ae75b
+2025-07-24 21:33:02 - crawler.amazon_crawler - INFO - Found product video: 'EVERYTHING YOU NEED. Unboxed &amp; Reviewed #ad' - https://amazon.com/vdp/0133300a28564001a2113046e691c63d
+2025-07-24 21:33:03 - crawler.amazon_crawler - INFO - Found product video: 'Great ac unit' - https://amazon.com/vdp/0f9efe332b8b4107b3e34d3e44a9ca9a
+2025-07-24 21:33:03 - crawler.amazon_crawler - INFO - Found product video: 'Great Buy' - https://amazon.com/vdp/0d20243ee26048089be5e9bdbc32884e
+2025-07-24 21:33:03 - crawler.amazon_crawler - INFO - Extracted 10 videos from 'Videos for this product' section
+2025-07-24 21:33:03 - crawler.amazon_crawler - INFO - Total product videos found: 10
+2025-07-24 21:33:03 - crawler.amazon_crawler - WARNING - Could not close video popup: Message: element not interactable
+  (Session info: chrome=138.0.7204.158)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70246e935+77845]
+	GetHandleVerifier [0x0x7ff70246e990+77936]
+	(No symbol) [0x0x7ff702229b0c]
+	(No symbol) [0x0x7ff702281ba4]
+	(No symbol) [0x0x7ff7022736c8]
+	(No symbol) [0x0x7ff7022a88ca]
+	(No symbol) [0x0x7ff702272f76]
+	(No symbol) [0x0x7ff7022a8ae0]
+	(No symbol) [0x0x7ff7022d0b07]
+	(No symbol) [0x0x7ff7022a86a3]
+	(No symbol) [0x0x7ff702271791]
+	(No symbol) [0x0x7ff702272523]
+	GetHandleVerifier [0x0x7ff70274684d+3059501]
+	GetHandleVerifier [0x0x7ff702740c0d+3035885]
+	GetHandleVerifier [0x0x7ff702760400+3164896]
+	GetHandleVerifier [0x0x7ff702488c3e+185118]
+	GetHandleVerifier [0x0x7ff70249054f+216111]
+	GetHandleVerifier [0x0x7ff7024772e4+113092]
+	GetHandleVerifier [0x0x7ff702477499+113529]
+	GetHandleVerifier [0x0x7ff70245e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-24 21:33:03 - crawler.amazon_crawler - WARNING - Could not close video popup with any method
+2025-07-24 21:33:03 - crawler.amazon_crawler - WARNING - Could not click 'Click to see full view': Message: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Click to see full view']"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70246e935+77845]
+	GetHandleVerifier [0x0x7ff70246e990+77936]
+	(No symbol) [0x0x7ff702229cda]
+	(No symbol) [0x0x7ff7022806aa]
+	(No symbol) [0x0x7ff70228095c]
+	(No symbol) [0x0x7ff7022d3d07]
+	(No symbol) [0x0x7ff7022a890f]
+	(No symbol) [0x0x7ff7022d0b07]
+	(No symbol) [0x0x7ff7022a86a3]
+	(No symbol) [0x0x7ff702271791]
+	(No symbol) [0x0x7ff702272523]
+	GetHandleVerifier [0x0x7ff70274684d+3059501]
+	GetHandleVerifier [0x0x7ff702740c0d+3035885]
+	GetHandleVerifier [0x0x7ff702760400+3164896]
+	GetHandleVerifier [0x0x7ff702488c3e+185118]
+	GetHandleVerifier [0x0x7ff70249054f+216111]
+	GetHandleVerifier [0x0x7ff7024772e4+113092]
+	GetHandleVerifier [0x0x7ff702477499+113529]
+	GetHandleVerifier [0x0x7ff70245e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-24 21:33:03 - crawler.amazon_crawler - WARNING - Could not open image popup
+2025-07-24 21:33:03 - crawler.amazon_crawler - INFO - Found ivThumbs container in image popup
+2025-07-24 21:33:03 - crawler.amazon_crawler - INFO - Found 0 image thumbnails in popup
+2025-07-24 21:33:03 - crawler.amazon_crawler - INFO - Total images extracted from popup: 0
+2025-07-24 21:33:03 - crawler.amazon_crawler - WARNING - Could not close image popup
+2025-07-24 21:33:03 - crawler.amazon_crawler - INFO - Final sale_percentage: 24% (preserved from extraction)
+2025-07-24 21:33:03 - crawler.amazon_crawler - INFO - Successfully crawled product B0D62XSBPZ
+2025-07-24 21:33:03 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B0D62XSBPZ with 24 fields
+2025-07-24 21:33:09 - __main__ - INFO - Test crawl successful!
+2025-07-24 21:34:11 - __main__ - INFO - .env file already exists
+2025-07-24 21:34:11 - __main__ - INFO - Testing crawl for ASIN: B071JM699P
+2025-07-24 21:34:11 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-24 21:34:11 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-24 21:34:11 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-24 21:34:13 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-24 21:34:13 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-24 21:34:13 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-24 21:34:14 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-24 21:34:14 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-24 21:34:14 - crawler.amazon_crawler - INFO - Crawling product: B071JM699P from https://www.amazon.com/dp/B071JM699P
+2025-07-24 21:34:23 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-24 21:34:23 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-24 21:34:23 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-24 21:34:23 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-24 21:34:28 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-24 21:34:29 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-24 21:34:38 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-24 21:34:38 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-24 21:34:45 - crawler.amazon_crawler - INFO - Extracted title: Amazon Basics Wood-Cased #2 Pencils, Pre-sharpened...
+2025-07-24 21:34:45 - crawler.amazon_crawler - INFO - Extracted 4 about_this_item bullet points
+2025-07-24 21:34:45 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-24 21:34:45 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-24 21:34:45 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $13.0
+2025-07-24 21:34:45 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-18%'
+2025-07-24 21:34:45 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 18%
+2025-07-24 21:34:45 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$15.93'
+2025-07-24 21:34:45 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $15.93
+2025-07-24 21:34:45 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$13.0, list=$15.93, discount=18%
+2025-07-24 21:34:45 - crawler.amazon_crawler - INFO - Found rating text: '4.8'
+2025-07-24 21:34:45 - crawler.amazon_crawler - INFO - Extracted rating: 4.8
+2025-07-24 21:34:45 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-24 21:34:45 - crawler.amazon_crawler - INFO - Found lightning deal: 13% claimed
+2025-07-24 21:34:46 - crawler.amazon_crawler - INFO - Extracted bag_sale: 80K+ bought in past month
+2025-07-24 21:34:46 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-24 21:34:46 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-24 21:34:46 - crawler.amazon_crawler - INFO - Extracted product_description: 95 characters
+2025-07-24 21:34:46 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-24 21:34:46 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-24 21:34:46 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 6 VIDEOS
+2025-07-24 21:34:47 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-24 21:34:50 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-24 21:34:50 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-24 21:34:50 - crawler.amazon_crawler - INFO - Found product video: 'A Closer Look' - https://amazon.com/vdp/0a724b07b1424054b82329625a8da01f
+2025-07-24 21:34:50 - crawler.amazon_crawler - INFO - Found product video: 'LOOK at ALL of these pencils. A GREAT buy. ' - https://amazon.com/vdp/07e638f67f574bccb134e1e6b58f7b53
+2025-07-24 21:34:50 - crawler.amazon_crawler - INFO - Found product video: 'Honest Review of Amazon Basic Pencils ' - https://amazon.com/vdp/055f81b1ed744139bc1d8400881b97f0
+2025-07-24 21:34:50 - crawler.amazon_crawler - INFO - Found product video: 'BEST #2 PENCIL? | AmazonBasics Pencil Review' - https://amazon.com/vdp/0e97192051e946a6ac295a623572d987
+2025-07-24 21:34:50 - crawler.amazon_crawler - INFO - Found product video: 'Amazon Basics Woodcased #2 Pencils, Pre-sharpened, HB Lead' - https://amazon.com/vdp/03c4f80c0e3d445a8c7d92658ea997de
+2025-07-24 21:34:50 - crawler.amazon_crawler - INFO - Found product video: 'Best Pencils. Teacher Approved + Teacher Gift Hack + Demo!' - https://amazon.com/vdp/08d23cbea25c423f920a1c3e8d5f2fdc
+2025-07-24 21:34:50 - crawler.amazon_crawler - INFO - Found product video: 'Satisfied Customer' - https://amazon.com/vdp/015480c72af149f6a6c526b7a3ab5af8
+2025-07-24 21:34:51 - crawler.amazon_crawler - INFO - Found product video: 'Great quality' - https://amazon.com/vdp/061db249fc1f4c378c84dc3046815e66
+2025-07-24 21:34:51 - crawler.amazon_crawler - INFO - Found product video: 'Good quality' - https://amazon.com/vdp/012576f8ec3f4a9da38bdb88d96fe8c1
+2025-07-24 21:34:51 - crawler.amazon_crawler - INFO - Found product video: 'High quality pencils' - https://amazon.com/vdp/005ad404918c4302a481398296f31653
+2025-07-24 21:34:51 - crawler.amazon_crawler - INFO - Found product video: 'Great deal!' - https://amazon.com/vdp/0e53028e1f7d43a79b92106404733621
+2025-07-24 21:34:51 - crawler.amazon_crawler - INFO - Found product video: 'Pencil' - https://amazon.com/vdp/0a2de7b70b8c4346b02683067947ed7d
+2025-07-24 21:34:51 - crawler.amazon_crawler - INFO - Found product video: 'It&#39;s a pencil. It works.' - https://amazon.com/vdp/01635038897b451eb2617a8695c29c0d
+2025-07-24 21:34:51 - crawler.amazon_crawler - INFO - Extracted 14 videos from 'Videos for this product' section
+2025-07-24 21:34:51 - crawler.amazon_crawler - INFO - Total product videos found: 14
+2025-07-24 21:34:51 - crawler.amazon_crawler - WARNING - Could not close video popup: Message: element not interactable
+  (Session info: chrome=138.0.7204.158)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70246e935+77845]
+	GetHandleVerifier [0x0x7ff70246e990+77936]
+	(No symbol) [0x0x7ff702229b0c]
+	(No symbol) [0x0x7ff702281ba4]
+	(No symbol) [0x0x7ff7022736c8]
+	(No symbol) [0x0x7ff7022a88ca]
+	(No symbol) [0x0x7ff702272f76]
+	(No symbol) [0x0x7ff7022a8ae0]
+	(No symbol) [0x0x7ff7022d0b07]
+	(No symbol) [0x0x7ff7022a86a3]
+	(No symbol) [0x0x7ff702271791]
+	(No symbol) [0x0x7ff702272523]
+	GetHandleVerifier [0x0x7ff70274684d+3059501]
+	GetHandleVerifier [0x0x7ff702740c0d+3035885]
+	GetHandleVerifier [0x0x7ff702760400+3164896]
+	GetHandleVerifier [0x0x7ff702488c3e+185118]
+	GetHandleVerifier [0x0x7ff70249054f+216111]
+	GetHandleVerifier [0x0x7ff7024772e4+113092]
+	GetHandleVerifier [0x0x7ff702477499+113529]
+	GetHandleVerifier [0x0x7ff70245e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-24 21:34:51 - crawler.amazon_crawler - WARNING - Could not close video popup with any method
+2025-07-24 21:34:51 - crawler.amazon_crawler - WARNING - Could not click 'Click to see full view': Message: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Click to see full view']"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70246e935+77845]
+	GetHandleVerifier [0x0x7ff70246e990+77936]
+	(No symbol) [0x0x7ff702229cda]
+	(No symbol) [0x0x7ff7022806aa]
+	(No symbol) [0x0x7ff70228095c]
+	(No symbol) [0x0x7ff7022d3d07]
+	(No symbol) [0x0x7ff7022a890f]
+	(No symbol) [0x0x7ff7022d0b07]
+	(No symbol) [0x0x7ff7022a86a3]
+	(No symbol) [0x0x7ff702271791]
+	(No symbol) [0x0x7ff702272523]
+	GetHandleVerifier [0x0x7ff70274684d+3059501]
+	GetHandleVerifier [0x0x7ff702740c0d+3035885]
+	GetHandleVerifier [0x0x7ff702760400+3164896]
+	GetHandleVerifier [0x0x7ff702488c3e+185118]
+	GetHandleVerifier [0x0x7ff70249054f+216111]
+	GetHandleVerifier [0x0x7ff7024772e4+113092]
+	GetHandleVerifier [0x0x7ff702477499+113529]
+	GetHandleVerifier [0x0x7ff70245e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-24 21:34:51 - crawler.amazon_crawler - WARNING - Could not open image popup
+2025-07-24 21:34:51 - crawler.amazon_crawler - INFO - Found ivThumbs container in image popup
+2025-07-24 21:34:51 - crawler.amazon_crawler - INFO - Found 0 image thumbnails in popup
+2025-07-24 21:34:51 - crawler.amazon_crawler - INFO - Total images extracted from popup: 0
+2025-07-24 21:34:51 - crawler.amazon_crawler - WARNING - Could not close image popup
+2025-07-24 21:34:51 - crawler.amazon_crawler - INFO - Final sale_percentage: 18% (preserved from extraction)
+2025-07-24 21:34:51 - crawler.amazon_crawler - INFO - Successfully crawled product B071JM699P
+2025-07-24 21:34:51 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B071JM699P
+2025-07-24 21:34:51 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B071JM699P with 24 fields
+2025-07-24 21:34:57 - __main__ - INFO - Test crawl successful!
+2025-07-24 21:39:20 - __main__ - INFO - .env file already exists
+2025-07-24 21:39:20 - __main__ - INFO - Testing crawl for ASIN: B071JM699P
+2025-07-24 21:39:20 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-24 21:39:20 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-24 21:39:20 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-24 21:39:21 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-24 21:39:21 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-24 21:39:21 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-24 21:39:23 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-24 21:39:23 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-24 21:39:23 - crawler.amazon_crawler - INFO - Crawling product: B071JM699P from https://www.amazon.com/dp/B071JM699P
+2025-07-24 21:39:31 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-24 21:39:31 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-24 21:39:31 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-24 21:39:31 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-24 21:39:36 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-24 21:39:38 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-24 21:39:46 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-24 21:39:46 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-24 21:39:53 - crawler.amazon_crawler - INFO - Extracted title: Amazon Basics Wood-Cased #2 Pencils, Pre-sharpened...
+2025-07-24 21:39:53 - crawler.amazon_crawler - INFO - Extracted 4 about_this_item bullet points
+2025-07-24 21:39:53 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-24 21:39:53 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-24 21:39:53 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $13.0
+2025-07-24 21:39:53 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-18%'
+2025-07-24 21:39:53 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 18%
+2025-07-24 21:39:53 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$15.93'
+2025-07-24 21:39:53 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $15.93
+2025-07-24 21:39:53 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$13.0, list=$15.93, discount=18%
+2025-07-24 21:39:53 - crawler.amazon_crawler - INFO - Found rating text: '4.8'
+2025-07-24 21:39:53 - crawler.amazon_crawler - INFO - Extracted rating: 4.8
+2025-07-24 21:39:53 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-24 21:39:53 - crawler.amazon_crawler - INFO - Found lightning deal: 13% claimed
+2025-07-24 21:39:53 - crawler.amazon_crawler - INFO - Extracted bag_sale: 80K+ bought in past month
+2025-07-24 21:39:53 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-24 21:39:54 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-24 21:39:54 - crawler.amazon_crawler - INFO - Extracted product_description: 95 characters
+2025-07-24 21:39:54 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-24 21:39:54 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-24 21:39:54 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 6 VIDEOS
+2025-07-24 21:39:55 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-24 21:39:58 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-24 21:39:58 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-24 21:39:58 - crawler.amazon_crawler - INFO - Found product video: 'A Closer Look' - https://amazon.com/vdp/0a724b07b1424054b82329625a8da01f
+2025-07-24 21:39:58 - crawler.amazon_crawler - INFO - Found product video: 'LOOK at ALL of these pencils. A GREAT buy. ' - https://amazon.com/vdp/07e638f67f574bccb134e1e6b58f7b53
+2025-07-24 21:39:58 - crawler.amazon_crawler - INFO - Found product video: 'Honest Review of Amazon Basic Pencils ' - https://amazon.com/vdp/055f81b1ed744139bc1d8400881b97f0
+2025-07-24 21:39:59 - crawler.amazon_crawler - INFO - Found product video: 'BEST #2 PENCIL? | AmazonBasics Pencil Review' - https://amazon.com/vdp/0e97192051e946a6ac295a623572d987
+2025-07-24 21:39:59 - crawler.amazon_crawler - INFO - Found product video: 'Amazon Basics Woodcased #2 Pencils, Pre-sharpened, HB Lead' - https://amazon.com/vdp/03c4f80c0e3d445a8c7d92658ea997de
+2025-07-24 21:39:59 - crawler.amazon_crawler - INFO - Found product video: 'Best Pencils. Teacher Approved + Teacher Gift Hack + Demo!' - https://amazon.com/vdp/08d23cbea25c423f920a1c3e8d5f2fdc
+2025-07-24 21:39:59 - crawler.amazon_crawler - INFO - Found product video: 'Satisfied Customer' - https://amazon.com/vdp/015480c72af149f6a6c526b7a3ab5af8
+2025-07-24 21:39:59 - crawler.amazon_crawler - INFO - Found product video: 'Great quality' - https://amazon.com/vdp/061db249fc1f4c378c84dc3046815e66
+2025-07-24 21:39:59 - crawler.amazon_crawler - INFO - Found product video: 'Good quality' - https://amazon.com/vdp/012576f8ec3f4a9da38bdb88d96fe8c1
+2025-07-24 21:39:59 - crawler.amazon_crawler - INFO - Found product video: 'High quality pencils' - https://amazon.com/vdp/005ad404918c4302a481398296f31653
+2025-07-24 21:39:59 - crawler.amazon_crawler - INFO - Found product video: 'Great deal!' - https://amazon.com/vdp/0e53028e1f7d43a79b92106404733621
+2025-07-24 21:39:59 - crawler.amazon_crawler - INFO - Found product video: 'Pencil' - https://amazon.com/vdp/0a2de7b70b8c4346b02683067947ed7d
+2025-07-24 21:39:59 - crawler.amazon_crawler - INFO - Found product video: 'It&#39;s a pencil. It works.' - https://amazon.com/vdp/01635038897b451eb2617a8695c29c0d
+2025-07-24 21:39:59 - crawler.amazon_crawler - INFO - Extracted 14 videos from 'Videos for this product' section
+2025-07-24 21:39:59 - crawler.amazon_crawler - INFO - Total product videos found: 14
+2025-07-24 21:39:59 - crawler.amazon_crawler - WARNING - Could not close video popup with any selector
+2025-07-24 21:40:01 - crawler.amazon_crawler - INFO - Clicked 'Click to see full view' with JavaScript: a.more-videos.a-declarative
+2025-07-24 21:40:04 - crawler.amazon_crawler - INFO - Found ivThumbs container in image popup
+2025-07-24 21:40:04 - crawler.amazon_crawler - INFO - Found 0 image thumbnails in popup
+2025-07-24 21:40:04 - crawler.amazon_crawler - INFO - Total images extracted from popup: 0
+2025-07-24 21:40:04 - crawler.amazon_crawler - WARNING - Could not close image popup
+2025-07-24 21:40:04 - crawler.amazon_crawler - INFO - Final sale_percentage: 18% (preserved from extraction)
+2025-07-24 21:40:04 - crawler.amazon_crawler - INFO - Successfully crawled product B071JM699P
+2025-07-24 21:40:04 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B071JM699P with 24 fields
+2025-07-24 21:40:10 - __main__ - INFO - Test crawl successful!
+2025-07-24 21:40:54 - __main__ - INFO - .env file already exists
+2025-07-24 21:40:54 - __main__ - INFO - Testing crawl for ASIN: B071JM699P
+2025-07-24 21:40:54 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-24 21:40:54 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-24 21:40:54 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-24 21:40:55 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-24 21:40:55 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-24 21:40:55 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-24 21:40:56 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-24 21:40:56 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-24 21:40:56 - crawler.amazon_crawler - INFO - Crawling product: B071JM699P from https://www.amazon.com/dp/B071JM699P
+2025-07-24 21:41:05 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-24 21:41:05 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-24 21:41:05 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-24 21:41:05 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-24 21:41:19 - __main__ - INFO - Goodbye!
+2025-07-24 21:42:34 - __main__ - INFO - .env file already exists
+2025-07-24 21:42:34 - __main__ - INFO - Testing crawl for ASIN: B071JM699P
+2025-07-24 21:42:34 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: True
+2025-07-24 21:42:34 - crawler.amazon_crawler - INFO - Running in HEADLESS mode (browser hidden)
+2025-07-24 21:42:34 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-24 21:42:36 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-24 21:42:36 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-24 21:42:36 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-24 21:42:37 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-24 21:42:37 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-24 21:42:37 - crawler.amazon_crawler - INFO - Crawling product: B071JM699P from https://www.amazon.com/dp/B071JM699P
+2025-07-24 21:42:45 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-24 21:42:45 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-24 21:42:45 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-24 21:42:45 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-24 21:42:52 - __main__ - INFO - Goodbye!
+2025-07-24 21:44:11 - __main__ - INFO - .env file already exists
+2025-07-24 21:44:11 - __main__ - INFO - Testing crawl for ASIN: B071JM699P
+2025-07-24 21:44:11 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: False
+2025-07-24 21:44:11 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-24 21:44:11 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-24 21:44:12 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-24 21:44:12 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-24 21:44:12 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-24 21:44:14 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-24 21:44:14 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-24 21:44:14 - crawler.amazon_crawler - INFO - Crawling product: B071JM699P from https://www.amazon.com/dp/B071JM699P
+2025-07-24 21:44:22 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-24 21:44:22 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-24 21:44:22 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-24 21:44:22 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-24 21:44:27 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-24 21:44:28 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-24 21:44:37 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-24 21:44:37 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-24 21:44:44 - crawler.amazon_crawler - INFO - Extracted title: Amazon Basics Wood-Cased #2 Pencils, Pre-sharpened...
+2025-07-24 21:44:44 - crawler.amazon_crawler - INFO - Extracted 4 about_this_item bullet points
+2025-07-24 21:44:44 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-24 21:44:44 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-24 21:44:44 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $13.0
+2025-07-24 21:44:44 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-18%'
+2025-07-24 21:44:44 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 18%
+2025-07-24 21:44:44 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$15.93'
+2025-07-24 21:44:44 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $15.93
+2025-07-24 21:44:44 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$13.0, list=$15.93, discount=18%
+2025-07-24 21:44:44 - crawler.amazon_crawler - INFO - Found rating text: '4.8'
+2025-07-24 21:44:44 - crawler.amazon_crawler - INFO - Extracted rating: 4.8
+2025-07-24 21:44:44 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-24 21:44:44 - crawler.amazon_crawler - INFO - Found lightning deal: 13% claimed
+2025-07-24 21:44:44 - crawler.amazon_crawler - INFO - Extracted bag_sale: 80K+ bought in past month
+2025-07-24 21:44:44 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-24 21:44:45 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-24 21:44:45 - crawler.amazon_crawler - INFO - Extracted product_description: 95 characters
+2025-07-24 21:44:46 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-24 21:44:46 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-24 21:44:46 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 6 VIDEOS
+2025-07-24 21:44:46 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-24 21:44:50 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-24 21:44:50 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-24 21:44:50 - crawler.amazon_crawler - INFO - Found product video: 'A Closer Look' - https://amazon.com/vdp/0a724b07b1424054b82329625a8da01f
+2025-07-24 21:44:50 - crawler.amazon_crawler - INFO - Found product video: 'LOOK at ALL of these pencils. A GREAT buy. ' - https://amazon.com/vdp/07e638f67f574bccb134e1e6b58f7b53
+2025-07-24 21:44:50 - crawler.amazon_crawler - INFO - Found product video: 'Honest Review of Amazon Basic Pencils ' - https://amazon.com/vdp/055f81b1ed744139bc1d8400881b97f0
+2025-07-24 21:44:50 - crawler.amazon_crawler - INFO - Found product video: 'BEST #2 PENCIL? | AmazonBasics Pencil Review' - https://amazon.com/vdp/0e97192051e946a6ac295a623572d987
+2025-07-24 21:44:50 - crawler.amazon_crawler - INFO - Found product video: 'Amazon Basics Woodcased #2 Pencils, Pre-sharpened, HB Lead' - https://amazon.com/vdp/03c4f80c0e3d445a8c7d92658ea997de
+2025-07-24 21:44:50 - crawler.amazon_crawler - INFO - Found product video: 'Best Pencils. Teacher Approved + Teacher Gift Hack + Demo!' - https://amazon.com/vdp/08d23cbea25c423f920a1c3e8d5f2fdc
+2025-07-24 21:44:50 - crawler.amazon_crawler - INFO - Found product video: 'Satisfied Customer' - https://amazon.com/vdp/015480c72af149f6a6c526b7a3ab5af8
+2025-07-24 21:44:50 - crawler.amazon_crawler - INFO - Found product video: 'Great quality' - https://amazon.com/vdp/061db249fc1f4c378c84dc3046815e66
+2025-07-24 21:44:50 - crawler.amazon_crawler - INFO - Found product video: 'Good quality' - https://amazon.com/vdp/012576f8ec3f4a9da38bdb88d96fe8c1
+2025-07-24 21:44:50 - crawler.amazon_crawler - INFO - Found product video: 'High quality pencils' - https://amazon.com/vdp/005ad404918c4302a481398296f31653
+2025-07-24 21:44:50 - crawler.amazon_crawler - INFO - Found product video: 'Great deal!' - https://amazon.com/vdp/0e53028e1f7d43a79b92106404733621
+2025-07-24 21:44:50 - crawler.amazon_crawler - INFO - Found product video: 'Pencil' - https://amazon.com/vdp/0a2de7b70b8c4346b02683067947ed7d
+2025-07-24 21:44:50 - crawler.amazon_crawler - INFO - Found product video: 'It&#39;s a pencil. It works.' - https://amazon.com/vdp/01635038897b451eb2617a8695c29c0d
+2025-07-24 21:44:50 - crawler.amazon_crawler - INFO - Extracted 14 videos from 'Videos for this product' section
+2025-07-24 21:44:50 - crawler.amazon_crawler - INFO - Total product videos found: 14
+2025-07-24 21:44:50 - crawler.amazon_crawler - WARNING - Could not close video popup with any selector
+2025-07-24 21:44:52 - crawler.amazon_crawler - INFO - Clicked 'Click to see full view' with JavaScript: a.more-videos.a-declarative
+2025-07-24 21:44:55 - crawler.amazon_crawler - INFO - Found ivThumbs container in image popup
+2025-07-24 21:44:55 - crawler.amazon_crawler - INFO - Found 0 image thumbnails in popup
+2025-07-24 21:44:55 - crawler.amazon_crawler - INFO - Total images extracted from popup: 0
+2025-07-24 21:44:55 - crawler.amazon_crawler - WARNING - Could not close image popup
+2025-07-24 21:44:55 - crawler.amazon_crawler - INFO - Final sale_percentage: 18% (preserved from extraction)
+2025-07-24 21:44:55 - crawler.amazon_crawler - INFO - Successfully crawled product B071JM699P
+2025-07-24 21:44:55 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B071JM699P with 24 fields
+2025-07-24 21:45:01 - __main__ - INFO - Test crawl successful!
+2025-07-24 21:45:52 - __main__ - INFO - .env file already exists
+2025-07-24 21:45:52 - __main__ - INFO - Testing crawl for ASIN: B071JM699P
+2025-07-24 21:45:52 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: False
+2025-07-24 21:45:52 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-24 21:45:52 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-24 21:45:53 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-24 21:45:53 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-24 21:45:53 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-24 21:45:55 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-24 21:45:55 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-24 21:45:55 - crawler.amazon_crawler - INFO - Crawling product: B071JM699P from https://www.amazon.com/dp/B071JM699P
+2025-07-24 21:46:03 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-24 21:46:03 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-24 21:46:03 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-24 21:46:04 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-24 21:46:09 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-24 21:46:10 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-24 21:46:18 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-24 21:46:18 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-24 21:46:25 - crawler.amazon_crawler - INFO - Extracted title: Amazon Basics Wood-Cased #2 Pencils, Pre-sharpened...
+2025-07-24 21:46:25 - crawler.amazon_crawler - INFO - Extracted 4 about_this_item bullet points
+2025-07-24 21:46:25 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-24 21:46:25 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-24 21:46:25 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $13.0
+2025-07-24 21:46:25 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-18%'
+2025-07-24 21:46:25 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 18%
+2025-07-24 21:46:26 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$15.93'
+2025-07-24 21:46:26 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $15.93
+2025-07-24 21:46:26 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$13.0, list=$15.93, discount=18%
+2025-07-24 21:46:26 - crawler.amazon_crawler - INFO - Found rating text: '4.8'
+2025-07-24 21:46:26 - crawler.amazon_crawler - INFO - Extracted rating: 4.8
+2025-07-24 21:46:26 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-24 21:46:26 - crawler.amazon_crawler - INFO - Found lightning deal: 13% claimed
+2025-07-24 21:46:26 - crawler.amazon_crawler - INFO - Extracted bag_sale: 80K+ bought in past month
+2025-07-24 21:46:26 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-24 21:46:26 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-24 21:46:26 - crawler.amazon_crawler - INFO - Extracted product_description: 95 characters
+2025-07-24 21:46:26 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-24 21:46:26 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-24 21:46:27 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 6 VIDEOS
+2025-07-24 21:46:27 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-24 21:46:30 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-24 21:46:30 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-24 21:46:31 - crawler.amazon_crawler - INFO - Found product video: 'A Closer Look' - https://amazon.com/vdp/0a724b07b1424054b82329625a8da01f
+2025-07-24 21:46:31 - crawler.amazon_crawler - INFO - Found product video: 'LOOK at ALL of these pencils. A GREAT buy. ' - https://amazon.com/vdp/07e638f67f574bccb134e1e6b58f7b53
+2025-07-24 21:46:31 - crawler.amazon_crawler - INFO - Found product video: 'Honest Review of Amazon Basic Pencils ' - https://amazon.com/vdp/055f81b1ed744139bc1d8400881b97f0
+2025-07-24 21:46:31 - crawler.amazon_crawler - INFO - Found product video: 'BEST #2 PENCIL? | AmazonBasics Pencil Review' - https://amazon.com/vdp/0e97192051e946a6ac295a623572d987
+2025-07-24 21:46:31 - crawler.amazon_crawler - INFO - Found product video: 'Amazon Basics Woodcased #2 Pencils, Pre-sharpened, HB Lead' - https://amazon.com/vdp/03c4f80c0e3d445a8c7d92658ea997de
+2025-07-24 21:46:31 - crawler.amazon_crawler - INFO - Found product video: 'Best Pencils. Teacher Approved + Teacher Gift Hack + Demo!' - https://amazon.com/vdp/08d23cbea25c423f920a1c3e8d5f2fdc
+2025-07-24 21:46:31 - crawler.amazon_crawler - INFO - Found product video: 'Satisfied Customer' - https://amazon.com/vdp/015480c72af149f6a6c526b7a3ab5af8
+2025-07-24 21:46:31 - crawler.amazon_crawler - INFO - Found product video: 'Great quality' - https://amazon.com/vdp/061db249fc1f4c378c84dc3046815e66
+2025-07-24 21:46:31 - crawler.amazon_crawler - INFO - Found product video: 'Good quality' - https://amazon.com/vdp/012576f8ec3f4a9da38bdb88d96fe8c1
+2025-07-24 21:46:31 - crawler.amazon_crawler - INFO - Found product video: 'High quality pencils' - https://amazon.com/vdp/005ad404918c4302a481398296f31653
+2025-07-24 21:46:31 - crawler.amazon_crawler - INFO - Found product video: 'Great deal!' - https://amazon.com/vdp/0e53028e1f7d43a79b92106404733621
+2025-07-24 21:46:31 - crawler.amazon_crawler - INFO - Found product video: 'Pencil' - https://amazon.com/vdp/0a2de7b70b8c4346b02683067947ed7d
+2025-07-24 21:46:31 - crawler.amazon_crawler - INFO - Found product video: 'It&#39;s a pencil. It works.' - https://amazon.com/vdp/01635038897b451eb2617a8695c29c0d
+2025-07-24 21:46:31 - crawler.amazon_crawler - INFO - Extracted 14 videos from 'Videos for this product' section
+2025-07-24 21:46:31 - crawler.amazon_crawler - INFO - Total product videos found: 14
+2025-07-24 21:46:32 - crawler.amazon_crawler - WARNING - Could not close video popup with any selector
+2025-07-24 21:46:32 - crawler.amazon_crawler - INFO - Clicked 'Click to see full view' with selector: a.more-videos.a-declarative
+2025-07-24 21:46:35 - crawler.amazon_crawler - INFO - Found ivThumbs container in image popup
+2025-07-24 21:46:35 - crawler.amazon_crawler - INFO - Found 0 image thumbnails in popup
+2025-07-24 21:46:35 - crawler.amazon_crawler - INFO - Total images extracted from popup: 0
+2025-07-24 21:46:35 - crawler.amazon_crawler - WARNING - Could not close image popup
+2025-07-24 21:46:35 - crawler.amazon_crawler - INFO - Final sale_percentage: 18% (preserved from extraction)
+2025-07-24 21:46:35 - crawler.amazon_crawler - INFO - Successfully crawled product B071JM699P
+2025-07-24 21:46:35 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B071JM699P with 24 fields
+2025-07-24 21:46:42 - __main__ - INFO - Test crawl successful!
+2025-07-24 21:53:49 - __main__ - INFO - .env file already exists
+2025-07-24 21:53:49 - __main__ - INFO - Testing crawl for ASIN: B071JM699P
+2025-07-24 21:53:49 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: False
+2025-07-24 21:53:49 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-24 21:53:49 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-24 21:53:50 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-24 21:53:50 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-24 21:53:50 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-24 21:53:52 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-24 21:53:52 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-24 21:53:52 - crawler.amazon_crawler - INFO - Crawling product: B071JM699P from https://www.amazon.com/dp/B071JM699P
+2025-07-24 21:54:03 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-24 21:54:03 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-24 21:54:03 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-24 21:54:03 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-24 21:54:08 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-24 21:54:09 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-24 21:54:18 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-24 21:54:18 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-24 21:54:25 - crawler.amazon_crawler - INFO - Extracted title: Amazon Basics Wood-Cased #2 Pencils, Pre-sharpened...
+2025-07-24 21:54:25 - crawler.amazon_crawler - INFO - Extracted 4 about_this_item bullet points
+2025-07-24 21:54:25 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-24 21:54:25 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-24 21:54:25 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $13.0
+2025-07-24 21:54:25 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-18%'
+2025-07-24 21:54:25 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 18%
+2025-07-24 21:54:25 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$15.93'
+2025-07-24 21:54:25 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $15.93
+2025-07-24 21:54:25 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$13.0, list=$15.93, discount=18%
+2025-07-24 21:54:25 - crawler.amazon_crawler - INFO - Found rating text: '4.8'
+2025-07-24 21:54:25 - crawler.amazon_crawler - INFO - Extracted rating: 4.8
+2025-07-24 21:54:25 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-24 21:54:25 - crawler.amazon_crawler - INFO - Found lightning deal: 13% claimed
+2025-07-24 21:54:25 - crawler.amazon_crawler - INFO - Extracted bag_sale: 80K+ bought in past month
+2025-07-24 21:54:26 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-24 21:54:26 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-24 21:54:26 - crawler.amazon_crawler - INFO - Extracted product_description: 95 characters
+2025-07-24 21:54:26 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-24 21:54:26 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-24 21:54:26 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 6 VIDEOS
+2025-07-24 21:54:27 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-24 21:54:30 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-24 21:54:30 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-24 21:54:30 - crawler.amazon_crawler - INFO - Found product video: 'A Closer Look' - https://amazon.com/vdp/0a724b07b1424054b82329625a8da01f
+2025-07-24 21:54:30 - crawler.amazon_crawler - INFO - Found product video: 'LOOK at ALL of these pencils. A GREAT buy. ' - https://amazon.com/vdp/07e638f67f574bccb134e1e6b58f7b53
+2025-07-24 21:54:30 - crawler.amazon_crawler - INFO - Found product video: 'Honest Review of Amazon Basic Pencils ' - https://amazon.com/vdp/055f81b1ed744139bc1d8400881b97f0
+2025-07-24 21:54:30 - crawler.amazon_crawler - INFO - Found product video: 'BEST #2 PENCIL? | AmazonBasics Pencil Review' - https://amazon.com/vdp/0e97192051e946a6ac295a623572d987
+2025-07-24 21:54:31 - crawler.amazon_crawler - INFO - Found product video: 'Amazon Basics Woodcased #2 Pencils, Pre-sharpened, HB Lead' - https://amazon.com/vdp/03c4f80c0e3d445a8c7d92658ea997de
+2025-07-24 21:54:31 - crawler.amazon_crawler - INFO - Found product video: 'Best Pencils. Teacher Approved + Teacher Gift Hack + Demo!' - https://amazon.com/vdp/08d23cbea25c423f920a1c3e8d5f2fdc
+2025-07-24 21:54:31 - crawler.amazon_crawler - INFO - Found product video: 'Satisfied Customer' - https://amazon.com/vdp/015480c72af149f6a6c526b7a3ab5af8
+2025-07-24 21:54:31 - crawler.amazon_crawler - INFO - Found product video: 'Great quality' - https://amazon.com/vdp/061db249fc1f4c378c84dc3046815e66
+2025-07-24 21:54:31 - crawler.amazon_crawler - INFO - Found product video: 'Good quality' - https://amazon.com/vdp/012576f8ec3f4a9da38bdb88d96fe8c1
+2025-07-24 21:54:31 - crawler.amazon_crawler - INFO - Found product video: 'High quality pencils' - https://amazon.com/vdp/005ad404918c4302a481398296f31653
+2025-07-24 21:54:31 - crawler.amazon_crawler - INFO - Found product video: 'Great deal!' - https://amazon.com/vdp/0e53028e1f7d43a79b92106404733621
+2025-07-24 21:54:31 - crawler.amazon_crawler - INFO - Found product video: 'Pencil' - https://amazon.com/vdp/0a2de7b70b8c4346b02683067947ed7d
+2025-07-24 21:54:31 - crawler.amazon_crawler - INFO - Found product video: 'It&#39;s a pencil. It works.' - https://amazon.com/vdp/01635038897b451eb2617a8695c29c0d
+2025-07-24 21:54:31 - crawler.amazon_crawler - INFO - Extracted 14 videos from 'Videos for this product' section
+2025-07-24 21:54:31 - crawler.amazon_crawler - INFO - Total product videos found: 14
+2025-07-24 21:54:31 - crawler.amazon_crawler - INFO - Closed video popup by clicking outside
+2025-07-24 21:54:33 - crawler.amazon_crawler - WARNING - Could not click close button: Message: no such element: Unable to locate element: {"method":"css selector","selector":"button.a-button-close.vse-close-button.vse-close-for-flex"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70246e935+77845]
+	GetHandleVerifier [0x0x7ff70246e990+77936]
+	(No symbol) [0x0x7ff702229cda]
+	(No symbol) [0x0x7ff7022806aa]
+	(No symbol) [0x0x7ff70228095c]
+	(No symbol) [0x0x7ff7022d3d07]
+	(No symbol) [0x0x7ff7022a890f]
+	(No symbol) [0x0x7ff7022d0b07]
+	(No symbol) [0x0x7ff7022a86a3]
+	(No symbol) [0x0x7ff702271791]
+	(No symbol) [0x0x7ff702272523]
+	GetHandleVerifier [0x0x7ff70274684d+3059501]
+	GetHandleVerifier [0x0x7ff702740c0d+3035885]
+	GetHandleVerifier [0x0x7ff702760400+3164896]
+	GetHandleVerifier [0x0x7ff702488c3e+185118]
+	GetHandleVerifier [0x0x7ff70249054f+216111]
+	GetHandleVerifier [0x0x7ff7024772e4+113092]
+	GetHandleVerifier [0x0x7ff702477499+113529]
+	GetHandleVerifier [0x0x7ff70245e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-24 21:54:34 - crawler.amazon_crawler - WARNING - Could not click first image thumbnail: Message: element click intercepted: Element <li class="a-spacing-small item imageThumbnail a-declarative" data-ux-click="" data-csa-c-type="uxElement" data-csa-c-element-type="navigational" data-csa-c-action="image-block-alt-image-hover" data-csa-c-posy="1" data-csa-c-id="a4mdl2-t4aqqz-q4lq92-kt0mx3">...</li> is not clickable at point (234, 293). Other element would receive the click: <video id="detailpage-imageblock-player-0cdb0c4b-0d1b-4c4c-b948-782a77d647de-container-element_html5_api" class="vjs-tech" playsinline="playsinline" disablepictureinpicture="true" tabindex="-1" preload="auto" poster="https://m.media-amazon.com/images/I/6188RKmqZuL.jpg" src="blob:https://www.amazon.com/9ec3a0ed-d747-4c1a-836c-a7a9b1de2628"></video>
+  (Session info: chrome=138.0.7204.158)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70246e935+77845]
+	GetHandleVerifier [0x0x7ff70246e990+77936]
+	(No symbol) [0x0x7ff702229cda]
+	(No symbol) [0x0x7ff7022886a9]
+	(No symbol) [0x0x7ff702286042]
+	(No symbol) [0x0x7ff702283081]
+	(No symbol) [0x0x7ff702281f81]
+	(No symbol) [0x0x7ff7022736c8]
+	(No symbol) [0x0x7ff7022a88ca]
+	(No symbol) [0x0x7ff702272f76]
+	(No symbol) [0x0x7ff7022a8ae0]
+	(No symbol) [0x0x7ff7022d0b07]
+	(No symbol) [0x0x7ff7022a86a3]
+	(No symbol) [0x0x7ff702271791]
+	(No symbol) [0x0x7ff702272523]
+	GetHandleVerifier [0x0x7ff70274684d+3059501]
+	GetHandleVerifier [0x0x7ff702740c0d+3035885]
+	GetHandleVerifier [0x0x7ff702760400+3164896]
+	GetHandleVerifier [0x0x7ff702488c3e+185118]
+	GetHandleVerifier [0x0x7ff70249054f+216111]
+	GetHandleVerifier [0x0x7ff7024772e4+113092]
+	GetHandleVerifier [0x0x7ff702477499+113529]
+	GetHandleVerifier [0x0x7ff70245e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-24 21:54:34 - crawler.amazon_crawler - WARNING - Could not click 'Click to see full view': Message: no such element: Unable to locate element: {"method":"css selector","selector":"#canvasCaption a.a-declarative"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70246e935+77845]
+	GetHandleVerifier [0x0x7ff70246e990+77936]
+	(No symbol) [0x0x7ff702229cda]
+	(No symbol) [0x0x7ff7022806aa]
+	(No symbol) [0x0x7ff70228095c]
+	(No symbol) [0x0x7ff7022d3d07]
+	(No symbol) [0x0x7ff7022a890f]
+	(No symbol) [0x0x7ff7022d0b07]
+	(No symbol) [0x0x7ff7022a86a3]
+	(No symbol) [0x0x7ff702271791]
+	(No symbol) [0x0x7ff702272523]
+	GetHandleVerifier [0x0x7ff70274684d+3059501]
+	GetHandleVerifier [0x0x7ff702740c0d+3035885]
+	GetHandleVerifier [0x0x7ff702760400+3164896]
+	GetHandleVerifier [0x0x7ff702488c3e+185118]
+	GetHandleVerifier [0x0x7ff70249054f+216111]
+	GetHandleVerifier [0x0x7ff7024772e4+113092]
+	GetHandleVerifier [0x0x7ff702477499+113529]
+	GetHandleVerifier [0x0x7ff70245e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-24 21:54:34 - crawler.amazon_crawler - INFO - Found ivThumbs container
+2025-07-24 21:54:34 - crawler.amazon_crawler - INFO - Found 0 image thumbnails
+2025-07-24 21:54:34 - crawler.amazon_crawler - INFO - Total images extracted: 0
+2025-07-24 21:54:35 - crawler.amazon_crawler - INFO - Closed image popup by clicking outside
+2025-07-24 21:54:36 - crawler.amazon_crawler - INFO - Final sale_percentage: 18% (preserved from extraction)
+2025-07-24 21:54:36 - crawler.amazon_crawler - INFO - Successfully crawled product B071JM699P
+2025-07-24 21:54:36 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B071JM699P with 24 fields
+2025-07-24 21:54:42 - __main__ - INFO - Test crawl successful!
+2025-07-24 21:57:06 - __main__ - INFO - .env file already exists
+2025-07-24 21:57:06 - __main__ - INFO - Testing crawl for ASIN: B071JM699P
+2025-07-24 21:57:06 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: False
+2025-07-24 21:57:06 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-24 21:57:06 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-24 21:57:08 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-24 21:57:08 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-24 21:57:08 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-24 21:57:10 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-24 21:57:10 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-24 21:57:10 - crawler.amazon_crawler - INFO - Crawling product: B071JM699P from https://www.amazon.com/dp/B071JM699P
+2025-07-24 21:57:19 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-24 21:57:19 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-24 21:57:19 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-24 21:57:20 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-24 21:57:25 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-24 21:57:26 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-24 21:57:35 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-24 21:57:35 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-24 21:57:42 - crawler.amazon_crawler - INFO - Extracted title: Amazon Basics Wood-Cased #2 Pencils, Pre-sharpened...
+2025-07-24 21:57:42 - crawler.amazon_crawler - INFO - Extracted 4 about_this_item bullet points
+2025-07-24 21:57:42 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-24 21:57:42 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-24 21:57:42 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $13.0
+2025-07-24 21:57:42 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-18%'
+2025-07-24 21:57:42 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 18%
+2025-07-24 21:57:42 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$15.93'
+2025-07-24 21:57:42 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $15.93
+2025-07-24 21:57:42 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$13.0, list=$15.93, discount=18%
+2025-07-24 21:57:42 - crawler.amazon_crawler - INFO - Found rating text: '4.8'
+2025-07-24 21:57:42 - crawler.amazon_crawler - INFO - Extracted rating: 4.8
+2025-07-24 21:57:42 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-24 21:57:43 - crawler.amazon_crawler - INFO - Found lightning deal: 13% claimed
+2025-07-24 21:57:43 - crawler.amazon_crawler - INFO - Extracted bag_sale: 80K+ bought in past month
+2025-07-24 21:57:43 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-24 21:57:43 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-24 21:57:43 - crawler.amazon_crawler - INFO - Extracted product_description: 95 characters
+2025-07-24 21:57:44 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-24 21:57:44 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-24 21:57:44 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 6 VIDEOS
+2025-07-24 21:57:45 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-24 21:57:49 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-24 21:57:49 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-24 21:57:49 - crawler.amazon_crawler - INFO - Found product video: 'A Closer Look' - https://amazon.com/vdp/0a724b07b1424054b82329625a8da01f
+2025-07-24 21:57:49 - crawler.amazon_crawler - INFO - Found product video: 'LOOK at ALL of these pencils. A GREAT buy. ' - https://amazon.com/vdp/07e638f67f574bccb134e1e6b58f7b53
+2025-07-24 21:57:49 - crawler.amazon_crawler - INFO - Found product video: 'Honest Review of Amazon Basic Pencils ' - https://amazon.com/vdp/055f81b1ed744139bc1d8400881b97f0
+2025-07-24 21:57:49 - crawler.amazon_crawler - INFO - Found product video: 'BEST #2 PENCIL? | AmazonBasics Pencil Review' - https://amazon.com/vdp/0e97192051e946a6ac295a623572d987
+2025-07-24 21:57:49 - crawler.amazon_crawler - INFO - Found product video: 'Amazon Basics Woodcased #2 Pencils, Pre-sharpened, HB Lead' - https://amazon.com/vdp/03c4f80c0e3d445a8c7d92658ea997de
+2025-07-24 21:57:49 - crawler.amazon_crawler - INFO - Found product video: 'Best Pencils. Teacher Approved + Teacher Gift Hack + Demo!' - https://amazon.com/vdp/08d23cbea25c423f920a1c3e8d5f2fdc
+2025-07-24 21:57:49 - crawler.amazon_crawler - INFO - Found product video: 'Satisfied Customer' - https://amazon.com/vdp/015480c72af149f6a6c526b7a3ab5af8
+2025-07-24 21:57:49 - crawler.amazon_crawler - INFO - Found product video: 'Great quality' - https://amazon.com/vdp/061db249fc1f4c378c84dc3046815e66
+2025-07-24 21:57:50 - crawler.amazon_crawler - INFO - Found product video: 'Good quality' - https://amazon.com/vdp/012576f8ec3f4a9da38bdb88d96fe8c1
+2025-07-24 21:57:50 - crawler.amazon_crawler - INFO - Found product video: 'High quality pencils' - https://amazon.com/vdp/005ad404918c4302a481398296f31653
+2025-07-24 21:57:50 - crawler.amazon_crawler - INFO - Found product video: 'Great deal!' - https://amazon.com/vdp/0e53028e1f7d43a79b92106404733621
+2025-07-24 21:57:50 - crawler.amazon_crawler - INFO - Found product video: 'Pencil' - https://amazon.com/vdp/0a2de7b70b8c4346b02683067947ed7d
+2025-07-24 21:57:50 - crawler.amazon_crawler - INFO - Found product video: 'It&#39;s a pencil. It works.' - https://amazon.com/vdp/01635038897b451eb2617a8695c29c0d
+2025-07-24 21:57:50 - crawler.amazon_crawler - INFO - Extracted 14 videos from 'Videos for this product' section
+2025-07-24 21:57:50 - crawler.amazon_crawler - INFO - Total product videos found: 14
+2025-07-24 21:57:51 - crawler.amazon_crawler - INFO - Closed video popup by clicking outside
+2025-07-24 21:57:53 - crawler.amazon_crawler - WARNING - Could not click close button: Message: no such element: Unable to locate element: {"method":"css selector","selector":"button.a-button-close.vse-close-button.vse-close-for-flex"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70246e935+77845]
+	GetHandleVerifier [0x0x7ff70246e990+77936]
+	(No symbol) [0x0x7ff702229cda]
+	(No symbol) [0x0x7ff7022806aa]
+	(No symbol) [0x0x7ff70228095c]
+	(No symbol) [0x0x7ff7022d3d07]
+	(No symbol) [0x0x7ff7022a890f]
+	(No symbol) [0x0x7ff7022d0b07]
+	(No symbol) [0x0x7ff7022a86a3]
+	(No symbol) [0x0x7ff702271791]
+	(No symbol) [0x0x7ff702272523]
+	GetHandleVerifier [0x0x7ff70274684d+3059501]
+	GetHandleVerifier [0x0x7ff702740c0d+3035885]
+	GetHandleVerifier [0x0x7ff702760400+3164896]
+	GetHandleVerifier [0x0x7ff702488c3e+185118]
+	GetHandleVerifier [0x0x7ff70249054f+216111]
+	GetHandleVerifier [0x0x7ff7024772e4+113092]
+	GetHandleVerifier [0x0x7ff702477499+113529]
+	GetHandleVerifier [0x0x7ff70245e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-24 21:57:54 - crawler.amazon_crawler - WARNING - Could not click first image thumbnail: Message: element click intercepted: Element <li class="a-spacing-small item imageThumbnail a-declarative" data-ux-click="" data-csa-c-type="uxElement" data-csa-c-element-type="navigational" data-csa-c-action="image-block-alt-image-hover" data-csa-c-posy="1" data-csa-c-id="7es0m0-rijql1-nafg6i-bcp73m">...</li> is not clickable at point (38, 293). Other element would receive the click: <div class="a-modal-scroller a-declarative" data-action="a-popover-floating-close" style="padding-bottom: 1px; visibility: visible;">...</div>
+  (Session info: chrome=138.0.7204.158)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70246e935+77845]
+	GetHandleVerifier [0x0x7ff70246e990+77936]
+	(No symbol) [0x0x7ff702229cda]
+	(No symbol) [0x0x7ff7022886a9]
+	(No symbol) [0x0x7ff702286042]
+	(No symbol) [0x0x7ff702283081]
+	(No symbol) [0x0x7ff702281f81]
+	(No symbol) [0x0x7ff7022736c8]
+	(No symbol) [0x0x7ff7022a88ca]
+	(No symbol) [0x0x7ff702272f76]
+	(No symbol) [0x0x7ff7022a8ae0]
+	(No symbol) [0x0x7ff7022d0b07]
+	(No symbol) [0x0x7ff7022a86a3]
+	(No symbol) [0x0x7ff702271791]
+	(No symbol) [0x0x7ff702272523]
+	GetHandleVerifier [0x0x7ff70274684d+3059501]
+	GetHandleVerifier [0x0x7ff702740c0d+3035885]
+	GetHandleVerifier [0x0x7ff702760400+3164896]
+	GetHandleVerifier [0x0x7ff702488c3e+185118]
+	GetHandleVerifier [0x0x7ff70249054f+216111]
+	GetHandleVerifier [0x0x7ff7024772e4+113092]
+	GetHandleVerifier [0x0x7ff702477499+113529]
+	GetHandleVerifier [0x0x7ff70245e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-24 21:57:54 - crawler.amazon_crawler - WARNING - Could not click 'Click to see full view': Message: no such element: Unable to locate element: {"method":"css selector","selector":"#canvasCaption a.a-declarative"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70246e935+77845]
+	GetHandleVerifier [0x0x7ff70246e990+77936]
+	(No symbol) [0x0x7ff702229cda]
+	(No symbol) [0x0x7ff7022806aa]
+	(No symbol) [0x0x7ff70228095c]
+	(No symbol) [0x0x7ff7022d3d07]
+	(No symbol) [0x0x7ff7022a890f]
+	(No symbol) [0x0x7ff7022d0b07]
+	(No symbol) [0x0x7ff7022a86a3]
+	(No symbol) [0x0x7ff702271791]
+	(No symbol) [0x0x7ff702272523]
+	GetHandleVerifier [0x0x7ff70274684d+3059501]
+	GetHandleVerifier [0x0x7ff702740c0d+3035885]
+	GetHandleVerifier [0x0x7ff702760400+3164896]
+	GetHandleVerifier [0x0x7ff702488c3e+185118]
+	GetHandleVerifier [0x0x7ff70249054f+216111]
+	GetHandleVerifier [0x0x7ff7024772e4+113092]
+	GetHandleVerifier [0x0x7ff702477499+113529]
+	GetHandleVerifier [0x0x7ff70245e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-24 21:57:54 - crawler.amazon_crawler - INFO - Found ivThumbs container
+2025-07-24 21:57:54 - crawler.amazon_crawler - INFO - Found 0 image thumbnails
+2025-07-24 21:57:54 - crawler.amazon_crawler - INFO - Total images extracted: 0
+2025-07-24 21:57:55 - crawler.amazon_crawler - INFO - Closed image popup by clicking outside
+2025-07-24 21:57:56 - crawler.amazon_crawler - INFO - Final sale_percentage: 18% (preserved from extraction)
+2025-07-24 21:57:56 - crawler.amazon_crawler - INFO - Successfully crawled product B071JM699P
+2025-07-24 21:57:56 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B071JM699P with 24 fields
+2025-07-24 21:58:02 - __main__ - INFO - Test crawl successful!
+2025-07-24 21:59:32 - __main__ - INFO - .env file already exists
+2025-07-24 21:59:32 - __main__ - INFO - Testing crawl for ASIN: B071JM699P
+2025-07-24 21:59:32 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: False
+2025-07-24 21:59:32 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-24 21:59:32 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-24 21:59:34 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-24 21:59:34 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-24 21:59:34 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-24 21:59:35 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-24 21:59:35 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-24 21:59:35 - crawler.amazon_crawler - INFO - Crawling product: B071JM699P from https://www.amazon.com/dp/B071JM699P
+2025-07-24 21:59:43 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-24 21:59:43 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-24 21:59:43 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-24 21:59:43 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-24 21:59:48 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-24 21:59:49 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-24 21:59:57 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-24 21:59:57 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-24 22:00:05 - crawler.amazon_crawler - INFO - Extracted title: Amazon Basics Wood-Cased #2 Pencils, Pre-sharpened...
+2025-07-24 22:00:05 - crawler.amazon_crawler - INFO - Extracted 4 about_this_item bullet points
+2025-07-24 22:00:05 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-24 22:00:05 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-24 22:00:05 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $13.0
+2025-07-24 22:00:05 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-18%'
+2025-07-24 22:00:05 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 18%
+2025-07-24 22:00:05 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$15.93'
+2025-07-24 22:00:05 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $15.93
+2025-07-24 22:00:05 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$13.0, list=$15.93, discount=18%
+2025-07-24 22:00:05 - crawler.amazon_crawler - INFO - Found rating text: '4.8'
+2025-07-24 22:00:05 - crawler.amazon_crawler - INFO - Extracted rating: 4.8
+2025-07-24 22:00:05 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-24 22:00:05 - crawler.amazon_crawler - INFO - Found lightning deal: 13% claimed
+2025-07-24 22:00:05 - crawler.amazon_crawler - INFO - Extracted bag_sale: 80K+ bought in past month
+2025-07-24 22:00:05 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-24 22:00:05 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-24 22:00:05 - crawler.amazon_crawler - INFO - Extracted product_description: 95 characters
+2025-07-24 22:00:06 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-24 22:00:06 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-24 22:00:06 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 6 VIDEOS
+2025-07-24 22:00:07 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-24 22:00:10 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-24 22:00:10 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-24 22:00:10 - crawler.amazon_crawler - INFO - Found product video: 'A Closer Look' - https://amazon.com/vdp/0a724b07b1424054b82329625a8da01f
+2025-07-24 22:00:10 - crawler.amazon_crawler - INFO - Found product video: 'LOOK at ALL of these pencils. A GREAT buy. ' - https://amazon.com/vdp/07e638f67f574bccb134e1e6b58f7b53
+2025-07-24 22:00:10 - crawler.amazon_crawler - INFO - Found product video: 'Honest Review of Amazon Basic Pencils ' - https://amazon.com/vdp/055f81b1ed744139bc1d8400881b97f0
+2025-07-24 22:00:10 - crawler.amazon_crawler - INFO - Found product video: 'BEST #2 PENCIL? | AmazonBasics Pencil Review' - https://amazon.com/vdp/0e97192051e946a6ac295a623572d987
+2025-07-24 22:00:10 - crawler.amazon_crawler - INFO - Found product video: 'Amazon Basics Woodcased #2 Pencils, Pre-sharpened, HB Lead' - https://amazon.com/vdp/03c4f80c0e3d445a8c7d92658ea997de
+2025-07-24 22:00:11 - crawler.amazon_crawler - INFO - Found product video: 'Best Pencils. Teacher Approved + Teacher Gift Hack + Demo!' - https://amazon.com/vdp/08d23cbea25c423f920a1c3e8d5f2fdc
+2025-07-24 22:00:11 - crawler.amazon_crawler - INFO - Found product video: 'Satisfied Customer' - https://amazon.com/vdp/015480c72af149f6a6c526b7a3ab5af8
+2025-07-24 22:00:11 - crawler.amazon_crawler - INFO - Found product video: 'Great quality' - https://amazon.com/vdp/061db249fc1f4c378c84dc3046815e66
+2025-07-24 22:00:11 - crawler.amazon_crawler - INFO - Found product video: 'Good quality' - https://amazon.com/vdp/012576f8ec3f4a9da38bdb88d96fe8c1
+2025-07-24 22:00:11 - crawler.amazon_crawler - INFO - Found product video: 'High quality pencils' - https://amazon.com/vdp/005ad404918c4302a481398296f31653
+2025-07-24 22:00:11 - crawler.amazon_crawler - INFO - Found product video: 'Great deal!' - https://amazon.com/vdp/0e53028e1f7d43a79b92106404733621
+2025-07-24 22:00:11 - crawler.amazon_crawler - INFO - Found product video: 'Pencil' - https://amazon.com/vdp/0a2de7b70b8c4346b02683067947ed7d
+2025-07-24 22:00:11 - crawler.amazon_crawler - INFO - Found product video: 'It&#39;s a pencil. It works.' - https://amazon.com/vdp/01635038897b451eb2617a8695c29c0d
+2025-07-24 22:00:11 - crawler.amazon_crawler - INFO - Extracted 14 videos from 'Videos for this product' section
+2025-07-24 22:00:11 - crawler.amazon_crawler - INFO - Total product videos found: 14
+2025-07-24 22:00:11 - crawler.amazon_crawler - INFO - Closed video popup by clicking outside
+2025-07-24 22:00:13 - crawler.amazon_crawler - WARNING - Close button found but not displayed
+2025-07-24 22:00:14 - crawler.amazon_crawler - WARNING - Could not click first image thumbnail: Message: element click intercepted: Element <li class="a-spacing-small item imageThumbnail a-declarative" data-ux-click="" data-csa-c-type="uxElement" data-csa-c-element-type="navigational" data-csa-c-action="image-block-alt-image-hover" data-csa-c-posy="1" data-csa-c-id="41mx29-6ehlkt-7uxkwd-o3gpqc">...</li> is not clickable at point (234, 293). Other element would receive the click: <video id="detailpage-imageblock-player-9d3864f8-7588-4025-9f06-2f990042276f-container-element_html5_api" class="vjs-tech" playsinline="playsinline" disablepictureinpicture="true" tabindex="-1" preload="auto" poster="https://m.media-amazon.com/images/I/6188RKmqZuL.jpg" src="blob:https://www.amazon.com/e98f9f1f-39d4-46d5-bd08-ff14ef5049cc"></video>
+  (Session info: chrome=138.0.7204.158)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70246e935+77845]
+	GetHandleVerifier [0x0x7ff70246e990+77936]
+	(No symbol) [0x0x7ff702229cda]
+	(No symbol) [0x0x7ff7022886a9]
+	(No symbol) [0x0x7ff702286042]
+	(No symbol) [0x0x7ff702283081]
+	(No symbol) [0x0x7ff702281f81]
+	(No symbol) [0x0x7ff7022736c8]
+	(No symbol) [0x0x7ff7022a88ca]
+	(No symbol) [0x0x7ff702272f76]
+	(No symbol) [0x0x7ff7022a8ae0]
+	(No symbol) [0x0x7ff7022d0b07]
+	(No symbol) [0x0x7ff7022a86a3]
+	(No symbol) [0x0x7ff702271791]
+	(No symbol) [0x0x7ff702272523]
+	GetHandleVerifier [0x0x7ff70274684d+3059501]
+	GetHandleVerifier [0x0x7ff702740c0d+3035885]
+	GetHandleVerifier [0x0x7ff702760400+3164896]
+	GetHandleVerifier [0x0x7ff702488c3e+185118]
+	GetHandleVerifier [0x0x7ff70249054f+216111]
+	GetHandleVerifier [0x0x7ff7024772e4+113092]
+	GetHandleVerifier [0x0x7ff702477499+113529]
+	GetHandleVerifier [0x0x7ff70245e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-24 22:00:14 - crawler.amazon_crawler - WARNING - Could not click 'Click to see full view': Message: no such element: Unable to locate element: {"method":"css selector","selector":"#canvasCaption a.a-declarative"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70246e935+77845]
+	GetHandleVerifier [0x0x7ff70246e990+77936]
+	(No symbol) [0x0x7ff702229cda]
+	(No symbol) [0x0x7ff7022806aa]
+	(No symbol) [0x0x7ff70228095c]
+	(No symbol) [0x0x7ff7022d3d07]
+	(No symbol) [0x0x7ff7022a890f]
+	(No symbol) [0x0x7ff7022d0b07]
+	(No symbol) [0x0x7ff7022a86a3]
+	(No symbol) [0x0x7ff702271791]
+	(No symbol) [0x0x7ff702272523]
+	GetHandleVerifier [0x0x7ff70274684d+3059501]
+	GetHandleVerifier [0x0x7ff702740c0d+3035885]
+	GetHandleVerifier [0x0x7ff702760400+3164896]
+	GetHandleVerifier [0x0x7ff702488c3e+185118]
+	GetHandleVerifier [0x0x7ff70249054f+216111]
+	GetHandleVerifier [0x0x7ff7024772e4+113092]
+	GetHandleVerifier [0x0x7ff702477499+113529]
+	GetHandleVerifier [0x0x7ff70245e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-24 22:00:14 - crawler.amazon_crawler - INFO - Found ivThumbs container
+2025-07-24 22:00:14 - crawler.amazon_crawler - INFO - Found 0 image thumbnails
+2025-07-24 22:00:14 - crawler.amazon_crawler - INFO - Total images extracted: 0
+2025-07-24 22:00:15 - crawler.amazon_crawler - INFO - Closed image popup by clicking outside
+2025-07-24 22:00:16 - crawler.amazon_crawler - INFO - Final sale_percentage: 18% (preserved from extraction)
+2025-07-24 22:00:16 - crawler.amazon_crawler - INFO - Successfully crawled product B071JM699P
+2025-07-24 22:00:16 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B071JM699P with 24 fields
+2025-07-24 22:00:22 - __main__ - INFO - Test crawl successful!
+2025-07-24 22:01:59 - __main__ - INFO - .env file already exists
+2025-07-24 22:01:59 - __main__ - INFO - Testing crawl for ASIN: B071JM699P
+2025-07-24 22:01:59 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: False
+2025-07-24 22:01:59 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-24 22:01:59 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-24 22:02:01 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-24 22:02:01 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-24 22:02:01 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-24 22:02:02 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-24 22:02:02 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-24 22:02:02 - crawler.amazon_crawler - INFO - Crawling product: B071JM699P from https://www.amazon.com/dp/B071JM699P
+2025-07-24 22:02:09 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-24 22:02:09 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-24 22:02:09 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-24 22:02:09 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-24 22:02:14 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-24 22:02:15 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-24 22:02:24 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-24 22:02:24 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-24 22:02:31 - crawler.amazon_crawler - INFO - Extracted title: Amazon Basics Wood-Cased #2 Pencils, Pre-sharpened...
+2025-07-24 22:02:31 - crawler.amazon_crawler - INFO - Extracted 4 about_this_item bullet points
+2025-07-24 22:02:31 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-24 22:02:31 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-24 22:02:31 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $13.0
+2025-07-24 22:02:31 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-18%'
+2025-07-24 22:02:31 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 18%
+2025-07-24 22:02:31 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$15.93'
+2025-07-24 22:02:31 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $15.93
+2025-07-24 22:02:31 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$13.0, list=$15.93, discount=18%
+2025-07-24 22:02:31 - crawler.amazon_crawler - INFO - Found rating text: '4.8'
+2025-07-24 22:02:31 - crawler.amazon_crawler - INFO - Extracted rating: 4.8
+2025-07-24 22:02:31 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-24 22:02:31 - crawler.amazon_crawler - INFO - Found lightning deal: 13% claimed
+2025-07-24 22:02:31 - crawler.amazon_crawler - INFO - Extracted bag_sale: 80K+ bought in past month
+2025-07-24 22:02:31 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-24 22:02:32 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-24 22:02:32 - crawler.amazon_crawler - INFO - Extracted product_description: 95 characters
+2025-07-24 22:02:32 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-24 22:02:32 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-24 22:02:32 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 6 VIDEOS
+2025-07-24 22:02:33 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-24 22:02:36 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-24 22:02:36 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-24 22:02:36 - crawler.amazon_crawler - INFO - Found product video: 'A Closer Look' - https://amazon.com/vdp/0a724b07b1424054b82329625a8da01f
+2025-07-24 22:02:36 - crawler.amazon_crawler - INFO - Found product video: 'LOOK at ALL of these pencils. A GREAT buy. ' - https://amazon.com/vdp/07e638f67f574bccb134e1e6b58f7b53
+2025-07-24 22:02:36 - crawler.amazon_crawler - INFO - Found product video: 'Honest Review of Amazon Basic Pencils ' - https://amazon.com/vdp/055f81b1ed744139bc1d8400881b97f0
+2025-07-24 22:02:37 - crawler.amazon_crawler - INFO - Found product video: 'BEST #2 PENCIL? | AmazonBasics Pencil Review' - https://amazon.com/vdp/0e97192051e946a6ac295a623572d987
+2025-07-24 22:02:37 - crawler.amazon_crawler - INFO - Found product video: 'Amazon Basics Woodcased #2 Pencils, Pre-sharpened, HB Lead' - https://amazon.com/vdp/03c4f80c0e3d445a8c7d92658ea997de
+2025-07-24 22:02:37 - crawler.amazon_crawler - INFO - Found product video: 'Best Pencils. Teacher Approved + Teacher Gift Hack + Demo!' - https://amazon.com/vdp/08d23cbea25c423f920a1c3e8d5f2fdc
+2025-07-24 22:02:37 - crawler.amazon_crawler - INFO - Found product video: 'Satisfied Customer' - https://amazon.com/vdp/015480c72af149f6a6c526b7a3ab5af8
+2025-07-24 22:02:37 - crawler.amazon_crawler - INFO - Found product video: 'Great quality' - https://amazon.com/vdp/061db249fc1f4c378c84dc3046815e66
+2025-07-24 22:02:37 - crawler.amazon_crawler - INFO - Found product video: 'Good quality' - https://amazon.com/vdp/012576f8ec3f4a9da38bdb88d96fe8c1
+2025-07-24 22:02:37 - crawler.amazon_crawler - INFO - Found product video: 'High quality pencils' - https://amazon.com/vdp/005ad404918c4302a481398296f31653
+2025-07-24 22:02:37 - crawler.amazon_crawler - INFO - Found product video: 'Great deal!' - https://amazon.com/vdp/0e53028e1f7d43a79b92106404733621
+2025-07-24 22:02:37 - crawler.amazon_crawler - INFO - Found product video: 'Pencil' - https://amazon.com/vdp/0a2de7b70b8c4346b02683067947ed7d
+2025-07-24 22:02:37 - crawler.amazon_crawler - INFO - Found product video: 'It&#39;s a pencil. It works.' - https://amazon.com/vdp/01635038897b451eb2617a8695c29c0d
+2025-07-24 22:02:37 - crawler.amazon_crawler - INFO - Extracted 14 videos from 'Videos for this product' section
+2025-07-24 22:02:37 - crawler.amazon_crawler - INFO - Total product videos found: 14
+2025-07-24 22:02:37 - crawler.amazon_crawler - WARNING - Close button found but not displayed
+2025-07-24 22:02:38 - crawler.amazon_crawler - WARNING - Could not click first image thumbnail: Message: element click intercepted: Element <li class="a-spacing-small item imageThumbnail a-declarative" data-ux-click="" data-csa-c-type="uxElement" data-csa-c-element-type="navigational" data-csa-c-action="image-block-alt-image-hover" data-csa-c-posy="1" data-csa-c-id="md6794-fuv9l8-g17qg0-vvz319">...</li> is not clickable at point (234, 293). Other element would receive the click: <video id="detailpage-imageblock-player-c5e51ec8-68d7-40f1-90da-7259f5a28275-container-element_html5_api" class="vjs-tech" playsinline="playsinline" disablepictureinpicture="true" tabindex="-1" preload="auto" poster="https://m.media-amazon.com/images/I/6188RKmqZuL.jpg" src="blob:https://www.amazon.com/4622edb0-afb9-497b-932a-c193e58874b7"></video>
+  (Session info: chrome=138.0.7204.158)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70246e935+77845]
+	GetHandleVerifier [0x0x7ff70246e990+77936]
+	(No symbol) [0x0x7ff702229cda]
+	(No symbol) [0x0x7ff7022886a9]
+	(No symbol) [0x0x7ff702286042]
+	(No symbol) [0x0x7ff702283081]
+	(No symbol) [0x0x7ff702281f81]
+	(No symbol) [0x0x7ff7022736c8]
+	(No symbol) [0x0x7ff7022a88ca]
+	(No symbol) [0x0x7ff702272f76]
+	(No symbol) [0x0x7ff7022a8ae0]
+	(No symbol) [0x0x7ff7022d0b07]
+	(No symbol) [0x0x7ff7022a86a3]
+	(No symbol) [0x0x7ff702271791]
+	(No symbol) [0x0x7ff702272523]
+	GetHandleVerifier [0x0x7ff70274684d+3059501]
+	GetHandleVerifier [0x0x7ff702740c0d+3035885]
+	GetHandleVerifier [0x0x7ff702760400+3164896]
+	GetHandleVerifier [0x0x7ff702488c3e+185118]
+	GetHandleVerifier [0x0x7ff70249054f+216111]
+	GetHandleVerifier [0x0x7ff7024772e4+113092]
+	GetHandleVerifier [0x0x7ff702477499+113529]
+	GetHandleVerifier [0x0x7ff70245e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-24 22:02:38 - crawler.amazon_crawler - WARNING - Could not click 'Click to see full view': Message: no such element: Unable to locate element: {"method":"css selector","selector":"#canvasCaption a.a-declarative"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70246e935+77845]
+	GetHandleVerifier [0x0x7ff70246e990+77936]
+	(No symbol) [0x0x7ff702229cda]
+	(No symbol) [0x0x7ff7022806aa]
+	(No symbol) [0x0x7ff70228095c]
+	(No symbol) [0x0x7ff7022d3d07]
+	(No symbol) [0x0x7ff7022a890f]
+	(No symbol) [0x0x7ff7022d0b07]
+	(No symbol) [0x0x7ff7022a86a3]
+	(No symbol) [0x0x7ff702271791]
+	(No symbol) [0x0x7ff702272523]
+	GetHandleVerifier [0x0x7ff70274684d+3059501]
+	GetHandleVerifier [0x0x7ff702740c0d+3035885]
+	GetHandleVerifier [0x0x7ff702760400+3164896]
+	GetHandleVerifier [0x0x7ff702488c3e+185118]
+	GetHandleVerifier [0x0x7ff70249054f+216111]
+	GetHandleVerifier [0x0x7ff7024772e4+113092]
+	GetHandleVerifier [0x0x7ff702477499+113529]
+	GetHandleVerifier [0x0x7ff70245e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-24 22:02:38 - crawler.amazon_crawler - INFO - Found ivThumbs container
+2025-07-24 22:02:38 - crawler.amazon_crawler - INFO - Found 0 image thumbnails
+2025-07-24 22:02:38 - crawler.amazon_crawler - INFO - Total images extracted: 0
+2025-07-24 22:02:39 - crawler.amazon_crawler - INFO - Closed image popup by clicking outside
+2025-07-24 22:02:40 - crawler.amazon_crawler - INFO - Final sale_percentage: 18% (preserved from extraction)
+2025-07-24 22:02:40 - crawler.amazon_crawler - INFO - Successfully crawled product B071JM699P
+2025-07-24 22:02:40 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B071JM699P with 24 fields
+2025-07-24 22:02:46 - __main__ - INFO - Test crawl successful!
+2025-07-24 22:04:50 - __main__ - INFO - .env file already exists
+2025-07-24 22:04:50 - __main__ - INFO - Testing crawl for ASIN: B0D62XSBPZ
+2025-07-24 22:04:50 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: False
+2025-07-24 22:04:50 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-24 22:04:50 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-24 22:04:52 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-24 22:04:52 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-24 22:04:52 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-24 22:04:58 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-24 22:04:58 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-24 22:04:58 - crawler.amazon_crawler - INFO - Crawling product: B0D62XSBPZ from https://www.amazon.com/dp/B0D62XSBPZ
+2025-07-24 22:05:07 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-24 22:05:07 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-24 22:05:07 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-24 22:05:07 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-24 22:05:12 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-24 22:05:13 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-24 22:05:22 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-24 22:05:22 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-24 22:05:29 - crawler.amazon_crawler - INFO - Extracted title: ZAFRO 8,000 BTU Portable Air Conditioners, 4 Modes...
+2025-07-24 22:05:29 - crawler.amazon_crawler - INFO - Extracted 6 about_this_item bullet points
+2025-07-24 22:05:29 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-24 22:05:29 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-24 22:05:29 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $189.0
+2025-07-24 22:05:29 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-24%'
+2025-07-24 22:05:29 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 24%
+2025-07-24 22:05:29 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$249.99'
+2025-07-24 22:05:29 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $249.99
+2025-07-24 22:05:29 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$189.0, list=$249.99, discount=24%
+2025-07-24 22:05:29 - crawler.amazon_crawler - INFO - Found rating text: '4.1'
+2025-07-24 22:05:29 - crawler.amazon_crawler - INFO - Extracted rating: 4.1
+2025-07-24 22:05:29 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-24 22:05:29 - crawler.amazon_crawler - INFO - Found lightning deal: 10% claimed
+2025-07-24 22:05:29 - crawler.amazon_crawler - INFO - Extracted bag_sale: 4K+ bought in past month
+2025-07-24 22:05:29 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-24 22:05:30 - crawler.amazon_crawler - INFO - Extracted 7 technical specifications
+2025-07-24 22:05:30 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff70246e935+77845]
+	GetHandleVerifier [0x0x7ff70246e990+77936]
+	(No symbol) [0x0x7ff702229cda]
+	(No symbol) [0x0x7ff7022806aa]
+	(No symbol) [0x0x7ff70228095c]
+	(No symbol) [0x0x7ff7022d3d07]
+	(No symbol) [0x0x7ff7022a890f]
+	(No symbol) [0x0x7ff7022d0b07]
+	(No symbol) [0x0x7ff7022a86a3]
+	(No symbol) [0x0x7ff702271791]
+	(No symbol) [0x0x7ff702272523]
+	GetHandleVerifier [0x0x7ff70274684d+3059501]
+	GetHandleVerifier [0x0x7ff702740c0d+3035885]
+	GetHandleVerifier [0x0x7ff702760400+3164896]
+	GetHandleVerifier [0x0x7ff702488c3e+185118]
+	GetHandleVerifier [0x0x7ff70249054f+216111]
+	GetHandleVerifier [0x0x7ff7024772e4+113092]
+	GetHandleVerifier [0x0x7ff702477499+113529]
+	GetHandleVerifier [0x0x7ff70245e298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-24 22:05:30 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 261 characters
+2025-07-24 22:05:31 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-24 22:05:31 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-24 22:05:31 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 8 VIDEOS
+2025-07-24 22:05:31 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-24 22:05:34 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-24 22:05:34 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-24 22:05:35 - crawler.amazon_crawler - INFO - Found product video: 'ZAFRO Portable Air Conditioner Quick Set Guide' - https://amazon.com/vdp/0000b1caea8f4471bbb9816019a177fd
+2025-07-24 22:05:35 - crawler.amazon_crawler - INFO - Found product video: 'Fullview of ZAFRO portablr air conditioner and how to use it' - https://amazon.com/vdp/09a6156d73d84c518454480c00ef0644
+2025-07-24 22:05:35 - crawler.amazon_crawler - INFO - Found product video: 'ZAFRO portable air conditioners quick guide' - https://amazon.com/vdp/010272ae1e3a4aa8a33c938390f83542
+2025-07-24 22:05:35 - crawler.amazon_crawler - INFO - Found product video: 'DONT MAKE MY MISTAKE! Full Install #ad' - https://amazon.com/vdp/0f558bfe6b8a411b9f4b963fb88da035
+2025-07-24 22:05:35 - crawler.amazon_crawler - INFO - Found product video: 'NOBODY TELLS YOU THIS.. Zafro A/C #ad' - https://amazon.com/vdp/04aceb6a209b433684b77e2ef7057df6
+2025-07-24 22:05:35 - crawler.amazon_crawler - INFO - Found product video: 'Portable Air Conditioner, 4 Modes, Fast Cooling, Remote' - https://amazon.com/vdp/0dab6dafa6c44f84b7463b81520141cd
+2025-07-24 22:05:35 - crawler.amazon_crawler - INFO - Found product video: 'HOW TO USE. IN UNDER 3min! #ad' - https://amazon.com/vdp/02b62637c34340e3b6e43d42aa9ae75b
+2025-07-24 22:05:35 - crawler.amazon_crawler - INFO - Found product video: 'EVERYTHING YOU NEED. Unboxed &amp; Reviewed #ad' - https://amazon.com/vdp/0133300a28564001a2113046e691c63d
+2025-07-24 22:05:35 - crawler.amazon_crawler - INFO - Found product video: 'Great ac unit' - https://amazon.com/vdp/0f9efe332b8b4107b3e34d3e44a9ca9a
+2025-07-24 22:05:35 - crawler.amazon_crawler - INFO - Found product video: 'Great Buy' - https://amazon.com/vdp/0d20243ee26048089be5e9bdbc32884e
+2025-07-24 22:05:35 - crawler.amazon_crawler - INFO - Extracted 10 videos from 'Videos for this product' section
+2025-07-24 22:05:35 - crawler.amazon_crawler - INFO - Total product videos found: 10
+2025-07-24 22:05:35 - crawler.amazon_crawler - INFO - Closed video popup with selector: button[data-action='a-popover-close'][aria-label='Close']
+2025-07-24 22:05:37 - crawler.amazon_crawler - INFO - Found 2 video elements still present
+2025-07-24 22:05:39 - crawler.amazon_crawler - INFO - Video popup closed successfully
+2025-07-24 22:05:39 - crawler.amazon_crawler - INFO - Clicked first image thumbnail
+2025-07-24 22:05:42 - crawler.amazon_crawler - INFO - Clicked 'Click to see full view' link
+2025-07-24 22:05:45 - crawler.amazon_crawler - INFO - Found ivThumbs container
+2025-07-24 22:05:45 - crawler.amazon_crawler - INFO - Found 8 image thumbnails
+2025-07-24 22:05:45 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/31X9amvMP+L._AC_US100_AA50_.jpg
+2025-07-24 22:05:45 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41mOVwAbAgL._AC_US100_AA50_.jpg
+2025-07-24 22:05:45 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41yc7CTdwsL._AC_US100_AA50_.jpg
+2025-07-24 22:05:45 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/417s726+JVL._AC_US100_AA50_.jpg
+2025-07-24 22:05:45 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51tzmlcQqJL._AC_US100_AA50_.jpg
+2025-07-24 22:05:45 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/510dZVVeWGL._AC_US100_AA50_.jpg
+2025-07-24 22:05:45 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41XAa8BYN-L._AC_US100_AA50_.jpg
+2025-07-24 22:05:45 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41RCtqS--lL._AC_US100_AA50_.jpg
+2025-07-24 22:05:45 - crawler.amazon_crawler - INFO - Total images extracted: 8
+2025-07-24 22:05:45 - crawler.amazon_crawler - INFO - Closed image popup by clicking outside
+2025-07-24 22:05:46 - crawler.amazon_crawler - INFO - Final sale_percentage: 24% (preserved from extraction)
+2025-07-24 22:05:46 - crawler.amazon_crawler - INFO - Successfully crawled product B0D62XSBPZ
+2025-07-24 22:05:46 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B0D62XSBPZ with 24 fields
+2025-07-24 22:05:53 - __main__ - INFO - Test crawl successful!
+2025-07-24 22:06:15 - __main__ - INFO - .env file already exists
+2025-07-24 22:06:15 - __main__ - INFO - Testing crawl for ASIN: B071JM699P
+2025-07-24 22:06:15 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: False
+2025-07-24 22:06:15 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-24 22:06:15 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-24 22:06:16 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-24 22:06:16 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-24 22:06:16 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-24 22:06:18 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-24 22:06:18 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-24 22:06:18 - crawler.amazon_crawler - INFO - Crawling product: B071JM699P from https://www.amazon.com/dp/B071JM699P
+2025-07-24 22:06:25 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-24 22:06:25 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-24 22:06:25 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-24 22:06:25 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-24 22:06:30 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-24 22:06:32 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-24 22:06:40 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-24 22:06:40 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-24 22:06:47 - crawler.amazon_crawler - INFO - Extracted title: Amazon Basics Wood-Cased #2 Pencils, Pre-sharpened...
+2025-07-24 22:06:47 - crawler.amazon_crawler - INFO - Extracted 4 about_this_item bullet points
+2025-07-24 22:06:47 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-24 22:06:47 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-24 22:06:47 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $13.0
+2025-07-24 22:06:47 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-18%'
+2025-07-24 22:06:47 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 18%
+2025-07-24 22:06:47 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$15.93'
+2025-07-24 22:06:47 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $15.93
+2025-07-24 22:06:47 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$13.0, list=$15.93, discount=18%
+2025-07-24 22:06:47 - crawler.amazon_crawler - INFO - Found rating text: '4.8'
+2025-07-24 22:06:47 - crawler.amazon_crawler - INFO - Extracted rating: 4.8
+2025-07-24 22:06:48 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-24 22:06:48 - crawler.amazon_crawler - INFO - Found lightning deal: 13% claimed
+2025-07-24 22:06:48 - crawler.amazon_crawler - INFO - Extracted bag_sale: 80K+ bought in past month
+2025-07-24 22:06:48 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-24 22:06:48 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-24 22:06:48 - crawler.amazon_crawler - INFO - Extracted product_description: 95 characters
+2025-07-24 22:06:49 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-24 22:06:49 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-24 22:06:49 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 6 VIDEOS
+2025-07-24 22:06:50 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-24 22:06:53 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-24 22:06:53 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-24 22:06:53 - crawler.amazon_crawler - INFO - Found product video: 'A Closer Look' - https://amazon.com/vdp/0a724b07b1424054b82329625a8da01f
+2025-07-24 22:06:53 - crawler.amazon_crawler - INFO - Found product video: 'LOOK at ALL of these pencils. A GREAT buy. ' - https://amazon.com/vdp/07e638f67f574bccb134e1e6b58f7b53
+2025-07-24 22:06:53 - crawler.amazon_crawler - INFO - Found product video: 'Honest Review of Amazon Basic Pencils ' - https://amazon.com/vdp/055f81b1ed744139bc1d8400881b97f0
+2025-07-24 22:06:53 - crawler.amazon_crawler - INFO - Found product video: 'BEST #2 PENCIL? | AmazonBasics Pencil Review' - https://amazon.com/vdp/0e97192051e946a6ac295a623572d987
+2025-07-24 22:06:53 - crawler.amazon_crawler - INFO - Found product video: 'Amazon Basics Woodcased #2 Pencils, Pre-sharpened, HB Lead' - https://amazon.com/vdp/03c4f80c0e3d445a8c7d92658ea997de
+2025-07-24 22:06:53 - crawler.amazon_crawler - INFO - Found product video: 'Best Pencils. Teacher Approved + Teacher Gift Hack + Demo!' - https://amazon.com/vdp/08d23cbea25c423f920a1c3e8d5f2fdc
+2025-07-24 22:06:53 - crawler.amazon_crawler - INFO - Found product video: 'Satisfied Customer' - https://amazon.com/vdp/015480c72af149f6a6c526b7a3ab5af8
+2025-07-24 22:06:53 - crawler.amazon_crawler - INFO - Found product video: 'Great quality' - https://amazon.com/vdp/061db249fc1f4c378c84dc3046815e66
+2025-07-24 22:06:53 - crawler.amazon_crawler - INFO - Found product video: 'Good quality' - https://amazon.com/vdp/012576f8ec3f4a9da38bdb88d96fe8c1
+2025-07-24 22:06:53 - crawler.amazon_crawler - INFO - Found product video: 'High quality pencils' - https://amazon.com/vdp/005ad404918c4302a481398296f31653
+2025-07-24 22:06:53 - crawler.amazon_crawler - INFO - Found product video: 'Great deal!' - https://amazon.com/vdp/0e53028e1f7d43a79b92106404733621
+2025-07-24 22:06:53 - crawler.amazon_crawler - INFO - Found product video: 'Pencil' - https://amazon.com/vdp/0a2de7b70b8c4346b02683067947ed7d
+2025-07-24 22:06:53 - crawler.amazon_crawler - INFO - Found product video: 'It&#39;s a pencil. It works.' - https://amazon.com/vdp/01635038897b451eb2617a8695c29c0d
+2025-07-24 22:06:53 - crawler.amazon_crawler - INFO - Extracted 14 videos from 'Videos for this product' section
+2025-07-24 22:06:53 - crawler.amazon_crawler - INFO - Total product videos found: 14
+2025-07-24 22:06:54 - crawler.amazon_crawler - INFO - Closed video popup with selector: button[data-action='a-popover-close'][aria-label='Close']
+2025-07-24 22:06:56 - crawler.amazon_crawler - INFO - Found 2 video elements still present
+2025-07-24 22:06:58 - crawler.amazon_crawler - INFO - Video popup closed successfully
+2025-07-24 22:06:58 - crawler.amazon_crawler - INFO - Clicked first image thumbnail
+2025-07-24 22:07:00 - crawler.amazon_crawler - INFO - Clicked 'Click to see full view' link
+2025-07-24 22:07:03 - crawler.amazon_crawler - INFO - Found ivThumbs container
+2025-07-24 22:07:03 - crawler.amazon_crawler - INFO - Found 5 image thumbnails
+2025-07-24 22:07:03 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41N5gLDbQuL._AC_SL1500_.jpg
+2025-07-24 22:07:03 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41kL4zEdRYL._AC_SL1500_.jpg
+2025-07-24 22:07:03 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41MSWV-F-6L._AC_SL1500_.jpg
+2025-07-24 22:07:03 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41lFpRlfD3L._AC_SL1500_.jpg
+2025-07-24 22:07:03 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51bkvRivQ4L._AC_SL1500_.jpg
+2025-07-24 22:07:03 - crawler.amazon_crawler - INFO - Total images extracted: 5
+2025-07-24 22:07:04 - crawler.amazon_crawler - INFO - Closed image popup by clicking outside
+2025-07-24 22:07:05 - crawler.amazon_crawler - INFO - Final sale_percentage: 18% (preserved from extraction)
+2025-07-24 22:07:05 - crawler.amazon_crawler - INFO - Successfully crawled product B071JM699P
+2025-07-24 22:07:05 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B071JM699P with 24 fields
+2025-07-24 22:07:11 - __main__ - INFO - Test crawl successful!
+2025-07-24 22:18:11 - __main__ - INFO - .env file already exists
+2025-07-24 22:18:11 - __main__ - INFO - Starting Amazon Product Crawler...
+2025-07-24 22:18:11 - __main__ - INFO - Initializing database...
+2025-07-24 22:18:11 - __main__ - INFO - Starting crawler scheduler...
+2025-07-24 22:18:11 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:18:11 - __main__ - INFO - Application initialized successfully!
+2025-07-24 22:18:11 - __main__ - INFO - Starting web server on http://127.0.0.1:8000
+2025-07-24 22:18:12 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:18:12 - api.main - INFO - Application started successfully
+2025-07-24 22:24:25 - __main__ - INFO - .env file already exists
+2025-07-24 22:24:25 - __main__ - INFO - Starting Amazon Product Crawler...
+2025-07-24 22:24:25 - __main__ - INFO - Initializing database...
+2025-07-24 22:24:25 - __main__ - INFO - Starting crawler scheduler...
+2025-07-24 22:24:25 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:24:25 - __main__ - INFO - Application initialized successfully!
+2025-07-24 22:24:25 - __main__ - INFO - Starting web server on http://127.0.0.1:8000
+2025-07-24 22:24:26 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:24:26 - api.main - INFO - Application started successfully
+2025-07-24 22:27:09 - __main__ - INFO - .env file already exists
+2025-07-24 22:27:09 - __main__ - INFO - Starting Amazon Product Crawler...
+2025-07-24 22:27:09 - __main__ - INFO - Initializing database...
+2025-07-24 22:27:09 - __main__ - INFO - Starting crawler scheduler...
+2025-07-24 22:27:09 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:27:09 - __main__ - INFO - Application initialized successfully!
+2025-07-24 22:27:09 - __main__ - INFO - Starting web server on http://127.0.0.1:8000
+2025-07-24 22:27:10 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:27:10 - api.main - INFO - Application started successfully
+2025-07-24 22:27:10 - scheduler.crawler_scheduler - INFO - Crawler scheduler stopped
+2025-07-24 22:27:10 - api.main - INFO - Application shutdown completed
+2025-07-24 22:27:10 - __main__ - INFO - Shutting down Amazon Crawler...
+2025-07-24 22:27:10 - __main__ - INFO - Cleanup completed!
+2025-07-24 22:30:47 - __main__ - INFO - .env file already exists
+2025-07-24 22:30:47 - __main__ - INFO - Starting Amazon Product Crawler...
+2025-07-24 22:30:47 - __main__ - INFO - Initializing database...
+2025-07-24 22:30:47 - __main__ - INFO - Starting crawler scheduler...
+2025-07-24 22:30:47 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:30:47 - __main__ - INFO - Application initialized successfully!
+2025-07-24 22:30:47 - __main__ - INFO - Starting web server on http://127.0.0.1:8000
+2025-07-24 22:30:48 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:30:48 - api.main - INFO - Application started successfully
+2025-07-24 22:31:23 - __main__ - INFO - .env file already exists
+2025-07-24 22:31:23 - __main__ - INFO - Starting Amazon Product Crawler...
+2025-07-24 22:31:23 - __main__ - INFO - Initializing database...
+2025-07-24 22:31:23 - __main__ - INFO - Starting crawler scheduler...
+2025-07-24 22:31:23 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:31:23 - __main__ - INFO - Application initialized successfully!
+2025-07-24 22:31:23 - __main__ - INFO - Starting web server on http://127.0.0.1:8000
+2025-07-24 22:31:24 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:31:24 - api.main - INFO - Application started successfully
+2025-07-24 22:31:25 - __main__ - INFO - .env file already exists
+2025-07-24 22:31:25 - __main__ - INFO - Starting Amazon Product Crawler...
+2025-07-24 22:31:25 - __main__ - INFO - Initializing database...
+2025-07-24 22:31:25 - __main__ - INFO - Starting crawler scheduler...
+2025-07-24 22:31:25 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:31:25 - __main__ - INFO - Application initialized successfully!
+2025-07-24 22:31:25 - __main__ - INFO - Starting web server on http://127.0.0.1:8000
+2025-07-24 22:31:26 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:31:26 - api.main - INFO - Application started successfully
+2025-07-24 22:31:26 - scheduler.crawler_scheduler - INFO - Crawler scheduler stopped
+2025-07-24 22:31:26 - api.main - INFO - Application shutdown completed
+2025-07-24 22:31:26 - __main__ - INFO - Shutting down Amazon Crawler...
+2025-07-24 22:31:26 - __main__ - INFO - Cleanup completed!
+2025-07-24 22:31:46 - __main__ - INFO - .env file already exists
+2025-07-24 22:31:46 - __main__ - INFO - Starting Amazon Product Crawler...
+2025-07-24 22:31:46 - __main__ - INFO - Initializing database...
+2025-07-24 22:31:46 - __main__ - INFO - Starting crawler scheduler...
+2025-07-24 22:31:46 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:31:46 - __main__ - INFO - Application initialized successfully!
+2025-07-24 22:31:46 - __main__ - INFO - Starting web server on http://127.0.0.1:8000
+2025-07-24 22:31:47 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:31:47 - api.main - INFO - Application started successfully
+2025-07-24 22:33:40 - __main__ - INFO - .env file already exists
+2025-07-24 22:33:40 - __main__ - INFO - Starting Amazon Product Crawler...
+2025-07-24 22:33:40 - __main__ - INFO - Initializing database...
+2025-07-24 22:33:40 - __main__ - INFO - Starting crawler scheduler...
+2025-07-24 22:33:40 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:33:40 - __main__ - INFO - Application initialized successfully!
+2025-07-24 22:33:40 - __main__ - INFO - Starting web server on http://127.0.0.1:8000
+2025-07-24 22:33:41 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:33:41 - api.main - INFO - Application started successfully
+2025-07-24 22:33:48 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:33:48 - api.main - INFO - Found 20 products from database
+2025-07-24 22:33:48 - api.main - INFO - Returning 3 unique products
+2025-07-24 22:34:11 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:34:11 - api.main - INFO - Found 20 products from database
+2025-07-24 22:34:11 - api.main - INFO - Returning 3 unique products
+2025-07-24 22:34:53 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:34:53 - api.main - INFO - Found 20 products from database
+2025-07-24 22:34:53 - api.main - INFO - Returning 3 unique products
+2025-07-24 22:35:51 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:35:51 - api.main - INFO - Found 20 products from database
+2025-07-24 22:35:51 - api.main - INFO - Returning 3 unique products
+2025-07-24 22:36:34 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:36:34 - api.main - INFO - Found 20 products from database
+2025-07-24 22:36:34 - api.main - INFO - Returning 3 unique products
+2025-07-24 22:40:27 - __main__ - INFO - .env file already exists
+2025-07-24 22:40:27 - __main__ - INFO - Starting Amazon Product Crawler...
+2025-07-24 22:40:27 - __main__ - INFO - Initializing database...
+2025-07-24 22:40:28 - __main__ - INFO - Starting crawler scheduler...
+2025-07-24 22:40:28 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:40:28 - __main__ - INFO - Application initialized successfully!
+2025-07-24 22:40:28 - __main__ - INFO - Starting web server on http://127.0.0.1:8000
+2025-07-24 22:40:28 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:40:28 - api.main - INFO - Application started successfully
+2025-07-24 22:47:46 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:47:46 - api.main - INFO - Found 20 products from database
+2025-07-24 22:47:46 - api.main - INFO - Returning 3 unique products
+2025-07-24 22:48:20 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:48:20 - api.main - INFO - Found 20 products from database
+2025-07-24 22:48:20 - api.main - INFO - Returning 3 unique products
+2025-07-24 22:48:21 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:48:21 - api.main - INFO - Found 20 products from database
+2025-07-24 22:48:21 - api.main - INFO - Returning 3 unique products
+2025-07-24 22:48:41 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:48:41 - api.main - INFO - Found 20 products from database
+2025-07-24 22:48:41 - api.main - INFO - Returning 3 unique products
+2025-07-24 22:50:39 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:50:39 - api.main - INFO - Found 20 products from database
+2025-07-24 22:50:39 - api.main - INFO - Returning 3 unique products
+2025-07-24 22:56:48 - api.main - ERROR - Error getting products: 'ProductCrawlHistory' object has no attribute 'inventory_status'
+2025-07-24 22:56:57 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:56:57 - api.main - INFO - Found 20 products from database
+2025-07-24 22:56:57 - api.main - INFO - Returning 3 unique products
+2025-07-24 22:57:08 - api.main - ERROR - Error getting products: 'ProductCrawlHistory' object has no attribute 'inventory_status'
+2025-07-24 22:57:11 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:57:11 - api.main - INFO - Found 20 products from database
+2025-07-24 22:57:11 - api.main - INFO - Returning 3 unique products
+2025-07-24 22:57:12 - api.main - ERROR - Error getting products: 'ProductCrawlHistory' object has no attribute 'inventory_status'
+2025-07-24 22:57:16 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:57:16 - api.main - INFO - Found 20 products from database
+2025-07-24 22:57:16 - api.main - INFO - Returning 3 unique products
+2025-07-24 22:57:30 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:57:30 - api.main - INFO - Found 20 products from database
+2025-07-24 22:57:30 - api.main - INFO - Returning 3 unique products
+2025-07-24 22:57:32 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:57:32 - api.main - INFO - Found 20 products from database
+2025-07-24 22:57:32 - api.main - INFO - Returning 3 unique products
+2025-07-24 22:57:33 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:57:33 - api.main - INFO - Found 20 products from database
+2025-07-24 22:57:33 - api.main - INFO - Returning 3 unique products
+2025-07-24 22:57:39 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:57:39 - api.main - INFO - Found 20 products from database
+2025-07-24 22:57:39 - api.main - INFO - Returning 3 unique products
+2025-07-24 22:57:40 - api.main - ERROR - Error getting products: 'ProductCrawlHistory' object has no attribute 'inventory_status'
+2025-07-24 22:58:10 - __main__ - INFO - .env file already exists
+2025-07-24 22:58:10 - __main__ - INFO - Starting Amazon Product Crawler...
+2025-07-24 22:58:10 - __main__ - INFO - Initializing database...
+2025-07-24 22:58:10 - __main__ - INFO - Starting crawler scheduler...
+2025-07-24 22:58:10 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:58:10 - __main__ - INFO - Application initialized successfully!
+2025-07-24 22:58:10 - __main__ - INFO - Starting web server on http://127.0.0.1:8000
+2025-07-24 22:58:10 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-24 22:58:10 - api.main - INFO - Application started successfully
+2025-07-24 22:58:23 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:58:23 - api.main - INFO - Found 4 unique ASINs from database
+2025-07-24 22:58:23 - api.main - INFO - Returning 4 products
+2025-07-24 22:58:33 - api.main - ERROR - Error getting products: 'ProductCrawlHistory' object has no attribute 'inventory_status'
+2025-07-24 22:58:36 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:58:36 - api.main - INFO - Found 4 unique ASINs from database
+2025-07-24 22:58:36 - api.main - INFO - Returning 4 products
+2025-07-24 22:58:39 - api.main - ERROR - Error getting products: 'ProductCrawlHistory' object has no attribute 'inventory_status'
+2025-07-24 22:58:46 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:58:46 - api.main - INFO - Found 4 unique ASINs from database
+2025-07-24 22:58:46 - api.main - INFO - Returning 4 products
+2025-07-24 22:58:57 - api.main - ERROR - Error getting products: 'ProductCrawlHistory' object has no attribute 'inventory_status'
+2025-07-24 22:59:00 - api.main - ERROR - Error getting products: 'ProductCrawlHistory' object has no attribute 'inventory_status'
+2025-07-24 22:59:01 - api.main - ERROR - Error getting products: 'ProductCrawlHistory' object has no attribute 'inventory_status'
+2025-07-24 22:59:13 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:59:13 - api.main - INFO - Found 4 unique ASINs from database
+2025-07-24 22:59:13 - api.main - INFO - Returning 4 products
+2025-07-24 22:59:28 - api.main - INFO - Starting get_products_list API call
+2025-07-24 22:59:28 - api.main - INFO - Found 4 unique ASINs from database
+2025-07-24 22:59:28 - api.main - INFO - Returning 4 products
+2025-07-24 22:59:57 - scheduler.crawler_scheduler - INFO - Manual crawl requested for ASIN: B079KL4C91
+2025-07-24 22:59:57 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: False
+2025-07-24 22:59:57 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-24 22:59:57 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-24 22:59:59 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-24 22:59:59 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-24 22:59:59 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-24 23:00:01 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-24 23:00:01 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-24 23:00:01 - crawler.amazon_crawler - INFO - Crawling product: B079KL4C91 from https://www.amazon.com/dp/B079KL4C91
+2025-07-24 23:00:08 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-24 23:00:08 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-24 23:00:08 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-24 23:00:09 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-24 23:00:14 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-24 23:00:15 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-24 23:00:23 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-24 23:00:23 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-24 23:00:30 - crawler.amazon_crawler - INFO - Extracted title: Amazon Basics Clear Thermal Laminating Plastic Pap...
+2025-07-24 23:00:30 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-24 23:00:30 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-24 23:00:30 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-24 23:00:31 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $16.0
+2025-07-24 23:00:31 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-8%'
+2025-07-24 23:00:31 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 8%
+2025-07-24 23:00:31 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$17.43'
+2025-07-24 23:00:31 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $17.43
+2025-07-24 23:00:31 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$16.0, list=$17.43, discount=8%
+2025-07-24 23:00:31 - crawler.amazon_crawler - INFO - Found rating text: '4.8'
+2025-07-24 23:00:31 - crawler.amazon_crawler - INFO - Extracted rating: 4.8
+2025-07-24 23:00:31 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-24 23:00:31 - crawler.amazon_crawler - INFO - Found lightning deal: 15% claimed
+2025-07-24 23:00:31 - crawler.amazon_crawler - INFO - Extracted bag_sale: 70K+ bought in past month
+2025-07-24 23:00:31 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-24 23:00:31 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-24 23:00:31 - crawler.amazon_crawler - INFO - Extracted product_description: 114 characters
+2025-07-24 23:00:32 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-24 23:00:32 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-24 23:00:32 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 6 VIDEOS
+2025-07-24 23:00:33 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-24 23:00:36 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-24 23:00:36 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-24 23:00:36 - crawler.amazon_crawler - INFO - Found product video: 'Amazon Basics 3 Mil Clear Thermal Plastic Laminator Sheets' - https://amazon.com/vdp/01124842236e4417a5af50fc3a7ec0d0
+2025-07-24 23:00:36 - crawler.amazon_crawler - INFO - Found product video: 'Testing the Clear Thermal Plastic Laminator Sheets' - https://amazon.com/vdp/0e5e476f8f4848719e4fe516c3f26c3e
+2025-07-24 23:00:36 - crawler.amazon_crawler - INFO - Found product video: 'Using this laminator and showing how easy it is to use!' - https://amazon.com/vdp/0650f9bf7d9c4c348b4b4f1e7a71413e
+2025-07-24 23:00:36 - crawler.amazon_crawler - INFO - Found product video: 'Testing out the Amazon Basics Thermal Laminator Machine' - https://amazon.com/vdp/0a1d757e16404e38905da06de497f073
+2025-07-24 23:00:36 - crawler.amazon_crawler - INFO - Found product video: 'Honest Review about these Laminating Sheets' - https://amazon.com/vdp/0fe27ee27f65460c88c41762b4cd8078
+2025-07-24 23:00:36 - crawler.amazon_crawler - INFO - Found product video: 'Laminator and laminating sheets' - https://amazon.com/vdp/04ad1543087548689161e4551c553244
+2025-07-24 23:00:36 - crawler.amazon_crawler - INFO - Found product video: 'Amazon basics laminating pouches' - https://amazon.com/vdp/0380310befd343e48bc9f9d65304f821
+2025-07-24 23:00:37 - crawler.amazon_crawler - INFO - Found product video: 'It is best' - https://amazon.com/vdp/069e36da5a7b405ea0d37d3ab790119e
+2025-07-24 23:00:37 - crawler.amazon_crawler - INFO - Found product video: 'So far so good' - https://amazon.com/vdp/000c31d535404ddc82fea9498a516705
+2025-07-24 23:00:37 - crawler.amazon_crawler - INFO - Found product video: 'Perfect for teachers!' - https://amazon.com/vdp/004d7947963a45b6bf8ddb8c8d583a79
+2025-07-24 23:00:37 - crawler.amazon_crawler - INFO - Extracted 10 videos from 'Videos for this product' section
+2025-07-24 23:00:37 - crawler.amazon_crawler - INFO - Total product videos found: 10
+2025-07-24 23:00:37 - crawler.amazon_crawler - INFO - Closed video popup with selector: button[data-action='a-popover-close'][aria-label='Close']
+2025-07-24 23:00:39 - crawler.amazon_crawler - INFO - Found 2 video elements still present
+2025-07-24 23:00:41 - crawler.amazon_crawler - INFO - Video popup closed successfully
+2025-07-24 23:00:41 - crawler.amazon_crawler - INFO - Clicked first image thumbnail
+2025-07-24 23:00:43 - crawler.amazon_crawler - INFO - Clicked 'Click to see full view' link
+2025-07-24 23:00:46 - crawler.amazon_crawler - INFO - Found ivThumbs container
+2025-07-24 23:00:46 - crawler.amazon_crawler - INFO - Found 6 image thumbnails
+2025-07-24 23:00:47 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/3162LMViSTL._AC_SL1500_.jpg
+2025-07-24 23:00:47 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41JIfQ8kMaL._AC_SL1500_.jpg
+2025-07-24 23:00:47 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/316LWr8fxuL._AC_SL1500_.jpg
+2025-07-24 23:00:47 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/31tIHZX4u-L._AC_SL1500_.jpg
+2025-07-24 23:00:47 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/21qJp4rHyxL._AC_SL1500_.jpg
+2025-07-24 23:00:47 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41upTpE2pLL._AC_SL1500_.jpg
+2025-07-24 23:00:47 - crawler.amazon_crawler - INFO - Total images extracted: 6
+2025-07-24 23:00:47 - crawler.amazon_crawler - INFO - Closed image popup by clicking outside
+2025-07-24 23:00:48 - crawler.amazon_crawler - INFO - Final sale_percentage: 8% (preserved from extraction)
+2025-07-24 23:00:48 - crawler.amazon_crawler - INFO - Successfully crawled product B079KL4C91
+2025-07-24 23:00:48 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B079KL4C91
+2025-07-24 23:00:48 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B079KL4C91 with 24 fields
+2025-07-24 23:00:48 - crawler.change_detector - INFO - No significant changes detected for ASIN B079KL4C91
+2025-07-24 23:00:48 - scheduler.crawler_scheduler - INFO - Manual crawl completed for B079KL4C91: Success
+2025-07-24 23:01:32 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:01:32 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:01:32 - api.main - INFO - Returning 5 products
+2025-07-24 23:02:01 - api.main - ERROR - Error getting products: 'ProductCrawlHistory' object has no attribute 'inventory_status'
+2025-07-24 23:02:07 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:02:07 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:02:07 - api.main - INFO - Returning 5 products
+2025-07-24 23:02:11 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:02:11 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:02:11 - api.main - INFO - Returning 5 products
+2025-07-24 23:02:31 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:02:31 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:02:31 - api.main - INFO - Returning 5 products
+2025-07-24 23:03:19 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:03:19 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:03:19 - api.main - INFO - Returning 5 products
+2025-07-24 23:03:32 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:03:32 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:03:32 - api.main - INFO - Returning 5 products
+2025-07-24 23:04:09 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:04:09 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:04:09 - api.main - INFO - Returning 5 products
