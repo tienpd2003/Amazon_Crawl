@@ -136,9 +136,22 @@
                     <div class="row">
                         <div class="col-md-8">
                             <label for="asinSelect" class="form-label">Chọn sản phẩm để theo dõi:</label>
-                            <select class="form-select" id="asinSelect" onchange="loadPriceHistory()">
-                                <option value="">-- Chọn sản phẩm --</option>
-                            </select>
+                            <div class="dropdown position-relative">
+                                <input type="text" 
+                                       class="form-control" 
+                                       id="asinSearchInput" 
+                                       placeholder="Tìm kiếm theo ASIN hoặc tên sản phẩm..." 
+                                       autocomplete="off"
+                                       onclick="toggleDropdown()"
+                                       onkeyup="filterProducts()"
+                                       onblur="hideDropdownDelay()">
+                                <div class="dropdown-menu w-100" id="productDropdown" style="max-height: 300px; overflow-y: auto;">
+                                    <div class="dropdown-item text-center text-muted">
+                                        <i class="fas fa-spinner fa-spin"></i> Đang tải sản phẩm...
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" id="selectedASIN" value="">
                         </div>
                         <div class="col-md-4">
                             <label for="daysSelect" class="form-label">Thời gian:</label>
@@ -213,32 +226,101 @@
             loadProducts();
         });
 
+        let allProducts = [];
+        let hideTimeout = null;
+
         // Load products list
         async function loadProducts() {
             try {
                 const response = await fetch('/api/products/list');
                 const data = await response.json();
                 
-                const select = document.getElementById('asinSelect');
-                select.innerHTML = '<option value="">-- Chọn sản phẩm --</option>';
-                
-                data.products.forEach(product => {
-                    const option = document.createElement('option');
-                    option.value = product.asin;
-                    option.textContent = `${product.asin} - ${product.title}`;
-                    select.appendChild(option);
-                });
+                allProducts = data.products;
+                displayProducts(allProducts);
                 
                 console.log(`Loaded ${data.products.length} products`);
                 
             } catch (error) {
                 console.error('Error loading products:', error);
+                document.getElementById('productDropdown').innerHTML = 
+                    '<div class="dropdown-item text-center text-danger">Lỗi tải dữ liệu sản phẩm</div>';
             }
         }
 
+        // Display products in dropdown
+        function displayProducts(products) {
+            const dropdown = document.getElementById('productDropdown');
+            
+            if (products.length === 0) {
+                dropdown.innerHTML = '<div class="dropdown-item text-center text-muted">Không tìm thấy sản phẩm</div>';
+                return;
+            }
+            
+            dropdown.innerHTML = products.map(product => 
+                `<div class="dropdown-item" style="cursor: pointer;" onclick="selectProduct('${product.asin}', '${product.title.replace(/'/g, "\\'")}')">
+                    <div class="fw-bold">${product.asin}</div>
+                    <small class="text-muted">${product.title}</small>
+                </div>`
+            ).join('');
+        }
+
+        // Toggle dropdown visibility
+        function toggleDropdown() {
+            const dropdown = document.getElementById('productDropdown');
+            dropdown.classList.toggle('show');
+            
+            if (dropdown.classList.contains('show') && allProducts.length === 0) {
+                loadProducts();
+            }
+        }
+
+        // Filter products based on search input
+        function filterProducts() {
+            const searchTerm = document.getElementById('asinSearchInput').value.toLowerCase();
+            const dropdown = document.getElementById('productDropdown');
+            
+            if (!searchTerm) {
+                displayProducts(allProducts);
+                dropdown.classList.add('show');
+                return;
+            }
+            
+            const filteredProducts = allProducts.filter(product => 
+                product.asin.toLowerCase().includes(searchTerm) || 
+                product.title.toLowerCase().includes(searchTerm)
+            );
+            
+            displayProducts(filteredProducts);
+            dropdown.classList.add('show');
+        }
+
+        // Select a product
+        function selectProduct(asin, title) {
+            document.getElementById('asinSearchInput').value = `${asin} - ${title}`;
+            document.getElementById('selectedASIN').value = asin;
+            document.getElementById('productDropdown').classList.remove('show');
+            
+            // Load price history for selected product
+            loadPriceHistory();
+        }
+
+        // Hide dropdown with delay (for blur event)
+        function hideDropdownDelay() {
+            hideTimeout = setTimeout(() => {
+                document.getElementById('productDropdown').classList.remove('show');
+            }, 200);
+        }
+
+        // Cancel hide timeout (when clicking inside dropdown)
+        document.getElementById('productDropdown').addEventListener('mousedown', function(e) {
+            if (hideTimeout) {
+                clearTimeout(hideTimeout);
+            }
+        });
+
         // Load price history
         async function loadPriceHistory() {
-            const asin = document.getElementById('asinSelect').value;
+            const asin = document.getElementById('selectedASIN').value;
             const days = document.getElementById('daysSelect').value;
             
             if (!asin) {
@@ -365,7 +447,9 @@
 
         // Display price statistics
         function displayPriceStats(data) {
-            document.getElementById('productTitle').textContent = data.chart_data[0]?.title?.substring(0, 60) + '...' || 'Thông tin giá';
+            // Hiển thị mã ASIN thay vì title
+            let asin = data.asin || document.getElementById('selectedASIN').value;
+            document.getElementById('productTitle').textContent = asin || 'Thông tin giá';
             document.getElementById('currentPrice').textContent = '$' + data.current_price.toLocaleString('en-US');
             document.getElementById('minPrice').textContent = '$' + data.min_price.toLocaleString('en-US');
             document.getElementById('maxPrice').textContent = '$' + data.max_price.toLocaleString('en-US');

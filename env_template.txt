@@ -1,4 +1,5 @@
 # Copy file này thành .env và điền thông tin thật
+
 # Database
 DATABASE_URL=sqlite:///./amazon_crawler.db
 
@@ -8,25 +9,20 @@ MAX_RETRIES=3
 TIMEOUT=30
 
 # Scheduler Settings
-SCHEDULER_TIMEZONE=Asia/Ho_Chi_Minh
+SCHEDULER_TIMEZONE=America/New_York
 DAILY_CRAWL_TIME=09:00
 
 # Notification Settings - Telegram
-# Lấy Bot Token từ: https://t.me/BotFather
-# Lấy Chat ID từ: https://t.me/userinfobot
 TELEGRAM_BOT_TOKEN=your_bot_token_here
 TELEGRAM_CHAT_ID=your_chat_id_here
+TELEGRAM_ENABLED=true
 
-# Notification Settings - Discord (Optional)
-# Webhook URL từ Discord server settings
-DISCORD_WEBHOOK_URL=
-
-# Notification Settings - Email (Optional)
-EMAIL_SMTP_SERVER=smtp.gmail.com
-EMAIL_SMTP_PORT=587
-EMAIL_USERNAME=your_email@gmail.com
-EMAIL_PASSWORD=your_app_password
-EMAIL_RECIPIENTS=recipient1@gmail.com,recipient2@gmail.com
+# Notification Triggers
+NOTIFY_ON_PRICE_CHANGE=true
+NOTIFY_ON_AVAILABILITY_CHANGE=true
+NOTIFY_ON_RATING_CHANGE=true
+NOTIFY_ON_NEW_COUPON=true
+NOTIFY_ON_NEW_DEAL=true
 
 # Dashboard Settings
 DASHBOARD_HOST=127.0.0.1
@@ -38,4 +34,8 @@ BROWSER_TYPE=chrome
 
 # Rate Limiting
 REQUESTS_PER_MINUTE=10
-CONCURRENT_REQUESTS=1 
+CONCURRENT_REQUESTS=1
+
+# Crawl Stats Settings (optional)
+SAVE_CRAWL_STATS=true
+STATS_RETENTION_DAYS=30 

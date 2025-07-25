@@ -218,7 +218,7 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header bg-info text-white">
-                                <h6 class="mb-0"><i class="fas fa-list"></i> ASIN Watchlist</h6>
+                                <h6 class="mb-0"><i class="fas fa-list"></i> ASIN Watchlist (<span id="watchlist-count"></span>)</h6>
                             </div>
                             <div class="card-body" style="max-height: 400px; overflow-y: auto;">
                                 <div id="watchlist-preview">
@@ -336,13 +336,17 @@
 
         async function loadWatchlistPreview() {
             try {
-                const response = await fetch('/api/watchlist');
+                // Chỉ lấy các ASIN đang active
+                const response = await fetch('/api/watchlist?active_only=true');
                 const data = await response.json();
+                
+                // Cập nhật tổng số lượng ASIN
+                document.getElementById('watchlist-count').textContent = data.watchlist.length;
                 
                 const container = document.getElementById('watchlist-preview');
                 
                 if (data.watchlist.length === 0) {
-                    container.innerHTML = '<div class="text-center text-muted">Chưa có ASIN nào trong watchlist</div>';
+                    container.innerHTML = '<div class="text-center text-muted">Chưa có ASIN nào trong watchlist';
                     return;
                 }
                 

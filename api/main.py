@@ -14,7 +14,7 @@ from config.settings import settings
 from database.connection import get_db, get_db_session
 from database.models import (
     Product, ProductCrawlHistory, ASINWatchlist, 
-    NotificationSettings, NotificationLog, CrawlStats
+    NotificationLog
 )
 from scheduler.crawler_scheduler import (
     crawler_scheduler, start_scheduler, stop_scheduler,
@@ -139,6 +139,9 @@ async def get_dashboard_stats(db: Session = Depends(get_db)) -> DashboardStats:
         today_start = datetime.combine(today, datetime.min.time())
         today_end = datetime.combine(today, datetime.max.time())
         
+        # Recent changes (last 24 hours)
+        yesterday = datetime.utcnow() - timedelta(days=1)
+        
         today_crawls = db.query(ProductCrawlHistory).filter(
             ProductCrawlHistory.crawl_date >= today_start,
             ProductCrawlHistory.crawl_date <= today_end
@@ -147,12 +150,9 @@ async def get_dashboard_stats(db: Session = Depends(get_db)) -> DashboardStats:
         successful_today = len([c for c in today_crawls if c.crawl_success])
         failed_today = len([c for c in today_crawls if not c.crawl_success])
         
-        # Average crawl time
-        recent_stats = db.query(CrawlStats).order_by(CrawlStats.date.desc()).first()
-        avg_crawl_time = recent_stats.average_crawl_time if recent_stats else 0
+        # Average crawl time (not available, set to 0)
+        avg_crawl_time = 0
         
-        # Recent changes (last 24 hours)
-        yesterday = datetime.utcnow() - timedelta(days=1)
         recent_notifications = db.query(NotificationLog).filter(
             NotificationLog.sent_at >= yesterday
         ).count()
@@ -206,6 +206,10 @@ async def get_products(
                 crawl_success=True
             ).order_by(ProductCrawlHistory.crawl_date.desc()).first()
             
+            # Get watchlist status
+            watchlist_item = db.query(ASINWatchlist).filter_by(asin=product.asin).first()
+            is_active = watchlist_item.is_active if watchlist_item else None
+            
             if latest_crawl:
                 product_data = {
                     "id": product.id,
@@ -215,10 +219,11 @@ async def get_products(
                     "list_price": latest_crawl.list_price,
                     "rating": latest_crawl.rating,
                     "rating_count": latest_crawl.rating_count,
-                    "inventory_status": latest_crawl.inventory_status,
+                    "inventory_status": latest_crawl.inventory,  # FIXED: was inventory_status
                     "amazon_choice": latest_crawl.amazon_choice,
                     "last_crawled": latest_crawl.crawl_date,
-                    "created_at": product.created_at
+                    "created_at": product.created_at,
+                    "is_active": is_active
                 }
             else:
                 product_data = {
@@ -232,7 +237,8 @@ async def get_products(
                     "inventory_status": None,
                     "amazon_choice": False,
                     "last_crawled": None,
-                    "created_at": product.created_at
+                    "created_at": product.created_at,
+                    "is_active": is_active
                 }
             
             product_list.append(product_data)
@@ -247,6 +253,26 @@ async def get_products(
         
     except Exception as e:
         logger.error(f"Error getting products: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get("/api/products/stats")
+async def get_products_stats(db: Session = Depends(get_db)):
+    """Get product statistics for management page"""
+    try:
+        total_products = db.query(Product).count()
+        active_watchlist = db.query(ASINWatchlist).filter_by(is_active=True).count()
+        inactive_watchlist = db.query(ASINWatchlist).filter_by(is_active=False).count()
+        # Sản phẩm không nằm trong watchlist
+        subq = db.query(ASINWatchlist.asin)
+        not_in_watchlist = db.query(Product).filter(~Product.asin.in_(subq)).count()
+        return {
+            "total_products": total_products,
+            "active_watchlist": active_watchlist,
+            "inactive_watchlist": inactive_watchlist,
+            "not_in_watchlist": not_in_watchlist
+        }
+    except Exception as e:
+        logger.error(f"Error getting product stats: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/api/products/list")
@@ -336,22 +362,25 @@ async def get_product_details(asin: str, db: Session = Depends(get_db)):
 
 @app.post("/api/products/add")
 async def add_product(request: ASINRequest, background_tasks: BackgroundTasks):
-    """Add ASIN to watchlist and crawl immediately"""
+    """Add ASIN to watchlist and crawl immediately if needed"""
     try:
         # Validate ASIN format (should be 10 characters)
         if not request.asin or len(request.asin) != 10:
             raise HTTPException(status_code=400, detail="Invalid ASIN format")
         
-        # Add to watchlist
-        success = await add_asin(request.asin, request.frequency, request.notes)
-        if not success:
+        # Add to watchlist (có thể trả về: 'added', 'added_no_crawl', 'reactivated', 'exists', 'error')
+        result = await add_asin(request.asin, request.frequency, request.notes)
+        if result == 'exists':
             raise HTTPException(status_code=400, detail="ASIN already exists or failed to add")
-        
-        # Trigger immediate crawl in background
-        background_tasks.add_task(crawl_asin_now, request.asin)
-        
-        return {"message": f"ASIN {request.asin} added successfully", "asin": request.asin}
-        
+        if result == 'reactivated':
+            return {"message": f"ASIN {request.asin} re-activated in watchlist", "asin": request.asin}
+        if result == 'added_no_crawl':
+            return {"message": f"ASIN {request.asin} đã có dữ liệu, chỉ thêm vào watchlist, không crawl lại", "asin": request.asin}
+        if result == 'added':
+            # Trigger immediate crawl in background
+            background_tasks.add_task(crawl_asin_now, request.asin)
+            return {"message": f"ASIN {request.asin} added successfully and crawl started", "asin": request.asin}
+        raise HTTPException(status_code=500, detail="Unknown error when adding ASIN")
     except HTTPException:
         raise
     except Exception as e:
@@ -387,11 +416,41 @@ async def manual_crawl(asin: str, background_tasks: BackgroundTasks):
         logger.error(f"Error starting manual crawl for {asin}: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.put("/api/watchlist/{asin}/toggle")
+async def toggle_watchlist_status(asin: str, db: Session = Depends(get_db)):
+    """Toggle active status of ASIN in watchlist (pause/resume monitoring)"""
+    try:
+        watchlist_item = db.query(ASINWatchlist).filter_by(asin=asin).first()
+        if not watchlist_item:
+            raise HTTPException(status_code=404, detail="ASIN not found in watchlist")
+        
+        # Toggle active status
+        watchlist_item.is_active = not watchlist_item.is_active
+        db.commit()
+        
+        status_text = "resumed" if watchlist_item.is_active else "paused"
+        
+        return {
+            "message": f"ASIN {asin} monitoring {status_text}",
+            "asin": asin,
+            "is_active": watchlist_item.is_active
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error toggling watchlist status for {asin}: {e}")
+        db.rollback()
+        raise HTTPException(status_code=500, detail=str(e))
+
 @app.get("/api/watchlist")
-async def get_watchlist(db: Session = Depends(get_db)):
+async def get_watchlist(active_only: bool = False, db: Session = Depends(get_db)):
     """Get ASIN watchlist"""
     try:
-        watchlist = db.query(ASINWatchlist).filter_by(is_active=True).all()
+        if active_only:
+            watchlist = db.query(ASINWatchlist).filter_by(is_active=True).all()
+        else:
+            watchlist = db.query(ASINWatchlist).all()
         
         return {
             "watchlist": [
@@ -399,6 +458,7 @@ async def get_watchlist(db: Session = Depends(get_db)):
                     "id": item.id,
                     "asin": item.asin,
                     "frequency": item.crawl_frequency,
+                    "is_active": item.is_active,
                     "added_date": item.added_date,
                     "last_crawled": item.last_crawled,
                     "next_crawl": item.next_crawl,
@@ -412,60 +472,21 @@ async def get_watchlist(db: Session = Depends(get_db)):
         logger.error(f"Error getting watchlist: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.get("/api/notifications/settings")
-async def get_notification_settings(db: Session = Depends(get_db)):
-    """Get notification settings"""
-    try:
-        settings_list = db.query(NotificationSettings).all()
-        
-        return {
-            "settings": [
-                {
-                    "id": setting.id,
-                    "type": setting.notification_type,
-                    "enabled": setting.enabled,
-                    "config": setting.config,
-                    "triggers": {
-                        "price_change": setting.price_change,
-                        "availability_change": setting.availability_change,
-                        "rating_change": setting.rating_change,
-                        "new_coupon": setting.new_coupon,
-                        "new_deal": setting.new_deal
-                    }
-                }
-                for setting in settings_list
-            ]
-        }
-        
-    except Exception as e:
-        logger.error(f"Error getting notification settings: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+# @app.get("/api/notifications/settings")
+# async def get_notification_settings(db: Session = Depends(get_db)):
+#     """Get notification settings - MOVED TO .ENV CONFIG"""
+#     # Notification settings are now managed via .env file
+#     return {"message": "Notification settings are now managed via .env file"}
 
-@app.put("/api/notifications/settings/{setting_id}")
-async def update_notification_setting(
-    setting_id: int, 
-    config: NotificationConfig,
-    db: Session = Depends(get_db)
-):
-    """Update notification settings"""
-    try:
-        setting = db.query(NotificationSettings).filter_by(id=setting_id).first()
-        if not setting:
-            raise HTTPException(status_code=404, detail="Setting not found")
-        
-        setting.enabled = config.enabled
-        setting.config = config.config
-        
-        db.commit()
-        
-        return {"message": "Notification setting updated successfully"}
-        
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error updating notification setting: {e}")
-        db.rollback()
-        raise HTTPException(status_code=500, detail=str(e))
+# @app.put("/api/notifications/settings/{setting_id}")
+# async def update_notification_setting(
+#     setting_id: int, 
+#     config: NotificationConfig,
+#     db: Session = Depends(get_db)
+# ):
+#     """Update notification settings - MOVED TO .ENV CONFIG"""
+#     # Notification settings are now managed via .env file
+#     return {"message": "Notification settings are now managed via .env file"}
 
 @app.get("/api/scheduler/status")
 async def get_scheduler_status():
@@ -516,33 +537,11 @@ async def get_notification_logs(
         logger.error(f"Error getting notification logs: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.get("/api/stats/crawl")
-async def get_crawl_stats(days: int = 7, db: Session = Depends(get_db)):
-    """Get crawl statistics"""
-    try:
-        since_date = datetime.utcnow() - timedelta(days=days)
-        
-        stats = db.query(CrawlStats).filter(
-            CrawlStats.date >= since_date
-        ).order_by(CrawlStats.date.desc()).all()
-        
-        return {
-            "stats": [
-                {
-                    "date": stat.date,
-                    "total_crawled": stat.total_asins_crawled,
-                    "successful": stat.successful_crawls,
-                    "failed": stat.failed_crawls,
-                    "avg_time": stat.average_crawl_time,
-                    "errors": stat.errors_encountered
-                }
-                for stat in stats
-            ]
-        }
-        
-    except Exception as e:
-        logger.error(f"Error getting crawl stats: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+# @app.get("/api/stats/crawl")
+# async def get_crawl_stats(days: int = 7, db: Session = Depends(get_db)):
+#     """Get crawl statistics - DISABLED (CrawlStats table removed)"""
+#     # CrawlStats functionality moved to direct calculation from ProductCrawlHistory
+#     return {"message": "Crawl stats moved to dashboard calculations"}
 
 # Price History API
 @app.get("/api/price-history/{asin}")

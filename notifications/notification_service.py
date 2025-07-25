@@ -1,18 +1,13 @@
 import asyncio
-import smtplib
 import json
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-from typing import Dict, List, Optional
+from typing import Dict
 from datetime import datetime
+import pytz
 
-import requests
 import telegram
-from discord_webhook import DiscordWebhook, DiscordEmbed
-
 from config.settings import settings
 from database.connection import get_db_session
-from database.models import NotificationSettings, NotificationLog, Product
+from database.models import NotificationLog, Product
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -20,6 +15,7 @@ logger = get_logger(__name__)
 class NotificationService:
     def __init__(self):
         self.session = get_db_session()
+        self.timezone = pytz.timezone('America/New_York')
     
     async def send_product_change_notification(self, asin: str, changes: Dict, product_data: Dict):
         """Send notification about product changes"""
@@ -40,37 +36,8 @@ class NotificationService:
                     logger.error(f"Failed to send Telegram notification: {e}")
                     self._log_notification(asin, "telegram", message, False, str(e))
             
-            # Send Discord notification if configured
-            if settings.DISCORD_WEBHOOK_URL:
-                try:
-                    discord_config = {'webhook_url': settings.DISCORD_WEBHOOK_URL}
-                    success = await self._send_discord_notification(message, changes, product_data, discord_config)
-                    self._log_notification(asin, "discord", message, success, None)
-                except Exception as e:
-                    logger.error(f"Failed to send Discord notification: {e}")
-                    self._log_notification(asin, "discord", message, False, str(e))
-            
-            # Send Email notification if configured
-            if settings.EMAIL_SMTP_SERVER and settings.EMAIL_USERNAME and settings.EMAIL_PASSWORD:
-                try:
-                    email_config = {
-                        'smtp_server': settings.EMAIL_SMTP_SERVER,
-                        'smtp_port': settings.EMAIL_SMTP_PORT,
-                        'username': settings.EMAIL_USERNAME,
-                        'password': settings.EMAIL_PASSWORD,
-                        'recipients': getattr(settings, 'EMAIL_RECIPIENTS', '').split(',') if hasattr(settings, 'EMAIL_RECIPIENTS') else []
-                    }
-                    if email_config['recipients']:
-                        success = await self._send_email_notification(message, asin, email_config)
-                        self._log_notification(asin, "email", message, success, None)
-                except Exception as e:
-                    logger.error(f"Failed to send Email notification: {e}")
-                    self._log_notification(asin, "email", message, False, str(e))
-            
         except Exception as e:
             logger.error(f"Error sending notifications for ASIN {asin}: {e}")
-    
-
     
     def _generate_change_message(self, asin: str, changes: Dict, product_data: Dict) -> str:
         """Generate notification message"""
@@ -149,9 +116,12 @@ class NotificationService:
             if old_count and new_count:
                 message_parts.append(f"🛒 Đã bán: {old_count}+ → {new_count}+ trong tháng qua")
         
+        # Get current time in New York timezone
+        ny_time = datetime.now(self.timezone)
+        
         message_parts.extend([
             f"",
-            f"🕒 Thời gian: {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}",
+            f"🕒 Thời gian (New York): {ny_time.strftime('%d/%m/%Y %H:%M:%S %Z')}",
             f"🔗 Link: https://www.amazon.com/dp/{asin}"
         ])
         
@@ -179,105 +149,6 @@ class NotificationService:
             
         except Exception as e:
             logger.error(f"Failed to send Telegram notification: {e}")
-            return False
-    
-    async def _send_discord_notification(self, message: str, changes: Dict, product_data: Dict, config: Dict) -> bool:
-        """Send Discord notification"""
-        try:
-            webhook_url = config.get('webhook_url') or settings.DISCORD_WEBHOOK_URL
-            
-            if not webhook_url:
-                logger.warning("Discord webhook URL not configured")
-                return False
-            
-            webhook = DiscordWebhook(url=webhook_url)
-            
-            # Create embed
-            embed = DiscordEmbed(
-                title="🚨 Amazon Product Change Alert",
-                description=f"ASIN: {product_data.get('asin')}",
-                color=0xff5733
-            )
-            
-            embed.add_embed_field(
-                name="Product",
-                value=product_data.get('title', 'Unknown')[:1000],
-                inline=False
-            )
-            
-            # Add change fields
-            if 'sale_price' in changes:
-                old_price = changes['sale_price']['old']
-                new_price = changes['sale_price']['new']
-                if old_price and new_price:
-                    change_percent = ((new_price - old_price) / old_price) * 100
-                    embed.add_embed_field(
-                        name="💰 Price Change",
-                        value=f"${old_price:.2f} → ${new_price:.2f} ({change_percent:+.1f}%)",
-                        inline=True
-                    )
-            
-            if 'rating' in changes:
-                old_rating = changes['rating']['old']
-                new_rating = changes['rating']['new']
-                if old_rating and new_rating:
-                    embed.add_embed_field(
-                        name="⭐ Rating Change",
-                        value=f"{old_rating} → {new_rating}",
-                        inline=True
-                    )
-            
-            embed.add_embed_field(
-                name="🔗 Product Link",
-                value=f"https://www.amazon.com/dp/{product_data.get('asin')}",
-                inline=False
-            )
-            
-            embed.set_timestamp()
-            webhook.add_embed(embed)
-            
-            response = webhook.execute()
-            
-            logger.info("Discord notification sent successfully")
-            return True
-            
-        except Exception as e:
-            logger.error(f"Failed to send Discord notification: {e}")
-            return False
-    
-    async def _send_email_notification(self, message: str, asin: str, config: Dict) -> bool:
-        """Send email notification"""
-        try:
-            smtp_server = config.get('smtp_server') or settings.EMAIL_SMTP_SERVER
-            smtp_port = config.get('smtp_port') or settings.EMAIL_SMTP_PORT
-            username = config.get('username') or settings.EMAIL_USERNAME
-            password = config.get('password') or settings.EMAIL_PASSWORD
-            recipients = config.get('recipients', [])
-            
-            if not all([smtp_server, username, password, recipients]):
-                logger.warning("Email configuration incomplete")
-                return False
-            
-            # Create message
-            msg = MIMEMultipart()
-            msg['From'] = username
-            msg['To'] = ', '.join(recipients)
-            msg['Subject'] = f"Amazon Product Change Alert - ASIN: {asin}"
-            
-            # Add body
-            msg.attach(MIMEText(message, 'plain', 'utf-8'))
-            
-            # Send email
-            with smtplib.SMTP(smtp_server, smtp_port) as server:
-                server.starttls()
-                server.login(username, password)
-                server.send_message(msg)
-            
-            logger.info("Email notification sent successfully")
-            return True
-            
-        except Exception as e:
-            logger.error(f"Failed to send email notification: {e}")
             return False
     
     def _log_notification(self, asin: str, notification_type: str, message: str, success: bool, error_message: str = None):

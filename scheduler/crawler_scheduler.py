@@ -8,7 +8,7 @@ from apscheduler.triggers.interval import IntervalTrigger
 
 from config.settings import settings
 from database.connection import get_db_session
-from database.models import ASINWatchlist, CrawlStats
+from database.models import ASINWatchlist
 from crawler.amazon_crawler import AmazonCrawler
 from crawler.change_detector import detect_changes
 from utils.logger import get_logger
@@ -146,17 +146,14 @@ class CrawlerScheduler:
             crawl_duration = (end_time - start_time).total_seconds()
             avg_crawl_time = crawl_duration / total_crawled if total_crawled > 0 else 0
             
-            # Save crawl stats
-            await self._save_crawl_stats(
-                total_crawled, successful_crawls, failed_crawls,
-                avg_crawl_time, errors
-            )
-            
+            # Log crawl stats (no DB save)
             logger.info(
                 f"Daily crawl completed - Total: {total_crawled}, "
                 f"Success: {successful_crawls}, Failed: {failed_crawls}, "
-                f"Duration: {crawl_duration:.1f}s"
+                f"Duration: {crawl_duration:.1f}s, Avg: {avg_crawl_time:.2f}s"
             )
+            if errors:
+                logger.warning(f"Crawl errors: {errors}")
             
         except Exception as e:
             logger.error(f"Error in daily crawl job: {e}")
@@ -206,33 +203,43 @@ class CrawlerScheduler:
         finally:
             crawler.close()
     
-    async def add_asin_to_watchlist(self, asin: str, crawl_frequency: str = "daily", notes: str = "") -> bool:
-        """Add ASIN to watchlist"""
+    async def add_asin_to_watchlist(self, asin: str, crawl_frequency: str = "daily", notes: str = "") -> str:
+        """Add ASIN to watchlist. Return 'added', 'added_no_crawl', 'reactivated', or 'exists'"""
         try:
             # Check if ASIN already exists
             existing = self.session.query(ASINWatchlist).filter_by(asin=asin).first()
             if existing:
+                if not existing.is_active:
+                    # Reactivate and update info
+                    existing.is_active = True
+                    existing.crawl_frequency = crawl_frequency
+                    existing.notes = notes
+                    existing.next_crawl = datetime.utcnow()
+                    self.session.commit()
+                    logger.info(f"Re-activated ASIN {asin} in watchlist with {crawl_frequency} frequency")
+                    return 'reactivated'
                 logger.warning(f"ASIN {asin} already exists in watchlist")
-                return False
-            
-            # Create new watchlist entry
+                return 'exists'
+
+            # Nếu đã có dữ liệu crawl thành công thì chỉ thêm vào watchlist, không crawl lại
+            from database.models import ProductCrawlHistory
+            has_crawled = self.session.query(ProductCrawlHistory).filter_by(asin=asin, crawl_success=True).first()
             watchlist_item = ASINWatchlist(
                 asin=asin,
                 crawl_frequency=crawl_frequency,
                 notes=notes,
                 next_crawl=datetime.utcnow()  # Crawl immediately
             )
-            
             self.session.add(watchlist_item)
             self.session.commit()
-            
             logger.info(f"Added ASIN {asin} to watchlist with {crawl_frequency} frequency")
-            return True
-            
+            if has_crawled:
+                return 'added_no_crawl'
+            return 'added'
         except Exception as e:
             logger.error(f"Error adding ASIN {asin} to watchlist: {e}")
             self.session.rollback()
-            return False
+            return 'error'
     
     async def remove_asin_from_watchlist(self, asin: str) -> bool:
         """Remove ASIN from watchlist"""
@@ -298,24 +305,6 @@ class CrawlerScheduler:
         else:
             # Default to daily
             return now + timedelta(days=1)
-    
-    async def _save_crawl_stats(self, total: int, successful: int, failed: int, avg_time: float, errors: List[str]):
-        """Save crawl statistics"""
-        try:
-            stats = CrawlStats(
-                total_asins_crawled=total,
-                successful_crawls=successful,
-                failed_crawls=failed,
-                average_crawl_time=avg_time,
-                errors_encountered=errors
-            )
-            
-            self.session.add(stats)
-            self.session.commit()
-            
-        except Exception as e:
-            logger.error(f"Error saving crawl stats: {e}")
-            self.session.rollback()
     
     def get_scheduler_status(self) -> dict:
         """Get scheduler status"""

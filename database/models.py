@@ -44,9 +44,9 @@ class ProductCrawlHistory(Base):
     sale_percentage = Column(Integer)           # 11. % giảm giá
     
     # 🏷️ Promotions (4 fields)
-    best_deal = Column(String(100), default="")  # 12. Chương trình khuyến mãi (e.g., "Limited time deal")
-    lightning_deal = Column(String(20))          # 13. Lightning deal (e.g., "81% claimed")
-    coupon = Column(Text, default="")            # 14. Có coupon (1 or 0)
+    best_deal = Column(String(100), default="")  # 12. Chương trình khuyến mãi
+    lightning_deal = Column(String(20))          # 13. Lightning deal
+    coupon = Column(Text, default="")            # 14. Có coupon
     bag_sale = Column(String(100))               # 15. Thông tin bag sale
     
     # ⭐ Reviews (2 fields)
@@ -59,8 +59,8 @@ class ProductCrawlHistory(Base):
     
     # 📢 Marketing (3 fields)
     advertised_asins = Column(JSON)             # 20. ID sản phẩm quảng cáo
-    amazon_choice = Column(Integer, default=0)  # 21. Amazon's Choice (1 or 0)
-    inventory = Column(String(50))              # 22. Tình trạng kho (InStock)
+    amazon_choice = Column(Integer, default=0)  # 21. Amazon's Choice
+    inventory = Column(String(50))              # 22. Tình trạng kho
     
     # Meta fields
     crawl_success = Column(Boolean, default=False)
@@ -81,21 +81,6 @@ class ASINWatchlist(Base):
     next_crawl = Column(DateTime)
     notes = Column(Text)
 
-class NotificationSettings(Base):
-    __tablename__ = "notification_settings"
-    
-    id = Column(Integer, primary_key=True, index=True)
-    notification_type = Column(String(20))  # telegram, discord, email
-    enabled = Column(Boolean, default=True)
-    config = Column(JSON)  # Store notification-specific configuration
-    
-    # Notification Triggers
-    price_change = Column(Boolean, default=True)
-    availability_change = Column(Boolean, default=True)
-    rating_change = Column(Boolean, default=True)
-    new_coupon = Column(Boolean, default=True)
-    new_deal = Column(Boolean, default=True)
-
 class NotificationLog(Base):
     __tablename__ = "notification_log"
     
@@ -108,24 +93,4 @@ class NotificationLog(Base):
     error_message = Column(Text)
     
     # Relationships
-    product = relationship("Product", back_populates="notifications")
-
-class CrawlStats(Base):
-    __tablename__ = "crawl_stats"
-    
-    id = Column(Integer, primary_key=True, index=True)
-    date = Column(DateTime, default=datetime.utcnow)
-    total_asins_crawled = Column(Integer, default=0)
-    successful_crawls = Column(Integer, default=0)
-    failed_crawls = Column(Integer, default=0)
-    average_crawl_time = Column(Float)
-    errors_encountered = Column(JSON)
-
-class UserSettings(Base):
-    __tablename__ = "user_settings"
-    
-    id = Column(Integer, primary_key=True, index=True)
-    setting_key = Column(String(100), unique=True)
-    setting_value = Column(Text)
-    description = Column(Text)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow) 
+    product = relationship("Product", back_populates="notifications") 
