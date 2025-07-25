@@ -1910,3 +1910,50 @@ Stacktrace:
 2025-07-24 23:04:09 - api.main - INFO - Starting get_products_list API call
 2025-07-24 23:04:09 - api.main - INFO - Found 5 unique ASINs from database
 2025-07-24 23:04:09 - api.main - INFO - Returning 5 products
+2025-07-24 23:04:37 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:04:37 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:04:37 - api.main - INFO - Returning 5 products
+2025-07-24 23:04:42 - api.main - ERROR - Error getting products: 'ProductCrawlHistory' object has no attribute 'inventory_status'
+2025-07-24 23:04:44 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:04:44 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:04:44 - api.main - INFO - Returning 5 products
+2025-07-24 23:05:48 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:05:48 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:05:48 - api.main - INFO - Returning 5 products
+2025-07-24 23:05:57 - api.main - ERROR - Error getting products: 'ProductCrawlHistory' object has no attribute 'inventory_status'
+2025-07-24 23:05:59 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:05:59 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:05:59 - api.main - INFO - Returning 5 products
+2025-07-24 23:06:01 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:06:01 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:06:01 - api.main - INFO - Returning 5 products
+2025-07-24 23:11:27 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:11:27 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:11:27 - api.main - INFO - Returning 5 products
+2025-07-24 23:11:28 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:11:28 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:11:28 - api.main - INFO - Returning 5 products
+2025-07-24 23:11:30 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:11:30 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:11:30 - api.main - INFO - Returning 5 products
+2025-07-24 23:12:47 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:12:47 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:12:47 - api.main - INFO - Returning 5 products
+2025-07-24 23:12:48 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:12:48 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:12:48 - api.main - INFO - Returning 5 products
+2025-07-24 23:19:10 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:19:10 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:19:10 - api.main - INFO - Returning 5 products
+2025-07-24 23:20:16 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:20:16 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:20:16 - api.main - INFO - Returning 5 products
+2025-07-24 23:20:37 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:20:37 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:20:37 - api.main - INFO - Returning 5 products
+2025-07-24 23:21:48 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:21:48 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:21:48 - api.main - INFO - Returning 5 products
+2025-07-24 23:22:17 - api.main - INFO - Starting get_products_list API call
+2025-07-24 23:22:17 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-24 23:22:17 - api.main - INFO - Returning 5 products

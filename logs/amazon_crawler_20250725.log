@@ -1,0 +1,828 @@
+2025-07-25 10:36:36 - __main__ - INFO - .env file already exists
+2025-07-25 10:36:36 - __main__ - INFO - Starting Amazon Product Crawler...
+2025-07-25 10:36:36 - __main__ - INFO - Initializing database...
+2025-07-25 10:36:36 - __main__ - INFO - Starting crawler scheduler...
+2025-07-25 10:36:36 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-25 10:36:36 - __main__ - INFO - Application initialized successfully!
+2025-07-25 10:36:36 - __main__ - INFO - Starting web server on http://127.0.0.1:8000
+2025-07-25 10:36:36 - scheduler.crawler_scheduler - INFO - Crawler scheduler started - Daily crawl at 09:00
+2025-07-25 10:36:36 - api.main - INFO - Application started successfully
+2025-07-25 10:39:28 - api.main - ERROR - Error getting products: 'ProductCrawlHistory' object has no attribute 'inventory_status'
+2025-07-25 10:40:06 - api.main - INFO - Starting get_products_list API call
+2025-07-25 10:40:06 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-25 10:40:06 - api.main - INFO - Returning 5 products
+2025-07-25 10:47:09 - api.main - INFO - Starting get_products_list API call
+2025-07-25 10:47:09 - api.main - INFO - Found 5 unique ASINs from database
+2025-07-25 10:47:09 - api.main - INFO - Returning 5 products
+2025-07-25 10:48:44 - scheduler.crawler_scheduler - INFO - Added ASIN B079JLY5M5 to watchlist with daily frequency
+2025-07-25 10:48:44 - scheduler.crawler_scheduler - INFO - Manual crawl requested for ASIN: B079JLY5M5
+2025-07-25 10:48:44 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: False
+2025-07-25 10:48:44 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-25 10:48:44 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-25 10:48:47 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-25 10:48:47 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-25 10:48:47 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-25 10:48:49 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-25 10:48:49 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-25 10:48:49 - crawler.amazon_crawler - INFO - Crawling product: B079JLY5M5 from https://www.amazon.com/dp/B079JLY5M5
+2025-07-25 10:48:57 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-25 10:48:57 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-25 10:48:57 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-25 10:48:57 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-25 10:49:01 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-25 10:49:03 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-25 10:49:11 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-25 10:49:11 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-25 10:49:18 - crawler.amazon_crawler - INFO - Extracted title: Logitech MK270 Wireless Keyboard and Mouse Combo f...
+2025-07-25 10:49:18 - crawler.amazon_crawler - INFO - Extracted 6 about_this_item bullet points
+2025-07-25 10:49:18 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-25 10:49:18 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-25 10:49:18 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $27.0
+2025-07-25 10:49:18 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-7%'
+2025-07-25 10:49:18 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 7%
+2025-07-25 10:49:18 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$29.99'
+2025-07-25 10:49:18 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $29.99
+2025-07-25 10:49:18 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$27.0, list=$29.99, discount=7%
+2025-07-25 10:49:18 - crawler.amazon_crawler - INFO - Found rating text: '4.5'
+2025-07-25 10:49:18 - crawler.amazon_crawler - INFO - Extracted rating: 4.5
+2025-07-25 10:49:18 - crawler.amazon_crawler - INFO - Extracted bag_sale: 10K+ bought in past month
+2025-07-25 10:49:18 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-25 10:49:18 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-25 10:49:19 - crawler.amazon_crawler - INFO - Extracted product_description: 1397 characters
+2025-07-25 10:49:19 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-25 10:49:19 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-25 10:49:19 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 9 VIDEOS
+2025-07-25 10:49:19 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-25 10:49:22 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-25 10:49:22 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-25 10:49:22 - crawler.amazon_crawler - INFO - Found product video: 'Logitech Receiver Location' - https://amazon.com/vdp/053ebe6127454656a41aca8ac3e81163
+2025-07-25 10:49:22 - crawler.amazon_crawler - INFO - Found product video: 'Logitech&#39;s best-selling keyboard and mouse combo on Amazon' - https://amazon.com/vdp/06b152094c1c4d3c8668bd24c314751b
+2025-07-25 10:49:22 - crawler.amazon_crawler - INFO - Found product video: 'Logitech MK270 Keybord Video' - https://amazon.com/vdp/0824caf24e6c48f79e68660038de6cc4
+2025-07-25 10:49:22 - crawler.amazon_crawler - INFO - Found product video: 'Product Overview Video' - https://amazon.com/vdp/0c8f073a0ff24cbdb43f3187ec074feb
+2025-07-25 10:49:22 - crawler.amazon_crawler - INFO - Found product video: 'Logitech MK270 Wireless Keyboard and Mouse Combo' - https://amazon.com/vdp/dd431fb47be448059a117ada6ccfc31c
+2025-07-25 10:49:22 - crawler.amazon_crawler - INFO - Found product video: 'In-Depth Overview: Logitech Wireless Keyboard + Mouse Combo' - https://amazon.com/vdp/09cc6f0b210f4c009d11b193e7e30321
+2025-07-25 10:49:22 - crawler.amazon_crawler - INFO - Found product video: 'Amazon Basics vs. Logitech | Comparing pros and cons' - https://amazon.com/vdp/0aef2efd003e43398e773bb0fa6f5bd6
+2025-07-25 10:49:23 - crawler.amazon_crawler - INFO - Found product video: 'Best Ultra-Thin Wireless Keyboard &amp; Mouse Combo | Full Review' - https://amazon.com/vdp/04b7c8d6571f4053bc4a66fb340cc6dc
+2025-07-25 10:49:23 - crawler.amazon_crawler - INFO - Found product video: 'Great Budget Set: Logitech MK270 Wireless Keyboard &amp; Mouse' - https://amazon.com/vdp/0e059aab74564483a04d7811a418cd8b
+2025-07-25 10:49:23 - crawler.amazon_crawler - INFO - Found product video: 'Watch before buying! Awesome keyboard/mouse combo!' - https://amazon.com/vdp/028982c78b524a099ec41e71b0c09519
+2025-07-25 10:49:23 - crawler.amazon_crawler - INFO - Found product video: 'Just be careful opening the Logitech box, because you may not see the Bluetooth transmitter.' - https://amazon.com/vdp/084b71423f2b4e40ae4c74b6164cd630
+2025-07-25 10:49:23 - crawler.amazon_crawler - INFO - Found product video: 'Nice keyboard' - https://amazon.com/vdp/07cc31a6265d413ab1da4d8ee76855af
+2025-07-25 10:49:23 - crawler.amazon_crawler - INFO - Found product video: 'Ease in use and setting up' - https://amazon.com/vdp/05ad159c1ae34098adc6aa3813842bfc
+2025-07-25 10:49:23 - crawler.amazon_crawler - INFO - Found product video: 'Love it !' - https://amazon.com/vdp/09fb223a24b04834959383f876af7b2f
+2025-07-25 10:49:23 - crawler.amazon_crawler - INFO - Found product video: 'Perfect' - https://amazon.com/vdp/0eaec7d4c1394dab857e829287cf1872
+2025-07-25 10:49:23 - crawler.amazon_crawler - INFO - Found product video: 'Gah! I&#39;m so happy with my purchase!' - https://amazon.com/vdp/00d97ae87a3d47daad5c10339db3a0d6
+2025-07-25 10:49:23 - crawler.amazon_crawler - INFO - Found product video: 'Excellent product' - https://amazon.com/vdp/0bfbfc75287e4676ad04b84055c664e1
+2025-07-25 10:49:23 - crawler.amazon_crawler - INFO - Found product video: 'Great Logitech Wireless Keyboard &amp; Mouse' - https://amazon.com/vdp/0cd1109010eb434c94da7b48abb6276e
+2025-07-25 10:49:23 - crawler.amazon_crawler - INFO - Found product video: 'Good' - https://amazon.com/vdp/041175b6a25248a7a27976282bbe21ff
+2025-07-25 10:49:23 - crawler.amazon_crawler - INFO - Extracted 19 videos from 'Videos for this product' section
+2025-07-25 10:49:23 - crawler.amazon_crawler - INFO - Total product videos found: 19
+2025-07-25 10:49:23 - crawler.amazon_crawler - INFO - Closed video popup with selector: button[data-action='a-popover-close'][aria-label='Close']
+2025-07-25 10:49:25 - crawler.amazon_crawler - INFO - Found 2 video elements still present
+2025-07-25 10:49:27 - crawler.amazon_crawler - INFO - Video popup closed successfully
+2025-07-25 10:49:27 - crawler.amazon_crawler - INFO - Clicked first image thumbnail
+2025-07-25 10:49:29 - crawler.amazon_crawler - INFO - Clicked 'Click to see full view' link
+2025-07-25 10:49:32 - crawler.amazon_crawler - INFO - Found ivThumbs container
+2025-07-25 10:49:32 - crawler.amazon_crawler - INFO - Found 12 image thumbnails
+2025-07-25 10:49:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/31kI-vgQwYL._AC_SL1500_.jpg
+2025-07-25 10:49:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/519V3poaqeL._AC_SL1500_.jpg
+2025-07-25 10:49:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/31hfkDV2q8L._AC_SL1500_.jpg
+2025-07-25 10:49:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41QW4vFbfDL._AC_SL1500_.jpg
+2025-07-25 10:49:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51IvFKKSBdL._AC_SL1500_.jpg
+2025-07-25 10:49:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41mn9UzglzL._AC_SL1500_.jpg
+2025-07-25 10:49:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41LYsrPI4eL._AC_SL1500_.jpg
+2025-07-25 10:49:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/414YMBu5UoL._AC_SL1500_.jpg
+2025-07-25 10:49:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41SKCkZ7HTL._AC_SL1500_.jpg
+2025-07-25 10:49:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/31rbH+D2xpL._AC_SL1500_.jpg
+2025-07-25 10:49:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41UZs9e-3GL._AC_SL1500_.jpg
+2025-07-25 10:49:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/416asb2aIVL._AC_SL1500_.jpg
+2025-07-25 10:49:32 - crawler.amazon_crawler - INFO - Total images extracted: 12
+2025-07-25 10:49:32 - crawler.amazon_crawler - INFO - Closed image popup by clicking outside
+2025-07-25 10:49:33 - crawler.amazon_crawler - INFO - Final sale_percentage: 7% (preserved from extraction)
+2025-07-25 10:49:33 - crawler.amazon_crawler - INFO - Successfully crawled product B079JLY5M5
+2025-07-25 10:49:34 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B079JLY5M5
+2025-07-25 10:49:34 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B079JLY5M5 with 24 fields
+2025-07-25 10:49:34 - crawler.change_detector - INFO - No significant changes detected for ASIN B079JLY5M5
+2025-07-25 10:49:34 - scheduler.crawler_scheduler - INFO - Manual crawl completed for B079JLY5M5: Success
+2025-07-25 10:51:12 - api.main - INFO - Starting get_products_list API call
+2025-07-25 10:51:12 - api.main - INFO - Found 6 unique ASINs from database
+2025-07-25 10:51:12 - api.main - INFO - Returning 6 products
+2025-07-25 10:51:27 - api.main - INFO - Starting get_products_list API call
+2025-07-25 10:51:27 - api.main - INFO - Found 6 unique ASINs from database
+2025-07-25 10:51:27 - api.main - INFO - Returning 6 products
+2025-07-25 10:51:43 - api.main - ERROR - Error getting products: 'ProductCrawlHistory' object has no attribute 'inventory_status'
+2025-07-25 10:51:46 - api.main - INFO - Starting get_products_list API call
+2025-07-25 10:51:46 - api.main - INFO - Found 6 unique ASINs from database
+2025-07-25 10:51:46 - api.main - INFO - Returning 6 products
+2025-07-25 10:51:46 - api.main - ERROR - Error getting products: 'ProductCrawlHistory' object has no attribute 'inventory_status'
+2025-07-25 10:52:54 - scheduler.crawler_scheduler - INFO - Manual crawl requested for ASIN: B0CWP5ZCWM
+2025-07-25 10:52:54 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: False
+2025-07-25 10:52:54 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-25 10:52:54 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-25 10:52:55 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-25 10:52:55 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-25 10:52:55 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-25 10:52:57 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-25 10:52:57 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-25 10:52:57 - crawler.amazon_crawler - INFO - Crawling product: B0CWP5ZCWM from https://www.amazon.com/dp/B0CWP5ZCWM
+2025-07-25 10:53:03 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-25 10:53:03 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-25 10:53:03 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-25 10:53:03 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-25 10:53:08 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-25 10:53:09 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-25 10:53:17 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-25 10:53:17 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-25 10:53:24 - crawler.amazon_crawler - INFO - Extracted title: Super Wings Transformable Toys, 5 in Traver Airpla...
+2025-07-25 10:53:24 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-25 10:53:24 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-25 10:53:24 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-25 10:53:24 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $16.0
+2025-07-25 10:53:24 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-15%'
+2025-07-25 10:53:24 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 15%
+2025-07-25 10:53:24 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$19.99'
+2025-07-25 10:53:24 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $19.99
+2025-07-25 10:53:24 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$16.0, list=$19.99, discount=15%
+2025-07-25 10:53:24 - crawler.amazon_crawler - INFO - Found rating text: '4.7'
+2025-07-25 10:53:24 - crawler.amazon_crawler - INFO - Extracted rating: 4.7
+2025-07-25 10:53:24 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-25 10:53:24 - crawler.amazon_crawler - INFO - Found lightning deal: 39% claimed
+2025-07-25 10:53:24 - crawler.amazon_crawler - INFO - Extracted bag_sale: 100+ bought in past month
+2025-07-25 10:53:25 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-25 10:53:25 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff60e5ee935+77845]
+	GetHandleVerifier [0x0x7ff60e5ee990+77936]
+	(No symbol) [0x0x7ff60e3a9cda]
+	(No symbol) [0x0x7ff60e4006aa]
+	(No symbol) [0x0x7ff60e40095c]
+	(No symbol) [0x0x7ff60e453d07]
+	(No symbol) [0x0x7ff60e42890f]
+	(No symbol) [0x0x7ff60e450b07]
+	(No symbol) [0x0x7ff60e4286a3]
+	(No symbol) [0x0x7ff60e3f1791]
+	(No symbol) [0x0x7ff60e3f2523]
+	GetHandleVerifier [0x0x7ff60e8c684d+3059501]
+	GetHandleVerifier [0x0x7ff60e8c0c0d+3035885]
+	GetHandleVerifier [0x0x7ff60e8e0400+3164896]
+	GetHandleVerifier [0x0x7ff60e608c3e+185118]
+	GetHandleVerifier [0x0x7ff60e61054f+216111]
+	GetHandleVerifier [0x0x7ff60e5f72e4+113092]
+	GetHandleVerifier [0x0x7ff60e5f7499+113529]
+	GetHandleVerifier [0x0x7ff60e5de298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-25 10:53:25 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 477 characters
+2025-07-25 10:53:25 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-25 10:53:25 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-25 10:53:25 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 2 VIDEOS
+2025-07-25 10:53:25 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-25 10:53:28 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-25 10:53:28 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-25 10:53:28 - crawler.amazon_crawler - INFO - Found product video: 'Season 8 New Character Super Wings 2-in-1 Mode Golden Girl' - https://amazon.com/vdp/05203cb11e4d491799d143d424711f38
+2025-07-25 10:53:28 - crawler.amazon_crawler - INFO - Found product video: 'My two year old plays with this one all day' - https://amazon.com/vdp/036b2343bd9b47538b99ebecb8249caa
+2025-07-25 10:53:28 - crawler.amazon_crawler - INFO - Found product video: 'Easy for kids to transform without assistance' - https://amazon.com/vdp/0686c86b69e7479fa571bda677b2bd68
+2025-07-25 10:53:28 - crawler.amazon_crawler - INFO - Extracted 3 videos from 'Videos for this product' section
+2025-07-25 10:53:28 - crawler.amazon_crawler - INFO - Total product videos found: 3
+2025-07-25 10:53:29 - crawler.amazon_crawler - INFO - Closed video popup with selector: button[data-action='a-popover-close'][aria-label='Close']
+2025-07-25 10:53:31 - crawler.amazon_crawler - INFO - Found 2 video elements still present
+2025-07-25 10:53:33 - crawler.amazon_crawler - INFO - Video popup closed successfully
+2025-07-25 10:53:33 - crawler.amazon_crawler - INFO - Clicked first image thumbnail
+2025-07-25 10:53:35 - crawler.amazon_crawler - INFO - Clicked 'Click to see full view' link
+2025-07-25 10:53:38 - crawler.amazon_crawler - INFO - Found ivThumbs container
+2025-07-25 10:53:38 - crawler.amazon_crawler - INFO - Found 6 image thumbnails
+2025-07-25 10:53:38 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51w0vLJ6B8L._AC_SL1500_.jpg
+2025-07-25 10:53:38 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51XnMp45r2L._AC_SL1500_.jpg
+2025-07-25 10:53:38 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51QE5HAsQzL._AC_SL1500_.jpg
+2025-07-25 10:53:38 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51Z8Wys2xyL._AC_SL1500_.jpg
+2025-07-25 10:53:38 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51C1cEx28TL._AC_SL1500_.jpg
+2025-07-25 10:53:38 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/417e+g0pHEL._AC_SL1500_.jpg
+2025-07-25 10:53:38 - crawler.amazon_crawler - INFO - Total images extracted: 6
+2025-07-25 10:53:38 - crawler.amazon_crawler - INFO - Closed image popup by clicking outside
+2025-07-25 10:53:39 - crawler.amazon_crawler - INFO - Final sale_percentage: 15% (preserved from extraction)
+2025-07-25 10:53:39 - crawler.amazon_crawler - INFO - Successfully crawled product B0CWP5ZCWM
+2025-07-25 10:53:39 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B0CWP5ZCWM
+2025-07-25 10:53:39 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B0CWP5ZCWM with 24 fields
+2025-07-25 10:53:39 - crawler.change_detector - INFO - No significant changes detected for ASIN B0CWP5ZCWM
+2025-07-25 10:53:39 - scheduler.crawler_scheduler - INFO - Manual crawl completed for B0CWP5ZCWM: Success
+2025-07-25 10:53:41 - scheduler.crawler_scheduler - INFO - Added ASIN B0CWP5ZCWM to watchlist with daily frequency
+2025-07-25 10:53:41 - scheduler.crawler_scheduler - INFO - Manual crawl requested for ASIN: B0CWP5ZCWM
+2025-07-25 10:53:41 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: False
+2025-07-25 10:53:41 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-25 10:53:41 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-25 10:53:46 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-25 10:53:46 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-25 10:53:46 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-25 10:53:47 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-25 10:53:47 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-25 10:53:47 - crawler.amazon_crawler - INFO - Crawling product: B0CWP5ZCWM from https://www.amazon.com/dp/B0CWP5ZCWM
+2025-07-25 10:53:55 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-25 10:53:55 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-25 10:53:55 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-25 10:53:56 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-25 10:54:00 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-25 10:54:01 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-25 10:54:10 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-25 10:54:10 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Extracted title: Super Wings Transformable Toys, 5 in Traver Airpla...
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $16.0
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Found percentage text in corePriceDisplay: '-15%'
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Extracted sale percentage from corePriceDisplay: 15%
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Found list price text in corePriceDisplay: '$19.99'
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Extracted list price from corePriceDisplay: $19.99
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$16.0, list=$19.99, discount=15%
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Found rating text: '4.7'
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Extracted rating: 4.7
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Extracted best deal: Limited time deal
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Found lightning deal: 39% claimed
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Extracted bag_sale: 100+ bought in past month
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-25 10:54:17 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff60e5ee935+77845]
+	GetHandleVerifier [0x0x7ff60e5ee990+77936]
+	(No symbol) [0x0x7ff60e3a9cda]
+	(No symbol) [0x0x7ff60e4006aa]
+	(No symbol) [0x0x7ff60e40095c]
+	(No symbol) [0x0x7ff60e453d07]
+	(No symbol) [0x0x7ff60e42890f]
+	(No symbol) [0x0x7ff60e450b07]
+	(No symbol) [0x0x7ff60e4286a3]
+	(No symbol) [0x0x7ff60e3f1791]
+	(No symbol) [0x0x7ff60e3f2523]
+	GetHandleVerifier [0x0x7ff60e8c684d+3059501]
+	GetHandleVerifier [0x0x7ff60e8c0c0d+3035885]
+	GetHandleVerifier [0x0x7ff60e8e0400+3164896]
+	GetHandleVerifier [0x0x7ff60e608c3e+185118]
+	GetHandleVerifier [0x0x7ff60e61054f+216111]
+	GetHandleVerifier [0x0x7ff60e5f72e4+113092]
+	GetHandleVerifier [0x0x7ff60e5f7499+113529]
+	GetHandleVerifier [0x0x7ff60e5de298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 477 characters
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-25 10:54:17 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 2 VIDEOS
+2025-07-25 10:54:18 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-25 10:54:21 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-25 10:54:21 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-25 10:54:21 - crawler.amazon_crawler - INFO - Found product video: 'Season 8 New Character Super Wings 2-in-1 Mode Golden Girl' - https://amazon.com/vdp/05203cb11e4d491799d143d424711f38
+2025-07-25 10:54:21 - crawler.amazon_crawler - INFO - Found product video: 'My two year old plays with this one all day' - https://amazon.com/vdp/036b2343bd9b47538b99ebecb8249caa
+2025-07-25 10:54:21 - crawler.amazon_crawler - INFO - Found product video: 'Easy for kids to transform without assistance' - https://amazon.com/vdp/0686c86b69e7479fa571bda677b2bd68
+2025-07-25 10:54:21 - crawler.amazon_crawler - INFO - Extracted 3 videos from 'Videos for this product' section
+2025-07-25 10:54:21 - crawler.amazon_crawler - INFO - Total product videos found: 3
+2025-07-25 10:54:21 - crawler.amazon_crawler - INFO - Closed video popup with selector: button[data-action='a-popover-close'][aria-label='Close']
+2025-07-25 10:54:23 - crawler.amazon_crawler - INFO - Found 2 video elements still present
+2025-07-25 10:54:25 - crawler.amazon_crawler - INFO - Video popup closed successfully
+2025-07-25 10:54:25 - crawler.amazon_crawler - INFO - Clicked first image thumbnail
+2025-07-25 10:54:27 - crawler.amazon_crawler - INFO - Clicked 'Click to see full view' link
+2025-07-25 10:54:30 - crawler.amazon_crawler - INFO - Found ivThumbs container
+2025-07-25 10:54:30 - crawler.amazon_crawler - INFO - Found 6 image thumbnails
+2025-07-25 10:54:30 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51w0vLJ6B8L._AC_SL1500_.jpg
+2025-07-25 10:54:30 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51XnMp45r2L._AC_SL1500_.jpg
+2025-07-25 10:54:30 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51QE5HAsQzL._AC_SL1500_.jpg
+2025-07-25 10:54:30 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51Z8Wys2xyL._AC_SL1500_.jpg
+2025-07-25 10:54:30 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51C1cEx28TL._AC_SL1500_.jpg
+2025-07-25 10:54:30 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/417e+g0pHEL._AC_SL1500_.jpg
+2025-07-25 10:54:30 - crawler.amazon_crawler - INFO - Total images extracted: 6
+2025-07-25 10:54:31 - crawler.amazon_crawler - INFO - Closed image popup by clicking outside
+2025-07-25 10:54:32 - crawler.amazon_crawler - INFO - Final sale_percentage: 15% (preserved from extraction)
+2025-07-25 10:54:32 - crawler.amazon_crawler - INFO - Successfully crawled product B0CWP5ZCWM
+2025-07-25 10:54:32 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B0CWP5ZCWM with 24 fields
+2025-07-25 10:54:32 - crawler.change_detector - INFO - No significant changes detected for ASIN B0CWP5ZCWM
+2025-07-25 10:54:32 - scheduler.crawler_scheduler - INFO - Manual crawl completed for B0CWP5ZCWM: Success
+2025-07-25 10:54:34 - scheduler.crawler_scheduler - WARNING - ASIN B0CWP5ZCWM already exists in watchlist
+2025-07-25 10:54:34 - scheduler.crawler_scheduler - WARNING - ASIN B0CWP5ZCWM already exists in watchlist
+2025-07-25 10:54:34 - scheduler.crawler_scheduler - WARNING - ASIN B0CWP5ZCWM already exists in watchlist
+2025-07-25 10:54:34 - scheduler.crawler_scheduler - WARNING - ASIN B0CWP5ZCWM already exists in watchlist
+2025-07-25 10:54:34 - scheduler.crawler_scheduler - WARNING - ASIN B0CWP5ZCWM already exists in watchlist
+2025-07-25 10:54:34 - scheduler.crawler_scheduler - WARNING - ASIN B0CWP5ZCWM already exists in watchlist
+2025-07-25 10:54:38 - scheduler.crawler_scheduler - WARNING - ASIN B0CWP5ZCWM already exists in watchlist
+2025-07-25 10:54:38 - scheduler.crawler_scheduler - WARNING - ASIN B0CWP5ZCWM already exists in watchlist
+2025-07-25 10:54:38 - scheduler.crawler_scheduler - INFO - Added ASIN B0CP9DXGJB to watchlist with daily frequency
+2025-07-25 10:54:38 - scheduler.crawler_scheduler - INFO - Manual crawl requested for ASIN: B0CP9DXGJB
+2025-07-25 10:54:38 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: False
+2025-07-25 10:54:38 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-25 10:54:38 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-25 10:54:39 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-25 10:54:39 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-25 10:54:39 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-25 10:54:40 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-25 10:54:40 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-25 10:54:40 - crawler.amazon_crawler - INFO - Crawling product: B0CP9DXGJB from https://www.amazon.com/dp/B0CP9DXGJB
+2025-07-25 10:54:46 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-25 10:54:46 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-25 10:54:46 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-25 10:54:47 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-25 10:54:51 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-25 10:54:52 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-25 10:55:01 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-25 10:55:01 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-25 10:55:08 - crawler.amazon_crawler - INFO - Extracted title: Super Wings Transformable Toys, 7" Super Robot and...
+2025-07-25 10:55:08 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-25 10:55:08 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-25 10:55:08 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-25 10:55:08 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $29.0
+2025-07-25 10:55:08 - crawler.amazon_crawler - INFO - No percentage found in corePriceDisplay - no discount
+2025-07-25 10:55:08 - crawler.amazon_crawler - INFO - No list price found in corePriceDisplay container - setting to NULL
+2025-07-25 10:55:08 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$29.0, list=$None, no discount
+2025-07-25 10:55:08 - crawler.amazon_crawler - INFO - Found rating text: '4.6'
+2025-07-25 10:55:08 - crawler.amazon_crawler - INFO - Extracted rating: 4.6
+2025-07-25 10:55:08 - crawler.amazon_crawler - INFO - Extracted bag_sale: 50+ bought in past month
+2025-07-25 10:55:08 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A1IP9E9IBWER6O&asin=B0CP9DXGJB&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-25 10:55:08 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff60e5ee935+77845]
+	GetHandleVerifier [0x0x7ff60e5ee990+77936]
+	(No symbol) [0x0x7ff60e3a9cda]
+	(No symbol) [0x0x7ff60e4006aa]
+	(No symbol) [0x0x7ff60e40095c]
+	(No symbol) [0x0x7ff60e453d07]
+	(No symbol) [0x0x7ff60e42890f]
+	(No symbol) [0x0x7ff60e450b07]
+	(No symbol) [0x0x7ff60e4286a3]
+	(No symbol) [0x0x7ff60e3f1791]
+	(No symbol) [0x0x7ff60e3f2523]
+	GetHandleVerifier [0x0x7ff60e8c684d+3059501]
+	GetHandleVerifier [0x0x7ff60e8c0c0d+3035885]
+	GetHandleVerifier [0x0x7ff60e8e0400+3164896]
+	GetHandleVerifier [0x0x7ff60e608c3e+185118]
+	GetHandleVerifier [0x0x7ff60e61054f+216111]
+	GetHandleVerifier [0x0x7ff60e5f72e4+113092]
+	GetHandleVerifier [0x0x7ff60e5f7499+113529]
+	GetHandleVerifier [0x0x7ff60e5de298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-25 10:55:08 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-25 10:55:08 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-25 10:55:08 - crawler.amazon_crawler - INFO - Found video thumbnail with count: VIDEO
+2025-07-25 10:55:09 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-25 10:55:12 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-25 10:55:12 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-25 10:55:12 - crawler.amazon_crawler - INFO - Found product video: 'Super Wings 7&#39;&#39; Transforming Robot Suit with 2&#34; Mini Bot' - https://amazon.com/vdp/0e5ff9c3da0a4a4d8fe5f8cbb575b699
+2025-07-25 10:55:12 - crawler.amazon_crawler - INFO - Extracted 1 videos from 'Videos for this product' section
+2025-07-25 10:55:12 - crawler.amazon_crawler - INFO - Total product videos found: 1
+2025-07-25 10:55:12 - crawler.amazon_crawler - INFO - Closed video popup with selector: button[data-action='a-popover-close'][aria-label='Close']
+2025-07-25 10:55:14 - crawler.amazon_crawler - INFO - Found 2 video elements still present
+2025-07-25 10:55:16 - crawler.amazon_crawler - INFO - Video popup closed successfully
+2025-07-25 10:55:16 - crawler.amazon_crawler - INFO - Clicked first image thumbnail
+2025-07-25 10:55:18 - crawler.amazon_crawler - INFO - Clicked 'Click to see full view' link
+2025-07-25 10:55:21 - crawler.amazon_crawler - INFO - Found ivThumbs container
+2025-07-25 10:55:21 - crawler.amazon_crawler - INFO - Found 7 image thumbnails
+2025-07-25 10:55:21 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51sFZXwBbFL._AC_SL1500_.jpg
+2025-07-25 10:55:21 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51OFr8QB3XL._AC_SL1500_.jpg
+2025-07-25 10:55:21 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51WuHCBZN0L._AC_SL1500_.jpg
+2025-07-25 10:55:21 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/410j26rPrIL._AC_SL1500_.jpg
+2025-07-25 10:55:21 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51QhjNQxeOL._AC_SL1500_.jpg
+2025-07-25 10:55:21 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/519CQcZcTqL._AC_SL1500_.jpg
+2025-07-25 10:55:21 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51pPfwda5eL._AC_SL1500_.jpg
+2025-07-25 10:55:21 - crawler.amazon_crawler - INFO - Total images extracted: 7
+2025-07-25 10:55:22 - crawler.amazon_crawler - INFO - Closed image popup by clicking outside
+2025-07-25 10:55:23 - crawler.amazon_crawler - INFO - Final sale_percentage: 0% (preserved from extraction)
+2025-07-25 10:55:23 - crawler.amazon_crawler - INFO - Successfully crawled product B0CP9DXGJB
+2025-07-25 10:55:23 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B0CP9DXGJB
+2025-07-25 10:55:23 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B0CP9DXGJB with 23 fields
+2025-07-25 10:55:23 - crawler.change_detector - INFO - No significant changes detected for ASIN B0CP9DXGJB
+2025-07-25 10:55:23 - scheduler.crawler_scheduler - INFO - Manual crawl completed for B0CP9DXGJB: Success
+2025-07-25 10:55:25 - scheduler.crawler_scheduler - WARNING - ASIN B0CWP5ZCWM already exists in watchlist
+2025-07-25 10:58:49 - api.main - INFO - Starting get_products_list API call
+2025-07-25 10:58:49 - api.main - INFO - Found 8 unique ASINs from database
+2025-07-25 10:58:49 - api.main - INFO - Returning 8 products
+2025-07-25 10:59:36 - api.main - INFO - Starting get_products_list API call
+2025-07-25 10:59:36 - api.main - INFO - Found 8 unique ASINs from database
+2025-07-25 10:59:36 - api.main - INFO - Returning 8 products
+2025-07-25 10:59:37 - api.main - INFO - Starting get_products_list API call
+2025-07-25 10:59:37 - api.main - INFO - Found 8 unique ASINs from database
+2025-07-25 10:59:37 - api.main - INFO - Returning 8 products
+2025-07-25 11:00:00 - scheduler.crawler_scheduler - INFO - Updating hourly stats
+2025-07-25 11:00:37 - api.main - ERROR - Error getting products: 'ProductCrawlHistory' object has no attribute 'inventory_status'
+2025-07-25 11:00:39 - api.main - INFO - Starting get_products_list API call
+2025-07-25 11:00:39 - api.main - INFO - Found 8 unique ASINs from database
+2025-07-25 11:00:39 - api.main - INFO - Returning 8 products
+2025-07-25 11:05:11 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: False
+2025-07-25 11:05:11 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-25 11:05:11 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-25 11:05:12 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-25 11:05:12 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-25 11:05:12 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-25 11:05:13 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-25 11:05:13 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-25 11:05:13 - crawler.amazon_crawler - INFO - Crawling product: B019QZBS10 from https://www.amazon.com/dp/B019QZBS10
+2025-07-25 11:05:18 - crawler.amazon_crawler - ERROR - Failed to crawl product B019QZBS10: Product page not found
+2025-07-25 11:05:20 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: False
+2025-07-25 11:05:20 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-25 11:05:20 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-25 11:05:25 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-25 11:05:25 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-25 11:05:25 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-25 11:05:27 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-25 11:05:27 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-25 11:05:27 - crawler.amazon_crawler - INFO - Crawling product: B019OZBSJ8 from https://www.amazon.com/dp/B019OZBSJ8
+2025-07-25 11:05:34 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-25 11:05:34 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-25 11:05:34 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-25 11:05:34 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-25 11:05:39 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-25 11:05:40 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-25 11:05:48 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-25 11:05:48 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-25 11:05:56 - crawler.amazon_crawler - INFO - Extracted title: Hipa SRM 210 Carburetor for Echo SRM-210 HC150 SRM...
+2025-07-25 11:05:56 - crawler.amazon_crawler - INFO - Extracted 7 about_this_item bullet points
+2025-07-25 11:05:56 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-25 11:05:56 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-25 11:05:56 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $13.0
+2025-07-25 11:05:56 - crawler.amazon_crawler - INFO - No percentage found in corePriceDisplay - no discount
+2025-07-25 11:05:56 - crawler.amazon_crawler - INFO - No list price found in corePriceDisplay container - setting to NULL
+2025-07-25 11:05:56 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$13.0, list=$None, no discount
+2025-07-25 11:05:56 - crawler.amazon_crawler - INFO - Found rating text: '4.5'
+2025-07-25 11:05:56 - crawler.amazon_crawler - INFO - Extracted rating: 4.5
+2025-07-25 11:05:56 - crawler.amazon_crawler - INFO - Extracted bag_sale: 900+ bought in past month
+2025-07-25 11:05:56 - crawler.amazon_crawler - INFO - Extracted sold_by_link: https://www.amazon.com/gp/help/seller/at-a-glance.html/ref=dp_merchant_link?ie=UTF8&seller=A2HSFOAIGPMKK&asin=B019OZBSJ8&ref_=dp_merchant_link&isAmazonFulfilled=1
+2025-07-25 11:05:56 - crawler.amazon_crawler - INFO - Extracted 3 technical specifications
+2025-07-25 11:05:56 - crawler.amazon_crawler - WARNING - Could not extract product_description: Message: no such element: Unable to locate element: {"method":"css selector","selector":"#productDescription"}
+  (Session info: chrome=138.0.7204.158); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x0x7ff60e5ee935+77845]
+	GetHandleVerifier [0x0x7ff60e5ee990+77936]
+	(No symbol) [0x0x7ff60e3a9cda]
+	(No symbol) [0x0x7ff60e4006aa]
+	(No symbol) [0x0x7ff60e40095c]
+	(No symbol) [0x0x7ff60e453d07]
+	(No symbol) [0x0x7ff60e42890f]
+	(No symbol) [0x0x7ff60e450b07]
+	(No symbol) [0x0x7ff60e4286a3]
+	(No symbol) [0x0x7ff60e3f1791]
+	(No symbol) [0x0x7ff60e3f2523]
+	GetHandleVerifier [0x0x7ff60e8c684d+3059501]
+	GetHandleVerifier [0x0x7ff60e8c0c0d+3035885]
+	GetHandleVerifier [0x0x7ff60e8e0400+3164896]
+	GetHandleVerifier [0x0x7ff60e608c3e+185118]
+	GetHandleVerifier [0x0x7ff60e61054f+216111]
+	GetHandleVerifier [0x0x7ff60e5f72e4+113092]
+	GetHandleVerifier [0x0x7ff60e5f7499+113529]
+	GetHandleVerifier [0x0x7ff60e5de298+10616]
+	BaseThreadInitThunk [0x0x7ffd1aebe8d7+23]
+	RtlUserThreadStart [0x0x7ffd1c17c34c+44]
+
+2025-07-25 11:05:56 - crawler.amazon_crawler - INFO - Extracted product_description from #aplus: 73 characters
+2025-07-25 11:05:56 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-25 11:05:56 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-25 11:05:56 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 4 VIDEOS
+2025-07-25 11:05:56 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-25 11:06:00 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-25 11:06:00 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-25 11:06:00 - crawler.amazon_crawler - INFO - Found product video: 'Hipa SRM 210 Carburetor for Echo SRM210 HC150 A021000742 ' - https://amazon.com/vdp/05e4c2dbfd304a1784203f44235c49e7
+2025-07-25 11:06:00 - crawler.amazon_crawler - INFO - Found product video: 'Hipa SRM210 Carburetor for Echo SRM 210 GT200R HC150 PE200' - https://amazon.com/vdp/0717c3ee87d64d6291170779b7f8bd35
+2025-07-25 11:06:00 - crawler.amazon_crawler - INFO - Found product video: 'Hipa Echo SRM210 carb kit review and install' - https://amazon.com/vdp/0381c42f23d24ea4a5990e15cc16bbfe
+2025-07-25 11:06:00 - crawler.amazon_crawler - INFO - Found product video: 'Replace Carburetor, Fuel Lines, &amp; Spark Plugs - Echo SRM-210' - https://amazon.com/vdp/0999eb52c12247ccbf43609925cf6daa
+2025-07-25 11:06:00 - crawler.amazon_crawler - INFO - Found product video: 'Is this how Amazon delivers now?' - https://amazon.com/vdp/052ec1aa0a904f8a9535e71bcb874a5f
+2025-07-25 11:06:00 - crawler.amazon_crawler - INFO - Found product video: 'I got exactly what I ordered 100%' - https://amazon.com/vdp/02096a96f0c54efb91be6d048702beed
+2025-07-25 11:06:00 - crawler.amazon_crawler - INFO - Found product video: 'Nice kit ,Had my Echo running in no time' - https://amazon.com/vdp/81a899cce92747b4b01f419668b0841e
+2025-07-25 11:06:00 - crawler.amazon_crawler - INFO - Extracted 7 videos from 'Videos for this product' section
+2025-07-25 11:06:00 - crawler.amazon_crawler - INFO - Total product videos found: 7
+2025-07-25 11:06:00 - crawler.amazon_crawler - INFO - Closed video popup with selector: button[data-action='a-popover-close'][aria-label='Close']
+2025-07-25 11:06:02 - crawler.amazon_crawler - INFO - Found 2 video elements still present
+2025-07-25 11:06:04 - crawler.amazon_crawler - INFO - Video popup closed successfully
+2025-07-25 11:06:04 - crawler.amazon_crawler - INFO - Clicked first image thumbnail
+2025-07-25 11:06:06 - crawler.amazon_crawler - INFO - Clicked 'Click to see full view' link
+2025-07-25 11:06:09 - crawler.amazon_crawler - INFO - Found ivThumbs container
+2025-07-25 11:06:09 - crawler.amazon_crawler - INFO - Found 9 image thumbnails
+2025-07-25 11:06:09 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41KjgKmnwPL._AC_US100_AA50_.jpg
+2025-07-25 11:06:09 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/61FZQy4pYPL._AC_US100_AA50_.jpg
+2025-07-25 11:06:09 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51-eyhNJx1L._AC_US100_AA50_.jpg
+2025-07-25 11:06:09 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51ME9KTuKpL._AC_US100_AA50_.jpg
+2025-07-25 11:06:09 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51SquXdsWgL._AC_US100_AA50_.jpg
+2025-07-25 11:06:09 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51ujjnHcnOL._AC_US100_AA50_.jpg
+2025-07-25 11:06:09 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/51EivUhWjwL._AC_US100_AA50_.jpg
+2025-07-25 11:06:09 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/418rmYaFKjL._AC_US100_AA50_.jpg
+2025-07-25 11:06:09 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41BoDcDUJrL._AC_US100_AA50_.jpg
+2025-07-25 11:06:09 - crawler.amazon_crawler - INFO - Total images extracted: 9
+2025-07-25 11:06:09 - crawler.amazon_crawler - INFO - Closed image popup by clicking outside
+2025-07-25 11:06:10 - crawler.amazon_crawler - INFO - Final sale_percentage: 0% (preserved from extraction)
+2025-07-25 11:06:10 - crawler.amazon_crawler - INFO - Successfully crawled product B019OZBSJ8
+2025-07-25 11:06:10 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B019OZBSJ8
+2025-07-25 11:06:10 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B019OZBSJ8 with 23 fields
+2025-07-25 11:06:10 - crawler.change_detector - INFO - No significant changes detected for ASIN B019OZBSJ8
+2025-07-25 11:06:17 - crawler.change_detector - INFO - Detected 12 significant changes for ASIN B019OZBSJ8
+2025-07-25 11:07:41 - api.main - ERROR - Error getting products: 'ProductCrawlHistory' object has no attribute 'inventory_status'
+2025-07-25 11:07:43 - api.main - INFO - Starting get_products_list API call
+2025-07-25 11:07:43 - api.main - INFO - Found 9 unique ASINs from database
+2025-07-25 11:07:43 - api.main - INFO - Returning 9 products
+2025-07-25 11:20:53 - scheduler.crawler_scheduler - INFO - Manual crawl requested for ASIN: B0BZYCJK89
+2025-07-25 11:20:53 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: False
+2025-07-25 11:20:53 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-25 11:20:53 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-25 11:20:54 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-25 11:20:54 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-25 11:20:54 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-25 11:20:55 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-25 11:20:55 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-25 11:20:55 - crawler.amazon_crawler - INFO - Crawling product: B0BZYCJK89 from https://www.amazon.com/dp/B0BZYCJK89
+2025-07-25 11:21:03 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-25 11:21:03 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-25 11:21:03 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-25 11:21:03 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-25 11:21:08 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-25 11:21:09 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-25 11:21:17 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-25 11:21:17 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-25 11:21:24 - crawler.amazon_crawler - INFO - Extracted title: Owala FreeSip Insulated Stainless Steel Water Bott...
+2025-07-25 11:21:24 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-25 11:21:24 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-25 11:21:24 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-25 11:21:24 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $29.0
+2025-07-25 11:21:24 - crawler.amazon_crawler - INFO - No percentage found in corePriceDisplay - no discount
+2025-07-25 11:21:25 - crawler.amazon_crawler - INFO - No list price found in corePriceDisplay container - setting to NULL
+2025-07-25 11:21:25 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$29.0, list=$None, no discount
+2025-07-25 11:21:25 - crawler.amazon_crawler - INFO - Found rating text: '4.6'
+2025-07-25 11:21:25 - crawler.amazon_crawler - INFO - Extracted rating: 4.6
+2025-07-25 11:21:25 - crawler.amazon_crawler - INFO - Extracted bag_sale: 20K+ bought in past month
+2025-07-25 11:21:25 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-25 11:21:25 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-25 11:21:25 - crawler.amazon_crawler - INFO - Extracted product_description: 926 characters
+2025-07-25 11:21:25 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-25 11:21:25 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-25 11:21:25 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 6 VIDEOS
+2025-07-25 11:21:25 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-25 11:21:28 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-25 11:21:29 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-25 11:21:29 - crawler.amazon_crawler - INFO - Found product video: 'Product Summary Video' - https://amazon.com/vdp/010d4fd9ea50494ba86d8f2b1c82cfb6
+2025-07-25 11:21:29 - crawler.amazon_crawler - INFO - Found product video: 'Why Is EVERYONE OBSESSED with this bottle??' - https://amazon.com/vdp/0df12ccafa8544c1a0c77d57993b0b74
+2025-07-25 11:21:29 - crawler.amazon_crawler - INFO - Found product video: 'OK, But Is It Worth The Hype?' - https://amazon.com/vdp/0018039dcd7444afbc315d692e757d4c
+2025-07-25 11:21:29 - crawler.amazon_crawler - INFO - Found product video: 'Review of the Owala FreeSip Water Bottle' - https://amazon.com/vdp/0ee75282091248d096f6eaf2adb4b8cd
+2025-07-25 11:21:29 - crawler.amazon_crawler - INFO - Found product video: 'Owala Thermal Cup 32 ounces' - https://amazon.com/vdp/0acbee4e9cdb482ebb2d385a5b9e0e95
+2025-07-25 11:21:29 - crawler.amazon_crawler - INFO - Found product video: 'Pros and cons of the Owala 24 oz water bottle' - https://amazon.com/vdp/0d592b7d65b54360a7919356c1793c37
+2025-07-25 11:21:29 - crawler.amazon_crawler - INFO - Found product video: 'Easy to sip!' - https://amazon.com/vdp/024c172238d34ac58a1592acb4c113f8
+2025-07-25 11:21:29 - crawler.amazon_crawler - INFO - Found product video: 'MUST HAVE!' - https://amazon.com/vdp/07b292efb23d4c02b2df65b8d8ec3ea3
+2025-07-25 11:21:29 - crawler.amazon_crawler - INFO - Found product video: 'Versatile, functional, and customizable' - https://amazon.com/vdp/0bcb84202b394edd92683c58758cdb98
+2025-07-25 11:21:29 - crawler.amazon_crawler - INFO - Found product video: 'Worth it!' - https://amazon.com/vdp/095510cd1bd541d8ad313bbe59a461b8
+2025-07-25 11:21:29 - crawler.amazon_crawler - INFO - Found product video: 'I Remember What Being Hydrated Feels Like!' - https://amazon.com/vdp/0256b3fd289b4fc2ad137d583f2adffa
+2025-07-25 11:21:29 - crawler.amazon_crawler - INFO - Found product video: 'This is so worth it!!!!' - https://amazon.com/vdp/082eb7dfffd849e09d1b5aaecd50df95
+2025-07-25 11:21:29 - crawler.amazon_crawler - INFO - Found product video: 'ELITE water bottle' - https://amazon.com/vdp/0c53773c4b534bc4abd2668f658c8de9
+2025-07-25 11:21:29 - crawler.amazon_crawler - INFO - Found product video: 'MY FAVORITE WATER BOTTLE!' - https://amazon.com/vdp/06f1c3a982534404ae82712ed2962496
+2025-07-25 11:21:29 - crawler.amazon_crawler - INFO - Found product video: 'Durable water bottle' - https://amazon.com/vdp/0959999e79194fe6bedb4effce817fbf
+2025-07-25 11:21:29 - crawler.amazon_crawler - INFO - Extracted 16 videos from 'Videos for this product' section
+2025-07-25 11:21:29 - crawler.amazon_crawler - INFO - Total product videos found: 16
+2025-07-25 11:21:29 - crawler.amazon_crawler - INFO - Closed video popup with selector: button[data-action='a-popover-close'][aria-label='Close']
+2025-07-25 11:21:31 - crawler.amazon_crawler - INFO - Found 2 video elements still present
+2025-07-25 11:21:33 - crawler.amazon_crawler - INFO - Video popup closed successfully
+2025-07-25 11:21:33 - crawler.amazon_crawler - INFO - Clicked first image thumbnail
+2025-07-25 11:21:35 - crawler.amazon_crawler - INFO - Clicked 'Click to see full view' link
+2025-07-25 11:21:38 - crawler.amazon_crawler - INFO - Found ivThumbs container
+2025-07-25 11:21:38 - crawler.amazon_crawler - INFO - Found 8 image thumbnails
+2025-07-25 11:21:38 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/21w0+hasP6L._AC_US100_AA50_.jpg
+2025-07-25 11:21:38 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41cgEepRF0L._AC_US100_AA50_.jpg
+2025-07-25 11:21:38 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41-bN6pDywL._AC_US100_AA50_.jpg
+2025-07-25 11:21:38 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41Z8cIOzqfL._AC_US100_AA50_.jpg
+2025-07-25 11:21:38 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/31AWcKp8pZL._AC_US100_AA50_.jpg
+2025-07-25 11:21:38 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41QhZXBBqaL._AC_US100_AA50_.jpg
+2025-07-25 11:21:38 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41HFv33G5xL._AC_US100_AA50_.jpg
+2025-07-25 11:21:38 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/21G-NYGQMRL._AC_US100_AA50_.jpg
+2025-07-25 11:21:38 - crawler.amazon_crawler - INFO - Total images extracted: 8
+2025-07-25 11:21:38 - crawler.amazon_crawler - INFO - Closed image popup by clicking outside
+2025-07-25 11:21:39 - crawler.amazon_crawler - INFO - Final sale_percentage: 0% (preserved from extraction)
+2025-07-25 11:21:39 - crawler.amazon_crawler - INFO - Successfully crawled product B0BZYCJK89
+2025-07-25 11:21:39 - crawler.amazon_crawler - INFO - Created new product record for ASIN: B0BZYCJK89
+2025-07-25 11:21:39 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B0BZYCJK89 with 23 fields
+2025-07-25 11:21:39 - crawler.change_detector - INFO - No significant changes detected for ASIN B0BZYCJK89
+2025-07-25 11:21:39 - scheduler.crawler_scheduler - INFO - Manual crawl completed for B0BZYCJK89: Success
+2025-07-25 11:24:09 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: False
+2025-07-25 11:24:09 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-25 11:24:09 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-25 11:24:10 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-25 11:24:10 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-25 11:24:10 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-25 11:24:11 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-25 11:24:11 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-25 11:24:11 - crawler.amazon_crawler - INFO - Crawling product: B0BZYCJK89 from https://www.amazon.com/dp/B0BZYCJK89
+2025-07-25 11:24:20 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-25 11:24:20 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-25 11:24:20 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-25 11:24:20 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-25 11:24:25 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-25 11:24:26 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-25 11:24:34 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-25 11:24:34 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-25 11:24:41 - crawler.amazon_crawler - INFO - Extracted title: Owala FreeSip Insulated Stainless Steel Water Bott...
+2025-07-25 11:24:41 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-25 11:24:41 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-25 11:24:41 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-25 11:24:41 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $29.0
+2025-07-25 11:24:41 - crawler.amazon_crawler - INFO - No percentage found in corePriceDisplay - no discount
+2025-07-25 11:24:41 - crawler.amazon_crawler - INFO - No list price found in corePriceDisplay container - setting to NULL
+2025-07-25 11:24:41 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$29.0, list=$None, no discount
+2025-07-25 11:24:41 - crawler.amazon_crawler - INFO - Found rating text: '4.6'
+2025-07-25 11:24:41 - crawler.amazon_crawler - INFO - Extracted rating: 4.6
+2025-07-25 11:24:41 - crawler.amazon_crawler - INFO - Extracted bag_sale: 20K+ bought in past month
+2025-07-25 11:24:42 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-25 11:24:42 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-25 11:24:42 - crawler.amazon_crawler - INFO - Extracted product_description: 926 characters
+2025-07-25 11:24:42 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-25 11:24:42 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-25 11:24:42 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 6 VIDEOS
+2025-07-25 11:24:43 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Found product video: 'Product Summary Video' - https://amazon.com/vdp/010d4fd9ea50494ba86d8f2b1c82cfb6
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Found product video: 'Why Is EVERYONE OBSESSED with this bottle??' - https://amazon.com/vdp/0df12ccafa8544c1a0c77d57993b0b74
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Found product video: 'OK, But Is It Worth The Hype?' - https://amazon.com/vdp/0018039dcd7444afbc315d692e757d4c
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Found product video: 'Review of the Owala FreeSip Water Bottle' - https://amazon.com/vdp/0ee75282091248d096f6eaf2adb4b8cd
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Found product video: 'Owala Thermal Cup 32 ounces' - https://amazon.com/vdp/0acbee4e9cdb482ebb2d385a5b9e0e95
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Found product video: 'Pros and cons of the Owala 24 oz water bottle' - https://amazon.com/vdp/0d592b7d65b54360a7919356c1793c37
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Found product video: 'Easy to sip!' - https://amazon.com/vdp/024c172238d34ac58a1592acb4c113f8
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Found product video: 'MUST HAVE!' - https://amazon.com/vdp/07b292efb23d4c02b2df65b8d8ec3ea3
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Found product video: 'Versatile, functional, and customizable' - https://amazon.com/vdp/0bcb84202b394edd92683c58758cdb98
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Found product video: 'Worth it!' - https://amazon.com/vdp/095510cd1bd541d8ad313bbe59a461b8
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Found product video: 'I Remember What Being Hydrated Feels Like!' - https://amazon.com/vdp/0256b3fd289b4fc2ad137d583f2adffa
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Found product video: 'This is so worth it!!!!' - https://amazon.com/vdp/082eb7dfffd849e09d1b5aaecd50df95
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Found product video: 'ELITE water bottle' - https://amazon.com/vdp/0c53773c4b534bc4abd2668f658c8de9
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Found product video: 'MY FAVORITE WATER BOTTLE!' - https://amazon.com/vdp/06f1c3a982534404ae82712ed2962496
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Found product video: 'Durable water bottle' - https://amazon.com/vdp/0959999e79194fe6bedb4effce817fbf
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Extracted 16 videos from 'Videos for this product' section
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Total product videos found: 16
+2025-07-25 11:24:46 - crawler.amazon_crawler - INFO - Closed video popup with selector: button[data-action='a-popover-close'][aria-label='Close']
+2025-07-25 11:24:48 - crawler.amazon_crawler - INFO - Found 2 video elements still present
+2025-07-25 11:24:50 - crawler.amazon_crawler - INFO - Video popup closed successfully
+2025-07-25 11:24:50 - crawler.amazon_crawler - INFO - Clicked first image thumbnail
+2025-07-25 11:24:52 - crawler.amazon_crawler - INFO - Clicked 'Click to see full view' link
+2025-07-25 11:24:55 - crawler.amazon_crawler - INFO - Found ivThumbs container
+2025-07-25 11:24:55 - crawler.amazon_crawler - INFO - Found 8 image thumbnails
+2025-07-25 11:24:55 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/21w0+hasP6L._AC_US100_AA50_.jpg
+2025-07-25 11:24:55 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41cgEepRF0L._AC_US100_AA50_.jpg
+2025-07-25 11:24:55 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41-bN6pDywL._AC_US100_AA50_.jpg
+2025-07-25 11:24:55 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41Z8cIOzqfL._AC_US100_AA50_.jpg
+2025-07-25 11:24:55 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/31AWcKp8pZL._AC_US100_AA50_.jpg
+2025-07-25 11:24:55 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41QhZXBBqaL._AC_US100_AA50_.jpg
+2025-07-25 11:24:55 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41HFv33G5xL._AC_US100_AA50_.jpg
+2025-07-25 11:24:55 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/21G-NYGQMRL._AC_US100_AA50_.jpg
+2025-07-25 11:24:55 - crawler.amazon_crawler - INFO - Total images extracted: 8
+2025-07-25 11:24:56 - crawler.amazon_crawler - INFO - Closed image popup by clicking outside
+2025-07-25 11:24:57 - crawler.amazon_crawler - INFO - Final sale_percentage: 0% (preserved from extraction)
+2025-07-25 11:24:57 - crawler.amazon_crawler - INFO - Successfully crawled product B0BZYCJK89
+2025-07-25 11:24:57 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B0BZYCJK89 with 23 fields
+2025-07-25 11:24:57 - crawler.change_detector - INFO - No significant changes detected for ASIN B0BZYCJK89
+2025-07-25 11:25:03 - crawler.change_detector - INFO - Detected 12 significant changes for ASIN B0BZYCJK89
+2025-07-25 11:31:22 - notifications.notification_service - INFO - Telegram notification sent successfully
+2025-07-25 11:31:37 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: False
+2025-07-25 11:31:37 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-25 11:31:37 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-25 11:31:38 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-25 11:31:38 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-25 11:31:38 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-25 11:31:39 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-25 11:31:39 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-25 11:31:39 - crawler.amazon_crawler - INFO - Crawling product: B0BZYCJK89 from https://www.amazon.com/dp/B0BZYCJK89
+2025-07-25 11:31:48 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-25 11:31:48 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-25 11:31:48 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-25 11:31:48 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-25 11:31:53 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-25 11:31:54 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-25 11:32:02 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-25 11:32:02 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-25 11:32:09 - crawler.amazon_crawler - INFO - Extracted title: Owala FreeSip Insulated Stainless Steel Water Bott...
+2025-07-25 11:32:09 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-25 11:32:09 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-25 11:32:09 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-25 11:32:10 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $29.0
+2025-07-25 11:32:10 - crawler.amazon_crawler - INFO - No percentage found in corePriceDisplay - no discount
+2025-07-25 11:32:10 - crawler.amazon_crawler - INFO - No list price found in corePriceDisplay container - setting to NULL
+2025-07-25 11:32:10 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$29.0, list=$None, no discount
+2025-07-25 11:32:10 - crawler.amazon_crawler - INFO - Found rating text: '4.6'
+2025-07-25 11:32:10 - crawler.amazon_crawler - INFO - Extracted rating: 4.6
+2025-07-25 11:32:10 - crawler.amazon_crawler - INFO - Extracted bag_sale: 20K+ bought in past month
+2025-07-25 11:32:10 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-25 11:32:10 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-25 11:32:10 - crawler.amazon_crawler - INFO - Extracted product_description: 926 characters
+2025-07-25 11:32:10 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-25 11:32:10 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-25 11:32:10 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 6 VIDEOS
+2025-07-25 11:32:11 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Found product video: 'Product Summary Video' - https://amazon.com/vdp/010d4fd9ea50494ba86d8f2b1c82cfb6
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Found product video: 'Why Is EVERYONE OBSESSED with this bottle??' - https://amazon.com/vdp/0df12ccafa8544c1a0c77d57993b0b74
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Found product video: 'OK, But Is It Worth The Hype?' - https://amazon.com/vdp/0018039dcd7444afbc315d692e757d4c
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Found product video: 'Review of the Owala FreeSip Water Bottle' - https://amazon.com/vdp/0ee75282091248d096f6eaf2adb4b8cd
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Found product video: 'Owala Thermal Cup 32 ounces' - https://amazon.com/vdp/0acbee4e9cdb482ebb2d385a5b9e0e95
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Found product video: 'Pros and cons of the Owala 24 oz water bottle' - https://amazon.com/vdp/0d592b7d65b54360a7919356c1793c37
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Found product video: 'Easy to sip!' - https://amazon.com/vdp/024c172238d34ac58a1592acb4c113f8
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Found product video: 'MUST HAVE!' - https://amazon.com/vdp/07b292efb23d4c02b2df65b8d8ec3ea3
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Found product video: 'Versatile, functional, and customizable' - https://amazon.com/vdp/0bcb84202b394edd92683c58758cdb98
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Found product video: 'Worth it!' - https://amazon.com/vdp/095510cd1bd541d8ad313bbe59a461b8
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Found product video: 'I Remember What Being Hydrated Feels Like!' - https://amazon.com/vdp/0256b3fd289b4fc2ad137d583f2adffa
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Found product video: 'This is so worth it!!!!' - https://amazon.com/vdp/082eb7dfffd849e09d1b5aaecd50df95
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Found product video: 'ELITE water bottle' - https://amazon.com/vdp/0c53773c4b534bc4abd2668f658c8de9
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Found product video: 'MY FAVORITE WATER BOTTLE!' - https://amazon.com/vdp/06f1c3a982534404ae82712ed2962496
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Found product video: 'Durable water bottle' - https://amazon.com/vdp/0959999e79194fe6bedb4effce817fbf
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Extracted 16 videos from 'Videos for this product' section
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Total product videos found: 16
+2025-07-25 11:32:14 - crawler.amazon_crawler - INFO - Closed video popup with selector: button[data-action='a-popover-close'][aria-label='Close']
+2025-07-25 11:32:16 - crawler.amazon_crawler - INFO - Found 2 video elements still present
+2025-07-25 11:32:18 - crawler.amazon_crawler - INFO - Video popup closed successfully
+2025-07-25 11:32:18 - crawler.amazon_crawler - INFO - Clicked first image thumbnail
+2025-07-25 11:32:20 - crawler.amazon_crawler - INFO - Clicked 'Click to see full view' link
+2025-07-25 11:32:23 - crawler.amazon_crawler - INFO - Found ivThumbs container
+2025-07-25 11:32:23 - crawler.amazon_crawler - INFO - Found 8 image thumbnails
+2025-07-25 11:32:23 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/21w0+hasP6L._AC_US100_AA50_.jpg
+2025-07-25 11:32:23 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41cgEepRF0L._AC_US100_AA50_.jpg
+2025-07-25 11:32:23 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41-bN6pDywL._AC_US100_AA50_.jpg
+2025-07-25 11:32:23 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41Z8cIOzqfL._AC_US100_AA50_.jpg
+2025-07-25 11:32:23 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/31AWcKp8pZL._AC_US100_AA50_.jpg
+2025-07-25 11:32:23 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41QhZXBBqaL._AC_US100_AA50_.jpg
+2025-07-25 11:32:23 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41HFv33G5xL._AC_US100_AA50_.jpg
+2025-07-25 11:32:23 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/21G-NYGQMRL._AC_US100_AA50_.jpg
+2025-07-25 11:32:23 - crawler.amazon_crawler - INFO - Total images extracted: 8
+2025-07-25 11:32:24 - crawler.amazon_crawler - INFO - Closed image popup by clicking outside
+2025-07-25 11:32:25 - crawler.amazon_crawler - INFO - Final sale_percentage: 0% (preserved from extraction)
+2025-07-25 11:32:25 - crawler.amazon_crawler - INFO - Successfully crawled product B0BZYCJK89
+2025-07-25 11:32:25 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B0BZYCJK89 with 23 fields
+2025-07-25 11:32:25 - crawler.change_detector - INFO - No significant changes detected for ASIN B0BZYCJK89
+2025-07-25 11:32:31 - crawler.change_detector - INFO - Detected 12 significant changes for ASIN B0BZYCJK89
+2025-07-25 11:32:32 - notifications.notification_service - INFO - Telegram notification sent successfully
+2025-07-25 11:35:48 - crawler.amazon_crawler - INFO - HEADLESS_BROWSER setting: False
+2025-07-25 11:35:48 - crawler.amazon_crawler - INFO - Running in VISIBLE mode (browser window will show)
+2025-07-25 11:35:48 - crawler.amazon_crawler - INFO - Attempting ChromeDriverManager setup...
+2025-07-25 11:35:49 - crawler.amazon_crawler - INFO - ChromeDriver found at: C:\Users\Admin\.wdm\drivers\chromedriver\win64\138.0.7204.168\chromedriver-win32/THIRD_PARTY_NOTICES.chromedriver
+2025-07-25 11:35:49 - crawler.amazon_crawler - WARNING - ChromeDriverManager failed: [WinError 193] %1 is not a valid Win32 application
+2025-07-25 11:35:49 - crawler.amazon_crawler - INFO - Attempting system ChromeDriver...
+2025-07-25 11:35:50 - crawler.amazon_crawler - INFO - System ChromeDriver setup successful
+2025-07-25 11:35:50 - crawler.amazon_crawler - INFO - Chrome driver setup successful
+2025-07-25 11:35:50 - crawler.amazon_crawler - INFO - Crawling product: B0BZYCJK89 from https://www.amazon.com/dp/B0BZYCJK89
+2025-07-25 11:35:57 - crawler.amazon_crawler - INFO - Current delivery location: Vietnam
+2025-07-25 11:35:57 - crawler.amazon_crawler - INFO - Setting delivery location to New York 10009...
+2025-07-25 11:35:57 - crawler.amazon_crawler - INFO - Attempting to set delivery location to zip code: 10009
+2025-07-25 11:35:57 - crawler.amazon_crawler - INFO - Clicked delivery location button
+2025-07-25 11:36:01 - crawler.amazon_crawler - INFO - Entered zip code: 10009 (human-like typing)
+2025-07-25 11:36:02 - crawler.amazon_crawler - INFO - Clicked Apply button
+2025-07-25 11:36:11 - crawler.amazon_crawler - INFO - Clicked Continue button (JavaScript)
+2025-07-25 11:36:11 - crawler.amazon_crawler - INFO - Waiting 7 seconds for page to load updated data...
+2025-07-25 11:36:18 - crawler.amazon_crawler - INFO - Extracted title: Owala FreeSip Insulated Stainless Steel Water Bott...
+2025-07-25 11:36:18 - crawler.amazon_crawler - INFO - Extracted 5 about_this_item bullet points
+2025-07-25 11:36:18 - crawler.amazon_crawler - INFO - Found corePriceDisplay_desktop_feature_div container
+2025-07-25 11:36:18 - crawler.amazon_crawler - INFO - Extracting all pricing from corePriceDisplay container
+2025-07-25 11:36:18 - crawler.amazon_crawler - INFO - Extracted sale price from corePriceDisplay: $29.0
+2025-07-25 11:36:18 - crawler.amazon_crawler - INFO - No percentage found in corePriceDisplay - no discount
+2025-07-25 11:36:18 - crawler.amazon_crawler - INFO - No list price found in corePriceDisplay container - setting to NULL
+2025-07-25 11:36:18 - crawler.amazon_crawler - INFO - Final pricing from corePriceDisplay: sale=$29.0, list=$None, no discount
+2025-07-25 11:36:18 - crawler.amazon_crawler - INFO - Found rating text: '4.6'
+2025-07-25 11:36:18 - crawler.amazon_crawler - INFO - Extracted rating: 4.6
+2025-07-25 11:36:18 - crawler.amazon_crawler - INFO - Extracted bag_sale: 20K+ bought in past month
+2025-07-25 11:36:18 - crawler.amazon_crawler - INFO - Extracted sold_by_link: Amazon.com
+2025-07-25 11:36:18 - crawler.amazon_crawler - INFO - Extracted 5 technical specifications
+2025-07-25 11:36:18 - crawler.amazon_crawler - INFO - Extracted product_description: 926 characters
+2025-07-25 11:36:19 - crawler.amazon_crawler - INFO - Starting images/videos extraction (last step)
+2025-07-25 11:36:19 - crawler.amazon_crawler - INFO - Starting video extraction first, then images from popup
+2025-07-25 11:36:19 - crawler.amazon_crawler - INFO - Found video thumbnail with count: 6 VIDEOS
+2025-07-25 11:36:19 - crawler.amazon_crawler - INFO - Clicked video thumbnail to open popup
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Found 1 video carousel containers after clicking thumbnail
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Found 'Videos for this product' section
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Found product video: 'Product Summary Video' - https://amazon.com/vdp/010d4fd9ea50494ba86d8f2b1c82cfb6
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Found product video: 'Why Is EVERYONE OBSESSED with this bottle??' - https://amazon.com/vdp/0df12ccafa8544c1a0c77d57993b0b74
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Found product video: 'OK, But Is It Worth The Hype?' - https://amazon.com/vdp/0018039dcd7444afbc315d692e757d4c
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Found product video: 'Review of the Owala FreeSip Water Bottle' - https://amazon.com/vdp/0ee75282091248d096f6eaf2adb4b8cd
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Found product video: 'Owala Thermal Cup 32 ounces' - https://amazon.com/vdp/0acbee4e9cdb482ebb2d385a5b9e0e95
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Found product video: 'Pros and cons of the Owala 24 oz water bottle' - https://amazon.com/vdp/0d592b7d65b54360a7919356c1793c37
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Found product video: 'Easy to sip!' - https://amazon.com/vdp/024c172238d34ac58a1592acb4c113f8
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Found product video: 'MUST HAVE!' - https://amazon.com/vdp/07b292efb23d4c02b2df65b8d8ec3ea3
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Found product video: 'Versatile, functional, and customizable' - https://amazon.com/vdp/0bcb84202b394edd92683c58758cdb98
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Found product video: 'Worth it!' - https://amazon.com/vdp/095510cd1bd541d8ad313bbe59a461b8
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Found product video: 'I Remember What Being Hydrated Feels Like!' - https://amazon.com/vdp/0256b3fd289b4fc2ad137d583f2adffa
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Found product video: 'This is so worth it!!!!' - https://amazon.com/vdp/082eb7dfffd849e09d1b5aaecd50df95
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Found product video: 'ELITE water bottle' - https://amazon.com/vdp/0c53773c4b534bc4abd2668f658c8de9
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Found product video: 'MY FAVORITE WATER BOTTLE!' - https://amazon.com/vdp/06f1c3a982534404ae82712ed2962496
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Found product video: 'Durable water bottle' - https://amazon.com/vdp/0959999e79194fe6bedb4effce817fbf
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Extracted 16 videos from 'Videos for this product' section
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Total product videos found: 16
+2025-07-25 11:36:22 - crawler.amazon_crawler - INFO - Closed video popup with selector: button[data-action='a-popover-close'][aria-label='Close']
+2025-07-25 11:36:24 - crawler.amazon_crawler - INFO - Found 2 video elements still present
+2025-07-25 11:36:26 - crawler.amazon_crawler - INFO - Video popup closed successfully
+2025-07-25 11:36:26 - crawler.amazon_crawler - INFO - Clicked first image thumbnail
+2025-07-25 11:36:29 - crawler.amazon_crawler - INFO - Clicked 'Click to see full view' link
+2025-07-25 11:36:32 - crawler.amazon_crawler - INFO - Found ivThumbs container
+2025-07-25 11:36:32 - crawler.amazon_crawler - INFO - Found 8 image thumbnails
+2025-07-25 11:36:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/21w0+hasP6L._AC_US100_AA50_.jpg
+2025-07-25 11:36:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41cgEepRF0L._AC_US100_AA50_.jpg
+2025-07-25 11:36:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41-bN6pDywL._AC_US100_AA50_.jpg
+2025-07-25 11:36:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41Z8cIOzqfL._AC_US100_AA50_.jpg
+2025-07-25 11:36:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/31AWcKp8pZL._AC_US100_AA50_.jpg
+2025-07-25 11:36:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41QhZXBBqaL._AC_US100_AA50_.jpg
+2025-07-25 11:36:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/41HFv33G5xL._AC_US100_AA50_.jpg
+2025-07-25 11:36:32 - crawler.amazon_crawler - INFO - Extracted image: https://m.media-amazon.com/images/I/21G-NYGQMRL._AC_US100_AA50_.jpg
+2025-07-25 11:36:32 - crawler.amazon_crawler - INFO - Total images extracted: 8
+2025-07-25 11:36:32 - crawler.amazon_crawler - INFO - Closed image popup by clicking outside
+2025-07-25 11:36:33 - crawler.amazon_crawler - INFO - Final sale_percentage: 0% (preserved from extraction)
+2025-07-25 11:36:33 - crawler.amazon_crawler - INFO - Successfully crawled product B0BZYCJK89
+2025-07-25 11:36:33 - crawler.amazon_crawler - INFO - Saved crawl data for ASIN: B0BZYCJK89 with 23 fields
+2025-07-25 11:36:33 - crawler.change_detector - INFO - No significant changes detected for ASIN B0BZYCJK89
+2025-07-25 11:36:39 - crawler.change_detector - INFO - Detected 12 significant changes for ASIN B0BZYCJK89
+2025-07-25 11:36:40 - notifications.notification_service - INFO - Telegram notification sent successfully

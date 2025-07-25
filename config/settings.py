@@ -31,6 +31,7 @@ class Settings:
     EMAIL_SMTP_PORT = int(os.getenv("EMAIL_SMTP_PORT", "587"))
     EMAIL_USERNAME = os.getenv("EMAIL_USERNAME", "")
     EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD", "")
+    EMAIL_RECIPIENTS = os.getenv("EMAIL_RECIPIENTS", "")
     
     # Dashboard Settings
     DASHBOARD_HOST = os.getenv("DASHBOARD_HOST", "127.0.0.1")

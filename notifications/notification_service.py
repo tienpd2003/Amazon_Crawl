@@ -24,39 +24,53 @@ class NotificationService:
     async def send_product_change_notification(self, asin: str, changes: Dict, product_data: Dict):
         """Send notification about product changes"""
         try:
-            # Get notification settings
-            notification_settings = self._get_notification_settings()
-            
             # Generate message
             message = self._generate_change_message(asin, changes, product_data)
             
-            # Send notifications
-            for setting in notification_settings:
-                if setting.enabled:
-                    success = False
-                    error_msg = None
-                    
-                    try:
-                        if setting.notification_type == "telegram":
-                            success = await self._send_telegram_notification(message, setting.config)
-                        elif setting.notification_type == "discord":
-                            success = await self._send_discord_notification(message, changes, product_data, setting.config)
-                        elif setting.notification_type == "email":
-                            success = await self._send_email_notification(message, asin, setting.config)
-                        
-                    except Exception as e:
-                        error_msg = str(e)
-                        logger.error(f"Failed to send {setting.notification_type} notification: {e}")
-                    
-                    # Log notification attempt
-                    self._log_notification(asin, setting.notification_type, message, success, error_msg)
+            # Send Telegram notification if configured
+            if settings.TELEGRAM_BOT_TOKEN and settings.TELEGRAM_CHAT_ID:
+                try:
+                    telegram_config = {
+                        'bot_token': settings.TELEGRAM_BOT_TOKEN,
+                        'chat_id': settings.TELEGRAM_CHAT_ID
+                    }
+                    success = await self._send_telegram_notification(message, telegram_config)
+                    self._log_notification(asin, "telegram", message, success, None)
+                except Exception as e:
+                    logger.error(f"Failed to send Telegram notification: {e}")
+                    self._log_notification(asin, "telegram", message, False, str(e))
+            
+            # Send Discord notification if configured
+            if settings.DISCORD_WEBHOOK_URL:
+                try:
+                    discord_config = {'webhook_url': settings.DISCORD_WEBHOOK_URL}
+                    success = await self._send_discord_notification(message, changes, product_data, discord_config)
+                    self._log_notification(asin, "discord", message, success, None)
+                except Exception as e:
+                    logger.error(f"Failed to send Discord notification: {e}")
+                    self._log_notification(asin, "discord", message, False, str(e))
+            
+            # Send Email notification if configured
+            if settings.EMAIL_SMTP_SERVER and settings.EMAIL_USERNAME and settings.EMAIL_PASSWORD:
+                try:
+                    email_config = {
+                        'smtp_server': settings.EMAIL_SMTP_SERVER,
+                        'smtp_port': settings.EMAIL_SMTP_PORT,
+                        'username': settings.EMAIL_USERNAME,
+                        'password': settings.EMAIL_PASSWORD,
+                        'recipients': getattr(settings, 'EMAIL_RECIPIENTS', '').split(',') if hasattr(settings, 'EMAIL_RECIPIENTS') else []
+                    }
+                    if email_config['recipients']:
+                        success = await self._send_email_notification(message, asin, email_config)
+                        self._log_notification(asin, "email", message, success, None)
+                except Exception as e:
+                    logger.error(f"Failed to send Email notification: {e}")
+                    self._log_notification(asin, "email", message, False, str(e))
             
         except Exception as e:
             logger.error(f"Error sending notifications for ASIN {asin}: {e}")
     
-    def _get_notification_settings(self) -> List[NotificationSettings]:
-        """Get enabled notification settings"""
-        return self.session.query(NotificationSettings).filter_by(enabled=True).all()
+
     
     def _generate_change_message(self, asin: str, changes: Dict, product_data: Dict) -> str:
         """Generate notification message"""
