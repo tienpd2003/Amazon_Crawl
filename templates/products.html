@@ -480,9 +480,8 @@
                     const result = await response.json();
                     const statusText = result.is_active ? 'resumed' : 'paused';
                     showSuccess(`ASIN ${asin} monitoring ${statusText}`);
-                    
-                    // Reload products to update UI
                     loadProducts(currentPage);
+                    loadProductStats(); // cập nhật thống kê ngay
                 } else {
                     const error = await response.json();
                     showError('Lỗi: ' + error.detail);
@@ -504,7 +503,8 @@
                 if (response.ok) {
                     const result = await response.json();
                     showSuccess(`Đã thêm ASIN ${asin} vào watchlist!`);
-                    refreshProducts(); // Reload products to update UI
+                    refreshProducts();
+                    loadProductStats(); // cập nhật thống kê ngay
                 } else {
                     const error = await response.json();
                     showError('Lỗi: ' + error.detail);

@@ -220,12 +220,20 @@
                             <div class="card-header bg-info text-white">
                                 <h6 class="mb-0"><i class="fas fa-list"></i> ASIN Watchlist (<span id="watchlist-count"></span>)</h6>
                             </div>
-                            <div class="card-body" style="max-height: 400px; overflow-y: auto;">
-                                <div id="watchlist-preview">
-                                    <div class="text-center text-muted">
-                                        <i class="fas fa-spinner fa-spin"></i> Đang tải...
-                                    </div>
-                                </div>
+                            <div class="card-body" style="max-height: 350px; overflow-y: auto;">
+                                <table class="table table-sm table-bordered mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>ASIN</th>
+                                            <th>Số thay đổi hôm nay</th>
+                                            <th>Ngày cập nhật</th>
+                                            <th>Tần suất</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="watchlist-preview">
+                                        <!-- Nội dung sẽ được render bằng JS -->
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -346,25 +354,18 @@
                 const container = document.getElementById('watchlist-preview');
                 
                 if (data.watchlist.length === 0) {
-                    container.innerHTML = '<div class="text-center text-muted">Chưa có ASIN nào trong watchlist';
+                    container.innerHTML = '<tr><td colspan="4" class="text-center text-muted">Chưa có ASIN nào trong watchlist</td></tr>';
                     return;
                 }
                 
-                const html = data.watchlist.slice(0, 10).map(item => `
-                    <div class="d-flex justify-content-between align-items-center mb-2 p-2 border rounded">
-                        <div>
-                            <strong>${item.asin}</strong>
-                            <div class="small text-muted">${item.frequency}</div>
-                        </div>
-                        <div class="text-end">
-                            <div class="small">
-                                ${item.last_crawled ? 
-                                    new Date(item.last_crawled).toLocaleDateString('vi-VN') : 
-                                    'Chưa crawl'
-                                }
-                            </div>
-                        </div>
-                    </div>
+                const sorted = [...data.watchlist].sort((a, b) => (b.change_count_today || 0) - (a.change_count_today || 0));
+                const html = sorted.map(item => `
+                    <tr>
+                        <td><strong>${item.asin}</strong></td>
+                        <td class="text-center">${item.change_count_today != null ? item.change_count_today : 0}</td>
+                        <td>${item.last_update_date || 'Chưa crawl'}</td>
+                        <td>${item.frequency ? item.frequency.charAt(0).toUpperCase() + item.frequency.slice(1) : ''}</td>
+                    </tr>
                 `).join('');
                 
                 container.innerHTML = html;
@@ -372,7 +373,7 @@
             } catch (error) {
                 console.error('Error loading watchlist preview:', error);
                 document.getElementById('watchlist-preview').innerHTML = 
-                    '<div class="text-center text-danger">Lỗi tải dữ liệu</div>';
+                    '<tr><td colspan="4" class="text-center text-danger">Lỗi tải dữ liệu</td></tr>';
             }
         }
 

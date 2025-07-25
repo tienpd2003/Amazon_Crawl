@@ -443,31 +443,98 @@ async def toggle_watchlist_status(asin: str, db: Session = Depends(get_db)):
         db.rollback()
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.post("/api/watchlist/{asin}/add")
+async def add_to_watchlist(asin: str, db: Session = Depends(get_db)):
+    """Add an existing product to the watchlist (for products already crawled but not in watchlist)"""
+    try:
+        # Kiểm tra đã có trong watchlist chưa
+        watchlist_item = db.query(ASINWatchlist).filter_by(asin=asin).first()
+        if watchlist_item:
+            if watchlist_item.is_active:
+                return {"message": f"ASIN {asin} đã nằm trong watchlist và đang active"}
+            else:
+                watchlist_item.is_active = True
+                db.commit()
+                return {"message": f"ASIN {asin} đã được kích hoạt lại trong watchlist"}
+        # Kiểm tra đã có dữ liệu crawl chưa
+        from database.models import ProductCrawlHistory
+        has_crawled = db.query(ProductCrawlHistory).filter_by(asin=asin, crawl_success=True).first()
+        if not has_crawled:
+            raise HTTPException(status_code=400, detail="ASIN chưa có dữ liệu crawl, không thể thêm vào watchlist")
+        # Thêm mới vào watchlist
+        new_item = ASINWatchlist(asin=asin, crawl_frequency="daily", is_active=True, next_crawl=datetime.utcnow())
+        db.add(new_item)
+        db.commit()
+        return {"message": f"ASIN {asin} đã được thêm vào watchlist"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error adding ASIN {asin} to watchlist: {e}")
+        db.rollback()
+        raise HTTPException(status_code=500, detail=str(e))
+
 @app.get("/api/watchlist")
 async def get_watchlist(active_only: bool = False, db: Session = Depends(get_db)):
     """Get ASIN watchlist"""
     try:
+        from database.models import ProductCrawlHistory
+        from datetime import datetime, timedelta, time
         if active_only:
             watchlist = db.query(ASINWatchlist).filter_by(is_active=True).all()
         else:
             watchlist = db.query(ASINWatchlist).all()
-        
-        return {
-            "watchlist": [
-                {
-                    "id": item.id,
-                    "asin": item.asin,
-                    "frequency": item.crawl_frequency,
-                    "is_active": item.is_active,
-                    "added_date": item.added_date,
-                    "last_crawled": item.last_crawled,
-                    "next_crawl": item.next_crawl,
-                    "notes": item.notes
-                }
-                for item in watchlist
-            ]
-        }
-        
+        today = datetime.utcnow().date()
+        start_today = datetime.combine(today, time.min)
+        end_today = datetime.combine(today, time.max)
+        yesterday = today - timedelta(days=1)
+        start_yesterday = datetime.combine(yesterday, time.min)
+        end_yesterday = datetime.combine(yesterday, time.max)
+        compare_fields = [
+            'title', 'product_description', 'product_information', 'about_this_item',
+            'image_count', 'image_urls', 'video_count', 'video_urls',
+            'sale_price', 'list_price', 'sale_percentage',
+            'best_deal', 'lightning_deal', 'coupon', 'bag_sale',
+            'rating', 'rating_count',
+            'brand_store_link', 'sold_by_link',
+            'advertised_asins', 'amazon_choice', 'inventory'
+        ]
+        result = []
+        for item in watchlist:
+            # Lấy bản ghi hôm nay (gần nhất trong ngày hôm nay)
+            crawl_today = db.query(ProductCrawlHistory).filter(
+                ProductCrawlHistory.asin == item.asin,
+                ProductCrawlHistory.crawl_date >= start_today,
+                ProductCrawlHistory.crawl_date <= end_today,
+                ProductCrawlHistory.crawl_success == True
+            ).order_by(ProductCrawlHistory.crawl_date.desc()).first()
+            # Lấy bản ghi hôm qua (gần nhất trong ngày hôm qua)
+            crawl_yesterday = db.query(ProductCrawlHistory).filter(
+                ProductCrawlHistory.asin == item.asin,
+                ProductCrawlHistory.crawl_date >= start_yesterday,
+                ProductCrawlHistory.crawl_date <= end_yesterday,
+                ProductCrawlHistory.crawl_success == True
+            ).order_by(ProductCrawlHistory.crawl_date.desc()).first()
+            change_count_today = 0
+            if crawl_today and crawl_yesterday:
+                for field in compare_fields:
+                    v_today = getattr(crawl_today, field, None)
+                    v_yesterday = getattr(crawl_yesterday, field, None)
+                    if v_today != v_yesterday:
+                        change_count_today += 1
+            last_update_date = crawl_today.crawl_date.strftime('%d/%m/%Y') if crawl_today else None
+            result.append({
+                "id": item.id,
+                "asin": item.asin,
+                "frequency": item.crawl_frequency,
+                "is_active": item.is_active,
+                "added_date": item.added_date,
+                "last_crawled": item.last_crawled,
+                "next_crawl": item.next_crawl,
+                "notes": item.notes,
+                "change_count_today": change_count_today,
+                "last_update_date": last_update_date
+            })
+        return {"watchlist": result}
     except Exception as e:
         logger.error(f"Error getting watchlist: {e}")
         raise HTTPException(status_code=500, detail=str(e))
