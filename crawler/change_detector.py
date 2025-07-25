@@ -134,28 +134,59 @@ class ChangeDetector:
                 return float(value) if value is not None else None
             except Exception:
                 return value
+        if field in ["advertised_asins", "image_urls", "video_urls"]:
+            # Chuẩn hóa list: sort, ép về str
+            if isinstance(value, list):
+                return sorted([str(x) for x in value])
+            if value is None:
+                return []
+            try:
+                import json
+                v = json.loads(value)
+                if isinstance(v, list):
+                    return sorted([str(x) for x in v])
+            except Exception:
+                pass
+            return [str(value)]
         return value
+
+    def _equal_value(self, a, b):
+        # So sánh số học cho int/float/str
+        try:
+            if a is None and b is None:
+                return True
+            if a is None or b is None:
+                return False
+            # Nếu là số, so sánh số học
+            if isinstance(a, (int, float, str)) and isinstance(b, (int, float, str)):
+                try:
+                    return float(a) == float(b)
+                except Exception:
+                    return str(a) == str(b)
+            # Nếu là list, so sánh từng phần tử đã sort
+            if isinstance(a, list) and isinstance(b, list):
+                return sorted([str(x) for x in a]) == sorted([str(x) for x in b])
+            # Mặc định
+            return a == b
+        except Exception:
+            return a == b
 
     def _compare_data(self, old_data: Dict, new_data: Dict) -> Dict:
         """Compare old and new data to detect changes"""
         changes = {}
-        
         for field, config in self.monitored_fields.items():
             old_value = self._get_field_value_for_compare(old_data.get(field), field)
             new_value = self._get_field_value_for_compare(new_data.get(field), field)
-            
             # Skip if both values are None
             if old_value is None and new_value is None:
                 continue
-            
-            # Check for changes based on field type
-            if self._values_different(old_value, new_value, config):
+            # So sánh chuẩn hóa
+            if not self._equal_value(old_value, new_value):
                 changes[field] = {
                     'old': old_value,
                     'new': new_value,
                     'type': config['type']
                 }
-        
         return changes
     
     def _values_different(self, old_value: Any, new_value: Any, config: Dict) -> bool:

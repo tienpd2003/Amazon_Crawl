@@ -1077,15 +1077,27 @@ class AmazonCrawler:
         return data
     
     def _extract_promotions(self) -> Dict:
-        """Extract promotion information"""
-        data = {
-            'best_deal': '',
-            'lightning_deal': '',
-            'coupon': '',
-            'bag_sale': ''
-        }
-        
+        """Extract promotions, coupon, lightning deal, best deal, bag sale"""
+        data = {}
         try:
+            # Coupon: lấy trong div#promoPriceBlockMessage_feature_div span.couponLabelText
+            try:
+                promo_div = self.driver.find_element(By.ID, "promoPriceBlockMessage_feature_div")
+                coupon_spans = promo_div.find_elements(By.CSS_SELECTOR, "span.couponLabelText")
+                coupon_text = ""
+                for span in coupon_spans:
+                    text = span.text.strip()
+                    if text:
+                        # Loại bỏ phần 'Terms' và phía sau nếu có
+                        if 'Terms' in text:
+                            text = text.split('Terms')[0].strip()
+                        coupon_text = text
+                        break
+                data['coupon'] = coupon_text
+            except Exception as e:
+                data['coupon'] = ""
+                logger.info(f"No coupon found in promoPriceBlockMessage_feature_div: {e}")
+            
             # Extract best deal (Limited time deal, etc)
             try:
                 deal_badge = self.driver.find_element(By.CSS_SELECTOR, "#dealBadgeSupportingText span")
@@ -1117,15 +1129,6 @@ class AmazonCrawler:
                 except Exception as e2:
                     logger.debug(f"No lightning deal found: {e2}")
                 
-            # Extract coupon information
-            try:
-                coupon_elem = self.driver.find_element(By.CSS_SELECTOR, "#couponBadgeRegularVpc")
-                if coupon_elem:
-                    data['coupon'] = coupon_elem.text.strip()
-                    logger.info(f"Extracted coupon: {data['coupon']}")
-            except Exception as e:
-                logger.debug(f"No coupon found: {e}")
-            
             # Extract bag sale information
             try:
                 bag_sale_elem = self.driver.find_element(By.CSS_SELECTOR, "#social-proofing-faceout-title-tk_bought")
@@ -1143,8 +1146,7 @@ class AmazonCrawler:
                     logger.debug(f"No bag sale info found: {e2}")
             
         except Exception as e:
-            logger.error(f"Error extracting promotion info: {e}")
-        
+            logger.error(f"Error extracting promotions: {e}")
         return data
     
     def _extract_inventory(self) -> Dict:
@@ -1318,34 +1320,39 @@ class AmazonCrawler:
         return data
     
     def _extract_advertisements(self) -> Dict:
-        """Extract advertised ASINs"""
+        """Extract advertised ASINs trong div#valuePick_container và div#ppd"""
         data = {}
-        
         try:
             advertised_asins = set()
-            
-            # Look for sponsored products
-            ad_selectors = [
-                "[data-asin]",
-                ".s-asin",
-                "[data-component-type='s-search-result']"
-            ]
-            
-            for selector in ad_selectors:
-                try:
-                    elements = self.driver.find_elements(By.CSS_SELECTOR, selector)
-                    for element in elements:
-                        asin = element.get_attribute('data-asin')
-                        if asin and len(asin) == 10:
-                            advertised_asins.add(asin)
-                except:
-                    continue
-            
+            # Lấy trong div#valuePick_container
+            try:
+                value_pick = self.driver.find_element(By.ID, "valuePick_container")
+                ad_links = value_pick.find_elements(By.CSS_SELECTOR, "a[href*='/dp/']")
+                for link in ad_links:
+                    href = link.get_attribute('href')
+                    import re
+                    m = re.search(r"/dp/([A-Z0-9]{10})", href)
+                    if m:
+                        asin = m.group(1)
+                        advertised_asins.add(asin)
+            except Exception as e:
+                logger.info(f"No #valuePick_container found or error: {e}")
+            # Lấy thêm trong div#ppd
+            try:
+                ppd = self.driver.find_element(By.ID, "ppd")
+                ad_links = ppd.find_elements(By.CSS_SELECTOR, "a[href*='/dp/']")
+                for link in ad_links:
+                    href = link.get_attribute('href')
+                    import re
+                    m = re.search(r"/dp/([A-Z0-9]{10})", href)
+                    if m:
+                        asin = m.group(1)
+                        advertised_asins.add(asin)
+            except Exception as e:
+                logger.info(f"No #ppd found or error: {e}")
             data['advertised_asins'] = list(advertised_asins)
-            
         except Exception as e:
             logger.error(f"Error extracting advertisements: {e}")
-        
         return data
     
     def _get_element_by_selectors(self, selectors: List[str]):
