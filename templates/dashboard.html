@@ -226,8 +226,7 @@
                                         <tr>
                                             <th>ASIN</th>
                                             <th>Số thay đổi hôm nay</th>
-                                            <th>Ngày cập nhật</th>
-                                            <th>Tần suất</th>
+                                            <th>Chi tiết thay đổi</th>
                                         </tr>
                                     </thead>
                                     <tbody id="watchlist-preview">
@@ -363,8 +362,9 @@
                     <tr>
                         <td><strong>${item.asin}</strong></td>
                         <td class="text-center">${item.change_count_today != null ? item.change_count_today : 0}</td>
-                        <td>${item.last_update_date || 'Chưa crawl'}</td>
-                        <td>${item.frequency ? item.frequency.charAt(0).toUpperCase() + item.frequency.slice(1) : ''}</td>
+                        <td class="text-center">
+                            <button class="btn btn-link btn-sm p-0" onclick="showChangeDetail('${item.asin}')">Chi tiết thay đổi</button>
+                        </td>
                     </tr>
                 `).join('');
                 
@@ -463,6 +463,43 @@
             loadWatchlistPreview();
             checkSchedulerStatus();
         }
+
+        async function showChangeDetail(asin) {
+            try {
+                const res = await fetch(`/api/watchlist/change-detail?asin=${asin}`);
+                const data = await res.json();
+                let html = '';
+                if (data.changes && Object.keys(data.changes).length > 0) {
+                    html += '<ul class="list-group">';
+                    for (const [field, change] of Object.entries(data.changes)) {
+                        html += `<li class="list-group-item"><b>${field}</b>: <span class="text-danger">${change.old}</span> → <span class="text-success">${change.new}</span></li>`;
+                    }
+                    html += '</ul>';
+                } else {
+                    html = '<div class="text-muted">Không có thay đổi nào hôm nay.</div>';
+                }
+                document.getElementById('changeDetailModalBody').innerHTML = html;
+                const modal = new bootstrap.Modal(document.getElementById('changeDetailModal'));
+                modal.show();
+            } catch (e) {
+                document.getElementById('changeDetailModalBody').innerHTML = '<div class="text-danger">Lỗi tải dữ liệu thay đổi.</div>';
+                const modal = new bootstrap.Modal(document.getElementById('changeDetailModal'));
+                modal.show();
+            }
+        }
     </script>
+    <div class="modal fade" id="changeDetailModal" tabindex="-1" aria-labelledby="changeDetailModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="changeDetailModalLabel">Chi tiết thay đổi</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="changeDetailModalBody">
+            <!-- Nội dung thay đổi sẽ được render ở đây -->
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 </html> 

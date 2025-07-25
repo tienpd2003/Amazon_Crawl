@@ -539,6 +539,47 @@ async def get_watchlist(active_only: bool = False, db: Session = Depends(get_db)
         logger.error(f"Error getting watchlist: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.get("/api/watchlist/change-detail")
+async def get_watchlist_change_detail(asin: str, db: Session = Depends(get_db)):
+    """Trả về chi tiết các trường đã thay đổi hôm nay so với hôm qua cho ASIN"""
+    try:
+        from crawler.change_detector import ChangeDetector
+        from datetime import datetime, time, timedelta
+        detector = ChangeDetector()
+        today = datetime.utcnow().date()
+        start_today = datetime.combine(today, time.min)
+        end_today = datetime.combine(today, time.max)
+        # Lấy bản ghi hôm nay
+        crawl_today = db.query(ProductCrawlHistory).filter(
+            ProductCrawlHistory.asin == asin,
+            ProductCrawlHistory.crawl_date >= start_today,
+            ProductCrawlHistory.crawl_date <= end_today,
+            ProductCrawlHistory.crawl_success == True
+        ).order_by(ProductCrawlHistory.crawl_date.desc()).first()
+        # Lấy bản ghi hôm qua
+        yesterday = today - timedelta(days=1)
+        start_yesterday = datetime.combine(yesterday, time.min)
+        end_yesterday = datetime.combine(yesterday, time.max)
+        crawl_yesterday = db.query(ProductCrawlHistory).filter(
+            ProductCrawlHistory.asin == asin,
+            ProductCrawlHistory.crawl_date >= start_yesterday,
+            ProductCrawlHistory.crawl_date <= end_yesterday,
+            ProductCrawlHistory.crawl_success == True
+        ).order_by(ProductCrawlHistory.crawl_date.desc()).first()
+        if not crawl_today or not crawl_yesterday:
+            return {"changes": {}}
+        # So sánh từng trường
+        changes = {}
+        for field in detector.monitored_fields.keys():
+            v_today = getattr(crawl_today, field, None)
+            v_yesterday = getattr(crawl_yesterday, field, None)
+            if v_today != v_yesterday:
+                changes[field] = {"old": v_yesterday, "new": v_today}
+        return {"changes": changes}
+    except Exception as e:
+        logger.error(f"Error getting change detail for {asin}: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
 # @app.get("/api/notifications/settings")
 # async def get_notification_settings(db: Session = Depends(get_db)):
 #     """Get notification settings - MOVED TO .ENV CONFIG"""

@@ -801,49 +801,61 @@ class AmazonCrawler:
             video_thumbnail_clicked = False
             
             try:
-                # Look for video thumbnail that shows video count (e.g., "8 videos")
-                video_thumbnails = self.driver.find_elements(By.CSS_SELECTOR, "li.videoThumbnail")
-                if not video_thumbnails:
-                    # Try alternative selectors for video thumbnail
-                    video_thumbnails = self.driver.find_elements(By.CSS_SELECTOR, "li[class*='video'], .video-thumbnail, [id*='video']")
-                
-                for thumb in video_thumbnails:
-                    try:
-                        # Check if this thumbnail has video count info
-                        video_count_elem = thumb.find_elements(By.CSS_SELECTOR, "#videoCount, .video-count, [class*='video'][class*='count']")
-                        if video_count_elem:
-                            count_text = video_count_elem[0].text.strip()
-                            logger.info(f"Found video thumbnail with count: {count_text}")
-                            
-                            # Click the thumbnail to open video popup
-                            thumb.click()
-                            logger.info("Clicked video thumbnail to open popup")
-                            video_thumbnail_clicked = True
-                            time.sleep(3)
-                            break
-                        else:
-                            # Try clicking any video-related thumbnail
-                            if 'video' in thumb.get_attribute('class').lower():
-                                thumb.click()
-                                logger.info("Clicked video thumbnail (no count found)")
-                                video_thumbnail_clicked = True
-                                time.sleep(3)
-                                break
-                    except Exception as e:
-                        logger.debug(f"Could not process video thumbnail: {e}")
-                        continue
-                
-                if not video_thumbnail_clicked:
-                    logger.info("No video thumbnail found to click")
+                # Chỉ tìm video thumbnail trong div#imageBlock
+                image_block = self.driver.find_elements(By.CSS_SELECTOR, "div#imageBlock")
+                if not image_block:
+                    logger.info("No #imageBlock found, assume no video")
                     data['video_urls'] = []
                     data['video_count'] = 0
-                    return data
+                    # KHÔNG return data ở đây, tiếp tục xử lý ảnh phía sau
+                else:
+                    image_block = image_block[0]
+                    video_thumbnails = image_block.find_elements(By.CSS_SELECTOR, "li.videoThumbnail")
+                    if not video_thumbnails:
+                        # Try alternative selectors for video thumbnail (chỉ trong image_block)
+                        video_thumbnails = image_block.find_elements(By.CSS_SELECTOR, "li[class*='video'], .video-thumbnail, [id*='video']")
+                    if not video_thumbnails:
+                        logger.info("No video thumbnail found in #imageBlock, assume no video")
+                        data['video_urls'] = []
+                        data['video_count'] = 0
+                        # KHÔNG return data ở đây, tiếp tục xử lý ảnh phía sau
+                    else:
+                        for thumb in video_thumbnails:
+                            try:
+                                # Check if this thumbnail has video count info
+                                video_count_elem = thumb.find_elements(By.CSS_SELECTOR, "#videoCount, .video-count, [class*='video'][class*='count']")
+                                if video_count_elem:
+                                    count_text = video_count_elem[0].text.strip()
+                                    logger.info(f"Found video thumbnail with count: {count_text}")
+                                    
+                                    # Click the thumbnail to open video popup
+                                    thumb.click()
+                                    logger.info("Clicked video thumbnail to open popup")
+                                    video_thumbnail_clicked = True
+                                    time.sleep(3)
+                                    break
+                                else:
+                                    # Try clicking any video-related thumbnail
+                                    if 'video' in thumb.get_attribute('class').lower():
+                                        thumb.click()
+                                        logger.info("Clicked video thumbnail (no count found)")
+                                        video_thumbnail_clicked = True
+                                        time.sleep(3)
+                                        break
+                            except Exception as e:
+                                logger.debug(f"Could not process video thumbnail: {e}")
+                                continue
+                        if not video_thumbnail_clicked:
+                            logger.info("No video thumbnail found to click in #imageBlock")
+                            data['video_urls'] = []
+                            data['video_count'] = 0
+                            # KHÔNG return data ở đây, tiếp tục xử lý ảnh phía sau
                 
             except Exception as e:
-                logger.warning(f"Could not find/click video thumbnail: {e}")
+                logger.warning(f"Could not find/click video thumbnail in #imageBlock: {e}")
                 data['video_urls'] = []
                 data['video_count'] = 0
-                return data
+                # KHÔNG return data ở đây, tiếp tục xử lý ảnh phía sau
             
             # Step 2: Extract videos from carousel after clicking thumbnail
             try:

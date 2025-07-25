@@ -171,24 +171,18 @@ async def main():
     print("🧪 AMAZON CRAWLER - CHANGE DETECTION TESTER")
     print("=" * 60)
     
-    # Danh sách ASIN để test (có thể thay đổi)
+    # Danh sách ASIN để test (chỉ test mã B01KZ6UMUQ)
     test_asins = [
-        "B0BZYCJK89",  # ASIN được user yêu cầu test
-        # Thêm ASIN khác nếu muốn test
+        "B01KZ6UMUQ",
     ]
     
     tester = ChangeDetectionTester()
     
     try:
         for asin in test_asins:
-            # Test 1: Crawl thực tế và phát hiện thay đổi
+            # Test crawl mới và phát hiện thay đổi
             await tester.test_single_asin(asin)
-            
-            # Test 2: Mô phỏng thay đổi
-            await tester.test_manual_change_simulation(asin)
-            
             print("\n" + "="*60)
-            
     except KeyboardInterrupt:
         print("\n🛑 Test dừng bởi người dùng")
     except Exception as e:

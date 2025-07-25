@@ -13,72 +13,50 @@ logger = get_logger(__name__)
 class ChangeDetector:
     def __init__(self):
         self.session = get_db_session()
-        
-        # Define which fields to monitor for changes
+        # Đúng 22 trường như model ProductCrawlHistory
         self.monitored_fields = {
-            # Pricing
+            'title': {'type': 'string'},
+            'product_description': {'type': 'string'},
+            'product_information': {'type': 'json'},
+            'about_this_item': {'type': 'json'},
+            'image_count': {'type': 'int', 'threshold': 1},
+            'image_urls': {'type': 'json'},
+            'video_count': {'type': 'int', 'threshold': 1},
+            'video_urls': {'type': 'json'},
             'sale_price': {'type': 'float', 'threshold': 0.01},
             'list_price': {'type': 'float', 'threshold': 0.01},
             'sale_percentage': {'type': 'float', 'threshold': 0.1},
-            
-            # Ratings
+            'best_deal': {'type': 'string'},
+            'lightning_deal': {'type': 'string'},
+            'coupon': {'type': 'string'},
+            'bag_sale': {'type': 'string'},
             'rating': {'type': 'float', 'threshold': 0.1},
             'rating_count': {'type': 'int', 'threshold': 1},
-            
-            # Inventory
-            'inventory_status': {'type': 'string'},
-            
-            # Promotions
-            'best_deal': {'type': 'bool'},
-            'lightning_deal': {'type': 'bool'},
-            'coupon_available': {'type': 'bool'},
-            'coupon_text': {'type': 'string'},
-            
-            # Tags
-            'amazon_choice': {'type': 'bool'},
-            
-            # Sales info
-            'bag_sale_text': {'type': 'string'},
-            'bag_sale_count': {'type': 'int', 'threshold': 1},
-            
-            # Links (important for seller changes)
             'brand_store_link': {'type': 'string'},
             'sold_by_link': {'type': 'string'},
-            
-            # Content (for major description changes)
-            'title': {'type': 'string'},
-            'bullet_points': {'type': 'list'},
-            
-            # Images/Videos (for content changes)
-            'image_count': {'type': 'int', 'threshold': 1},
-            'video_count': {'type': 'int', 'threshold': 1},
+            'advertised_asins': {'type': 'json'},
+            'amazon_choice': {'type': 'int'},
+            'inventory': {'type': 'string'},
         }
     
     async def detect_and_notify_changes(self, asin: str, new_data: Dict) -> Dict:
         """Detect changes and send notifications if any significant changes found"""
         try:
-            # Get the latest previous crawl data
-            previous_data = self._get_latest_crawl_data(asin)
-            
+            # Get the latest previous crawl data (yesterday only)
+            previous_data = self._get_yesterday_crawl_data(asin)
             if not previous_data:
-                logger.info(f"No previous data found for ASIN {asin}, this is the first crawl")
+                logger.info(f"No yesterday data found for ASIN {asin}, this is the first crawl today or no crawl yesterday")
                 return {'is_first_crawl': True, 'changes': {}}
-            
             # Detect changes
             changes = self._compare_data(previous_data, new_data)
-            
             # Filter significant changes
             significant_changes = self._filter_significant_changes(changes)
-            
             if significant_changes:
                 logger.info(f"Detected {len(significant_changes)} significant changes for ASIN {asin}")
-                
                 # Send notifications
                 await send_notification(asin, significant_changes, new_data)
-                
                 # Log the changes
                 self._log_changes(asin, significant_changes)
-                
                 return {
                     'is_first_crawl': False,
                     'has_changes': True,
@@ -93,7 +71,6 @@ class ChangeDetector:
                     'changes': {},
                     'change_count': 0
                 }
-        
         except Exception as e:
             logger.error(f"Error detecting changes for ASIN {asin}: {e}")
             return {'error': str(e)}
@@ -122,13 +99,50 @@ class ChangeDetector:
             logger.error(f"Error getting latest crawl data for {asin}: {e}")
             return None
     
+    def _get_yesterday_crawl_data(self, asin: str) -> Optional[Dict]:
+        """Get the latest successful crawl data for yesterday"""
+        try:
+            from datetime import time
+            today = datetime.utcnow().date()
+            yesterday = today - timedelta(days=1)
+            start_yesterday = datetime.combine(yesterday, time.min)
+            end_yesterday = datetime.combine(yesterday, time.max)
+            latest_crawl = (
+                self.session.query(ProductCrawlHistory)
+                .filter_by(asin=asin, crawl_success=True)
+                .filter(ProductCrawlHistory.crawl_date >= start_yesterday)
+                .filter(ProductCrawlHistory.crawl_date <= end_yesterday)
+                .order_by(ProductCrawlHistory.crawl_date.desc())
+                .first()
+            )
+            if not latest_crawl:
+                return None
+            data = {field: getattr(latest_crawl, field, None) for field in self.monitored_fields.keys()}
+            return data
+        except Exception as e:
+            logger.error(f"Error getting yesterday crawl data for {asin}: {e}")
+            return None
+    
+    def _get_field_value_for_compare(self, value, field):
+        if field in ["amazon_choice", "image_count", "video_count", "rating_count"]:
+            try:
+                return int(value) if value is not None else None
+            except Exception:
+                return value
+        if field in ["sale_price", "list_price", "sale_percentage", "rating"]:
+            try:
+                return float(value) if value is not None else None
+            except Exception:
+                return value
+        return value
+
     def _compare_data(self, old_data: Dict, new_data: Dict) -> Dict:
         """Compare old and new data to detect changes"""
         changes = {}
         
         for field, config in self.monitored_fields.items():
-            old_value = old_data.get(field)
-            new_value = new_data.get(field)
+            old_value = self._get_field_value_for_compare(old_data.get(field), field)
+            new_value = self._get_field_value_for_compare(new_data.get(field), field)
             
             # Skip if both values are None
             if old_value is None and new_value is None:
