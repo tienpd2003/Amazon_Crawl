@@ -3,11 +3,11 @@
 .env.*
 !env_template.txt
 
-# Database
-*.db
-*.db-journal
-*.db.backup*
-amazon_crawler.db*
+# # Database
+# *.db
+# *.db-journal
+# *.db.backup*
+# amazon_crawler.db*
 
 # Python
 __pycache__/
