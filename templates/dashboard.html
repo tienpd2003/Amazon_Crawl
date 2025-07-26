@@ -217,8 +217,14 @@
                     
                     <div class="col-lg-6">
                         <div class="card">
-                            <div class="card-header bg-info text-white">
-                                <h6 class="mb-0"><i class="fas fa-list"></i> ASIN Watchlist (<span id="watchlist-count"></span>)</h6>
+                            <div class="card-header bg-info text-white d-flex align-items-center justify-content-between">
+                                <div>
+                                    <i class="fas fa-list me-2"></i>
+                                    <span>ASIN Watchlist (<span id="watchlist-count"></span>)</span>
+                                </div>
+                                <button class="btn btn-sm btn-danger" onclick="crawlAllWatchlist()" title="Crawl toàn bộ ASIN Watchlist">
+                                    <i class="fas fa-sync-alt"></i> Crawl toàn bộ
+                                </button>
                             </div>
                             <div class="card-body" style="max-height: 350px; overflow-y: auto;">
                                 <table class="table table-sm table-bordered mb-0">
@@ -454,6 +460,21 @@
             } catch (error) {
                 console.error('Error crawling ASIN:', error);
                 alert('Có lỗi xảy ra khi crawl ASIN');
+            }
+        }
+
+        async function crawlAllWatchlist() {
+            if (!confirm("Bạn có chắc muốn crawl lại toàn bộ ASIN trong watchlist ngay bây giờ?")) return;
+            try {
+                const response = await fetch('/api/crawl/watchlist/now', { method: 'POST' });
+                if (response.ok) {
+                    alert('Đã bắt đầu crawl toàn bộ ASIN trong watchlist!');
+                } else {
+                    const error = await response.json();
+                    alert('Lỗi: ' + error.detail);
+                }
+            } catch (error) {
+                alert('Có lỗi xảy ra khi crawl toàn bộ ASIN');
             }
         }
 

@@ -190,6 +190,24 @@
         </div>
     </div>
 
+    <!-- Product Details Modal -->
+    <div class="modal fade" id="productDetailsModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productDetailsModalTitle">Chi tiết sản phẩm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="productDetailsModalBody">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         let currentPage = 1;
@@ -455,8 +473,119 @@
         }
 
         // View details
-        function viewDetails(asin) {
-            window.open(`/price-tracking?asin=${asin}`, '_blank');
+        async function viewDetails(asin) {
+            try {
+                const response = await fetch(`/api/products/${asin}/detailed-comparison`);
+                if (response.ok) {
+                    const data = await response.json();
+                    showProductDetailsModal(data);
+                } else {
+                    const error = await response.json();
+                    showError('Lỗi: ' + error.detail);
+                }
+            } catch (error) {
+                console.error('Error loading product details:', error);
+                showError('Có lỗi xảy ra khi tải chi tiết sản phẩm');
+            }
+        }
+
+        // Show product details modal
+        function showProductDetailsModal(data) {
+            const modal = document.getElementById('productDetailsModal');
+            const modalTitle = document.getElementById('productDetailsModalTitle');
+            const modalBody = document.getElementById('productDetailsModalBody');
+            
+            modalTitle.textContent = `Chi tiết ASIN: ${data.asin}`;
+            
+            if (!data.data) {
+                modalBody.innerHTML = `
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i> ${data.message || 'Chưa có dữ liệu crawl cho ASIN này'}
+                    </div>
+                `;
+                const bootstrapModal = new bootstrap.Modal(modal);
+                bootstrapModal.show();
+                return;
+            }
+            
+            const productData = data.data;
+            let html = `
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header bg-primary text-white">
+                                <h6 class="mb-0"><i class="fas fa-info-circle"></i> Thông tin chi tiết sản phẩm</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6 class="text-primary">Thông tin cơ bản</h6>
+                                        <p><strong>Thời gian crawl:</strong> ${new Date(productData.crawl_date).toLocaleString('vi-VN')}</p>
+                                        ${productData.title ? `<p><strong>Tiêu đề:</strong> ${productData.title}</p>` : ''}
+                                        ${productData.sale_price ? `<p><strong>Giá bán:</strong> $${productData.sale_price}</p>` : ''}
+                                        ${productData.list_price ? `<p><strong>Giá niêm yết:</strong> $${productData.list_price}</p>` : ''}
+                                        ${productData.sale_percentage ? `<p><strong>Giảm giá:</strong> ${productData.sale_percentage}%</p>` : ''}
+                                        ${productData.rating ? `<p><strong>Đánh giá:</strong> ${productData.rating}★ (${productData.rating_count || 0} đánh giá)</p>` : ''}
+                                        ${productData.inventory ? `<p><strong>Tình trạng kho:</strong> ${productData.inventory}</p>` : ''}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6 class="text-primary">Thông tin khuyến mãi</h6>
+                                        ${productData.best_deal ? `<p><strong>Khuyến mãi:</strong> ${productData.best_deal}</p>` : ''}
+                                        ${productData.lightning_deal ? `<p><strong>Lightning Deal:</strong> ${productData.lightning_deal}</p>` : ''}
+                                        ${productData.coupon ? `<p><strong>Coupon:</strong> ${productData.coupon}</p>` : ''}
+                                        ${productData.bag_sale ? `<p><strong>Bag Sale:</strong> ${productData.bag_sale}</p>` : ''}
+                                        ${productData.amazon_choice ? `<p><strong>Amazon Choice:</strong> ${productData.amazon_choice}</p>` : ''}
+                                    </div>
+                                </div>
+                                
+                                <hr>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6 class="text-primary">Thông tin media</h6>
+                                        ${productData.image_count ? `<p><strong>Số ảnh:</strong> ${productData.image_count}</p>` : ''}
+                                        ${productData.video_count ? `<p><strong>Số video:</strong> ${productData.video_count}</p>` : ''}
+                                        ${productData.advertised_asins ? `<p><strong>Sản phẩm quảng cáo:</strong> ${Array.isArray(productData.advertised_asins) ? productData.advertised_asins.join(', ') : productData.advertised_asins}</p>` : ''}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6 class="text-primary">Liên kết</h6>
+                                        ${productData.brand_store_link ? `<p><strong>Brand Store:</strong> <a href="${productData.brand_store_link}" target="_blank">Xem</a></p>` : ''}
+                                        ${productData.sold_by_link ? `<p><strong>Sold By:</strong> <a href="${productData.sold_by_link}" target="_blank">Xem</a></p>` : ''}
+                                    </div>
+                                </div>
+                                
+                                ${productData.product_description || productData.product_information || productData.about_this_item ? `
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h6 class="text-primary">Mô tả sản phẩm</h6>
+                                            ${productData.product_description ? `<p><strong>Mô tả:</strong> ${productData.product_description}</p>` : ''}
+                                            ${productData.product_information ? `<p><strong>Thông tin:</strong> ${productData.product_information}</p>` : ''}
+                                            ${productData.about_this_item ? `<p><strong>Về sản phẩm:</strong> ${productData.about_this_item}</p>` : ''}
+                                        </div>
+                                    </div>
+                                ` : ''}
+                                
+                                ${productData.image_urls || productData.video_urls ? `
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h6 class="text-primary">Media URLs</h6>
+                                            ${productData.image_urls ? `<p><strong>Ảnh:</strong> ${Array.isArray(productData.image_urls) ? productData.image_urls.slice(0, 3).join(', ') + (productData.image_urls.length > 3 ? '...' : '') : productData.image_urls}</p>` : ''}
+                                            ${productData.video_urls ? `<p><strong>Video:</strong> ${Array.isArray(productData.video_urls) ? productData.video_urls.slice(0, 3).join(', ') + (productData.video_urls.length > 3 ? '...' : '') : productData.video_urls}</p>` : ''}
+                                        </div>
+                                    </div>
+                                ` : ''}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            modalBody.innerHTML = html;
+            
+            const bootstrapModal = new bootstrap.Modal(modal);
+            bootstrapModal.show();
         }
 
         // Search products

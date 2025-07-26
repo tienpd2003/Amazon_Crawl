@@ -416,6 +416,65 @@ async def manual_crawl(asin: str, background_tasks: BackgroundTasks):
         logger.error(f"Error starting manual crawl for {asin}: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
+@app.get("/api/products/{asin}/detailed-comparison")
+async def get_product_detailed_comparison(asin: str, db: Session = Depends(get_db)):
+    """Get latest detailed product data"""
+    try:
+        # Get latest successful crawl
+        latest_crawl = (
+            db.query(ProductCrawlHistory)
+            .filter_by(asin=asin, crawl_success=True)
+            .order_by(ProductCrawlHistory.crawl_date.desc())
+            .first()
+        )
+        
+        # Get watchlist info
+        watchlist_item = db.query(ASINWatchlist).filter_by(asin=asin).first()
+        
+        if not latest_crawl:
+            return {
+                "asin": asin,
+                "data": None,
+                "is_in_watchlist": watchlist_item is not None,
+                "is_active": watchlist_item.is_active if watchlist_item else None,
+                "message": "Chưa có dữ liệu crawl cho ASIN này"
+            }
+        
+        return {
+            "asin": asin,
+            "data": {
+                "crawl_date": latest_crawl.crawl_date,
+                "title": latest_crawl.title,
+                "product_description": latest_crawl.product_description,
+                "product_information": latest_crawl.product_information,
+                "about_this_item": latest_crawl.about_this_item,
+                "sale_price": latest_crawl.sale_price,
+                "list_price": latest_crawl.list_price,
+                "sale_percentage": latest_crawl.sale_percentage,
+                "rating": latest_crawl.rating,
+                "rating_count": latest_crawl.rating_count,
+                "inventory": latest_crawl.inventory,
+                "image_count": latest_crawl.image_count,
+                "image_urls": latest_crawl.image_urls,
+                "video_count": latest_crawl.video_count,
+                "video_urls": latest_crawl.video_urls,
+                "best_deal": latest_crawl.best_deal,
+                "lightning_deal": latest_crawl.lightning_deal,
+                "coupon": latest_crawl.coupon,
+                "bag_sale": latest_crawl.bag_sale,
+                "amazon_choice": latest_crawl.amazon_choice,
+                "advertised_asins": latest_crawl.advertised_asins,
+                "brand_store_link": latest_crawl.brand_store_link,
+                "sold_by_link": latest_crawl.sold_by_link
+            },
+            "is_in_watchlist": watchlist_item is not None,
+            "is_active": watchlist_item.is_active if watchlist_item else None
+        }
+        
+    except Exception as e:
+        logger.error(f"Error getting detailed data for {asin}: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
 @app.put("/api/watchlist/{asin}/toggle")
 async def toggle_watchlist_status(asin: str, db: Session = Depends(get_db)):
     """Toggle active status of ASIN in watchlist (pause/resume monitoring)"""
@@ -711,6 +770,12 @@ async def get_price_history(asin: str, days: int = 30, db: Session = Depends(get
     except Exception as e:
         logger.error(f"Error getting price history: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/api/crawl/watchlist/now")
+async def crawl_all_watchlist_now(background_tasks: BackgroundTasks):
+    from scheduler.crawler_scheduler import crawler_scheduler
+    background_tasks.add_task(crawler_scheduler.daily_crawl_job)
+    return {"message": "Đã bắt đầu crawl toàn bộ ASIN trong watchlist!"}
 
 # Health check
 @app.get("/health")

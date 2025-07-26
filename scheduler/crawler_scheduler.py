@@ -31,7 +31,7 @@ class CrawlerScheduler:
             # Remove existing jobs if they exist
             if self.scheduler.get_job('daily_crawl'):
                 self.scheduler.remove_job('daily_crawl')
-            if self.scheduler.get_job('hourly_stats'):
+            if self.scheduler.get_job('hourly_stats'): 
                 self.scheduler.remove_job('hourly_stats')
             
             # Schedule daily crawl
@@ -115,7 +115,7 @@ class CrawlerScheduler:
                             successful_crawls += 1
                             logger.info(f"Successfully crawled {asin}")
                             
-                            # Update last crawled time
+                            # Update last crawled time and next_crawl
                             asin_data.last_crawled = datetime.utcnow()
                             asin_data.next_crawl = self._calculate_next_crawl(asin_data)
                             
@@ -214,7 +214,7 @@ class CrawlerScheduler:
                     existing.is_active = True
                     existing.crawl_frequency = crawl_frequency
                     existing.notes = notes
-                    existing.next_crawl = datetime.utcnow()
+                    existing.next_crawl = self._calculate_next_crawl(existing)
                     self.session.commit()
                     logger.info(f"Re-activated ASIN {asin} in watchlist with {crawl_frequency} frequency")
                     return 'reactivated'
@@ -228,7 +228,7 @@ class CrawlerScheduler:
                 asin=asin,
                 crawl_frequency=crawl_frequency,
                 notes=notes,
-                next_crawl=datetime.utcnow()  # Crawl immediately
+                next_crawl=self._calculate_next_crawl()
             )
             self.session.add(watchlist_item)
             self.session.commit()
@@ -271,7 +271,7 @@ class CrawlerScheduler:
             logger.error(f"Error in stats update job: {e}")
     
     def _get_active_asins(self) -> List[ASINWatchlist]:
-        """Get list of active ASINs that need crawling"""
+        """Get list of active ASINs that need crawling based on next_crawl time"""
         try:
             now = datetime.utcnow()
             
@@ -292,19 +292,21 @@ class CrawlerScheduler:
             logger.error(f"Error getting active ASINs: {e}")
             return []
     
-    def _calculate_next_crawl(self, asin_data: ASINWatchlist) -> datetime:
-        """Calculate next crawl time based on frequency"""
-        now = datetime.utcnow()
-        
-        if asin_data.crawl_frequency == "daily":
-            return now + timedelta(days=1)
-        elif asin_data.crawl_frequency == "weekly":
-            return now + timedelta(weeks=1)
-        elif asin_data.crawl_frequency == "monthly":
-            return now + timedelta(days=30)
+    def _calculate_next_crawl(self, asin_data: ASINWatchlist = None) -> datetime:
+        """Calculate next crawl time - 5:30 UTC of next day after last_crawled"""
+        if asin_data and asin_data.last_crawled:
+            # Use last_crawled as base
+            last_crawled_date = asin_data.last_crawled.date()
+            next_day = last_crawled_date + timedelta(days=1)
         else:
-            # Default to daily
-            return now + timedelta(days=1)
+            # If no last_crawled, use current time as base
+            now = datetime.utcnow()
+            next_day = now.date() + timedelta(days=1)
+        
+        # Calculate 5:30 UTC of next day
+        next_crawl_time = datetime.combine(next_day, datetime.min.time().replace(hour=5, minute=30))
+        
+        return next_crawl_time
     
     def get_scheduler_status(self) -> dict:
         """Get scheduler status"""
