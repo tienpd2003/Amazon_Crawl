@@ -17,6 +17,7 @@ class ChangeDetector:
         self.monitored_fields = {
             'title': {'type': 'string'},
             'product_description': {'type': 'string'},
+            'product_description_images': {'type': 'json'},
             'product_information': {'type': 'json'},
             'about_this_item': {'type': 'json'},
             'image_count': {'type': 'int', 'threshold': 1},
@@ -224,6 +225,19 @@ class ChangeDetector:
                 else:
                     return str(old_value) != str(new_value)
             
+            elif field_type == 'json':
+                # For JSON fields (like product_description_images), compare content
+                if isinstance(old_value, list) and isinstance(new_value, list):
+                    # Compare each item in the lists
+                    old_set = set(str(x) for x in old_value)
+                    new_set = set(str(x) for x in new_value)
+                    return old_set != new_set
+                elif isinstance(old_value, dict) and isinstance(new_value, dict):
+                    # For dictionaries, compare key-value pairs
+                    return old_value != new_value
+                else:
+                    return str(old_value) != str(new_value)
+            
             else:
                 # Default: direct comparison
                 return old_value != new_value
@@ -250,7 +264,7 @@ class ChangeDetector:
         # Always significant changes
         significant_fields = [
             'best_deal', 'lightning_deal', 'coupon_available', 
-            'amazon_choice', 'inventory_status'
+            'amazon_choice', 'inventory_status', 'product_description_images'
         ]
         
         if field in significant_fields:

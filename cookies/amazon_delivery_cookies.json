@@ -1,0 +1,86 @@
+{
+  "timestamp": "2025-07-28T16:10:54.555562",
+  "delivery_location": "New York 10009",
+  "cookies": [
+    {
+      "domain": "www.amazon.com",
+      "expiry": 1783959053,
+      "httpOnly": false,
+      "name": "csm-hit",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "tb:s-KMB5YMJRQQHVJ845JA3K|1753719051950&t:1753719053971&adb:adblk_no"
+    },
+    {
+      "domain": "www.amazon.com",
+      "expiry": 1753805442,
+      "httpOnly": false,
+      "name": "rxc",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "ALC8igWXEeLG/JeqVwg"
+    },
+    {
+      "domain": ".amazon.com",
+      "expiry": 1785255016,
+      "httpOnly": false,
+      "name": "session-token",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": true,
+      "value": "zL/OC96A6ueGvf5tNX4vTTJcLoVymeSCub2dwHm0mgSxNvFRHu4eIWvRoo4NVV7rWnokuLmkYrMmd2g1K1xnsPdbalWvAn0v7LQTtX1SiVaCNB1rPaGOTm3f9xaKdhzuPoB4Ysqp06O5UlPLxhz9NmYYcA4YDNLimXZ+iQ37Z75LVCC6DvXxWlK7RUZbe8GBFj6Kr5jw0dVLs5J/DRvdBiz/vF4pHeLKJ1EfePqMyF7akbolwOvHzeV5XnoJrFLR/qj86q38NGiIdW3x110gTYaCYp65KUj9jgGSh5WLfq4CvUuruwsxByLUFa1lL93w0LLz+jtDVXEwhERSuP8pIP3JMyPkulTQ"
+    },
+    {
+      "domain": ".amazon.com",
+      "expiry": 1785255015,
+      "httpOnly": false,
+      "name": "ubid-main",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": true,
+      "value": "134-8749567-6741567"
+    },
+    {
+      "domain": ".amazon.com",
+      "expiry": 1785255012,
+      "httpOnly": false,
+      "name": "lc-main",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "en_US"
+    },
+    {
+      "domain": ".amazon.com",
+      "expiry": 1785255012,
+      "httpOnly": false,
+      "name": "i18n-prefs",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": false,
+      "value": "USD"
+    },
+    {
+      "domain": ".amazon.com",
+      "expiry": 1785255012,
+      "httpOnly": false,
+      "name": "session-id-time",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": true,
+      "value": "2082787201l"
+    },
+    {
+      "domain": ".amazon.com",
+      "expiry": 1785255012,
+      "httpOnly": false,
+      "name": "session-id",
+      "path": "/",
+      "sameSite": "Lax",
+      "secure": true,
+      "value": "145-1678881-7252239"
+    }
+  ]
+}

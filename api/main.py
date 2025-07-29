@@ -54,6 +54,8 @@ class NotificationConfig(BaseModel):
 class ProductResponse(BaseModel):
     asin: str
     title: Optional[str]
+    product_description: Optional[str]
+    product_description_images: Optional[List[str]]
     sale_price: Optional[float]
     list_price: Optional[float]
     rating: Optional[float]
@@ -446,6 +448,7 @@ async def get_product_detailed_comparison(asin: str, db: Session = Depends(get_d
                 "crawl_date": latest_crawl.crawl_date,
                 "title": latest_crawl.title,
                 "product_description": latest_crawl.product_description,
+                "product_description_images": latest_crawl.product_description_images,
                 "product_information": latest_crawl.product_information,
                 "about_this_item": latest_crawl.about_this_item,
                 "sale_price": latest_crawl.sale_price,
@@ -549,7 +552,7 @@ async def get_watchlist(active_only: bool = False, db: Session = Depends(get_db)
         start_yesterday = datetime.combine(yesterday, time.min)
         end_yesterday = datetime.combine(yesterday, time.max)
         compare_fields = [
-            'title', 'product_description', 'product_information', 'about_this_item',
+            'title', 'product_description', 'product_description_images', 'product_information', 'about_this_item',
             'image_count', 'image_urls', 'video_count', 'video_urls',
             'sale_price', 'list_price', 'sale_percentage',
             'best_deal', 'lightning_deal', 'coupon', 'bag_sale',

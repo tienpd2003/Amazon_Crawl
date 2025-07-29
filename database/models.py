@@ -26,11 +26,12 @@ class ProductCrawlHistory(Base):
     asin = Column(String(10), index=True)
     crawl_date = Column(DateTime, default=datetime.utcnow)
     
-    # 📊 Core Product Info (4 fields)
+    # 📊 Core Product Info (5 fields)
     title = Column(Text)                        # 1. Tên sản phẩm
     product_description = Column(Text)          # 2. Mô tả sản phẩm (EBC content)
-    product_information = Column(JSON)          # 3. Thông số kỹ thuật
-    about_this_item = Column(JSON)              # 4. About this item (bullet points)
+    product_description_images = Column(JSON)   # 3. Ảnh trong mô tả sản phẩm
+    product_information = Column(JSON)          # 4. Thông số kỹ thuật
+    about_this_item = Column(JSON)              # 5. About this item (bullet points)
     
     # 🖼️ Media (4 fields)
     image_count = Column(Integer, default=0)    # 5. Số lượng ảnh

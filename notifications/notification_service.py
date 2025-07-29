@@ -109,6 +109,102 @@ class NotificationService:
             else:
                 message_parts.append(f"📉 Không còn là Amazon's Choice")
         
+        # Product Description Images changes
+        if 'product_description_images' in changes:
+            old_images = changes['product_description_images']['old'] or []
+            new_images = changes['product_description_images']['new'] or []
+            
+            if isinstance(old_images, list) and isinstance(new_images, list):
+                old_set = set(str(x) for x in old_images)
+                new_set = set(str(x) for x in new_images)
+                
+                # Find added and removed images
+                added_images = new_set - old_set
+                removed_images = old_set - new_set
+                
+                old_count = len(old_images)
+                new_count = len(new_images)
+                
+                if added_images and removed_images:
+                    message_parts.append(f"🔄 Ảnh mô tả sản phẩm đã thay đổi: +{len(added_images)} ảnh mới, -{len(removed_images)} ảnh cũ")
+                elif added_images:
+                    message_parts.append(f"🖼️ Thêm {len(added_images)} ảnh mô tả sản phẩm mới!")
+                elif removed_images:
+                    message_parts.append(f"📷 Giảm {len(removed_images)} ảnh mô tả sản phẩm")
+                elif old_count != new_count:
+                    # Same URLs but different count (duplicates removed/added)
+                    message_parts.append(f"🔄 Số lượng ảnh mô tả sản phẩm thay đổi: {old_count} → {new_count}")
+                else:
+                    message_parts.append(f"🔄 Ảnh mô tả sản phẩm đã thay đổi (thứ tự hoặc nội dung)")
+            else:
+                # Fallback for non-list data
+                if old_images != new_images:
+                    message_parts.append(f"🔄 Ảnh mô tả sản phẩm đã thay đổi")
+        
+        # Product Images changes (main product images)
+        if 'image_urls' in changes:
+            old_images = changes['image_urls']['old'] or []
+            new_images = changes['image_urls']['new'] or []
+            
+            if isinstance(old_images, list) and isinstance(new_images, list):
+                old_set = set(str(x) for x in old_images)
+                new_set = set(str(x) for x in new_images)
+                
+                # Find added and removed images
+                added_images = new_set - old_set
+                removed_images = old_set - new_set
+                
+                old_count = len(old_images)
+                new_count = len(new_images)
+                
+                if added_images and removed_images:
+                    message_parts.append(f"🔄 Ảnh sản phẩm đã thay đổi: +{len(added_images)} ảnh mới, -{len(removed_images)} ảnh cũ")
+                elif added_images:
+                    message_parts.append(f"📸 Thêm {len(added_images)} ảnh sản phẩm mới!")
+                elif removed_images:
+                    message_parts.append(f"🗑️ Giảm {len(removed_images)} ảnh sản phẩm")
+                elif old_count != new_count:
+                    # Same URLs but different count (duplicates removed/added)
+                    message_parts.append(f"🔄 Số lượng ảnh sản phẩm thay đổi: {old_count} → {new_count}")
+                else:
+                    message_parts.append(f"🔄 Ảnh sản phẩm đã thay đổi (thứ tự hoặc nội dung)")
+            else:
+                # Fallback for non-list data
+                if old_images != new_images:
+                    message_parts.append(f"🔄 Ảnh sản phẩm đã thay đổi")
+        
+        # Product Videos changes
+        if 'video_urls' in changes:
+            old_videos = changes['video_urls']['old'] or []
+            new_videos = changes['video_urls']['new'] or []
+            
+            if isinstance(old_videos, list) and isinstance(new_videos, list):
+                old_set = set(str(x) for x in old_videos)
+                new_set = set(str(x) for x in new_videos)
+                
+                # Find added and removed videos
+                added_videos = new_set - old_set
+                removed_videos = old_set - new_set
+                
+                old_count = len(old_videos)
+                new_count = len(new_videos)
+                
+                if added_videos and removed_videos:
+                    message_parts.append(f"🔄 Video sản phẩm đã thay đổi: +{len(added_videos)} video mới, -{len(removed_videos)} video cũ")
+                elif added_videos:
+                    message_parts.append(f"🎬 Thêm {len(added_videos)} video sản phẩm mới!")
+                elif removed_videos:
+                    message_parts.append(f"🎥 Giảm {len(removed_videos)} video sản phẩm")
+                elif old_count != new_count:
+                    # Same URLs but different count (duplicates removed/added)
+                    message_parts.append(f"🔄 Số lượng video sản phẩm thay đổi: {old_count} → {new_count}")
+                else:
+                    message_parts.append(f"🔄 Video sản phẩm đã thay đổi (thứ tự hoặc nội dung)")
+            else:
+                # Fallback for non-list data
+                if old_videos != new_videos:
+                    message_parts.append(f"🔄 Video sản phẩm đã thay đổi")
+        
         # Bag sale changes
         if 'bag_sale_count' in changes:
             old_count = changes['bag_sale_count']['old']

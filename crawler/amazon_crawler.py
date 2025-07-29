@@ -276,78 +276,135 @@ class AmazonCrawler:
                 logger.warning(f"Could not click Apply: {e}")
                 return False
             
-            # Click Continue button - try multiple selectors
+            # Click Continue button - optimized order based on success probability
             try:
-                # Try different ways to click Continue button
+                # Try different ways to click Continue button (ordered by success rate)
                 continue_clicked = False
                 
-                # Method 1: Click the input element
+                # Method 1: JavaScript click (HIGHEST SUCCESS RATE - PROVEN WORKING)
+                # Based on logs, this method works most reliably
                 try:
-                    continue_button = WebDriverWait(self.driver, 5).until(
-                        EC.element_to_be_clickable((By.CSS_SELECTOR, "#GLUXConfirmClose"))
-                    )
-                    continue_button.click()
-                    logger.info("Clicked Continue button (input)")
+                    js_button = self.driver.find_element(By.CSS_SELECTOR, "#GLUXConfirmClose")
+                    self.driver.execute_script("arguments[0].click();", js_button)
+                    logger.info("Clicked Continue button (JavaScript force) - SUCCESS")
                     continue_clicked = True
                 except:
                     pass
                 
-                # Method 2: Click the span text element if input failed
+                # Method 2: Click the outer span container with data-action (HIGH SUCCESS RATE)
+                # This is the most reliable because it's the actual clickable container
+                if not continue_clicked:
+                    try:
+                        outer_span = WebDriverWait(self.driver, 5).until(
+                            EC.element_to_be_clickable((By.CSS_SELECTOR, "span.a-button-inner[data-action='GLUXConfirmAction']"))
+                        )
+                        outer_span.click()
+                        logger.info("Clicked Continue button (outer span with data-action) - SUCCESS")
+                        continue_clicked = True
+                    except:
+                        pass
+                
+                # Method 3: Try clicking X button first to close popup, then Continue
+                if not continue_clicked:
+                    try:
+                        # Look for X button first
+                        x_button = self.driver.find_element(By.CSS_SELECTOR, "button[data-action='a-popover-close'][aria-label='Close']")
+                        if x_button.is_displayed() and x_button.is_enabled():
+                            x_button.click()
+                            logger.info("Clicked X button to close popup first")
+                            time.sleep(1)  # Wait for popup to close
+                            
+                            # Now try to click Continue button
+                            try:
+                                outer_span = WebDriverWait(self.driver, 3).until(
+                                    EC.element_to_be_clickable((By.CSS_SELECTOR, "span.a-button-inner[data-action='GLUXConfirmAction']"))
+                                )
+                                outer_span.click()
+                                logger.info("Clicked Continue button after X button - SUCCESS")
+                                continue_clicked = True
+                            except:
+                                logger.info("X button clicked but Continue still not accessible")
+                    except:
+                        pass
+                
+                # Method 4: Click the button container (MEDIUM SUCCESS RATE)
+                # The main button container that wraps everything
+                if not continue_clicked:
+                    try:
+                        button_container = WebDriverWait(self.driver, 3).until(
+                            EC.element_to_be_clickable((By.CSS_SELECTOR, "span.a-button.a-column.a-button-primary.a-button-span4"))
+                        )
+                        button_container.click()
+                        logger.info("Clicked Continue button (button container) - SUCCESS")
+                        continue_clicked = True
+                    except:
+                        pass
+                
+                # Method 5: Click the input element (MEDIUM SUCCESS RATE)
+                # Sometimes the input element is not directly clickable
+                if not continue_clicked:
+                    try:
+                        continue_button = WebDriverWait(self.driver, 3).until(
+                            EC.element_to_be_clickable((By.CSS_SELECTOR, "#GLUXConfirmClose"))
+                        )
+                        continue_button.click()
+                        logger.info("Clicked Continue button (input element) - SUCCESS")
+                        continue_clicked = True
+                    except:
+                        pass
+                
+                # Method 6: Click the span text element (LOWER SUCCESS RATE)
+                # Text element might be clickable
                 if not continue_clicked:
                     try:
                         span_button = self.driver.find_element(By.CSS_SELECTOR, "span#GLUXConfirmClose-announce")
-                        span_button.click()
-                        logger.info("Clicked Continue button (span)")
-                        continue_clicked = True
+                        if span_button.is_displayed() and span_button.is_enabled():
+                            span_button.click()
+                            logger.info("Clicked Continue button (span text) - SUCCESS")
+                            continue_clicked = True
                     except:
                         pass
                 
-                # Method 3: Click the outer span container
+                # Method 7: Click by text content (LOWEST SUCCESS RATE)
+                # Fallback using XPath text search
                 if not continue_clicked:
                     try:
-                        outer_span = self.driver.find_element(By.CSS_SELECTOR, "span.a-button-inner[data-action='GLUXConfirmAction']")
-                        outer_span.click()
-                        logger.info("Clicked Continue button (outer span)")
-                        continue_clicked = True
-                    except:
-                        pass
-                
-                # Method 4: JavaScript click as last resort
-                if not continue_clicked:
-                    try:
-                        js_button = self.driver.find_element(By.CSS_SELECTOR, "#GLUXConfirmClose")
-                        self.driver.execute_script("arguments[0].click();", js_button)
-                        logger.info("Clicked Continue button (JavaScript)")
-                        continue_clicked = True
+                        continue_text = self.driver.find_element(By.XPATH, "//span[contains(text(), 'Continue')]")
+                        if continue_text.is_displayed() and continue_text.is_enabled():
+                            continue_text.click()
+                            logger.info("Clicked Continue button (text content) - SUCCESS")
+                            continue_clicked = True
                     except:
                         pass
                 
                 if continue_clicked:
-                                                    # Wait 7 seconds for page to load new data
-                    logger.info("Waiting 7 seconds for page to load updated data...")
-                    time.sleep(7)
+                    # Wait 3 seconds for page to load new data
+                    logger.info("Waiting 3 seconds for page to load updated data...")
+                    time.sleep(3)
                 else:
                     logger.warning("Could not click Continue button with any method")
-                    logger.info("Waiting 7 seconds for any data updates...")
-                    time.sleep(7)
+                    logger.info("Waiting 3 seconds for any data updates...")
+                    time.sleep(3)
                 
             except Exception as e:
                 logger.warning(f"Error in Continue button logic: {e}")
                 # Continue anyway as location might still be set
-                logger.info("Waiting 7 seconds for any data updates...")
-                time.sleep(7)
+                logger.info("Waiting 3 seconds for any data updates...")
+                time.sleep(3)
             
             # Verify location change
             try:
                 location_element = self.driver.find_element(By.CSS_SELECTOR, "#glow-ingress-line2")
                 new_location = location_element.text
-                logger.info(f"New delivery location: {new_location}")
+                # Clean Unicode characters that cause encoding issues
+                clean_location = new_location.replace('\u200c', '').replace('\u200d', '').strip()
+                logger.info(f"New delivery location: {clean_location}")
                 
-                if zip_code in new_location or "New York" in new_location:
-                    logger.info(f"Successfully changed delivery to: {new_location}")
+                if zip_code in clean_location or "New York" in clean_location:
+                    logger.info(f"Successfully changed delivery to: {clean_location}")
                     return True
                 else:
-                    logger.warning(f"Location may not have changed: {new_location}")
+                    logger.warning(f"Location may not have changed: {clean_location}")
                     return True  # Continue crawling anyway
             except Exception as e:
                 logger.warning(f"Could not verify location change: {e}")
@@ -387,10 +444,12 @@ class AmazonCrawler:
             try:
                 location_element = self.driver.find_element(By.CSS_SELECTOR, "#glow-ingress-line2")
                 current_location = location_element.text
-                logger.info(f"Current delivery location: {current_location}")
+                # Clean Unicode characters that cause encoding issues
+                clean_current_location = current_location.replace('\u200c', '').replace('\u200d', '').strip()
+                logger.info(f"Current delivery location: {clean_current_location}")
                 
                 # Set delivery location to New York 10009 if not already set
-                if "10009" not in current_location and "New York" not in current_location:
+                if "10009" not in clean_current_location and "New York" not in clean_current_location:
                     logger.info("Setting delivery location to New York 10009...")
                     location_changed = self._set_delivery_location()
                     # No need to refresh - page already updated after 7s wait in location change
@@ -401,6 +460,7 @@ class AmazonCrawler:
                 logger.warning(f"Could not read delivery location: {e}")
             
             # Extract all product information (EXCEPT images/videos first to avoid DOM changes)
+            logger.info("Extracting product data...")
             product_data.update(self._extract_basic_info())
             product_data.update(self._extract_pricing())
             product_data.update(self._extract_ratings())
@@ -411,8 +471,7 @@ class AmazonCrawler:
             product_data.update(self._extract_advertisements())
             
             # Extract images and videos LAST to avoid affecting other data extraction
-            # (clicking video thumbnail may change DOM structure)
-            logger.info("Starting images/videos extraction (last step)")
+            logger.info("Extracting media content...")
             product_data.update(self._extract_images_videos())
             
             # Format output according to required 22 fields
@@ -444,10 +503,11 @@ class AmazonCrawler:
             
             # No mapping needed - field names match exactly
             formatted_data = {
-                # Core product info (4 fields)
+                # Core product info (5 fields)
                 'asin': data.get('asin'),
                 'title': data.get('title'),
                 'product_description': data.get('product_description', ''),
+                'product_description_images': data.get('product_description_images', []),
                 'product_information': data.get('product_information', {}),
                 'about_this_item': data.get('about_this_item', []),
                 
@@ -502,7 +562,7 @@ class AmazonCrawler:
             try:
                 title_element = self.driver.find_element(By.CSS_SELECTOR, "#productTitle")
                 data['title'] = title_element.text.strip()
-                logger.info(f"Extracted title: {data['title'][:50]}...")
+                logger.info(f"Title: {data['title'][:60]}...")
             except:
                 # Fallback selectors
                 title_selectors = [".product-title", "h1.a-size-large"]
@@ -533,7 +593,7 @@ class AmazonCrawler:
                     if text and len(text) > 10 and text not in bullet_points:
                         bullet_points.append(text)
                         
-                logger.info(f"Extracted {len(bullet_points)} about_this_item bullet points")
+                logger.info(f"About this item: {len(bullet_points)} bullet points")
             except Exception as e:
                 logger.warning(f"Could not extract about_this_item: {e}")
             
@@ -572,20 +632,17 @@ class AmazonCrawler:
             try:
                 # Look for the main corePriceDisplay container
                 core_pricing_container = self.driver.find_element(By.CSS_SELECTOR, "#corePriceDisplay_desktop_feature_div")
-                logger.info("Found corePriceDisplay_desktop_feature_div container")
             except:
                 # Fallback to class-based selector
                 try:
                     core_pricing_containers = self.driver.find_elements(By.CSS_SELECTOR, "[data-feature-name='corePriceDisplay_desktop']")
                     if core_pricing_containers:
                         core_pricing_container = core_pricing_containers[0]
-                        logger.info("Found corePriceDisplay container via data-feature-name")
                 except:
                     logger.warning("Could not find corePriceDisplay container")
             
             # Extract all pricing from the core container
             if core_pricing_container:
-                logger.info("Extracting all pricing from corePriceDisplay container")
                 
                 # Extract sale price from priceToPay within the container
                 try:
@@ -602,7 +659,6 @@ class AmazonCrawler:
                             if price_text:
                                 sale_price = self._parse_price(price_text)
                                 if sale_price:
-                                    logger.info(f"Extracted sale price from corePriceDisplay: ${sale_price}")
                                     break
                         except:
                             continue
@@ -613,13 +669,11 @@ class AmazonCrawler:
                 try:
                     percentage_elem = core_pricing_container.find_element(By.CSS_SELECTOR, ".savingsPercentage")
                     percentage_text = percentage_elem.text.strip()
-                    logger.info(f"Found percentage text in corePriceDisplay: '{percentage_text}'")
                     
                     # Extract percentage value (e.g., "-20%" -> 20)
                     percent_match = re.search(r'-?(\d+)%', percentage_text)
                     if percent_match:
                         sale_percentage = int(percent_match.group(1))
-                        logger.info(f"Extracted sale percentage from corePriceDisplay: {sale_percentage}%")
                 except:
                     # No percentage in container = no discount
                     sale_percentage = 0
@@ -632,7 +686,6 @@ class AmazonCrawler:
                         savings_match = re.search(r'with\s+(\d+)\s+percent\s+savings', offscreen_text, re.IGNORECASE)
                         if savings_match:
                             sale_percentage = int(savings_match.group(1))
-                            logger.info(f"Extracted sale percentage from offscreen in corePriceDisplay: {sale_percentage}%")
                     except:
                         pass
                 
@@ -650,8 +703,6 @@ class AmazonCrawler:
                             list_price_elem = core_pricing_container.find_element(By.CSS_SELECTOR, selector)
                             list_price_text = list_price_elem.text.strip()
                             if list_price_text:
-                                logger.info(f"Found list price text in corePriceDisplay: '{list_price_text}'")
-                                
                                 # Handle "List Price: $24.95" format - extract price after colon
                                 if "List Price:" in list_price_text:
                                     price_match = re.search(r'List Price:\s*\$?([\d,]+\.?\d*)', list_price_text)
@@ -663,7 +714,6 @@ class AmazonCrawler:
                                     list_price = self._parse_price(list_price_text)
                                 
                                 if list_price:
-                                    logger.info(f"Extracted list price from corePriceDisplay: ${list_price}")
                                     break
                         except:
                             continue
@@ -705,9 +755,9 @@ class AmazonCrawler:
             
             # Log final results
             if sale_percentage > 0:
-                logger.info(f"Final pricing from corePriceDisplay: sale=${sale_price}, list=${list_price}, discount={sale_percentage}%")
+                logger.info(f"Pricing: ${sale_price} (was ${list_price}, -{sale_percentage}%)")
             else:
-                logger.info(f"Final pricing from corePriceDisplay: sale=${sale_price}, list=${list_price}, no discount")
+                logger.info(f"Pricing: ${sale_price}")
             
         except Exception as e:
             logger.error(f"Error extracting pricing: {e}")
@@ -738,19 +788,16 @@ class AmazonCrawler:
             ]
             rating_text = self._get_text_by_selectors(rating_selectors)
             if rating_text:
-                logger.info(f"Found rating text: '{rating_text}'")
                 rating_match = re.search(r'(\d+\.?\d*)', rating_text.strip())
                 if rating_match:
                     data['rating'] = float(rating_match.group(1))
-                    logger.info(f"Extracted rating: {data['rating']}")
                 else:
                     # Try to extract from "X out of 5 stars" format
                     stars_match = re.search(r'(\d+\.?\d*)\s*out\s*of\s*5', rating_text.strip(), re.IGNORECASE)
                     if stars_match:
                         data['rating'] = float(stars_match.group(1))
-                        logger.info(f"Extracted rating from 'out of 5': {data['rating']}")
             else:
-                logger.warning("Could not extract rating - trying manual debug...")
+                logger.warning("Could not extract rating")
                 # Debug: try to find rating related elements
                 try:
                     debug_elements = self.driver.find_elements(By.CSS_SELECTOR, "[class*='rating'], [class*='star'], [class*='review'], [id*='review'], [id*='rating']")
@@ -778,6 +825,7 @@ class AmazonCrawler:
                 count_match = re.search(r'([\d,]+)', rating_count_text.replace(',', ''))
                 if count_match:
                     data['rating_count'] = int(count_match.group(1).replace(',', ''))
+                    logger.info(f"Rating: {data.get('rating', 'N/A')}/5 ({data['rating_count']:,} reviews)")
             
         except Exception as e:
             logger.error(f"Error extracting ratings: {e}")
@@ -794,7 +842,7 @@ class AmazonCrawler:
         }
         
         try:
-            logger.info("Starting video extraction first, then images from popup")
+            logger.info("Extracting videos and images...")
             
             # Step 1: Find and click video thumbnail to open video popup
             video_urls = []
@@ -826,11 +874,9 @@ class AmazonCrawler:
                                 video_count_elem = thumb.find_elements(By.CSS_SELECTOR, "#videoCount, .video-count, [class*='video'][class*='count']")
                                 if video_count_elem:
                                     count_text = video_count_elem[0].text.strip()
-                                    logger.info(f"Found video thumbnail with count: {count_text}")
                                     
                                     # Click the thumbnail to open video popup
                                     thumb.click()
-                                    logger.info("Clicked video thumbnail to open popup")
                                     video_thumbnail_clicked = True
                                     time.sleep(3)
                                     break
@@ -864,8 +910,6 @@ class AmazonCrawler:
                     # Try alternative selectors for video carousel
                     carousel_containers = self.driver.find_elements(By.CSS_SELECTOR, "div[class*='video'][class*='container'], .video-carousel, [id*='video'][id*='carousel']")
                 
-                logger.info(f"Found {len(carousel_containers)} video carousel containers after clicking thumbnail")
-                
                 for carousel in carousel_containers:
                     try:
                         # Find "Videos for this product" section specifically
@@ -875,7 +919,6 @@ class AmazonCrawler:
                         for header in section_headers:
                             if "Videos for this product" in header.text:
                                 product_video_section = header
-                                logger.info("Found 'Videos for this product' section")
                                 break
                         
                         if not product_video_section:
@@ -912,15 +955,12 @@ class AmazonCrawler:
                                         
                                         # Only store the URL
                                         video_urls.append(full_video_url)
-                                        logger.info(f"Found product video: '{title}' - {full_video_url}")
                                         
                                 except Exception as e:
-                                    logger.warning(f"Error extracting video details: {e}")
                                     continue
                             
-                            logger.info(f"Extracted {len(video_urls)} videos from 'Videos for this product' section")
                         else:
-                            logger.info("Could not find 'Videos for this product' section")
+                            pass
                             
                     except Exception as e:
                         logger.warning(f"Error processing video carousel: {e}")
@@ -929,7 +969,7 @@ class AmazonCrawler:
                 # Set video data
                 data['video_urls'] = video_urls
                 data['video_count'] = len(video_urls)
-                logger.info(f"Total product videos found: {data['video_count']}")
+                logger.info(f"Videos: {data['video_count']} found")
                 
             except Exception as e:
                 logger.warning(f"Error extracting videos: {e}")
@@ -1001,15 +1041,39 @@ class AmazonCrawler:
             except Exception as e:
                 logger.warning(f"Could not click first image thumbnail: {e}")
             
-            # Step 5: Click "Click to see full view" link
+            # Step 5: Click "Click to see full view" link with updated selector
             try:
-                full_view_link = self.driver.find_element(By.CSS_SELECTOR, "#canvasCaption a.a-declarative")
+                # Try new selector first based on updated HTML
+                full_view_link = WebDriverWait(self.driver, 5).until(
+                    EC.element_to_be_clickable((By.CSS_SELECTOR, "#image-canvas-caption a.a-declarative"))
+                )
                 if full_view_link.is_displayed():
-                    full_view_link.click()
-                    logger.info("Clicked 'Click to see full view' link")
+                    # Use JavaScript click to avoid stale element issues
+                    self.driver.execute_script("arguments[0].click();", full_view_link)
+                    logger.info("Clicked 'Click to see full view' link (new selector)")
                     time.sleep(3)
+                else:
+                    logger.warning("'Click to see full view' link not visible")
             except Exception as e:
-                logger.warning(f"Could not click 'Click to see full view': {e}")
+                logger.warning(f"Could not click 'Click to see full view' (new selector): {e}")
+                # Try old selector as fallback
+                try:
+                    full_view_link = self.driver.find_element(By.CSS_SELECTOR, "#canvasCaption a.a-declarative")
+                    if full_view_link.is_displayed():
+                        self.driver.execute_script("arguments[0].click();", full_view_link)
+                        logger.info("Clicked 'Click to see full view' link (old selector)")
+                        time.sleep(3)
+                except Exception as fallback_e:
+                    logger.warning(f"Could not click 'Click to see full view' (old selector): {fallback_e}")
+                    # Try clicking directly on image as last resort
+                    try:
+                        main_image = self.driver.find_element(By.CSS_SELECTOR, "#landingImage")
+                        if main_image.is_displayed():
+                            main_image.click()
+                            logger.info("Clicked main image as fallback")
+                            time.sleep(3)
+                    except Exception as image_e:
+                        logger.warning(f"Fallback image click also failed: {image_e}")
             
             # Step 6: Extract images from popup
             try:
@@ -1047,7 +1111,7 @@ class AmazonCrawler:
                 # Set final image data
                 data['image_urls'] = image_urls
                 data['image_count'] = len(image_urls)
-                logger.info(f"Total images extracted: {data['image_count']}")
+                logger.info(f"Images: {data['image_count']} found")
                 
                 # Close image popup
                 try:
@@ -1103,9 +1167,8 @@ class AmazonCrawler:
                 deal_badge = self.driver.find_element(By.CSS_SELECTOR, "#dealBadgeSupportingText span")
                 if deal_badge:
                     data['best_deal'] = deal_badge.text.strip()
-                    logger.info(f"Extracted best deal: {data['best_deal']}")
             except Exception as e:
-                logger.debug(f"No best deal badge found: {e}")
+                pass
             
             # Extract lightning deal progress
             try:
@@ -1115,7 +1178,6 @@ class AmazonCrawler:
                     claimed_text = percent_message.text.strip()
                     if "claimed" in claimed_text.lower():
                         data['lightning_deal'] = claimed_text
-                        logger.info(f"Found lightning deal: {claimed_text}")
                         
             except Exception as e:
                 # Try alternative selector if first attempt fails
@@ -1125,25 +1187,22 @@ class AmazonCrawler:
                         claimed_text = percent_message.text.strip()
                         if "claimed" in claimed_text.lower():
                             data['lightning_deal'] = claimed_text
-                            logger.info(f"Found lightning deal (alternative): {claimed_text}")
                 except Exception as e2:
-                    logger.debug(f"No lightning deal found: {e2}")
+                    pass
                 
             # Extract bag sale information
             try:
                 bag_sale_elem = self.driver.find_element(By.CSS_SELECTOR, "#social-proofing-faceout-title-tk_bought")
                 if bag_sale_elem:
                     data['bag_sale'] = bag_sale_elem.text.strip()
-                    logger.info(f"Extracted bag_sale: {data['bag_sale']}")
             except Exception as e:
                 # Try alternative selector
                 try:
                     bag_sale_elem = self.driver.find_element(By.CSS_SELECTOR, ".social-proofing-faceout-title-text")
                     if bag_sale_elem:
                         data['bag_sale'] = bag_sale_elem.text.strip()
-                        logger.info(f"Extracted bag_sale (alternative): {data['bag_sale']}")
                 except Exception as e2:
-                    logger.debug(f"No bag sale info found: {e2}")
+                    pass
             
         except Exception as e:
             logger.error(f"Error extracting promotions: {e}")
@@ -1207,7 +1266,6 @@ class AmazonCrawler:
                     # If no link, use seller name as fallback
                     seller_name = sold_by_element.text.strip()
                     data['sold_by_link'] = seller_name if seller_name else ""
-                logger.info(f"Extracted sold_by_link: {data.get('sold_by_link', '')}")
             else:
                 data['sold_by_link'] = ""
             
@@ -1221,76 +1279,214 @@ class AmazonCrawler:
         data = {}
         
         try:
-            # Product information (technical details) - using exact table structure
+            # Product information from productDetails_feature_div
             product_info = {}
             
             try:
-                # Look for the product overview table first 
-                table_rows = self.driver.find_elements(By.CSS_SELECTOR, "table.a-normal.a-spacing-micro tr")
-                for row in table_rows:
+                # Look for the product details div first
+                product_details_div = self.driver.find_element(By.CSS_SELECTOR, "#productDetails_feature_div")
+                if product_details_div:
+                    
+                    # Try to find prodDetails within productDetails_feature_div
                     try:
-                        # Find the key and value cells
-                        key_cell = row.find_element(By.CSS_SELECTOR, "td.a-span3 span.a-text-bold")
-                        value_cell = row.find_element(By.CSS_SELECTOR, "td.a-span9 span.po-break-word")
-                        
-                        key = key_cell.text.strip()
-                        value = value_cell.text.strip()
-                        
-                        if key and value:
-                            product_info[key] = value
+                        prod_details = product_details_div.find_element(By.CSS_SELECTOR, "#prodDetails")
+                        if prod_details:
                             
-                    except:
-                        continue
+                            # First, try to find and expand all collapsed sections
+                            try:
+                                # Look for the left and right sections containers
+                                left_sections = None
+                                right_sections = None
+                                
+                                try:
+                                    left_sections = self.driver.find_element(By.CSS_SELECTOR, "#productDetails_expanderTables_depthLeftSections")
+                                except:
+                                    left_sections = None
+                                
+                                try:
+                                    right_sections = self.driver.find_element(By.CSS_SELECTOR, "#productDetails_expanderTables_depthRightSections")
+                                except:
+                                    right_sections = None
+                                
+                                # Find all expander headers in both containers
+                                all_expander_headers = []
+                                
+                                if left_sections:
+                                    left_headers = left_sections.find_elements(By.CSS_SELECTOR, "a.a-expander-header")
+                                    all_expander_headers.extend(left_headers)
+                                
+                                if right_sections:
+                                    right_headers = right_sections.find_elements(By.CSS_SELECTOR, "a.a-expander-header")
+                                    all_expander_headers.extend(right_headers)
+                                
+                                # Also try finding expander headers directly in prodDetails as fallback
+                                if not all_expander_headers:
+                                    prod_headers = prod_details.find_elements(By.CSS_SELECTOR, "a.a-expander-header")
+                                    all_expander_headers.extend(prod_headers)
+                                
+                                if all_expander_headers:
+                                    # Expand all collapsed sections
+                                    for i, header in enumerate(all_expander_headers):
+                                        try:
+                                            # Get the text of the header to identify which section
+                                            header_text = header.text.strip()
+                                            
+                                            # Check if the section is collapsed
+                                            aria_expanded = header.get_attribute("aria-expanded")
+                                            
+                                            # Check if it has the expand icon (collapsed state)
+                                            try:
+                                                expand_icon = header.find_element(By.CSS_SELECTOR, ".a-icon-section-expand")
+                                                has_expand_icon = True
+                                            except:
+                                                has_expand_icon = False
+                                            
+                                            # If collapsed, click to expand
+                                            if aria_expanded == "false" or has_expand_icon:
+                                                header.click()
+                                                time.sleep(1)  # Wait for expansion animation
+                                        except Exception as click_e:
+                                            logger.warning(f"Error clicking expander header {i+1}: {click_e}")
+                                            continue
+                                    
+                                    # Wait a bit more for all expansions to complete
+                                    time.sleep(2)
+                                else:
+                                    logger.warning("No expander headers found")
+                                    
+                            except Exception as expander_e:
+                                logger.warning(f"Error expanding sections: {expander_e}")
+                            
+                            # Now try to extract from all tables after expansion
+                            try:
+                                all_tables = prod_details.find_elements(By.CSS_SELECTOR, "table.a-keyvalue")
+                                
+                                if all_tables:
+                                    # Extract from all tables
+                                    all_table_data = []
+                                    for i, table in enumerate(all_tables):
+                                        try:
+                                            table_text = table.text.strip()
+                                            if table_text:
+                                                all_table_data.append(table_text)
+                                        except Exception as table_e:
+                                            pass
+                                    
+                                    if all_table_data:
+                                        combined_table_text = "\n\n".join(all_table_data)
+                                        logger.info(f"Product info: {len(combined_table_text)} characters from {len(all_table_data)} tables")
+                                        product_info = {"full_details": combined_table_text}
+                                    else:
+                                        logger.warning("No table data extracted")
+                                else:
+                                    logger.warning("No tables found in prodDetails")
+                                    
+                            except Exception as table_extract_e:
+                                logger.warning(f"Error extracting from tables: {table_extract_e}")
+                            
+                            # If no table data, fallback to the entire prodDetails text
+                            if not product_info:
+                                prod_details_text = prod_details.text.strip()
+                                if prod_details_text:
+                                    logger.info(f"Product info: {len(prod_details_text)} characters (fallback)")
+                                    product_info = {"full_details": prod_details_text}
+                        else:
+                            logger.warning("Could not find #prodDetails within productDetails_feature_div")
+                            # Fallback to the entire productDetails_feature_div
+                            product_details_text = product_details_div.text.strip()
+                            if product_details_text:
+                                logger.info(f"Product info: {len(product_details_text)} characters (fallback)")
+                                product_info = {"full_details": product_details_text}
+                                
+                    except Exception as prod_details_e:
+                        logger.warning(f"Error extracting from #prodDetails: {prod_details_e}")
+                        # Fallback to the entire productDetails_feature_div
+                        product_details_text = product_details_div.text.strip()
+                        if product_details_text:
+                            logger.info(f"Product info: {len(product_details_text)} characters (fallback)")
+                            product_info = {"full_details": product_details_text}
                         
-                if product_info:
-                    logger.info(f"Extracted {len(product_info)} technical specifications")
-                
+                else:
+                    logger.warning("Could not find productDetails_feature_div")
+                    
             except Exception as e:
-                logger.warning(f"Could not extract from product overview table: {e}")
+                logger.warning(f"Could not extract from productDetails_feature_div: {e}")
                 
-                # Fallback to other technical details tables
-                tech_table_selectors = [
-                    "#productDetails_techSpec_section_1 tr",
-                    "#technical-details tr",
-                    ".pdTab tr"
+                # Fallback to other product details selectors
+                fallback_selectors = [
+                    "#prodDetails",
+                    "#productDetails_techSpec_section_1",
+                    "#technical-details",
+                    ".pdTab"
                 ]
                 
-                for selector in tech_table_selectors:
+                for selector in fallback_selectors:
                     try:
-                        rows = self.driver.find_elements(By.CSS_SELECTOR, selector)
-                        for row in rows:
-                            cells = row.find_elements(By.TAG_NAME, "td")
-                            if len(cells) >= 2:
-                                key = cells[0].text.strip()
-                                value = cells[1].text.strip()
-                                if key and value:
-                                    product_info[key] = value
+                        fallback_div = self.driver.find_element(By.CSS_SELECTOR, selector)
+                        if fallback_div:
+                            fallback_text = fallback_div.text.strip()
+                            if fallback_text:
+                                product_info = {"full_details": fallback_text}
+                                logger.info(f"Extracted product details from fallback selector: {selector}")
+                                break
                     except:
                         continue
             
             data['product_information'] = product_info
             
-            # Product description from productDescription div - using exact CSS selector from HTML
+            # Product description from #aplus_feature_div - extract both text and images
             try:
-                desc_element = self.driver.find_element(By.CSS_SELECTOR, "#productDescription")
-                if desc_element:
-                    # Extract text from all p tags within productDescription
-                    desc_paragraphs = desc_element.find_elements(By.TAG_NAME, "p")
-                    desc_texts = []
-                    for p in desc_paragraphs:
-                        text = p.text.strip()
-                        if text and len(text) > 5:  # Filter out empty paragraphs
-                            desc_texts.append(text)
+                aplus_feature_div = self.driver.find_element(By.CSS_SELECTOR, "#aplus_feature_div")
+                if aplus_feature_div:
+                    # Extract text content from the entire aplus_feature_div
+                    desc_text = aplus_feature_div.text.strip()
+                    data['product_description'] = desc_text if desc_text else ""
+                    logger.info(f"Product description: {len(data['product_description'])} characters")
                     
-                    data['product_description'] = "\n".join(desc_texts) if desc_texts else ""
-                    logger.info(f"Extracted product_description: {len(data['product_description'])} characters")
+                    # Extract all image URLs from the #aplus_feature_div
+                    desc_images = []
+                    try:
+                        # Find all img tags within #aplus_feature_div
+                        img_elements = aplus_feature_div.find_elements(By.TAG_NAME, "img")
+                        
+                        for i, img in enumerate(img_elements):
+                            try:
+                                # Get data-src attribute first (real image), then src as fallback
+                                img_url = img.get_attribute("data-src")
+                                if not img_url:
+                                    img_url = img.get_attribute("src")
+                                
+                                # Only include images that are actual product description images
+                                # Filter out grey pixels, tracking images, and other non-content images
+                                if (img_url and 
+                                    img_url.startswith("http") and
+                                    not img_url.endswith("grey-pixel.gif") and
+                                    not "tracking" in img_url.lower() and
+                                    not "pixel" in img_url.lower() and
+                                    not "gif" in img_url.lower()):
+                                    
+                                    desc_images.append(img_url)
+                            except Exception as img_e:
+                                continue
+                        
+                        logger.info(f"Product description images: {len(desc_images)} images")
+                        data['product_description_images'] = desc_images
+                        
+                    except Exception as e:
+                        logger.warning(f"Could not extract images from product description: {e}")
+                        data['product_description_images'] = []
+                        
                 else:
                     data['product_description'] = ""
+                    data['product_description_images'] = []
+                    
             except Exception as e:
-                logger.warning(f"Could not extract product_description: {e}")
+                logger.warning(f"Could not extract from #aplus_feature_div: {e}")
                 # Fallback to other description selectors
                 desc_selectors = [
-                    "#aplus",                    # EBC A+ content
+                    "#aplus_feature_div",       # EBC A+ content (main target)
+                    "#aplus",                   # Inner aplus div
+                    "#productDescription",      # Standard product description
                     ".aplus-v2",                # EBC A+ content v2
                     "#productDetails_techSpec_section_1",  # Technical description
                     ".a-section.product-description",      # Alternative description
@@ -1306,16 +1502,63 @@ class AmazonCrawler:
                             if len(desc_text) > 20:  # Only use if meaningful content
                                 data['product_description'] = desc_text
                                 logger.info(f"Extracted product_description from {selector}: {len(desc_text)} characters")
+                                
+                                # Try to extract images from fallback selector too
+                                desc_images = []
+                                try:
+                                    img_elements = desc_element.find_elements(By.TAG_NAME, "img")
+                                    logger.info(f"Found {len(img_elements)} img elements in fallback selector: {selector}")
+                                    
+                                    for i, img in enumerate(img_elements):
+                                        try:
+                                            # Get data-src attribute first (real image), then src as fallback
+                                            img_url = img.get_attribute("data-src")
+                                            if not img_url:
+                                                img_url = img.get_attribute("src")
+                                            
+                                            logger.info(f"Fallback Image {i+1}: src='{img.get_attribute('src')}', data-src='{img.get_attribute('data-src')}', final_url='{img_url}'")
+                                            
+                                            # Only include images that are actual product description images
+                                            # Filter out grey pixels, tracking images, and other non-content images
+                                            if (img_url and 
+                                                img_url.startswith("http") and
+                                                not img_url.endswith("grey-pixel.gif") and
+                                                not "tracking" in img_url.lower() and
+                                                not "pixel" in img_url.lower() and
+                                                not "gif" in img_url.lower()):
+                                                
+                                                desc_images.append(img_url)
+                                                logger.info(f"[SUCCESS] Added fallback description image: {img_url}")
+                                            elif img_url and img_url.startswith("http"):
+                                                logger.info(f"[SKIPPED] Non-description image (fallback): {img_url}")
+                                            else:
+                                                logger.info(f"[SKIPPED] Invalid fallback image URL: {img_url}")
+                                        except Exception as img_e:
+                                            logger.error(f"Error extracting fallback image URL {i+1}: {img_e}")
+                                            continue
+                                    
+                                    data['product_description_images'] = desc_images
+                                    logger.info(f"Extracted {len(desc_images)} images from fallback selector")
+                                except:
+                                    data['product_description_images'] = []
+                                
                                 break
                     except:
                         continue
                 
-                # If still empty, set empty string
+                # If still empty, set empty values
                 if 'product_description' not in data:
                     data['product_description'] = ""
+                if 'product_description_images' not in data:
+                    data['product_description_images'] = []
             
         except Exception as e:
             logger.error(f"Error extracting technical info: {e}")
+            # Set defaults on error
+            if 'product_description' not in data:
+                data['product_description'] = ""
+            if 'product_description_images' not in data:
+                data['product_description_images'] = []
         
         return data
     
