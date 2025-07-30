@@ -20,6 +20,7 @@ from scheduler.crawler_scheduler import (
     crawler_scheduler, start_scheduler, stop_scheduler,
     crawl_asin_now, add_asin, remove_asin
 )
+from api.batch_import_api import router as batch_import_router
 from crawler.change_detector import ChangeDetector
 from utils.logger import get_logger
 
@@ -70,6 +71,9 @@ class DashboardStats(BaseModel):
     failed_crawls_today: int
     avg_crawl_time: float
     recent_changes: int
+
+# Include batch import router
+app.include_router(batch_import_router)
 
 # Startup event
 @app.on_event("startup")
@@ -124,6 +128,11 @@ async def settings_page(request: Request):
 async def price_tracking_page(request: Request):
     """Price tracking dashboard page"""
     return templates.TemplateResponse("price_tracking.html", {"request": request})
+
+@app.get("/batch-import", response_class=HTMLResponse)
+async def batch_import_page(request: Request):
+    """Batch import page"""
+    return templates.TemplateResponse("batch_import.html", {"request": request})
 
 # API Routes
 @app.get("/api/dashboard/stats")

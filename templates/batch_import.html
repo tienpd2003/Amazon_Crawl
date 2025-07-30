@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Product Crawler - Batch Import</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/dropzone@5.9.3/dist/min/dropzone.min.css" rel="stylesheet">
+
+    <style>
+        .sidebar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .nav-link {
+            color: rgba(255,255,255,0.8) !important;
+            transition: all 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: white !important;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+        .content-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .content-card:hover {
+            transform: translateY(-2px);
+        }
+        .upload-area {
+            border: 2px dashed #007bff;
+            border-radius: 15px;
+            background: #f8f9fa;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .upload-area:hover {
+            border-color: #0056b3;
+            background: #e9ecef;
+        }
+        .upload-area.dragover {
+            border-color: #28a745;
+            background: #d4edda;
+        }
+        .progress-bar {
+            border-radius: 10px;
+        }
+        .stats-badge {
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+        }
+        .file-preview {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .import-log {
+            max-height: 400px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .log-entry {
+            margin-bottom: 8px;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .log-success { background: #d4edda; color: #155724; }
+        .log-error { background: #f8d7da; color: #721c24; }
+        .log-info { background: #d1ecf1; color: #0c5460; }
+        .log-warning { background: #fff3cd; color: #856404; }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <div class="text-center mb-4">
+                        <h4 class="text-white"><i class="fab fa-amazon text-warning"></i> Crawler</h4>
+                    </div>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">
+                                <i class="fas fa-tachometer-alt"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/batch-import">
+                                <i class="fas fa-upload"></i> Batch Import
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/price-tracking">
+                                <i class="fas fa-chart-line"></i> Theo dõi giá
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/products">
+                                <i class="fas fa-box"></i> Sản phẩm
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">
+                        <i class="fas fa-upload text-primary"></i> Batch Import
+                    </h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="refreshStats()">
+                                <i class="fas fa-sync-alt"></i> Refresh
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Stats -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card content-card">
+                            <div class="card-body text-center">
+                                <div class="stat-icon bg-primary-gradient mx-auto mb-3">
+                                    <i class="fas fa-box"></i>
+                                </div>
+                                <h5 class="card-title">Total ASINs</h5>
+                                <h3 class="text-primary" id="total-asins">0</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card content-card">
+                            <div class="card-body text-center">
+                                <div class="stat-icon bg-success-gradient mx-auto mb-3">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <h5 class="card-title">Active ASINs</h5>
+                                <h3 class="text-success" id="active-asins">0</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card content-card">
+                            <div class="card-body text-center">
+                                <div class="stat-icon bg-warning-gradient mx-auto mb-3">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <h5 class="card-title">Due for Crawl</h5>
+                                <h3 class="text-warning" id="due-for-crawl">0</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card content-card">
+                            <div class="card-body text-center">
+                                <div class="stat-icon bg-info-gradient mx-auto mb-3">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <h5 class="card-title">Batch Size</h5>
+                                <h3 class="text-info" id="batch-size">100</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Import Section -->
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card content-card">
+                            <div class="card-header">
+                                <h5 class="mb-0">
+                                    <i class="fas fa-file-upload text-primary"></i> Import ASINs
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <!-- File Upload -->
+                                <div class="mb-4">
+                                    <label class="form-label">Upload File (CSV, Excel, TXT)</label>
+                                    <div class="alert alert-info mb-3">
+                                        <i class="fas fa-info-circle"></i>
+                                        <strong>Lưu ý:</strong> Chỉ cần file chứa ASINs. Hệ thống sẽ tự động crawl thông tin sản phẩm từ Amazon.
+                                        <br><small>Ví dụ: ASIN, B019OZBSJ8, B08N5WRWNW, ...</small>
+                                    </div>
+                                    <div class="upload-area p-4 text-center" id="upload-area">
+                                        <i class="fas fa-cloud-upload-alt fa-3x text-muted mb-3"></i>
+                                        <h5>Drag & Drop files here</h5>
+                                        <p class="text-muted">or click to browse</p>
+                                        <input type="file" id="file-input" class="d-none" accept=".csv,.xlsx,.xls,.txt">
+                                        <button class="btn btn-primary" onclick="document.getElementById('file-input').click()">
+                                            <i class="fas fa-folder-open"></i> Choose File
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Import Options -->
+                                <div class="row mb-4">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Crawl Frequency</label>
+                                        <select class="form-select" id="frequency">
+                                            <option value="daily">Daily</option>
+                                            <option value="weekly">Weekly</option>
+                                            <option value="monthly">Monthly</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Column Name (for CSV/Excel)</label>
+                                        <input type="text" class="form-control" id="column-name" placeholder="ASIN (auto-detect)">
+                                        <small class="text-muted">Chỉ cần cột ASIN. Hệ thống sẽ tự động crawl thông tin sản phẩm từ Amazon.</small>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label">Notes</label>
+                                    <textarea class="form-control" id="notes" rows="3" placeholder="Optional notes for this import"></textarea>
+                                </div>
+
+                                <!-- Action Buttons -->
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-primary" onclick="startImport()">
+                                        <i class="fas fa-play"></i> Start Import
+                                    </button>
+                                    <button class="btn btn-secondary" onclick="testImport()">
+                                        <i class="fas fa-vial"></i> Test Import
+                                    </button>
+                                    <button class="btn btn-success" onclick="crawlAllNow()">
+                                        <i class="fas fa-spider"></i> Crawl All Now
+                                    </button>
+                                    <button class="btn btn-outline-secondary" onclick="clearForm()">
+                                        <i class="fas fa-times"></i> Clear
+                                    </button>
+                                </div>
+
+                                <!-- Progress -->
+                                <div class="mt-4" id="progress-section" style="display: none;">
+                                    <label class="form-label">Import Progress</label>
+                                    <div class="progress mb-2">
+                                        <div class="progress-bar" id="progress-bar" role="progressbar" style="width: 0%"></div>
+                                    </div>
+                                    <small class="text-muted" id="progress-text">Preparing import...</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <!-- Quick Import -->
+                        <div class="card content-card mb-4">
+                            <div class="card-header">
+                                <h6 class="mb-0">
+                                    <i class="fas fa-bolt text-warning"></i> Quick Import
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label class="form-label">ASINs (comma-separated)</label>
+                                    <textarea class="form-control" id="quick-asins" rows="4" placeholder="B019OZBSJ8,B08N5WRWNW,B07XYZ1234"></textarea>
+                                </div>
+                                <button class="btn btn-warning w-100" onclick="quickImport()">
+                                    <i class="fas fa-rocket"></i> Quick Import
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Watchlist ASINs -->
+                        <div class="card content-card mb-4">
+                            <div class="card-header">
+                                <h6 class="mb-0">
+                                    <i class="fas fa-list text-info"></i> Watchlist ASINs
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <div id="watchlist-asins">
+                                    <div class="text-center text-muted">
+                                        <i class="fas fa-spinner fa-spin"></i> Loading...
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- System Info -->
+                        <div class="card content-card">
+                            <div class="card-header">
+                                <h6 class="mb-0">
+                                    <i class="fas fa-info-circle text-info"></i> System Info
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-2">
+                                    <small class="text-muted">Batch Size:</small>
+                                    <span class="badge bg-primary" id="info-batch-size">100</span>
+                                </div>
+                                <div class="mb-2">
+                                    <small class="text-muted">Concurrent Crawlers:</small>
+                                    <span class="badge bg-success" id="info-concurrent">5</span>
+                                </div>
+                                <div class="mb-2">
+                                    <small class="text-muted">Status:</small>
+                                    <span class="badge bg-success" id="system-status">Running</span>
+                                </div>
+                                <div class="mb-2">
+                                    <small class="text-muted">Last Update:</small>
+                                    <span id="last-update">Just now</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Import Log -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="card content-card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">
+                                    <i class="fas fa-list text-primary"></i> Import Log
+                                </h5>
+                                <button class="btn btn-sm btn-outline-secondary" onclick="clearLog()">
+                                    <i class="fas fa-trash"></i> Clear
+                                </button>
+                            </div>
+                            <div class="card-body">
+                                <div class="import-log" id="import-log">
+                                    <div class="log-entry log-info">
+                                        <i class="fas fa-info-circle"></i> System ready for batch import
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dropzone@5.9.3/dist/min/dropzone.min.js"></script>
+    
+    <script>
+        let currentFile = null;
+        let importInProgress = false;
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadStats();
+            loadWatchlistASINs();
+            setupFileUpload();
+            updateSystemInfo();
+        });
+
+        // Load watchlist ASINs
+        async function loadWatchlistASINs() {
+            try {
+                const response = await fetch('/api/watchlist?active_only=true');
+                const watchlist = await response.json();
+                
+                const container = document.getElementById('watchlist-asins');
+                if (watchlist.length === 0) {
+                    container.innerHTML = '<div class="text-center text-muted">No ASINs in watchlist</div>';
+                    return;
+                }
+                
+                let html = '<div class="row">';
+                watchlist.slice(0, 6).forEach(item => {
+                    html += `
+                        <div class="col-md-6 mb-2">
+                            <div class="d-flex justify-content-between align-items-center p-2 border rounded">
+                                <span class="badge bg-primary">${item.asin}</span>
+                                <button class="btn btn-sm btn-outline-success" onclick="crawlSingleASIN('${item.asin}')">
+                                    <i class="fas fa-spider"></i> Crawl
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+                
+                if (watchlist.length > 6) {
+                    html += `<div class="text-center mt-2"><small class="text-muted">+${watchlist.length - 6} more ASINs</small></div>`;
+                }
+                
+                container.innerHTML = html;
+                
+            } catch (error) {
+                document.getElementById('watchlist-asins').innerHTML = '<div class="text-center text-danger">Error loading watchlist</div>';
+            }
+        }
+
+        // Crawl single ASIN
+        async function crawlSingleASIN(asin) {
+            try {
+                addLog(`Starting crawl for ${asin}...`, 'info');
+                
+                const response = await fetch(`/api/batch-import/crawl-now/${asin}`, {
+                    method: 'POST'
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    addLog(`Crawl completed for ${asin}: ${result.message}`, 'success');
+                    loadStats();
+                } else {
+                    const error = await response.text();
+                    addLog(`Crawl failed for ${asin}: ${error}`, 'error');
+                }
+                
+            } catch (error) {
+                addLog(`Crawl failed for ${asin}: ${error.message}`, 'error');
+            }
+        }
+
+        // Load system statistics
+        async function loadStats() {
+            try {
+                const response = await fetch('/api/batch-import/stats');
+                const stats = await response.json();
+                
+                document.getElementById('total-asins').textContent = stats.total_asins?.toLocaleString() || '0';
+                document.getElementById('active-asins').textContent = stats.active_asins?.toLocaleString() || '0';
+                document.getElementById('due-for-crawl').textContent = stats.due_for_crawl?.toLocaleString() || '0';
+                document.getElementById('batch-size').textContent = stats.batch_size || '100';
+                
+                document.getElementById('info-batch-size').textContent = stats.batch_size || '100';
+                document.getElementById('info-concurrent').textContent = stats.max_concurrent_crawlers || '5';
+                
+            } catch (error) {
+                addLog('Error loading stats: ' + error.message, 'error');
+            }
+        }
+
+        // Setup file upload
+        function setupFileUpload() {
+            const uploadArea = document.getElementById('upload-area');
+            const fileInput = document.getElementById('file-input');
+
+            // Drag and drop
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.classList.add('dragover');
+            });
+
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.classList.remove('dragover');
+            });
+
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.classList.remove('dragover');
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    handleFileSelect(files[0]);
+                }
+            });
+
+            // File input change
+            fileInput.addEventListener('change', (e) => {
+                if (e.target.files.length > 0) {
+                    handleFileSelect(e.target.files[0]);
+                }
+            });
+        }
+
+        // Handle file selection
+        function handleFileSelect(file) {
+            currentFile = file;
+            
+            // Update upload area
+            const uploadArea = document.getElementById('upload-area');
+            uploadArea.innerHTML = `
+                <i class="fas fa-file-alt fa-3x text-success mb-3"></i>
+                <h5>${file.name}</h5>
+                <p class="text-muted">${(file.size / 1024).toFixed(1)} KB</p>
+                <button class="btn btn-outline-secondary" onclick="clearFile()">
+                    <i class="fas fa-times"></i> Remove
+                </button>
+            `;
+            
+            addLog(`File selected: ${file.name}`, 'info');
+        }
+
+        // Clear file
+        function clearFile() {
+            currentFile = null;
+            const uploadArea = document.getElementById('upload-area');
+            uploadArea.innerHTML = `
+                <i class="fas fa-cloud-upload-alt fa-3x text-muted mb-3"></i>
+                <h5>Drag & Drop files here</h5>
+                <p class="text-muted">or click to browse</p>
+                <input type="file" id="file-input" class="d-none" accept=".csv,.xlsx,.xls,.txt">
+                <button class="btn btn-primary" onclick="document.getElementById('file-input').click()">
+                    <i class="fas fa-folder-open"></i> Choose File
+                </button>
+            `;
+            setupFileUpload();
+        }
+
+        // Start import
+        async function startImport() {
+            if (importInProgress) {
+                addLog('Import already in progress', 'warning');
+                return;
+            }
+
+            if (!currentFile) {
+                addLog('Please select a file first', 'error');
+                return;
+            }
+
+            importInProgress = true;
+            showProgress();
+
+            try {
+                const formData = new FormData();
+                formData.append('file', currentFile);
+                formData.append('frequency', document.getElementById('frequency').value);
+                formData.append('notes', document.getElementById('notes').value);
+                
+                const columnName = document.getElementById('column-name').value;
+                if (columnName) {
+                    formData.append('column', columnName);
+                }
+
+                addLog('Starting import...', 'info');
+                updateProgress(10, 'Uploading file...');
+
+                const response = await fetch('/api/batch-import/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                
+                updateProgress(50, 'Import completed, starting crawl...');
+                
+                // Show crawl progress
+                if (result.crawl_result) {
+                    const crawl = result.crawl_result;
+                    updateProgress(75, `Crawling: ${crawl.successful_crawls + crawl.failed_crawls}/${crawl.total_asins} ASINs (${crawl.batches_processed} batches)`);
+                }
+                
+                updateProgress(100, 'Import and crawl completed');
+                addLog(`Import completed: ${result.total_asins} ASINs processed`, 'success');
+                
+                // Show crawl results if available
+                if (result.crawl_result) {
+                    const crawl = result.crawl_result;
+                    addLog(`Crawl completed: ${crawl.successful_crawls} successful, ${crawl.failed_crawls} failed`, 'success');
+                    addLog(`Processed ${crawl.batches_processed} batches`, 'info');
+                }
+                
+                // Show results
+                showImportResults(result);
+                
+                // Refresh stats
+                loadStats();
+                
+            } catch (error) {
+                addLog('Import failed: ' + error.message, 'error');
+                updateProgress(0, 'Import failed');
+            } finally {
+                importInProgress = false;
+                hideProgress();
+            }
+        }
+
+        // Test import
+        async function testImport() {
+            if (!currentFile) {
+                addLog('Please select a file first', 'error');
+                return;
+            }
+
+            try {
+                const formData = new FormData();
+                formData.append('file', currentFile);
+                formData.append('test', 'true');
+                
+                const columnName = document.getElementById('column-name').value;
+                if (columnName) {
+                    formData.append('column', columnName);
+                }
+
+                addLog('Testing import...', 'info');
+
+                const response = await fetch('/api/batch-import/test', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+                
+                addLog(`Test completed: ${result.total_asins} valid ASINs found`, 'success');
+                if (result.invalid_asins && result.invalid_asins.length > 0) {
+                    addLog(`Invalid ASINs: ${result.invalid_asins.join(', ')}`, 'warning');
+                }
+                
+            } catch (error) {
+                addLog('Test failed: ' + error.message, 'error');
+            }
+        }
+
+        // Crawl all ASINs now
+        async function crawlAllNow() {
+            try {
+                addLog('Starting crawl all ASINs...', 'info');
+                
+                const response = await fetch('/api/crawl/watchlist/now', {
+                    method: 'POST'
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    addLog(`Crawl all completed: ${result.message}`, 'success');
+                    loadStats();
+                } else {
+                    const error = await response.text();
+                    addLog(`Crawl failed: ${error}`, 'error');
+                }
+                
+            } catch (error) {
+                addLog('Crawl failed: ' + error.message, 'error');
+            }
+        }
+
+        // Quick import
+        async function quickImport() {
+            const asins = document.getElementById('quick-asins').value.trim();
+            if (!asins) {
+                addLog('Please enter ASINs', 'error');
+                return;
+            }
+
+            const asinList = asins.split(',').map(asin => asin.trim()).filter(asin => asin);
+            
+            try {
+                addLog('Starting quick import...', 'info');
+
+                const response = await fetch('/api/batch-import/quick', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        asins: asinList,
+                        frequency: document.getElementById('frequency').value,
+                        notes: document.getElementById('notes').value || 'Quick import'
+                    })
+                });
+
+                const result = await response.json();
+                
+                addLog(`Quick import completed: ${result.total_asins} ASINs processed`, 'success');
+                showImportResults(result);
+                loadStats();
+                
+            } catch (error) {
+                addLog('Quick import failed: ' + error.message, 'error');
+            }
+        }
+
+        // Show import results
+        function showImportResults(result) {
+            let resultsHtml = `
+                <div class="alert alert-success">
+                    <h6>Import Results:</h6>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <span class="badge bg-primary">Total: ${result.total_asins}</span>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="badge bg-success">Added: ${result.added}</span>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="badge bg-info">Exists: ${result.exists}</span>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="badge bg-warning">Errors: ${result.errors}</span>
+                        </div>
+                    </div>
+            `;
+            
+            // Add crawl results if available
+            if (result.crawl_result) {
+                const crawl = result.crawl_result;
+                resultsHtml += `
+                    <hr>
+                    <h6>Crawl Results:</h6>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <span class="badge bg-success">Successful: ${crawl.successful_crawls}</span>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="badge bg-danger">Failed: ${crawl.failed_crawls}</span>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="badge bg-info">Batches: ${crawl.batches_processed}</span>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="badge bg-primary">Total: ${crawl.total_asins}</span>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            resultsHtml += `</div>`;
+            
+            const logContainer = document.getElementById('import-log');
+            logContainer.insertAdjacentHTML('beforeend', resultsHtml);
+        }
+
+        // Progress functions
+        function showProgress() {
+            document.getElementById('progress-section').style.display = 'block';
+        }
+
+        function hideProgress() {
+            document.getElementById('progress-section').style.display = 'none';
+        }
+
+        function updateProgress(percent, text) {
+            document.getElementById('progress-bar').style.width = percent + '%';
+            document.getElementById('progress-text').textContent = text;
+        }
+
+        // Utility functions
+        function addLog(message, type = 'info') {
+            const logContainer = document.getElementById('import-log');
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = document.createElement('div');
+            logEntry.className = `log-entry log-${type}`;
+            logEntry.innerHTML = `<i class="fas fa-${getLogIcon(type)}"></i> [${timestamp}] ${message}`;
+            logContainer.appendChild(logEntry);
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+
+        function getLogIcon(type) {
+            switch (type) {
+                case 'success': return 'check-circle';
+                case 'error': return 'exclamation-circle';
+                case 'warning': return 'exclamation-triangle';
+                default: return 'info-circle';
+            }
+        }
+
+        function clearForm() {
+            clearFile();
+            document.getElementById('frequency').value = 'daily';
+            document.getElementById('column-name').value = '';
+            document.getElementById('notes').value = '';
+            document.getElementById('quick-asins').value = '';
+        }
+
+        function clearLog() {
+            document.getElementById('import-log').innerHTML = `
+                <div class="log-entry log-info">
+                    <i class="fas fa-info-circle"></i> Log cleared
+                </div>
+            `;
+        }
+
+        function refreshStats() {
+            loadStats();
+            addLog('Statistics refreshed', 'info');
+        }
+
+        function updateSystemInfo() {
+            document.getElementById('last-update').textContent = new Date().toLocaleString();
+        }
+
+        // Auto-refresh stats every 30 seconds
+        setInterval(loadStats, 30000);
+        setInterval(updateSystemInfo, 10000);
+    </script>
+</body>
+</html> 

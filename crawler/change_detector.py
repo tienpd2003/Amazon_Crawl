@@ -258,62 +258,67 @@ class ChangeDetector:
     
     def _is_change_significant(self, field: str, change_data: Dict) -> bool:
         """Determine if a change is significant enough to notify"""
-        old_value = change_data['old']
-        new_value = change_data['new']
-        
-        # Always significant changes
-        significant_fields = [
-            'best_deal', 'lightning_deal', 'coupon_available', 
-            'amazon_choice', 'inventory_status', 'product_description_images'
-        ]
-        
-        if field in significant_fields:
-            return True
-        
-        # Price changes - significant if change is more than 1%
-        if field in ['sale_price', 'list_price']:
-            if old_value and new_value and old_value > 0:
-                change_percent = abs((new_value - old_value) / old_value) * 100
-                return change_percent >= 1.0  # 1% threshold
-        
-        # Rating changes - significant if change is 0.1 or more
-        if field == 'rating':
-            if old_value and new_value:
-                return abs(new_value - old_value) >= 0.1
-        
-        # Rating count changes - significant if change is 10 or more
-        if field == 'rating_count':
-            if old_value and new_value:
-                return abs(new_value - old_value) >= 10
-        
-        # Bag sale count changes - significant if change is 50+ or more
-        if field == 'bag_sale_count':
-            if old_value and new_value:
-                return abs(new_value - old_value) >= 50
-        
-        # Image/video count changes
-        if field in ['image_count', 'video_count']:
-            return True  # Any change in media count is significant
-        
-        # Title changes
-        if field == 'title':
-            if old_value and new_value:
-                # Significant if title changes substantially
-                old_words = set(str(old_value).lower().split())
-                new_words = set(str(new_value).lower().split())
-                # Check if more than 20% of words changed
-                total_words = len(old_words.union(new_words))
-                common_words = len(old_words.intersection(new_words))
-                if total_words > 0:
-                    similarity = common_words / total_words
-                    return similarity < 0.8  # 80% similarity threshold
-        
-        # Seller/brand link changes
-        if field in ['brand_store_link', 'sold_by_link']:
-            return True  # Any seller change is significant
-        
-        # Default: consider it significant
+        # Báo cáo TẤT CẢ 23 trường khi có thay đổi
+        # Không lọc bớt nữa - báo cáo mọi thay đổi
         return True
+        
+        # Code cũ (đã comment):
+        # old_value = change_data['old']
+        # new_value = change_data['new']
+        # 
+        # # Always significant changes
+        # significant_fields = [
+        #     'best_deal', 'lightning_deal', 'coupon_available', 
+        #     'amazon_choice', 'inventory_status', 'product_description_images'
+        # ]
+        # 
+        # if field in significant_fields:
+        #     return True
+        # 
+        # # Price changes - significant if change is more than 1%
+        # if field in ['sale_price', 'list_price']:
+        #     if old_value and new_value and old_value > 0:
+        #         change_percent = abs((new_value - old_value) / old_value) * 100
+        #         return change_percent >= 1.0  # 1% threshold
+        # 
+        # # Rating changes - significant if change is 0.1 or more
+        # if field == 'rating':
+        #     if old_value and new_value:
+        #         return abs(new_value - old_value) >= 0.1
+        # 
+        # # Rating count changes - significant if change is 10 or more
+        # if field == 'rating_count':
+        #     if old_value and new_value:
+        #         return abs(new_value - old_value) >= 10
+        # 
+        # # Bag sale count changes - significant if change is 50+ or more
+        # if field == 'bag_sale_count':
+        #     if old_value and new_value:
+        #         return abs(new_value - old_value) >= 50
+        # 
+        # # Image/video count changes
+        # if field in ['image_count', 'video_count']:
+        #     return True  # Any change in media count is significant
+        # 
+        # # Title changes
+        # if field == 'title':
+        #     if old_value and new_value:
+        #         # Significant if title changes substantially
+        #         old_words = set(str(old_value).lower().split())
+        #         new_words = set(str(new_value).lower().split())
+        #         # Check if more than 20% of words changed
+        #         total_words = len(old_words.union(new_words))
+        #         common_words = len(old_words.intersection(new_words))
+        #         if total_words > 0:
+        #             similarity = common_words / total_words
+        #             return similarity < 0.8  # 80% similarity threshold
+        # 
+        # # Seller/brand link changes
+        # if field in ['brand_store_link', 'sold_by_link']:
+        #     return True  # Any seller change is significant
+        # 
+        # # Default: consider it significant
+        # return True
     
     def _log_changes(self, asin: str, changes: Dict):
         """Log detected changes"""

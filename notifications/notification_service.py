@@ -18,9 +18,9 @@ class NotificationService:
         self.timezone = pytz.timezone('America/New_York')
     
     async def send_product_change_notification(self, asin: str, changes: Dict, product_data: Dict):
-        """Send notification about product changes"""
+        """Send notification about product changes - 1 message per ASIN"""
         try:
-            # Generate message
+            # Generate message for all changes of this ASIN
             message = self._generate_change_message(asin, changes, product_data)
             
             # Send Telegram notification if configured
@@ -40,16 +40,18 @@ class NotificationService:
             logger.error(f"Error sending notifications for ASIN {asin}: {e}")
     
     def _generate_change_message(self, asin: str, changes: Dict, product_data: Dict) -> str:
-        """Generate notification message"""
+        """Generate notification message for all changes of an ASIN - Clear and concise format"""
         title = product_data.get('title', 'Unknown Product')
         
         message_parts = [
             f"🚨 THAY ĐỔI SẢN PHẨM AMAZON",
             f"ASIN: {asin}",
-            f"Sản phẩm: {title[:100]}...",
+            f"Sản phẩm: {title[:80]}...",
             f"",
-            f"📊 CÁC THAY ĐỔI:"
+            f"📊 Có {len(changes)} thay đổi:"
         ]
+        
+        change_number = 1
         
         # Price changes
         if 'sale_price' in changes:
@@ -58,13 +60,15 @@ class NotificationService:
             if old_price and new_price:
                 change_percent = ((new_price - old_price) / old_price) * 100
                 direction = "📈" if change_percent > 0 else "📉"
-                message_parts.append(f"{direction} Giá bán: ${old_price:.2f} → ${new_price:.2f} ({change_percent:+.1f}%)")
+                message_parts.append(f"{change_number}. {direction} Giá bán: ${old_price:.2f} → ${new_price:.2f} ({change_percent:+.1f}%)")
+                change_number += 1
         
         if 'list_price' in changes:
             old_price = changes['list_price']['old']
             new_price = changes['list_price']['new']
             if old_price and new_price:
-                message_parts.append(f"💰 Giá niêm yết: ${old_price:.2f} → ${new_price:.2f}")
+                message_parts.append(f"{change_number}. 💰 Giá niêm yết: ${old_price:.2f} → ${new_price:.2f}")
+                change_number += 1
         
         # Rating changes
         if 'rating' in changes:
@@ -72,42 +76,72 @@ class NotificationService:
             new_rating = changes['rating']['new']
             if old_rating and new_rating:
                 direction = "⭐" if new_rating > old_rating else "📉"
-                message_parts.append(f"{direction} Đánh giá: {old_rating} → {new_rating}")
+                message_parts.append(f"{change_number}. {direction} Đánh giá: {old_rating} → {new_rating}")
+                change_number += 1
         
         if 'rating_count' in changes:
             old_count = changes['rating_count']['old']
             new_count = changes['rating_count']['new']
             if old_count and new_count:
-                message_parts.append(f"👥 Số lượng đánh giá: {old_count:,} → {new_count:,}")
+                message_parts.append(f"{change_number}. 👥 Số lượng đánh giá: {old_count:,} → {new_count:,}")
+                change_number += 1
+        
+        # Sale percentage changes
+        if 'sale_percentage' in changes:
+            old_percent = changes['sale_percentage']['old']
+            new_percent = changes['sale_percentage']['new']
+            if old_percent is not None and new_percent is not None:
+                message_parts.append(f"{change_number}. 📊 Phần trăm giảm giá: {old_percent}% → {new_percent}%")
+                change_number += 1
         
         # Inventory changes
-        if 'inventory_status' in changes:
-            old_status = changes['inventory_status']['old']
-            new_status = changes['inventory_status']['new']
-            emoji = "✅" if "in stock" in new_status.lower() else "❌"
-            message_parts.append(f"{emoji} Tồn kho: {old_status} → {new_status}")
+        if 'inventory' in changes:
+            old_status = changes['inventory']['old']
+            new_status = changes['inventory']['new']
+            emoji = "✅" if "in stock" in str(new_status).lower() else "❌"
+            message_parts.append(f"{change_number}. {emoji} Tình trạng kho: {old_status} → {new_status}")
+            change_number += 1
         
         # Promotions
-        if 'coupon_available' in changes:
-            if changes['coupon_available']['new']:
-                message_parts.append(f"🎟️ Coupon mới có sẵn!")
-            else:
-                message_parts.append(f"❌ Coupon đã hết hạn")
+        if 'coupon' in changes:
+            old_coupon = changes['coupon']['old']
+            new_coupon = changes['coupon']['new']
+            if new_coupon and not old_coupon:
+                message_parts.append(f"{change_number}. 🎟️ Có coupon mới: {new_coupon}")
+            elif old_coupon and not new_coupon:
+                message_parts.append(f"{change_number}. ❌ Coupon đã hết hạn")
+            elif old_coupon != new_coupon:
+                message_parts.append(f"{change_number}. 🔄 Coupon có thay đổi")
+            change_number += 1
         
         if 'lightning_deal' in changes:
             if changes['lightning_deal']['new']:
-                message_parts.append(f"⚡ Lightning Deal đang diễn ra!")
+                message_parts.append(f"{change_number}. ⚡ Lightning Deal đang diễn ra!")
+                change_number += 1
         
         if 'best_deal' in changes:
             if changes['best_deal']['new']:
-                message_parts.append(f"🔥 Best Deal đang diễn ra!")
+                message_parts.append(f"{change_number}. 🔥 Best Deal đang diễn ra!")
+                change_number += 1
+        
+        # Bag sale changes
+        if 'bag_sale' in changes:
+            old_bag = changes['bag_sale']['old']
+            new_bag = changes['bag_sale']['new']
+            if old_bag != new_bag:
+                if new_bag:
+                    message_parts.append(f"{change_number}. 🛒 {new_bag}")
+                else:
+                    message_parts.append(f"{change_number}. ❌ Bag sale đã kết thúc")
+                change_number += 1
         
         # Amazon's Choice
         if 'amazon_choice' in changes:
             if changes['amazon_choice']['new']:
-                message_parts.append(f"🏆 Được chọn làm Amazon's Choice!")
+                message_parts.append(f"{change_number}. 🏆 Được chọn làm Amazon's Choice!")
             else:
-                message_parts.append(f"📉 Không còn là Amazon's Choice")
+                message_parts.append(f"{change_number}. 📉 Không còn là Amazon's Choice")
+            change_number += 1
         
         # Product Description Images changes
         if 'product_description_images' in changes:
@@ -122,24 +156,15 @@ class NotificationService:
                 added_images = new_set - old_set
                 removed_images = old_set - new_set
                 
-                old_count = len(old_images)
-                new_count = len(new_images)
-                
                 if added_images and removed_images:
-                    message_parts.append(f"🔄 Ảnh mô tả sản phẩm đã thay đổi: +{len(added_images)} ảnh mới, -{len(removed_images)} ảnh cũ")
+                    message_parts.append(f"{change_number}. 🖼️ Ảnh mô tả: +{len(added_images)} link mới, -{len(removed_images)} link cũ")
                 elif added_images:
-                    message_parts.append(f"🖼️ Thêm {len(added_images)} ảnh mô tả sản phẩm mới!")
+                    message_parts.append(f"{change_number}. 🖼️ Thêm {len(added_images)} link ảnh mô tả")
                 elif removed_images:
-                    message_parts.append(f"📷 Giảm {len(removed_images)} ảnh mô tả sản phẩm")
-                elif old_count != new_count:
-                    # Same URLs but different count (duplicates removed/added)
-                    message_parts.append(f"🔄 Số lượng ảnh mô tả sản phẩm thay đổi: {old_count} → {new_count}")
+                    message_parts.append(f"{change_number}. 📷 Xóa {len(removed_images)} link ảnh mô tả")
                 else:
-                    message_parts.append(f"🔄 Ảnh mô tả sản phẩm đã thay đổi (thứ tự hoặc nội dung)")
-            else:
-                # Fallback for non-list data
-                if old_images != new_images:
-                    message_parts.append(f"🔄 Ảnh mô tả sản phẩm đã thay đổi")
+                    message_parts.append(f"{change_number}. 🔄 Link ảnh mô tả có thay đổi")
+                change_number += 1
         
         # Product Images changes (main product images)
         if 'image_urls' in changes:
@@ -154,24 +179,15 @@ class NotificationService:
                 added_images = new_set - old_set
                 removed_images = old_set - new_set
                 
-                old_count = len(old_images)
-                new_count = len(new_images)
-                
                 if added_images and removed_images:
-                    message_parts.append(f"🔄 Ảnh sản phẩm đã thay đổi: +{len(added_images)} ảnh mới, -{len(removed_images)} ảnh cũ")
+                    message_parts.append(f"{change_number}. 📸 Ảnh sản phẩm: +{len(added_images)} link mới, -{len(removed_images)} link cũ")
                 elif added_images:
-                    message_parts.append(f"📸 Thêm {len(added_images)} ảnh sản phẩm mới!")
+                    message_parts.append(f"{change_number}. 📸 Thêm {len(added_images)} link ảnh sản phẩm")
                 elif removed_images:
-                    message_parts.append(f"🗑️ Giảm {len(removed_images)} ảnh sản phẩm")
-                elif old_count != new_count:
-                    # Same URLs but different count (duplicates removed/added)
-                    message_parts.append(f"🔄 Số lượng ảnh sản phẩm thay đổi: {old_count} → {new_count}")
+                    message_parts.append(f"{change_number}. 🗑️ Xóa {len(removed_images)} link ảnh sản phẩm")
                 else:
-                    message_parts.append(f"🔄 Ảnh sản phẩm đã thay đổi (thứ tự hoặc nội dung)")
-            else:
-                # Fallback for non-list data
-                if old_images != new_images:
-                    message_parts.append(f"🔄 Ảnh sản phẩm đã thay đổi")
+                    message_parts.append(f"{change_number}. 🔄 Link ảnh sản phẩm có thay đổi")
+                change_number += 1
         
         # Product Videos changes
         if 'video_urls' in changes:
@@ -186,39 +202,88 @@ class NotificationService:
                 added_videos = new_set - old_set
                 removed_videos = old_set - new_set
                 
-                old_count = len(old_videos)
-                new_count = len(new_videos)
-                
                 if added_videos and removed_videos:
-                    message_parts.append(f"🔄 Video sản phẩm đã thay đổi: +{len(added_videos)} video mới, -{len(removed_videos)} video cũ")
+                    message_parts.append(f"{change_number}. 🎬 Video sản phẩm: +{len(added_videos)} link mới, -{len(removed_videos)} link cũ")
                 elif added_videos:
-                    message_parts.append(f"🎬 Thêm {len(added_videos)} video sản phẩm mới!")
+                    message_parts.append(f"{change_number}. 🎬 Thêm {len(added_videos)} link video sản phẩm")
                 elif removed_videos:
-                    message_parts.append(f"🎥 Giảm {len(removed_videos)} video sản phẩm")
-                elif old_count != new_count:
-                    # Same URLs but different count (duplicates removed/added)
-                    message_parts.append(f"🔄 Số lượng video sản phẩm thay đổi: {old_count} → {new_count}")
+                    message_parts.append(f"{change_number}. 🎥 Xóa {len(removed_videos)} link video sản phẩm")
                 else:
-                    message_parts.append(f"🔄 Video sản phẩm đã thay đổi (thứ tự hoặc nội dung)")
-            else:
-                # Fallback for non-list data
-                if old_videos != new_videos:
-                    message_parts.append(f"🔄 Video sản phẩm đã thay đổi")
+                    message_parts.append(f"{change_number}. 🔄 Link video sản phẩm có thay đổi")
+                change_number += 1
         
-        # Bag sale changes
+        # Seller info changes
+        if 'brand_store_link' in changes:
+            old_link = changes['brand_store_link']['old']
+            new_link = changes['brand_store_link']['new']
+            if old_link != new_link:
+                message_parts.append(f"{change_number}. 🏪 Link store nhãn hàng có thay đổi")
+                change_number += 1
+        
+        if 'sold_by_link' in changes:
+            old_link = changes['sold_by_link']['old']
+            new_link = changes['sold_by_link']['new']
+            if old_link != new_link:
+                message_parts.append(f"{change_number}. 🏪 Link nhà bán có thay đổi")
+                change_number += 1
+        
+        # Advertised ASINs changes
+        if 'advertised_asins' in changes:
+            old_asins = changes['advertised_asins']['old'] or []
+            new_asins = changes['advertised_asins']['new'] or []
+            if isinstance(old_asins, list) and isinstance(new_asins, list):
+                if len(old_asins) != len(new_asins):
+                    message_parts.append(f"{change_number}. 📢 Sản phẩm quảng cáo có thay đổi")
+                    change_number += 1
+        
+        # Image count changes
+        if 'image_count' in changes:
+            old_count = changes['image_count']['old']
+            new_count = changes['image_count']['new']
+            if old_count is not None and new_count is not None and old_count != new_count:
+                message_parts.append(f"{change_number}. 📸 Số lượng ảnh: {old_count} → {new_count}")
+                change_number += 1
+        
+        # Video count changes
+        if 'video_count' in changes:
+            old_count = changes['video_count']['old']
+            new_count = changes['video_count']['new']
+            if old_count is not None and new_count is not None and old_count != new_count:
+                message_parts.append(f"{change_number}. 🎬 Số lượng video: {old_count} → {new_count}")
+                change_number += 1
+        
+        # Bag sale count changes
         if 'bag_sale_count' in changes:
             old_count = changes['bag_sale_count']['old']
             new_count = changes['bag_sale_count']['new']
             if old_count and new_count:
-                message_parts.append(f"🛒 Đã bán: {old_count}+ → {new_count}+ trong tháng qua")
+                message_parts.append(f"{change_number}. 🛒 Đã bán: {old_count}+ → {new_count}+ trong tháng qua")
+                change_number += 1
+        
+        # Other text changes (shortened)
+        text_fields = ['title', 'product_description', 'about_this_item', 'product_information']
+        for field in text_fields:
+            if field in changes:
+                old_value = changes[field]['old']
+                new_value = changes[field]['new']
+                
+                if field == 'title':
+                    message_parts.append(f"{change_number}. 📝 Tên sản phẩm có thay đổi")
+                elif field == 'product_description':
+                    message_parts.append(f"{change_number}. 📄 Mô tả sản phẩm có thay đổi")
+                elif field == 'about_this_item':
+                    message_parts.append(f"{change_number}. 📋 Tính năng sản phẩm có thay đổi")
+                elif field == 'product_information':
+                    message_parts.append(f"{change_number}. ℹ️ Thông tin sản phẩm có thay đổi")
+                change_number += 1
         
         # Get current time in New York timezone
         ny_time = datetime.now(self.timezone)
         
         message_parts.extend([
             f"",
-            f"🕒 Thời gian (New York): {ny_time.strftime('%d/%m/%Y %H:%M:%S %Z')}",
-            f"🔗 Link: https://www.amazon.com/dp/{asin}"
+            f"🕒 Thời gian: {ny_time.strftime('%d/%m/%Y %H:%M:%S %Z')}",
+            f"🔗 https://www.amazon.com/dp/{asin}"
         ])
         
         return "\n".join(message_parts)

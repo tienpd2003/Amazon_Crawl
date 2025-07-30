@@ -29,7 +29,7 @@ class AmazonCrawler:
         self.wait = None
         self.session = get_db_session()
         
-    def _setup_driver(self):
+    def _setup_driver(self, port: int = None):
         """Setup Chrome driver with anti-detection measures"""
         try:
             chrome_options = Options()
@@ -63,6 +63,18 @@ class AmazonCrawler:
             
             # Window size
             chrome_options.add_argument("--window-size=1920,1080")
+            
+            # Add unique port if specified
+            if port:
+                chrome_options.add_argument(f"--remote-debugging-port={port}")
+                logger.info(f"Using custom port: {port}")
+                
+                # Add unique user data directory to avoid conflicts
+                import tempfile
+                import os
+                user_data_dir = os.path.join(tempfile.gettempdir(), f"chrome_profile_{port}")
+                chrome_options.add_argument(f"--user-data-dir={user_data_dir}")
+                logger.info(f"Using unique user data directory: {user_data_dir}")
             
             # Try multiple approaches to setup driver
             self.driver = None
@@ -416,13 +428,14 @@ class AmazonCrawler:
     
 
     
-    def crawl_product(self, asin: str) -> Dict:
+    def crawl_product(self, asin: str, port: int = None) -> Dict:
         """Crawl product information from Amazon"""
         if not self.driver:
-            self._setup_driver()
+            self._setup_driver(port)
             
         url = settings.AMAZON_DP_URL.format(asin=asin)
-        logger.info(f"Crawling product: {asin} from {url}")
+        # Giảm log - chỉ hiện ASIN đang crawl
+        logger.info(f"Crawling: {asin}")
         
         product_data = {
             'asin': asin,
@@ -446,21 +459,17 @@ class AmazonCrawler:
                 current_location = location_element.text
                 # Clean Unicode characters that cause encoding issues
                 clean_current_location = current_location.replace('\u200c', '').replace('\u200d', '').strip()
-                logger.info(f"Current delivery location: {clean_current_location}")
                 
                 # Set delivery location to New York 10009 if not already set
                 if "10009" not in clean_current_location and "New York" not in clean_current_location:
-                    logger.info("Setting delivery location to New York 10009...")
                     location_changed = self._set_delivery_location()
                     # No need to refresh - page already updated after 7s wait in location change
-                else:
-                    logger.info("Delivery location already set to New York area")
                     
             except Exception as e:
-                logger.warning(f"Could not read delivery location: {e}")
+                # Giảm log warning
+                pass
             
             # Extract all product information (EXCEPT images/videos first to avoid DOM changes)
-            logger.info("Extracting product data...")
             product_data.update(self._extract_basic_info())
             product_data.update(self._extract_pricing())
             product_data.update(self._extract_ratings())
@@ -471,19 +480,20 @@ class AmazonCrawler:
             product_data.update(self._extract_advertisements())
             
             # Extract images and videos LAST to avoid affecting other data extraction
-            logger.info("Extracting media content...")
             product_data.update(self._extract_images_videos())
             
             # Format output according to required 22 fields
             product_data = self._format_final_output(product_data)
             
             product_data['crawl_success'] = True
-            logger.info(f"Successfully crawled product {asin}")
+            # Chỉ log kết quả cuối
+            logger.info(f"✅ {asin}: Crawl completed successfully")
             
         except Exception as e:
             error_msg = str(e)
             product_data['crawl_error'] = error_msg
-            logger.error(f"Failed to crawl product {asin}: {error_msg}")
+            # Chỉ log lỗi cuối
+            logger.error(f"❌ {asin}: Crawl failed - {error_msg}")
         
         return product_data
     
