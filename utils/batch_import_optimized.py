@@ -107,9 +107,9 @@ class OptimizedBatchImporter:
         
         return True
     
-    def extract_asins_from_csv(self, file_path: str, asin_column: str = None) -> List[str]:
-        """Extract ASINs from CSV file"""
-        asins = []
+    def extract_asins_from_csv(self, file_path: str, asin_column: str = None, category_column: str = None) -> List[Dict[str, str]]:
+        """Extract ASINs and categories from CSV file"""
+        asin_data = []
         
         try:
             with open(file_path, 'r', encoding='utf-8') as file:
@@ -127,10 +127,23 @@ class OptimizedBatchImporter:
                         # If no ASIN column found, assume first column
                         asin_column = columns[0]
                 
+                # Try to find category column
+                if not category_column:
+                    columns = reader.fieldnames
+                    for col in columns:
+                        if 'category' in col.lower():
+                            category_column = col
+                            break
+                
                 for row in reader:
                     asin = row.get(asin_column, '').strip()
+                    category = row.get(category_column, '').strip() if category_column else ""
+                    
                     if self.validate_asin(asin):
-                        asins.append(asin.upper())
+                        asin_data.append({
+                            "asin": asin.upper(),
+                            "category": category
+                        })
                     else:
                         logger.warning(f"Invalid ASIN in CSV: {asin}")
         
@@ -138,18 +151,21 @@ class OptimizedBatchImporter:
             logger.error(f"Error reading CSV file: {e}")
             raise
         
-        return asins
+        return asin_data
     
-    def extract_asins_from_txt(self, file_path: str) -> List[str]:
-        """Extract ASINs from text file (one per line)"""
-        asins = []
+    def extract_asins_from_txt(self, file_path: str) -> List[Dict[str, str]]:
+        """Extract ASINs from text file (one per line) - no category for txt files"""
+        asin_data = []
         
         try:
             with open(file_path, 'r', encoding='utf-8') as file:
                 for line_num, line in enumerate(file, 1):
                     asin = line.strip()
                     if self.validate_asin(asin):
-                        asins.append(asin.upper())
+                        asin_data.append({
+                            "asin": asin.upper(),
+                            "category": ""  # No category for txt files
+                        })
                     else:
                         logger.warning(f"Invalid ASIN at line {line_num}: {asin}")
         
@@ -157,11 +173,11 @@ class OptimizedBatchImporter:
             logger.error(f"Error reading text file: {e}")
             raise
         
-        return asins
+        return asin_data
     
-    def extract_asins_from_excel(self, file_path: str, sheet_name: str = None, asin_column: str = None) -> List[str]:
-        """Extract ASINs from Excel file"""
-        asins = []
+    def extract_asins_from_excel(self, file_path: str, sheet_name: str = None, asin_column: str = None, category_column: str = None) -> List[Dict[str, str]]:
+        """Extract ASINs and categories from Excel file"""
+        asin_data = []
         
         try:
             # Read Excel file
@@ -182,11 +198,24 @@ class OptimizedBatchImporter:
                     # If no ASIN column found, assume first column
                     asin_column = columns[0]
             
-            # Extract ASINs from the specified column
-            for index, value in df[asin_column].items():
-                asin = str(value).strip()
+            # Try to find category column
+            if not category_column:
+                columns = df.columns.tolist()
+                for col in columns:
+                    if 'category' in col.lower():
+                        category_column = col
+                        break
+            
+            # Extract ASINs and categories from the specified columns
+            for index, row in df.iterrows():
+                asin = str(row[asin_column]).strip()
+                category = str(row[category_column]).strip() if category_column and category_column in row else ""
+                
                 if self.validate_asin(asin):
-                    asins.append(asin.upper())
+                    asin_data.append({
+                        "asin": asin.upper(),
+                        "category": category
+                    })
                 else:
                     logger.warning(f"Invalid ASIN at row {index + 1}: {asin}")
         
@@ -194,10 +223,10 @@ class OptimizedBatchImporter:
             logger.error(f"Error reading Excel file: {e}")
             raise
         
-        return asins
+        return asin_data
     
-    def extract_asins_from_file(self, file_path: str, **kwargs) -> List[str]:
-        """Extract ASINs from file based on file extension"""
+    def extract_asins_from_file(self, file_path: str, **kwargs) -> List[Dict[str, str]]:
+        """Extract ASINs and categories from file based on file extension"""
         if not os.path.exists(file_path):
             raise FileNotFoundError(f"File not found: {file_path}")
         
@@ -206,14 +235,14 @@ class OptimizedBatchImporter:
         if file_ext not in self.supported_formats:
             raise ValueError(f"Unsupported file format: {file_ext}. Supported: {self.supported_formats}")
         
-        logger.info(f"Extracting ASINs from {file_path}")
+        logger.info(f"Extracting ASINs and categories from {file_path}")
         
         if file_ext == '.csv':
-            return self.extract_asins_from_csv(file_path, kwargs.get('asin_column'))
+            return self.extract_asins_from_csv(file_path, kwargs.get('asin_column'), kwargs.get('category_column'))
         elif file_ext == '.txt':
             return self.extract_asins_from_txt(file_path)
         elif file_ext in ['.xlsx', '.xls']:
-            return self.extract_asins_from_excel(file_path, kwargs.get('sheet_name'), kwargs.get('asin_column'))
+            return self.extract_asins_from_excel(file_path, kwargs.get('sheet_name'), kwargs.get('asin_column'), kwargs.get('category_column'))
         else:
             raise ValueError(f"Unsupported file format: {file_ext}")
     
@@ -222,10 +251,10 @@ class OptimizedBatchImporter:
         start_time = datetime.utcnow()
         
         try:
-            # Extract ASINs from file
-            asins = self.extract_asins_from_file(file_path, **kwargs)
+            # Extract ASINs and categories from file
+            asin_data = self.extract_asins_from_file(file_path, **kwargs)
             
-            if not asins:
+            if not asin_data:
                 return {
                     'success': False,
                     'error': 'No valid ASINs found in file',
@@ -233,12 +262,24 @@ class OptimizedBatchImporter:
                     'total_asins': 0
                 }
             
-            logger.info(f"Found {len(asins)} valid ASINs in {file_path}")
+            # Extract just ASINs for watchlist
+            asins = [item["asin"] for item in asin_data]
+            
+            logger.info(f"Found {len(asin_data)} valid ASINs in {file_path}")
             
             # Remove duplicates while preserving order
-            unique_asins = list(dict.fromkeys(asins))
-            if len(unique_asins) != len(asins):
-                logger.info(f"Removed {len(asins) - len(unique_asins)} duplicate ASINs")
+            unique_asin_data = []
+            seen_asins = set()
+            for item in asin_data:
+                if item["asin"] not in seen_asins:
+                    unique_asin_data.append(item)
+                    seen_asins.add(item["asin"])
+            
+            if len(unique_asin_data) != len(asin_data):
+                logger.info(f"Removed {len(asin_data) - len(unique_asin_data)} duplicate ASINs")
+            
+            # Extract unique ASINs for watchlist
+            unique_asins = [item["asin"] for item in unique_asin_data]
             
             # Add to watchlist first
             from scheduler.crawler_scheduler import add_multiple_asins
@@ -246,13 +287,13 @@ class OptimizedBatchImporter:
             
             # Add file info to result
             result['file_path'] = file_path
-            result['total_asins'] = len(unique_asins)
+            result['total_asins'] = len(unique_asin_data)
             result['import_time'] = datetime.utcnow()
             
             # Start immediate crawling with optimized batch processing
             batch_size = kwargs.get('batch_size', 2)  # Get batch_size from kwargs
-            logger.info(f"Starting optimized crawl for {len(unique_asins)} ASINs with batch_size={batch_size}")
-            crawl_result = await self._crawl_asins_optimized(unique_asins, batch_size=batch_size)
+            logger.info(f"Starting optimized crawl for {len(unique_asin_data)} ASINs with batch_size={batch_size}")
+            crawl_result = await self._crawl_asins_optimized(unique_asin_data, batch_size=batch_size)
             result['crawl_result'] = crawl_result
             
             result['duration'] = (datetime.utcnow() - start_time).total_seconds()
@@ -276,20 +317,23 @@ class OptimizedBatchImporter:
         start_time = datetime.utcnow()
         
         try:
-            # Validate and clean ASINs
-            valid_asins = []
+            # Convert asin_list to asin_data format (no categories for list import)
+            asin_data = []
             invalid_asins = []
             
             for asin in asin_list:
                 if self.validate_asin(asin):
-                    valid_asins.append(asin.strip().upper())
+                    asin_data.append({
+                        "asin": asin.strip().upper(),
+                        "category": ""  # No category for list import
+                    })
                 else:
                     invalid_asins.append(asin)
             
             if invalid_asins:
                 logger.warning(f"Found {len(invalid_asins)} invalid ASINs: {invalid_asins[:10]}...")
             
-            if not valid_asins:
+            if not asin_data:
                 return {
                     'success': False,
                     'error': 'No valid ASINs in list',
@@ -298,22 +342,31 @@ class OptimizedBatchImporter:
                 }
             
             # Remove duplicates
-            unique_asins = list(dict.fromkeys(valid_asins))
-            if len(unique_asins) != len(valid_asins):
-                logger.info(f"Removed {len(valid_asins) - len(unique_asins)} duplicate ASINs")
+            unique_asin_data = []
+            seen_asins = set()
+            for item in asin_data:
+                if item["asin"] not in seen_asins:
+                    unique_asin_data.append(item)
+                    seen_asins.add(item["asin"])
+            
+            if len(unique_asin_data) != len(asin_data):
+                logger.info(f"Removed {len(asin_data) - len(unique_asin_data)} duplicate ASINs")
+            
+            # Extract unique ASINs for watchlist
+            unique_asins = [item["asin"] for item in unique_asin_data]
             
             # Add to watchlist first
             from scheduler.crawler_scheduler import add_multiple_asins
             result = await add_multiple_asins(unique_asins, crawl_frequency, notes, crawl_immediately=False)
             
             # Add list info to result
-            result['total_asins'] = len(unique_asins)
+            result['total_asins'] = len(unique_asin_data)
             result['invalid_asins'] = invalid_asins
             result['import_time'] = datetime.utcnow()
             
             # Start immediate crawling with optimized batch processing
-            logger.info(f"Starting optimized crawl for {len(unique_asins)} ASINs with default batch_size=2")
-            crawl_result = await self._crawl_asins_optimized(unique_asins, batch_size=2)
+            logger.info(f"Starting optimized crawl for {len(unique_asin_data)} ASINs with default batch_size=2")
+            crawl_result = await self._crawl_asins_optimized(unique_asin_data, batch_size=2)
             result['crawl_result'] = crawl_result
             
             result['duration'] = (datetime.utcnow() - start_time).total_seconds()
@@ -331,12 +384,12 @@ class OptimizedBatchImporter:
                 'duration': (datetime.utcnow() - start_time).total_seconds()
             }
     
-    async def _crawl_asins_optimized(self, asin_list: List[str], batch_size: int = 50, delay_seconds: int = 5) -> Dict:
+    async def _crawl_asins_optimized(self, asin_data: List[Dict[str, str]], batch_size: int = 50, delay_seconds: int = 5) -> Dict:
         """Crawl ASINs with optimized profile reuse"""
-        logger.info(f"Starting optimized crawl: {len(asin_list)} ASINs, batch_size={batch_size}, delay={delay_seconds}s")
+        logger.info(f"Starting optimized crawl: {len(asin_data)} ASINs, batch_size={batch_size}, delay={delay_seconds}s")
         
         crawl_results = {
-            'total_asins': len(asin_list),
+            'total_asins': len(asin_data),
             'batches_processed': 0,
             'successful_crawls': 0,
             'failed_crawls': 0,
@@ -346,10 +399,10 @@ class OptimizedBatchImporter:
         
         try:
             # Process ASINs in batches
-            for i in range(0, len(asin_list), batch_size):
-                batch = asin_list[i:i + batch_size]
+            for i in range(0, len(asin_data), batch_size):
+                batch = asin_data[i:i + batch_size]
                 batch_num = i // batch_size + 1
-                total_batches = (len(asin_list) + batch_size - 1) // batch_size
+                total_batches = (len(asin_data) + batch_size - 1) // batch_size
                 
                 logger.info(f"Processing batch {batch_num}/{total_batches}: {len(batch)} ASINs")
                 
@@ -365,7 +418,7 @@ class OptimizedBatchImporter:
                 logger.info(f"Batch {batch_num} completed: {batch_result['successful']} successful, {batch_result['failed']} failed, {batch_result['profiles_used']} profiles used")
                 
                 # Add delay between batches (except for the last batch)
-                if i + batch_size < len(asin_list):
+                if i + batch_size < len(asin_data):
                     logger.info(f"Waiting {delay_seconds} seconds before next batch...")
                     await asyncio.sleep(delay_seconds)
             
@@ -387,7 +440,7 @@ class OptimizedBatchImporter:
             
             return crawl_results
     
-    async def _crawl_batch_with_profile_reuse(self, asin_batch: List[str]) -> Dict:
+    async def _crawl_batch_with_profile_reuse(self, asin_batch: List[Dict[str, str]]) -> Dict:
         """Crawl a batch of ASINs with profile reuse - CONCURRENT processing"""
         batch_result = {
             'batch_size': len(asin_batch),
@@ -402,9 +455,9 @@ class OptimizedBatchImporter:
             
             # Tạo tasks cho tất cả ASINs trong batch để chạy concurrent
             tasks = []
-            for i, asin in enumerate(asin_batch):
+            for i, asin_item in enumerate(asin_batch):
                 profile_id = i % self.max_profiles  # Luân phiên sử dụng profiles
-                task = self._crawl_single_asin_concurrent(asin, profile_id)
+                task = self._crawl_single_asin_concurrent(asin_item["asin"], profile_id, asin_item["category"])
                 tasks.append(task)
             
             # Chạy tất cả tasks cùng lúc
@@ -413,7 +466,8 @@ class OptimizedBatchImporter:
             
             # Xử lý kết quả
             for i, result in enumerate(results):
-                asin = asin_batch[i]
+                asin_item = asin_batch[i]
+                asin = asin_item["asin"]
                 profile_id = i % self.max_profiles
                 
                 if isinstance(result, Exception):
@@ -422,6 +476,7 @@ class OptimizedBatchImporter:
                     logger.error(f"❌ Exception crawling {asin}: {result}")
                     batch_result['results'].append({
                         'asin': asin,
+                        'category': asin_item["category"],
                         'profile_id': profile_id,
                         'success': False,
                         'error': str(result)
@@ -437,6 +492,7 @@ class OptimizedBatchImporter:
                     
                     batch_result['results'].append({
                         'asin': asin,
+                        'category': asin_item["category"],
                         'profile_id': profile_id,
                         'port': result.get('port'),
                         'success': result['success'],
@@ -454,14 +510,14 @@ class OptimizedBatchImporter:
             batch_result['error'] = str(e)
             return batch_result
     
-    async def _crawl_single_asin_concurrent(self, asin: str, profile_id: int) -> Dict:
+    async def _crawl_single_asin_concurrent(self, asin: str, profile_id: int, category: str = "") -> Dict:
         """Crawl a single ASIN concurrently with a specific profile"""
         try:
             # Lấy hoặc tạo profile
             profile = await self._get_or_create_profile(profile_id)
             
             # Crawl với profile này
-            result = await self._crawl_single_asin_with_profile(asin, profile)
+            result = await self._crawl_single_asin_with_profile(asin, profile, category)
             
             # Thêm thông tin port vào result
             result['port'] = profile['port']
@@ -472,13 +528,14 @@ class OptimizedBatchImporter:
             logger.error(f"ASIN {asin}: ❌ Error in concurrent crawl - {str(e)}")
             return {
                 'asin': asin,
+                'category': category,
                 'success': False,
                 'error': str(e),
                 'crawl_time': datetime.utcnow(),
                 'port': None
             }
     
-    async def _crawl_single_asin_with_profile(self, asin: str, profile: Dict) -> Dict:
+    async def _crawl_single_asin_with_profile(self, asin: str, profile: Dict, category: str = "") -> Dict:
         """Crawl a single ASIN with a specific profile"""
         try:
             crawler = profile['crawler']
@@ -486,6 +543,9 @@ class OptimizedBatchImporter:
             
             # Crawl product with profile - run in thread to avoid blocking
             product_data = await asyncio.to_thread(crawler.crawl_product, asin, port)
+            
+            # Add category to product_data
+            product_data['category'] = category
             
             # Update profile delivery_set status
             if product_data.get('crawl_success'):
@@ -499,6 +559,7 @@ class OptimizedBatchImporter:
             
             result = {
                 'asin': asin,
+                'category': category,
                 'success': product_data.get('crawl_success', False),
                 'error': product_data.get('crawl_error'),
                 'crawl_time': datetime.utcnow()
@@ -510,6 +571,7 @@ class OptimizedBatchImporter:
             logger.error(f"ASIN {asin}: ❌ Error - {str(e)}")
             return {
                 'asin': asin,
+                'category': category,
                 'success': False,
                 'error': str(e),
                 'crawl_time': datetime.utcnow()

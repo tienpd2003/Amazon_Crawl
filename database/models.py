@@ -28,6 +28,7 @@ class ProductCrawlHistory(Base):
     
     # 📊 Core Product Info (5 fields)
     title = Column(Text)                        # 1. Tên sản phẩm
+    category = Column(String(100), default="") # Category sản phẩm
     product_description = Column(Text)          # 2. Mô tả sản phẩm (EBC content)
     product_description_images = Column(JSON)   # 3. Ảnh trong mô tả sản phẩm
     product_information = Column(JSON)          # 4. Thông số kỹ thuật

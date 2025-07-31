@@ -217,6 +217,11 @@
                                         <input type="text" class="form-control" id="column-name" placeholder="ASIN (auto-detect)">
                                         <small class="text-muted">Chỉ cần cột ASIN. Hệ thống sẽ tự động crawl thông tin sản phẩm từ Amazon.</small>
                                     </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Category Column (optional)</label>
+                                        <input type="text" class="form-control" id="category-column-name" placeholder="Category (auto-detect)">
+                                        <small class="text-muted">Cột chứa category cho từng ASIN (nếu có).</small>
+                                    </div>
                                 </div>
 
                                 <!-- Optimized Import Options -->
@@ -552,6 +557,11 @@
                 if (columnName) {
                     formData.append('column', columnName);
                 }
+                
+                const categoryColumnName = document.getElementById('category-column-name').value;
+                if (categoryColumnName) {
+                    formData.append('category_column', categoryColumnName);
+                }
 
                 // Add optimized import options
                 const optimized = document.getElementById('optimized-import').checked;
@@ -633,6 +643,11 @@
                 const columnName = document.getElementById('column-name').value;
                 if (columnName) {
                     formData.append('column', columnName);
+                }
+                
+                const categoryColumnName = document.getElementById('category-column-name').value;
+                if (categoryColumnName) {
+                    formData.append('category_column', categoryColumnName);
                 }
 
                 addLog('Testing import...', 'info');
@@ -801,6 +816,7 @@
             clearFile();
             document.getElementById('frequency').value = 'daily';
             document.getElementById('column-name').value = '';
+            document.getElementById('category-column-name').value = '';
             document.getElementById('notes').value = '';
             document.getElementById('quick-asins').value = '';
         }

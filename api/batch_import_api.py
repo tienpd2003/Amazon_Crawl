@@ -49,6 +49,7 @@ async def upload_and_import(
     frequency: str = Form("daily"),
     notes: str = Form(""),
     column: Optional[str] = Form(None),
+    category_column: Optional[str] = Form(None),
     optimized: bool = Form(False)
 ):
     """Upload file and import ASINs"""
@@ -74,6 +75,8 @@ async def upload_and_import(
             kwargs = {}
             if column:
                 kwargs['asin_column'] = column
+            if category_column:
+                kwargs['category_column'] = category_column
             
             # Import from file (original or optimized)
             if optimized:
@@ -109,9 +112,10 @@ async def upload_and_import_optimized(
     frequency: str = Form("daily"),
     notes: str = Form(""),
     column: Optional[str] = Form(None),
+    category_column: Optional[str] = Form(None),
     batch_size: str = Form("2")
 ):
-    """Upload file and import ASINs with OPTIMIZED concurrent processing"""
+    """Upload file and import ASINs with optimized concurrent processing"""
     try:
         # Validate file type
         allowed_extensions = ['.csv', '.xlsx', '.xls', '.txt']
@@ -123,6 +127,14 @@ async def upload_and_import_optimized(
                 detail=f"Invalid file type. Allowed: {', '.join(allowed_extensions)}"
             )
         
+        # Validate batch size
+        try:
+            batch_size_int = int(batch_size)
+            if batch_size_int < 1 or batch_size_int > 10:
+                raise ValueError("Batch size must be between 1 and 10")
+        except ValueError as e:
+            raise HTTPException(status_code=400, detail=str(e))
+        
         # Save uploaded file temporarily
         with tempfile.NamedTemporaryFile(delete=False, suffix=file_ext) as temp_file:
             content = await file.read()
@@ -131,20 +143,16 @@ async def upload_and_import_optimized(
         
         try:
             # Prepare kwargs for import
-            kwargs = {}
+            kwargs = {
+                'batch_size': batch_size_int
+            }
             if column:
                 kwargs['asin_column'] = column
+            if category_column:
+                kwargs['category_column'] = category_column
             
-            # Convert batch_size to int and add to kwargs
-            try:
-                batch_size_int = int(batch_size)
-                kwargs['batch_size'] = batch_size_int
-                logger.info(f"Using OPTIMIZED batch import with batch_size={batch_size_int}")
-            except ValueError:
-                logger.warning(f"Invalid batch_size '{batch_size}', using default 2")
-                kwargs['batch_size'] = 2
-            
-            # Import from file with OPTIMIZED processing
+            # Import from file with optimized processing
+            logger.info(f"Using OPTIMIZED batch import with batch_size={batch_size_int}")
             result = await import_from_file_optimized(temp_file_path, frequency, notes, **kwargs)
             
             # Serialize result for JSON
@@ -153,8 +161,7 @@ async def upload_and_import_optimized(
             # Add file info to result
             serializable_result['file_name'] = file.filename
             serializable_result['file_size'] = len(content)
-            serializable_result['batch_size'] = batch_size
-            serializable_result['optimized'] = True
+            serializable_result['batch_size'] = batch_size_int
             
             logger.info(f"Optimized batch import completed: {serializable_result}")
             return JSONResponse(content=serializable_result)

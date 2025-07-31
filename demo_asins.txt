@@ -1,5 +1,23 @@
-B07YKLXB3Y
-B0DK4MFCVD
-B07VVK39F7
-B0CP1LR1PW
-B0FCQJ8PK5
+ASIN,Category
+B0CHF85R82,Laptop
+B0DZBRFTD6,Thiết bị điện tử
+B0F25ZD6WS,Đồ gia dụng
+B0DLKWK3DJ,Thiết bị nhà bếp
+B09WPTVH6F,Điện thoại
+B0DZGYH7LK,Phụ kiện điện tử
+B0BCG64V2N,Đồng hồ thông minh
+B0CPLLDNQP,Thiết bị văn phòng
+B0DZNJDGV9,Camera
+B0CZJJGF6H,Thiết bị mạng
+B0DCFR453N,Loa bluetooth
+B0BX2LVBYY,Chuột máy tính
+B0CZHTCZXX,Bàn phím cơ
+B09YNSQZJ2,Ổ cứng di động
+B0DFQ7TP18,Thiết bị lưu trữ
+B0CHRPFFR1,TV thông minh
+B08F6SRKQ6,Robot hút bụi
+B0D2242FXW,Đèn thông minh
+B0B657SQNK,Pin sạc dự phòng
+B08V5BZ21G,Webcam
+B07L3P283N,Microphone
+B09Z6DTJSM,Thiết bị an ninh

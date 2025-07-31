@@ -199,7 +199,8 @@ async def get_products(
         if search:
             query = query.join(ProductCrawlHistory).filter(
                 ProductCrawlHistory.title.contains(search) |
-                Product.asin.contains(search)
+                Product.asin.contains(search) |
+                ProductCrawlHistory.category.contains(search)
             )
         
         # Get total count
@@ -226,6 +227,7 @@ async def get_products(
                     "id": product.id,
                     "asin": product.asin,
                     "title": latest_crawl.title,
+                    "category": latest_crawl.category or "",  # Add category field
                     "sale_price": latest_crawl.sale_price,
                     "list_price": latest_crawl.list_price,
                     "rating": latest_crawl.rating,
@@ -243,6 +245,7 @@ async def get_products(
                     "id": product.id,
                     "asin": product.asin,
                     "title": None,
+                    "category": "",  # Add category field
                     "sale_price": None,
                     "list_price": None,
                     "rating": None,
