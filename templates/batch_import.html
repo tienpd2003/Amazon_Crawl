@@ -219,6 +219,30 @@
                                     </div>
                                 </div>
 
+                                <!-- Optimized Import Options -->
+                                <div class="row mb-4">
+                                    <div class="col-md-6">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="optimized-import" checked>
+                                            <label class="form-check-label" for="optimized-import">
+                                                <i class="fas fa-rocket text-success"></i> Optimized Import
+                                            </label>
+                                            <small class="form-text text-muted d-block">Concurrent processing with profile reuse</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">Batch Size</label>
+                                        <select class="form-select" id="import-batch-size">
+                                            <option value="2">2 ASINs per batch</option>
+                                            <option value="5">5 ASINs per batch</option>
+                                            <option value="10">10 ASINs per batch</option>
+                                            <option value="20">20 ASINs per batch</option>
+                                            <option value="50">50 ASINs per batch</option>
+                                        </select>
+                                        <small class="text-muted">Số sản phẩm crawl cùng lúc trong mỗi batch</small>
+                                    </div>
+                                </div>
+
                                 <div class="mb-4">
                                     <label class="form-label">Notes</label>
                                     <textarea class="form-control" id="notes" rows="3" placeholder="Optional notes for this import"></textarea>
@@ -529,10 +553,28 @@
                     formData.append('column', columnName);
                 }
 
-                addLog('Starting import...', 'info');
+                // Add optimized import options
+                const optimized = document.getElementById('optimized-import').checked;
+                const batchSizeElement = document.getElementById('import-batch-size');
+                const batchSize = batchSizeElement ? batchSizeElement.value : '2';
+                
+                // Debug logging
+                console.log('Optimized import:', optimized);
+                console.log('Batch size element:', batchSizeElement);
+                console.log('Batch size value:', batchSize);
+                
+                if (optimized) {
+                    formData.append('optimized', 'true');
+                    formData.append('batch_size', batchSize);
+                    addLog(`Starting OPTIMIZED import with batch size ${batchSize}...`, 'info');
+                } else {
+                    addLog('Starting standard import...', 'info');
+                }
+                
                 updateProgress(10, 'Uploading file...');
 
-                const response = await fetch('/api/batch-import/upload', {
+                const endpoint = optimized ? '/api/batch-import/upload-optimized' : '/api/batch-import/upload';
+                const response = await fetch(endpoint, {
                     method: 'POST',
                     body: formData
                 });

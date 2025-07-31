@@ -18,6 +18,7 @@ from crawler.amazon_crawler import AmazonCrawler
 from crawler.optimized_crawler import OptimizedAmazonCrawler
 from crawler.change_detector import detect_changes
 from utils.logger import get_logger
+from utils.batch_import_optimized import optimized_batch_importer
 
 logger = get_logger(__name__)
 
@@ -29,7 +30,7 @@ class CrawlerScheduler:
         self.is_running = False
         
         # Batch processing settings - giống batch_import.py
-        self.batch_size = 2  # Giảm từ 100 xuống 2 để test
+        self.batch_size = 50  # Mặc định 50 để đồng bộ với batch_import_optimized.py
         self.max_concurrent_crawlers = 2  # Giảm từ 5 xuống 2
         self.crawl_queue = Queue()
         self.active_crawlers = 0
@@ -118,8 +119,8 @@ class CrawlerScheduler:
             logger.info("Crawler scheduler stopped")
     
     async def daily_crawl_job(self):
-        """Main daily crawl job - sử dụng concurrent crawling như batch_import.py"""
-        logger.info("Starting daily crawl job")
+        """Main daily crawl job - sử dụng concurrent crawling như batch_import_optimized.py"""
+        logger.info("Starting daily crawl job (optimized)")
         start_time = datetime.utcnow()
         
         try:
@@ -135,15 +136,15 @@ class CrawlerScheduler:
             # Extract ASIN strings from ASINWatchlist objects
             asin_list = [asin_data.asin for asin_data in active_asins]
             
-            # Use same batch crawling logic as batch_import.py
-            crawl_result = await self._crawl_asins_in_batches(asin_list)
+            # Dùng engine tối ưu
+            crawl_result = await optimized_batch_importer._crawl_asins_optimized(asin_list, batch_size=self.batch_size)
             
             # Calculate final stats
             end_time = datetime.utcnow()
             crawl_duration = (end_time - start_time).total_seconds()
             
             logger.info(
-                f"Daily crawl completed - "
+                f"Daily crawl completed (optimized) - "
                 f"Total: {crawl_result['total_asins']}, "
                 f"Successful: {crawl_result['successful_crawls']}, "
                 f"Failed: {crawl_result['failed_crawls']}, "
@@ -152,51 +153,12 @@ class CrawlerScheduler:
             )
             
         except Exception as e:
-            logger.error(f"Error in daily crawl job: {e}")
+            logger.error(f"Error in daily crawl job (optimized): {e}")
 
     async def _crawl_asins_in_batches(self, asin_list: List[str], batch_size: int = 2, delay_seconds: int = 2) -> Dict:
-        """Crawl ASINs in batches with delay between batches - giống batch_import.py"""
-        logger.info(f"Starting batch crawl: {len(asin_list)} ASINs, batch_size={batch_size}, delay={delay_seconds}s")
-        
-        crawl_results = {
-            'total_asins': len(asin_list),
-            'batches_processed': 0,
-            'successful_crawls': 0,
-            'failed_crawls': 0,
-            'batch_results': []
-        }
-        
-        try:
-            # Process ASINs in batches
-            for i in range(0, len(asin_list), batch_size):
-                batch = asin_list[i:i + batch_size]
-                batch_num = i // batch_size + 1
-                total_batches = (len(asin_list) + batch_size - 1) // batch_size
-                
-                logger.info(f"Processing batch {batch_num}/{total_batches}: {len(batch)} ASINs")
-                
-                # Crawl current batch
-                batch_result = await self._crawl_single_batch(batch)
-                crawl_results['batch_results'].append(batch_result)
-                crawl_results['batches_processed'] += 1
-                crawl_results['successful_crawls'] += batch_result['successful']
-                crawl_results['failed_crawls'] += batch_result['failed']
-                
-                # Log batch progress
-                logger.info(f"Batch {batch_num} completed: {batch_result['successful']} successful, {batch_result['failed']} failed")
-                
-                # Add delay between batches (except for the last batch)
-                if i + batch_size < len(asin_list):
-                    logger.info(f"Waiting {delay_seconds} seconds before next batch...")
-                    await asyncio.sleep(delay_seconds)
-            
-            logger.info(f"Batch crawl completed: {crawl_results['successful_crawls']} successful, {crawl_results['failed_crawls']} failed")
-            return crawl_results
-            
-        except Exception as e:
-            logger.error(f"Error in batch crawl: {e}")
-            crawl_results['error'] = str(e)
-            return crawl_results
+        """DEPRECATED: Use optimized_batch_importer._crawl_asins_optimized instead"""
+        logger.warning("_crawl_asins_in_batches is deprecated. Use optimized_batch_importer._crawl_asins_optimized instead.")
+        return await optimized_batch_importer._crawl_asins_optimized(asin_list, batch_size=self.batch_size)
 
     async def _crawl_single_batch(self, asin_batch: List[str]) -> Dict:
         """Crawl a single batch of ASINs concurrently - giống batch_import.py"""

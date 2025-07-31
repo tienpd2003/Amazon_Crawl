@@ -28,6 +28,8 @@ class AmazonCrawler:
         self.driver = None
         self.wait = None
         self.session = get_db_session()
+        self.delivery_location_set = False  # Thêm flag để track đã set location chưa
+        self.current_port = None  # Track port hiện tại để biết profile nào đang dùng
         
     def _setup_driver(self, port: int = None):
         """Setup Chrome driver with anti-detection measures"""
@@ -242,6 +244,49 @@ class AmazonCrawler:
         delay = settings.CRAWLER_DELAY + random.uniform(0, 2)
         time.sleep(delay)
     
+    def _handle_continue_shopping(self):
+        """Xử lý trang Continue shopping của Amazon - Tối ưu tốc độ"""
+        try:
+            # Kiểm tra nhanh xem có phải trang "Continue shopping" không
+            try:
+                # Tìm button "Continue shopping" với selector chính xác nhất trước
+                continue_button = self.driver.find_element(By.CSS_SELECTOR, "button[type='submit'][class*='a-button-text'][alt*='Continue shopping']")
+                
+                # Kiểm tra text nhanh
+                button_text = continue_button.text.lower()
+                if "continue" in button_text and "shopping" in button_text:
+                    logger.info("🔄 Detected 'Continue shopping' page, clicking button...")
+                    
+                    # Click button
+                    continue_button.click()
+                    
+                    # Đợi trang load ngắn
+                    time.sleep(2)
+                    
+                    # Kiểm tra nhanh xem đã vào được trang sản phẩm chưa
+                    try:
+                        product_title = self.driver.find_element(By.CSS_SELECTOR, "#productTitle, h1")
+                        logger.info("✅ Successfully bypassed 'Continue shopping' page")
+                        return True
+                    except NoSuchElementException:
+                        logger.warning("⚠️ Still on 'Continue shopping' page after clicking")
+                        return False
+                        
+            except NoSuchElementException:
+                # Không tìm thấy button, có thể đã ở trang sản phẩm
+                try:
+                    product_title = self.driver.find_element(By.CSS_SELECTOR, "#productTitle, h1")
+                    logger.info("✅ Already on product page, no 'Continue shopping' detected")
+                    return True
+                except NoSuchElementException:
+                    # Không phải trang sản phẩm, nhưng cũng không phải Continue shopping
+                    logger.info("ℹ️ Not a product page, but no 'Continue shopping' detected")
+                    return True
+                
+        except Exception as e:
+            logger.error(f"❌ Error handling 'Continue shopping' page: {e}")
+            return False
+    
     def _set_delivery_location(self, zip_code: str = "10009"):
         """Set delivery location to New York 10009 with human-like typing"""
         try:
@@ -430,8 +475,14 @@ class AmazonCrawler:
     
     def crawl_product(self, asin: str, port: int = None) -> Dict:
         """Crawl product information from Amazon"""
-        if not self.driver:
+        # Check if we need to setup a new driver (different port = different profile)
+        if not self.driver or port != self.current_port:
+            if self.driver:
+                logger.info(f"Port changed from {self.current_port} to {port}, creating new driver")
+                self.driver.quit()
             self._setup_driver(port)
+            self.current_port = port
+            self.delivery_location_set = False  # Reset flag for new profile
             
         url = settings.AMAZON_DP_URL.format(asin=asin)
         # Giảm log - chỉ hiện ASIN đang crawl
@@ -453,21 +504,38 @@ class AmazonCrawler:
             if "Page Not Found" in self.driver.title or "404" in self.driver.title:
                 raise Exception("Product page not found")
             
-            # Display current delivery location
-            try:
-                location_element = self.driver.find_element(By.CSS_SELECTOR, "#glow-ingress-line2")
-                current_location = location_element.text
-                # Clean Unicode characters that cause encoding issues
-                clean_current_location = current_location.replace('\u200c', '').replace('\u200d', '').strip()
-                
-                # Set delivery location to New York 10009 if not already set
-                if "10009" not in clean_current_location and "New York" not in clean_current_location:
-                    location_changed = self._set_delivery_location()
-                    # No need to refresh - page already updated after 7s wait in location change
+            # Xử lý trang "Continue shopping" nếu gặp phải
+            self._handle_continue_shopping()
+            
+            # Tối ưu: Chỉ set delivery location 1 lần cho mỗi profile/session
+            if not self.delivery_location_set:
+                try:
+                    location_element = self.driver.find_element(By.CSS_SELECTOR, "#glow-ingress-line2")
+                    current_location = location_element.text
+                    # Clean Unicode characters that cause encoding issues
+                    clean_current_location = current_location.replace('\u200c', '').replace('\u200d', '').strip()
                     
-            except Exception as e:
-                # Giảm log warning
-                pass
+                    logger.info(f"Current delivery location: {clean_current_location}")
+                    
+                    # Chỉ set location nếu chưa đúng New York 10009
+                    if "10009" not in clean_current_location and "New York" not in clean_current_location:
+                        logger.info("Setting delivery location to New York 10009...")
+                        location_changed = self._set_delivery_location()
+                        if location_changed:
+                            self.delivery_location_set = True
+                            logger.info("✅ Delivery location set successfully for this profile")
+                        else:
+                            logger.warning("❌ Failed to set delivery location")
+                    else:
+                        # Location đã đúng, mark as set
+                        self.delivery_location_set = True
+                        logger.info("✅ Delivery location already correct (New York 10009)")
+                        
+                except Exception as e:
+                    logger.warning(f"Could not check/set delivery location: {e}")
+                    # Continue crawling anyway
+            else:
+                logger.info("🔄 Delivery location already set for this profile, skipping...")
             
             # Extract all product information (EXCEPT images/videos first to avoid DOM changes)
             product_data.update(self._extract_basic_info())
@@ -1691,10 +1759,22 @@ class AmazonCrawler:
     
     def close(self):
         """Close browser and database session"""
-        if self.driver:
-            self.driver.quit()
-        if self.session:
-            self.session.close()
+        try:
+            if self.driver:
+                logger.info(f"Closing browser driver (port: {self.current_port})")
+                self.driver.quit()
+                self.driver = None
+                self.current_port = None
+                self.delivery_location_set = False
+        except Exception as e:
+            logger.error(f"Error closing browser driver: {e}")
+        
+        try:
+            if self.session:
+                self.session.close()
+                self.session = None
+        except Exception as e:
+            logger.error(f"Error closing database session: {e}")
 
 # Utility function for single product crawl
 def crawl_single_product(asin: str) -> Dict:

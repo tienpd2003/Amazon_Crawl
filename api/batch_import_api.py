@@ -7,6 +7,7 @@ from typing import List, Optional
 import json
 
 from utils.batch_import import import_from_file, import_from_list, get_import_stats
+from utils.batch_import_optimized import import_from_file_optimized, import_from_list_optimized, get_import_stats as get_optimized_stats
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -47,7 +48,8 @@ async def upload_and_import(
     file: UploadFile = File(...),
     frequency: str = Form("daily"),
     notes: str = Form(""),
-    column: Optional[str] = Form(None)
+    column: Optional[str] = Form(None),
+    optimized: bool = Form(False)
 ):
     """Upload file and import ASINs"""
     try:
@@ -73,8 +75,13 @@ async def upload_and_import(
             if column:
                 kwargs['asin_column'] = column
             
-            # Import from file
-            result = await import_from_file(temp_file_path, frequency, notes, **kwargs)
+            # Import from file (original or optimized)
+            if optimized:
+                logger.info("Using OPTIMIZED batch import with concurrent processing")
+                result = await import_from_file_optimized(temp_file_path, frequency, notes, **kwargs)
+            else:
+                logger.info("Using ORIGINAL batch import")
+                result = await import_from_file(temp_file_path, frequency, notes, **kwargs)
             
             # Serialize result for JSON
             serializable_result = serialize_for_json(result)
@@ -93,6 +100,72 @@ async def upload_and_import(
                 
     except Exception as e:
         logger.error(f"Error in batch import upload: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/upload-optimized")
+async def upload_and_import_optimized(
+    background_tasks: BackgroundTasks,
+    file: UploadFile = File(...),
+    frequency: str = Form("daily"),
+    notes: str = Form(""),
+    column: Optional[str] = Form(None),
+    batch_size: str = Form("2")
+):
+    """Upload file and import ASINs with OPTIMIZED concurrent processing"""
+    try:
+        # Validate file type
+        allowed_extensions = ['.csv', '.xlsx', '.xls', '.txt']
+        file_ext = os.path.splitext(file.filename)[1].lower()
+        
+        if file_ext not in allowed_extensions:
+            raise HTTPException(
+                status_code=400, 
+                detail=f"Invalid file type. Allowed: {', '.join(allowed_extensions)}"
+            )
+        
+        # Save uploaded file temporarily
+        with tempfile.NamedTemporaryFile(delete=False, suffix=file_ext) as temp_file:
+            content = await file.read()
+            temp_file.write(content)
+            temp_file_path = temp_file.name
+        
+        try:
+            # Prepare kwargs for import
+            kwargs = {}
+            if column:
+                kwargs['asin_column'] = column
+            
+            # Convert batch_size to int and add to kwargs
+            try:
+                batch_size_int = int(batch_size)
+                kwargs['batch_size'] = batch_size_int
+                logger.info(f"Using OPTIMIZED batch import with batch_size={batch_size_int}")
+            except ValueError:
+                logger.warning(f"Invalid batch_size '{batch_size}', using default 2")
+                kwargs['batch_size'] = 2
+            
+            # Import from file with OPTIMIZED processing
+            result = await import_from_file_optimized(temp_file_path, frequency, notes, **kwargs)
+            
+            # Serialize result for JSON
+            serializable_result = serialize_for_json(result)
+            
+            # Add file info to result
+            serializable_result['file_name'] = file.filename
+            serializable_result['file_size'] = len(content)
+            serializable_result['batch_size'] = batch_size
+            serializable_result['optimized'] = True
+            
+            logger.info(f"Optimized batch import completed: {serializable_result}")
+            return JSONResponse(content=serializable_result)
+            
+        finally:
+            # Clean up temporary file
+            if os.path.exists(temp_file_path):
+                os.unlink(temp_file_path)
+                
+    except Exception as e:
+        logger.error(f"Error in optimized batch import upload: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.post("/test")

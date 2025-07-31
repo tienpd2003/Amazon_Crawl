@@ -36,6 +36,48 @@
             transform: translateY(-5px);
         }
         .stat-box { background: #f8f9fa; border-radius: 8px; padding: 10px 0; text-align: center; margin-bottom: 10px; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+        
+        /* Table styles for vertical layout */
+        .product-table {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .product-table .table {
+            margin-bottom: 0;
+        }
+        .product-table .table th {
+            background: #f8f9fa;
+            border-bottom: 2px solid #dee2e6;
+            font-weight: 600;
+            color: #495057;
+        }
+        .product-table .table td {
+            vertical-align: middle;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .product-table .table tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+        .title-cell {
+            max-width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .title-cell:hover {
+            cursor: help;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+        .action-buttons .btn {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+        }
     </style>
 </head>
 <body class="bg-light">
@@ -264,77 +306,83 @@
                 return;
             }
 
-            const productsHtml = products.map(product => `
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card product-card h-100">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-start mb-2">
-                                <h6 class="card-title text-primary">${product.asin}</h6>
-                                <span class="badge ${product.last_crawled ? 'bg-success' : 'bg-warning'}">
-                                    ${product.last_crawled ? 'Đã crawl' : 'Chưa crawl'}
-                                </span>
-                            </div>
-                            
-                            <p class="card-text small text-muted" style="height: 60px; overflow: hidden;">
-                                ${product.title || 'Chưa có thông tin tiêu đề'}
-                            </p>
-                            
-                            <div class="row text-center mb-3">
-                                <div class="col-6">
-                                    <div class="text-success fw-bold">
-                                        ${product.sale_price ? '$' + product.sale_price.toLocaleString('en-US') : 'N/A'}
-                                    </div>
-                                    <small class="text-muted">Giá bán</small>
-                                </div>
-                                <div class="col-6">
-                                    <div class="text-info fw-bold">
-                                        ${product.rating ? product.rating + '★' : 'N/A'}
-                                    </div>
-                                    <small class="text-muted">Đánh giá</small>
-                                </div>
-                            </div>
-                            
-                            <div class="text-center">
-                                <small class="text-muted">
-                                    ${product.last_crawled ? 
-                                        'Cập nhật: ' + new Date(product.last_crawled).toLocaleDateString('vi-VN') : 
-                                        'Chưa crawl lần nào'
-                                    }
-                                </small>
-                            </div>
-                        </div>
-                        
-                        <div class="card-footer bg-transparent">
-                            <div class="d-flex gap-2">
-                                <button class="btn btn-outline-primary btn-sm flex-fill" onclick="viewDetails('${product.asin}')">
-                                    <i class="fas fa-eye"></i> Chi tiết
-                                </button>
-                                <button class="btn btn-outline-success btn-sm" onclick="crawlNow('${product.asin}')">
-                                    <i class="fas fa-sync"></i>
-                                </button>
-                                ${product.is_active === true ? `
-                                    <button class="btn btn-outline-warning btn-sm" onclick="toggleWatchlist('${product.asin}', true)">
-                                        <i class="fas fa-pause"></i>
-                                    </button>
-                                ` : product.is_active === false ? `
-                                    <button class="btn btn-outline-info btn-sm" onclick="toggleWatchlist('${product.asin}', false)">
-                                        <i class="fas fa-play"></i>
-                                    </button>
-                                ` : product.last_crawled ? `
-                                    <button class="btn btn-outline-info btn-sm" onclick="addToWatchlist('${product.asin}')">
-                                        <i class="fas fa-bookmark"></i>
-                                    </button>
-                                ` : ''}
-                                <button class="btn btn-outline-danger btn-sm" onclick="removeProduct('${product.asin}')">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+            const tableHtml = `
+                <div class="product-table">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>ASIN</th>
+                                <th>Tiêu đề sản phẩm</th>
+                                <th>Đánh giá</th>
+                                <th>Lượt đánh giá</th>
+                                <th>Số ảnh</th>
+                                <th>Số video</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${products.map(product => `
+                                <tr>
+                                    <td>
+                                        <strong class="text-primary">${product.asin}</strong>
+                                    </td>
+                                    <td>
+                                        <div class="title-cell" title="${product.title || 'Chưa có thông tin tiêu đề'}">
+                                            ${product.title || 'Chưa có thông tin tiêu đề'}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        ${product.rating ? `<span class="text-warning">${product.rating}★</span>` : 'N/A'}
+                                    </td>
+                                    <td>
+                                        ${product.rating_count ? product.rating_count.toLocaleString() : 'N/A'}
+                                    </td>
+                                    <td>
+                                        ${product.image_count || 0}
+                                    </td>
+                                    <td>
+                                        ${product.video_count || 0}
+                                    </td>
+                                    <td>
+                                        <span class="badge ${product.last_crawled ? 'bg-success' : 'bg-warning'}">
+                                            ${product.last_crawled ? 'Đã crawl' : 'Chưa crawl'}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-outline-primary btn-sm" onclick="viewDetails('${product.asin}')" title="Xem chi tiết">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-outline-success btn-sm" onclick="crawlNow('${product.asin}')" title="Crawl ngay">
+                                                <i class="fas fa-sync"></i>
+                                            </button>
+                                            ${product.is_active === true ? `
+                                                <button class="btn btn-outline-warning btn-sm" onclick="toggleWatchlist('${product.asin}', true)" title="Dừng theo dõi">
+                                                    <i class="fas fa-pause"></i>
+                                                </button>
+                                            ` : product.is_active === false ? `
+                                                <button class="btn btn-outline-info btn-sm" onclick="toggleWatchlist('${product.asin}', false)" title="Tiếp tục theo dõi">
+                                                    <i class="fas fa-play"></i>
+                                                </button>
+                                            ` : product.last_crawled ? `
+                                                <button class="btn btn-outline-info btn-sm" onclick="addToWatchlist('${product.asin}')" title="Thêm vào ASIN">
+                                                    <i class="fas fa-bookmark"></i>
+                                                </button>
+                                            ` : ''}
+                                            <button class="btn btn-outline-danger btn-sm" onclick="removeProduct('${product.asin}')" title="Xóa sản phẩm">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
                 </div>
-            `).join('');
+            `;
             
-            container.innerHTML = `<div class="row">${productsHtml}</div>`;
+            container.innerHTML = tableHtml;
         }
 
         // Update pagination

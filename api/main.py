@@ -232,6 +232,8 @@ async def get_products(
                     "rating_count": latest_crawl.rating_count,
                     "inventory_status": latest_crawl.inventory,  # FIXED: was inventory_status
                     "amazon_choice": latest_crawl.amazon_choice,
+                    "image_count": latest_crawl.image_count,
+                    "video_count": latest_crawl.video_count,
                     "last_crawled": latest_crawl.crawl_date,
                     "created_at": product.created_at,
                     "is_active": is_active
@@ -247,6 +249,8 @@ async def get_products(
                     "rating_count": None,
                     "inventory_status": None,
                     "amazon_choice": False,
+                    "image_count": 0,
+                    "video_count": 0,
                     "last_crawled": None,
                     "created_at": product.created_at,
                     "is_active": is_active
