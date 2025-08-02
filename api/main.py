@@ -186,6 +186,7 @@ async def get_products(
     page: int = 1, 
     limit: int = 50,
     search: Optional[str] = None,
+    sort: Optional[str] = None,
     db: Session = Depends(get_db)
 ):
     """Get products with pagination"""
@@ -208,6 +209,12 @@ async def get_products(
         
         # Get products with latest data
         products = query.offset(offset).limit(limit).all()
+        
+        # Apply sorting if specified
+        if sort:
+            # We'll sort the product_list after getting all data
+            # since we need to join with ProductCrawlHistory for sorting
+            pass
         
         # Format response
         product_list = []
@@ -261,6 +268,21 @@ async def get_products(
             
             product_list.append(product_data)
         
+        # Apply sorting if specified
+        if sort:
+            if sort == "price_desc":
+                product_list.sort(key=lambda x: (x["sale_price"] is None, x["sale_price"] or 0), reverse=True)
+            elif sort == "price_asc":
+                product_list.sort(key=lambda x: (x["sale_price"] is None, x["sale_price"] or 0))
+            elif sort == "rating_desc":
+                product_list.sort(key=lambda x: (x["rating"] is None, x["rating"] or 0), reverse=True)
+            elif sort == "rating_asc":
+                product_list.sort(key=lambda x: (x["rating"] is None, x["rating"] or 0))
+            elif sort == "created_desc":
+                product_list.sort(key=lambda x: x["created_at"], reverse=True)
+            elif sort == "created_asc":
+                product_list.sort(key=lambda x: x["created_at"])
+        
         return {
             "products": product_list,
             "total": total,
@@ -283,6 +305,7 @@ async def get_products_stats(db: Session = Depends(get_db)):
         # Sản phẩm không nằm trong watchlist
         subq = db.query(ASINWatchlist.asin)
         not_in_watchlist = db.query(Product).filter(~Product.asin.in_(subq)).count()
+        
         return {
             "total_products": total_products,
             "active_watchlist": active_watchlist,
@@ -651,8 +674,37 @@ async def get_watchlist_change_detail(asin: str, db: Session = Depends(get_db)):
         for field in detector.monitored_fields.keys():
             v_today = getattr(crawl_today, field, None)
             v_yesterday = getattr(crawl_yesterday, field, None)
-            if v_today != v_yesterday:
-                changes[field] = {"old": v_yesterday, "new": v_today}
+            
+            # Xử lý đặc biệt cho product_information và about_this_item
+            if field in ["product_information", "about_this_item"]:
+                # Kiểm tra xem cả hai có rỗng không (giống logic trong change_detector.py)
+                yesterday_empty = v_yesterday is None or (isinstance(v_yesterday, dict) and 
+                    (not v_yesterday or (len(v_yesterday) == 1 and 'full_details' in v_yesterday and not v_yesterday['full_details'])))
+                today_empty = v_today is None or (isinstance(v_today, dict) and 
+                    (not v_today or (len(v_today) == 1 and 'full_details' in v_today and not v_today['full_details'])))
+                
+                # Nếu cả hai đều rỗng, bỏ qua (giống change_detector.py)
+                if yesterday_empty and today_empty:
+                    continue
+                
+                # Nếu có thay đổi thực sự
+                if v_today != v_yesterday:
+                    # Format để hiển thị
+                    if yesterday_empty:
+                        old_value = "Không có thông tin"
+                    else:
+                        old_value = str(v_yesterday)
+                    
+                    if today_empty:
+                        new_value = "Không có thông tin"
+                    else:
+                        new_value = str(v_today)
+                    
+                    changes[field] = {"old": old_value, "new": new_value}
+            else:
+                # Xử lý các trường khác như cũ
+                if v_today != v_yesterday:
+                    changes[field] = {"old": v_yesterday, "new": v_today}
         return {"changes": changes}
     except Exception as e:
         logger.error(f"Error getting change detail for {asin}: {e}")

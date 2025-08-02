@@ -149,6 +149,25 @@ class ChangeDetector:
             except Exception:
                 pass
             return [str(value)]
+        if field in ["product_information", "about_this_item"]:
+            # Xử lý đặc biệt cho product_information và about_this_item
+            if value is None:
+                return {}
+            if isinstance(value, dict):
+                # Nếu dict rỗng hoặc chỉ có key rỗng, coi như None
+                if not value or (len(value) == 1 and 'full_details' in value and not value['full_details']):
+                    return {}
+                return value
+            try:
+                import json
+                v = json.loads(value) if isinstance(value, str) else value
+                if isinstance(v, dict):
+                    if not v or (len(v) == 1 and 'full_details' in v and not v['full_details']):
+                        return {}
+                    return v
+            except Exception:
+                pass
+            return {}
         return value
 
     def _equal_value(self, a, b):
@@ -158,6 +177,16 @@ class ChangeDetector:
                 return True
             if a is None or b is None:
                 return False
+            
+            # Xử lý đặc biệt cho dict rỗng
+            if isinstance(a, dict) and isinstance(b, dict):
+                # Nếu cả hai đều rỗng hoặc chỉ có key rỗng, coi như bằng nhau
+                a_empty = not a or (len(a) == 1 and 'full_details' in a and not a['full_details'])
+                b_empty = not b or (len(b) == 1 and 'full_details' in b and not b['full_details'])
+                if a_empty and b_empty:
+                    return True
+                return a == b
+            
             # Nếu là số, so sánh số học
             if isinstance(a, (int, float, str)) and isinstance(b, (int, float, str)):
                 try:
@@ -178,9 +207,19 @@ class ChangeDetector:
         for field, config in self.monitored_fields.items():
             old_value = self._get_field_value_for_compare(old_data.get(field), field)
             new_value = self._get_field_value_for_compare(new_data.get(field), field)
+            
             # Skip if both values are None
             if old_value is None and new_value is None:
                 continue
+                
+            # Skip if both values are empty dicts (for product_information, about_this_item)
+            if field in ["product_information", "about_this_item"]:
+                if isinstance(old_value, dict) and isinstance(new_value, dict):
+                    old_empty = not old_value or (len(old_value) == 1 and 'full_details' in old_value and not old_value['full_details'])
+                    new_empty = not new_value or (len(new_value) == 1 and 'full_details' in new_value and not new_value['full_details'])
+                    if old_empty and new_empty:
+                        continue
+            
             # So sánh chuẩn hóa
             if not self._equal_value(old_value, new_value):
                 changes[field] = {

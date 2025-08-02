@@ -78,6 +78,16 @@
             padding: 0.25rem 0.5rem;
             font-size: 0.875rem;
         }
+        .price-cell {
+            min-width: 120px;
+            text-align: center;
+        }
+        .price-cell .text-success {
+            font-size: 1.1em;
+        }
+        .price-cell .text-danger {
+            font-weight: 600;
+        }
     </style>
 </head>
 <body class="bg-light">
@@ -162,6 +172,8 @@
                                     <option value="created_asc">Cũ nhất</option>
                                     <option value="price_desc">Giá cao nhất</option>
                                     <option value="price_asc">Giá thấp nhất</option>
+                                    <option value="rating_desc">Đánh giá cao nhất</option>
+                                    <option value="rating_asc">Đánh giá thấp nhất</option>
                                 </select>
                             </div>
                         </div>
@@ -268,7 +280,8 @@
                 const params = new URLSearchParams({
                     page: page,
                     limit: 12,
-                    ...(search && { search })
+                    ...(search && { search }),
+                    ...(sort && { sort })
                 });
                 
                 const response = await fetch(`/api/products?${params}`);
@@ -314,6 +327,7 @@
                                 <th>ASIN</th>
                                 <th>Tiêu đề sản phẩm</th>
                                 <th>Category</th>
+                                <th>Giá sản phẩm</th>
                                 <th>Đánh giá</th>
                                 <th>Lượt đánh giá</th>
                                 <th>Số ảnh</th>
@@ -335,6 +349,12 @@
                                     </td>
                                     <td>
                                         <span class="badge bg-info">${product.category || 'N/A'}</span>
+                                    </td>
+                                    <td class="price-cell">
+                                        ${product.sale_price ? `<span class="text-success fw-bold">$${parseFloat(product.sale_price).toFixed(2)}</span>` : 'N/A'}
+                                        ${product.list_price && product.sale_price && product.list_price > product.sale_price ? 
+                                            `<br><small class="text-muted text-decoration-line-through">$${parseFloat(product.list_price).toFixed(2)}</small>
+                                             <br><small class="text-danger">-${Math.round(((product.list_price - product.sale_price) / product.list_price) * 100)}%</small>` : ''}
                                     </td>
                                     <td>
                                         ${product.rating ? `<span class="text-warning">${product.rating}★</span>` : 'N/A'}

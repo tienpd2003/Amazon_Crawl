@@ -108,7 +108,7 @@ class OptimizedBatchImporter:
         return True
     
     def extract_asins_from_csv(self, file_path: str, asin_column: str = None, category_column: str = None) -> List[Dict[str, str]]:
-        """Extract ASINs and categories from CSV file"""
+        """Extract ASINs and categories from CSV file with category inheritance"""
         asin_data = []
         
         try:
@@ -135,14 +135,22 @@ class OptimizedBatchImporter:
                             category_column = col
                             break
                 
+                # Track current category for inheritance
+                current_category = ""
+                
                 for row in reader:
                     asin = row.get(asin_column, '').strip()
                     category = row.get(category_column, '').strip() if category_column else ""
                     
+                    # Category inheritance logic
+                    if category:  # If category is provided, update current category
+                        current_category = category
+                    # If category is empty, use the current_category (inheritance)
+                    
                     if self.validate_asin(asin):
                         asin_data.append({
                             "asin": asin.upper(),
-                            "category": category
+                            "category": current_category
                         })
                     else:
                         logger.warning(f"Invalid ASIN in CSV: {asin}")
@@ -176,7 +184,7 @@ class OptimizedBatchImporter:
         return asin_data
     
     def extract_asins_from_excel(self, file_path: str, sheet_name: str = None, asin_column: str = None, category_column: str = None) -> List[Dict[str, str]]:
-        """Extract ASINs and categories from Excel file"""
+        """Extract ASINs and categories from Excel file with category inheritance"""
         asin_data = []
         
         try:
@@ -206,15 +214,23 @@ class OptimizedBatchImporter:
                         category_column = col
                         break
             
+            # Track current category for inheritance
+            current_category = ""
+            
             # Extract ASINs and categories from the specified columns
             for index, row in df.iterrows():
                 asin = str(row[asin_column]).strip()
                 category = str(row[category_column]).strip() if category_column and category_column in row else ""
                 
+                # Category inheritance logic
+                if category:  # If category is provided, update current category
+                    current_category = category
+                # If category is empty, use the current_category (inheritance)
+                
                 if self.validate_asin(asin):
                     asin_data.append({
                         "asin": asin.upper(),
-                        "category": category
+                        "category": current_category
                     })
                 else:
                     logger.warning(f"Invalid ASIN at row {index + 1}: {asin}")

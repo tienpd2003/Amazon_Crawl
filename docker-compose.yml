@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  amazon-crawler:
+    build: .
+    container_name: amazon-crawler
+    ports:
+      - "8000:8000"
+    environment:
+      # Database
+      - DATABASE_URL=sqlite:///./amazon_crawler.db
+      
+      # Amazon Crawler Settings
+      - CRAWLER_DELAY=3
+      - MAX_RETRIES=3
+      - TIMEOUT=30
+      
+      # Scheduler Settings
+      - SCHEDULER_TIMEZONE=Asia/Ho_Chi_Minh
+      - DAILY_CRAWL_TIME=09:00
+      
+      # Dashboard Settings
+      - DASHBOARD_HOST=0.0.0.0
+      - DASHBOARD_PORT=8000
+      
+      # Browser Settings
+      - HEADLESS_BROWSER=true
+      - BROWSER_TYPE=chrome
+      
+      # Rate Limiting
+      - REQUESTS_PER_MINUTE=10
+      - CONCURRENT_REQUESTS=1
+      
+      # Optional: Add your notification settings here
+      # - TELEGRAM_BOT_TOKEN=your_bot_token_here
+      # - TELEGRAM_CHAT_ID=your_chat_id_here
+      # - DISCORD_WEBHOOK_URL=your_webhook_url_here
+      
+    volumes:
+      # Persist database
+      - ./amazon_crawler.db:/app/amazon_crawler.db
+      # Persist data directories
+      - ./data:/app/data
+      # Persist logs
+      - ./logs:/app/logs
+      # Persist cookies
+      - ./cookies:/app/cookies
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s 
